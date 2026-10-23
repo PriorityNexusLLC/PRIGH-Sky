@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRIGH · The Sky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* The night sky is always night. Type and surfaces follow the Assumption Check house style (Fraunces display,
+     IBM Plex body and mono) so both registries read as one family. */
+  :root {
+    --paper: #0b0d14; --surface: #12151f; --surface-sunk: #0e1119; --ink: #e9e7e1; --ink-soft: #9aa3b5;
+    --line: #232838; --line-strong: #323a4e; --accent: #85a6ec; --accent-soft: #1b2540;
+    --verified: #5cc3a3; --caution: #e0a35c; --bad: #ef6f63; --possible: #b592f0;
+    --font-display: "Fraunces", Georgia, serif; --font-body: "IBM Plex Sans", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    --A: #ef6b5e; --B: #f4b350; --C: #5aa9e6; --D: #b48ae0; --E: #4cc38a; --F: #c9935f; --G: #e07bbf; --H: #ffd400; --I: #c3cf3a; --J: #9fb3c8; --X: #8a93a6;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-body); line-height: 1.5; overflow: hidden; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; line-height: 1.15; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  button { font: inherit; cursor: pointer; }
+  .mono { font-family: var(--font-mono); }
+
+  .bar { position: fixed; top: 0; left: 0; right: 0; z-index: 20; display: flex; align-items: center; gap: 1rem; padding: 0.7rem 18px;
+         background: color-mix(in srgb, var(--paper) 80%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .wordmark .wip { white-space: nowrap; margin-left: 0.6rem; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: #d9a441; border: 1px solid #d9a441; border-radius: 999px; padding: 0.1rem 0.45rem; opacity: 0.85; }
+  .wordmark { display: flex; align-items: baseline; gap: 0.55rem; }
+  .wordmark b { font-family: var(--font-display); font-weight: 900; font-size: 1.1rem; }
+  .wordmark span { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .search { flex: 1; min-width: 9rem; max-width: 32rem; position: relative; }
+  @media (max-width: 900px) { .wordmark span:not(.wip) { display: none; } .wordmark .wip { margin-left: 0.2rem; } }
+  .search input { width: 100%; font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--surface-sunk); border: 1px solid var(--line-strong); border-radius: 9px; padding: 0.5rem 0.75rem; }
+  .search input::placeholder { color: var(--ink-soft); }
+  .hits { position: absolute; left: 0; right: 0; top: 110%; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px; max-height: 50vh; overflow: auto; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+  .hits[hidden] { display: none; }
+  .hit { display: flex; gap: 0.6rem; align-items: center; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); color: var(--ink); padding: 0.5rem 0.75rem; font-size: 0.9rem; }
+  .hit:hover { background: var(--accent-soft); }
+  .hit .d { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .hit .sub { color: var(--ink-soft); font-size: 0.78rem; margin-left: auto; font-family: var(--font-mono); }
+  .nav { display: flex; gap: 0.2rem; margin-left: auto; }
+  .nav button, .nav a { font-size: 0.86rem; color: var(--ink-soft); background: none; border: 0; padding: 0.35rem 0.5rem; text-decoration: none; }
+  .nav button:hover, .nav a:hover { color: var(--accent); }
+  .nav button.on { color: var(--ink); }
+
+  canvas#sky { position: fixed; inset: 0; display: block; cursor: grab; }
+  canvas#sky.grabbing { cursor: grabbing; }
+
+  /* the key: one thin strip along the bottom, so the sky keeps the room */
+  .legend { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap;
+            background: color-mix(in srgb, var(--surface) 90%, transparent); border-top: 1px solid var(--line); padding: 0.3rem 1rem 0.3rem 18px;
+            font-size: 0.74rem; color: var(--ink-soft); }
+  .legend .group { display: inline-flex; align-items: center; gap: 0.45rem; white-space: nowrap; }
+  .legend .row { display: inline-flex; flex-wrap: wrap; gap: 0.25rem 0.35rem; }
+  .legend .sep { width: 1px; height: 1.1rem; background: var(--line); }
+  .legend .status { position: static; margin-left: auto; border: none; background: none; padding: 0; }
+  .chip { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.03em; color: var(--ink); background: none; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0.15rem 0.5rem; }
+  .chip .d { width: 9px; height: 9px; border-radius: 50%; }
+  .chip.off { opacity: 0.38; }
+  .legend .k { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+  .glow { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #fff; }
+  .glow.v { box-shadow: 0 0 8px 2px var(--verified); } .glow.o { box-shadow: 0 0 6px 1px var(--accent); } .glow.n { opacity: 0.45; } .glow.a { box-shadow: 0 0 6px 2px var(--bad); }
+
+  .only-flows { display: none; } body.flows .only-flows { display: inline-flex; } body.flows .only-sky { display: none; }
+  .only-loops { display: none; } body.loops .only-loops { display: inline-flex; } body.loops .only-sky { display: none; }
+  body:not(.flows) .legend .only-flows, body:not(.loops) .legend .only-loops, body.flows .legend .only-sky, body.loops .legend .only-sky { display: none !important; }
+  .flows-note { position: fixed; left: 18px; top: 70px; z-index: 10; max-width: 24rem; font-size: 0.78rem; color: var(--ink-soft); background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line); border-radius: 8px; padding: 0.45rem 0.7rem; }
+  .flows-note[hidden] { display: none; }
+  .status { position: fixed; right: 18px; bottom: 16px; z-index: 10; font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-soft); background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line); border-radius: 8px; padding: 0.3rem 0.6rem; }
+
+  .tip { position: fixed; z-index: 15; pointer-events: none; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; padding: 0.4rem 0.6rem; font-size: 0.82rem; max-width: 22rem; box-shadow: 0 6px 20px rgba(0,0,0,.5); }
+  .tip[hidden] { display: none; }
+  .tip .sub { color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.7rem; }
+
+  .panel { position: fixed; top: 58px; right: 0; bottom: 0; width: min(26rem, 92vw); z-index: 12; background: color-mix(in srgb, var(--surface) 94%, transparent); border-left: 1px solid var(--line); overflow: auto; padding: 1.1rem 1.2rem 2rem; transform: translateX(105%); transition: transform .2s ease; }
+  .panel.open { transform: none; }
+  .panel .kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .panel h2 { font-size: 1.45rem; margin: 0.3rem 0 0.2rem; }
+  .panel .meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; margin: 0.4rem 0 0.9rem; }
+  .panel .pill { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--ink-soft); }
+  .panel .pill.v { color: var(--verified); border-color: var(--verified); } .panel .pill.o { color: var(--accent); border-color: var(--accent); } .panel .pill.a { color: var(--bad); border-color: var(--bad); }
+  .panel .btns { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0 1rem; }
+  .panel .btn { font-size: 0.82rem; color: var(--ink); background: var(--accent-soft); border: 0; border-radius: 8px; padding: 0.4rem 0.7rem; }
+  .panel .btn.primary { background: var(--accent); color: #0f1320; font-weight: 600; }
+  .conn { border-top: 1px solid var(--line); padding: 0.55rem 0; font-size: 0.86rem; }
+  .conn .who { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+  .conn .who button { background: none; border: 0; padding: 0; color: var(--ink); font: inherit; font-weight: 600; text-align: left; }
+  .conn .who button:hover { color: var(--accent); }
+  .conn .how { color: var(--ink-soft); font-size: 0.8rem; }
+  .conn .src { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); }
+  .conn .src a { color: var(--ink-soft); }
+  .conn.ended { opacity: 0.6; }
+  .panel .note { font-size: 0.78rem; color: var(--ink-soft); border: 1px dashed var(--line-strong); border-radius: 8px; padding: 0.5rem 0.7rem; margin-top: 1rem; }
+  .close { position: absolute; top: 0.8rem; right: 0.9rem; background: none; border: 0; color: var(--ink-soft); font-size: 1.1rem; }
+
+  .about { position: fixed; inset: 58px 0 0 0; z-index: 11; overflow: auto; background: var(--paper); padding: 2.2rem 20px 4rem; }
+  .about[hidden] { display: none; }
+  .about .wrap { max-width: 44rem; margin: 0 auto; }
+  .about .kicker { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+  .about h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 900; letter-spacing: -0.02em; }
+  .about .lede { color: var(--ink-soft); font-size: 1.1rem; max-width: 46ch; margin: 1rem 0 2rem; }
+  .about h2 { font-size: 1.35rem; margin: 2rem 0 0.5rem; }
+  .about p, .about li { color: var(--ink-soft); font-size: 0.95rem; max-width: 62ch; }
+  .about b { color: var(--ink); }
+  .callout { background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 12px; padding: 1rem 1.2rem; margin: 1.4rem 0; }
+  .callout .big { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); }
+  .rlist { display: grid; gap: 0.8rem; margin-top: 1.4rem; }
+  .rcard { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; display: grid; gap: 0.35rem; }
+  .rcard h3 { font-size: 1.15rem; }
+  .rcard .m { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; }
+  .rcard .pill { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.12rem 0.45rem; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--ink-soft); }
+  .rcard .pill.v { color: var(--verified); border-color: var(--verified); } .rcard .pill.c { color: var(--caution); border-color: var(--caution); }
+  .rcard .links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.3rem; }
+  .rcard .links a, .rcard .links button { font-size: 0.82rem; color: var(--ink); background: var(--accent-soft); border: 0; border-radius: 8px; padding: 0.35rem 0.65rem; text-decoration: none; }
+  .empty { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.8rem; }
+  @media (max-width: 640px) { .wordmark span { display: none; } .legend { max-width: 60vw; font-size: 0.72rem; } .nav a.alt { display: none; } }
+</style>
+</head>
+<body data-public="1" data-static="1">
+<div class="bar">
+  <div class="wordmark"><b>PRIGH</b><span>Priority Nexus · the sky</span><span class="wip" title="Not everything is collected, checked or verified yet. The glow on each star says what is.">work in progress</span></div>
+  <div class="search">
+    <input id="q" type="search" placeholder="Search an organization or person…" aria-label="Search entities" autocomplete="off">
+    <div class="hits" id="hits" hidden></div>
+  </div>
+  <nav class="nav">
+    <button id="nav-sky" class="on" type="button">Sky</button>
+    <button id="nav-about" type="button">How to read it</button>
+    <button id="nav-method" type="button">Method</button>
+    <button id="nav-corrections" type="button">Corrections</button>
+    <button id="nav-reports" hidden type="button">Reports</button>
+    
+  </nav>
+</div>
+
+<canvas id="sky"></canvas>
+<div class="empty" id="loading">loading the sky…</div>
+<div class="tip" id="tip" hidden></div>
+<div class="flows-note" id="flows-note" hidden></div>
+
+<div class="legend" id="legend">
+  <div class="group" title="Click a domain to dim the others"><span class="k">Domains</span><div class="row" id="domchips"></div></div>
+  <span class="sep"></span>
+  <div class="group"><span class="k" title="What sinks to each core">Gravity</span>
+    <div class="row">
+      <button class="chip" data-gravity="connections" type="button" title="A count: how many filed records touch an entity">connections</button>
+      <button class="chip off" data-gravity="influence" type="button" title="A model: weighted reach through the verified graph, with today's default weights">influence</button>
+      <button class="chip off" data-gravity="flows" type="button" title="The flows: the ten groups around a circle and the bands of money and people between them, from the filed records on the map. No stars.">flows</button>
+      <button class="chip off" data-gravity="loops" type="button" title="The loops: a company lobbied a bill, a member introduced it, the company's PAC gave to that member. Three filed records on one page. No stars.">loops</button>
+    </div>
+    <span id="gravity-note" hidden>Connections is a count: how many filed records touch an entity.</span>
+  </div>
+  <span class="sep"></span>
+  <div class="group only-flows" title="Which bands to draw"><span class="k">Bands</span>
+    <div class="row">
+      <button class="chip" data-kind="all" type="button" title="Every kind, width by the number of filed records">all kinds</button>
+      <button class="chip off" data-kind="contributions" type="button" title="Campaign money from committees to candidates and officeholders (FEC and LD-203 filings); width by dollars">contributions</button>
+      <button class="chip off" data-kind="lobbying" type="button" title="Lobbying (Senate LDA and state registries); width by number of records">lobbying</button>
+      <button class="chip off" data-kind="contracts" type="button" title="Federal contracts (USAspending), from the agency's group to the contractor's; width by dollars">contracts</button>
+      <button class="chip off" data-kind="grants" type="button" title="Federal grants (USAspending), from the agency's group to the recipient's; width by dollars">grants</button>
+      <button class="chip off" data-kind="seats" type="button" title="Board seats, officer roles and offices held by people who also hold a role in another group; width by number of records">seats</button>
+      <button class="chip off" data-kind="moves" type="button" title="Revolving door, both ways: lobbyists who disclosed a former government position; people whose filed company role ended and who hold a government post now; people whose government post ended and who hold a company role now; people holding both at once; width by number of records">revolving door</button>
+    </div>
+    <span class="k" id="flows-width" style="text-transform:none;letter-spacing:0">width: number of filed records</span>
+  </div>
+  <div class="group only-loops" title="How many loops to draw, largest PAC gifts first"><span class="k">Show</span>
+    <div class="row">
+      <button class="chip" data-loops="40" type="button">40 largest</button>
+      <button class="chip off" data-loops="120" type="button">120</button>
+      <button class="chip off" data-loops="all" type="button">all</button>
+      <button class="chip off" data-loops="omnibus" type="button" title="Loops through the big spending, tax and authorization bills, kept apart: one number there hides many provisions">omnibus, kept apart</button>
+    </div>
+    <span class="k" style="text-transform:none;letter-spacing:0">width: the PAC's gift this cycle</span>
+  </div>
+  <div class="group only-sky" title="Size and brightness are the number of filed connections; the glow is how well proven"><span class="k">Glow</span>
+    <div class="row">
+      <span class="chip"><span class="glow v"></span>confirmed</span>
+      <span class="chip"><span class="glow o"></span>checked once</span>
+      <span class="chip"><span class="glow n"></span>not checked</span>
+      <span class="chip"><span class="glow a"></span>source changed</span>
+    </div>
+  </div>
+  <div class="status" id="status"></div>
+</div>
+
+<aside class="panel" id="panel" aria-live="polite">
+  <button class="close" id="close" type="button" aria-label="Close">✕</button>
+  <div id="panel-body"></div>
+</aside>
+
+<section class="about" id="about" hidden>
+  <div class="wrap">
+    <p class="kicker">How to read the sky</p>
+    <h1>Every dot is an organization or a person. Only an official record puts it there.</h1>
+    <p><b>Work in progress.</b> Not everything is collected, checked or verified yet. What is checked glows; what is not, does not. Missing is not the same as clean.</p>
+    <ul>
+      <li><b>Brighter:</b> more filed connections.</li>
+      <li><b>Color:</b> its field. Ten fields sit in a ring. The galaxy in the middle: those in several fields.</li>
+      <li><b>Glow:</b> green, a second record agrees. Blue, read once. Dim, not checked yet. Red, the source changed.</li>
+    </ul>
+    <div class="callout"><p class="big">Connected is not guilty.</p><p>Each line is a lawful filing. The page draws no conclusions. Every line links to its filing.</p></div>
+    <h2>Three pictures. The chips at the bottom switch them.</h2>
+    <p><b>Sky.</b> The ring. Drag to turn. Wheel to zoom. Click a galaxy's name to fly to it. Click a star: only what it touches stays.</p>
+    <p><b>Flows.</b> Ten groups on a circle. A band is money or a person moving from one group to another, from filed records: contributions, lobbying, contracts, grants, board seats, the revolving door. Thicker is more. Hover: one line. Click: the records.</p>
+    <p><b>Loops.</b> A company lobbied a bill. A member introduced it. The company's PAC paid that member. Three filings on one page: companies left, bills middle, members right. The gold arc is the gift, as wide as it was. Click a loop: the three records.</p>
+    <h2>Where it comes from</h2>
+    <ul>
+      <li>Every organization and person has an official ID before it is placed.</li>
+      <li>Every line cites a filing. Two facts before any two records are joined.</li>
+      <li>Every change is logged. Nothing changes silently.</li>
+      <li>Same-name guesses are never shown.</li>
+    </ul>
+    <h2>Our own interests</h2>
+    <p>Funding, two ways only. Anonymous: never named here. Open: named, with a report on the giver next to every mention. Funding buys nothing else. Today: no funders, no business ties to anyone on the map, no known conflict. If you are named and want to answer: send it, we post it.</p>
+    <p class="mono" style="margin-top:2rem;font-size:0.72rem">PRIGH · the public sky · for the people, not against anyone.</p>
+  </div>
+</section>
+
+<section class="about page" id="method" hidden>
+  <div class="wrap">
+    <p class="kicker">How the map is made</p>
+    <h1>Method</h1>
+    <p class="lede">One standard, applied the same way to every entity and every connection, including the ones we would rather not find. These are the rules that keep the map honest as it grows.</p>
+    <div class="callout"><p class="big">Verified is not the same as culpable.</p><p>Every glow and every line describes how far the checking has gone, never whether anyone did anything wrong. A board seat, a contract, a contribution, a confirmation to office: each is a lawful, filed fact.</p></div>
+
+    <h2>Three cores</h2>
+    <ul>
+      <li><b>Identity.</b> Nothing is placed without an official identifier: SEC CIK, IRS EIN, Legal Entity Identifier, federal contractor ID (UEI), Bioguide ID, federal agency code, state FIPS code, UN M49 code, or a nomination's official citation. Never a loose name.</li>
+      <li><b>Transparency.</b> Every connection cites an official primary record: a proxy statement, an insider form, a Form 990, a lobbying registration, a federal award, a Senate confirmation, a state registry. Two facts are required before any two records are joined; a name alone never joins anything.</li>
+      <li><b>Integrity.</b> Nothing changes silently. Every addition, correction and merge is an entry in a tamper-evident audit log whose fingerprint is published monthly.</li>
+    </ul>
+
+    <h2>How a connection is proven</h2>
+    <ul>
+      <li><b>Check 1, at entry:</b> the record is validated against the source rules (which registries count, what a citation must carry).</li>
+      <li><b>Check 2, re-read:</b> the cited document is re-read from its official source and the names must still be there. If the source changed or can't be reached, the line turns red until a person looks.</li>
+      <li><b>Check 3, a second source:</b> a different official record is sought that says the same thing (another filing, the counterparty's own record, the agency's data service). Only then is a line "confirmed".</li>
+      <li><b>Possible matches</b> (same name, nothing else) are kept outside the map, shown as possible, and never published as fact.</li>
+    </ul>
+
+    <h2>What the sky encodes</h2>
+    <ul>
+      <li><b>Color</b> is the domain the entity belongs to; an entity in several domains sits between them, as a bridge.</li>
+      <li><b>Size and brightness</b> are the number of filed connections. A count, not a judgment.</li>
+      <li><b>Glow</b> is proof: confirmed by a second source, checked once, not checked yet, or source changed.</li>
+      <li><b>Position inside a domain (gravity):</b> what sinks to the core. By <b>connections</b>, the most-connected entities sit at the core and the rest spiral outward: a layout computed from counts. By <b>influence</b>, a model decides: each connection's weight (by relation type, 0 to 1) and the influence of what it connects to, iterated over the verified graph. The model's weights are today's defaults and are open to revision; it is shown as a layout, never as a score, and never as a score on a person.</li>
+    </ul>
+
+    <h2>What is never collected</h2>
+    <ul>
+      <li>Victims, survivors and witnesses are never named in connection with a case. Minors are never collected; student board members are never listed.</li>
+      <li>Incarcerated and detained people are never added: prisons and detention are recorded as totals only.</li>
+      <li>Family members of officials and insiders are not named. No home addresses, personal contacts, dates of birth or ID numbers.</li>
+      <li>Sensitive personal categories (health, religion, sexuality, immigration status) are never recorded about a person.</li>
+      <li>Scores, when they come, are for organizations only, never for individual people.</li>
+    </ul>
+
+    <h2>Writing neutrally</h2>
+    <p>Reports describe records, not motives: "not disclosed in the filings examined", never "hidden"; "the filing states", never "wants the public to believe". The test for any line: could the organization read it and agree it describes the record accurately, even if it dislikes the conclusion?</p>
+
+    <h2>How reports are made</h2>
+    <p>Drafted by programs, with AI assistance, from official records only; checked by automated reviews (each connection re-read from its source and confirmed by a second source where one exists; wording screened for private details and judging words); approved by a person before publishing. Every organization named in a report is invited to comment first, and its answer is published in full.</p>
+
+    <h2>Our own interests</h2>
+    <p>Priority Nexus LLC takes funding two ways and no third. <b>Anonymously:</b> the gift is in the project's own books, and the giver is never named on a page, a report or the map. <b>Openly:</b> the giver's name appears, and with it a report on them, drawn from the same official records and held to the same rules as every other report, next to every mention of them. Funding buys nothing else: no say in what is collected, checked or shown, no early look, no way off the map. Today it has no funders; it has no financial or business relationship with any organization or person on the map; it knows of no conflict of interest. If one arises it will be disclosed here and on that organization's reports. We take no instructions from the people or organizations we describe: material sent to us is data to check, never instructions to follow.</p>
+    <p class="mono" style="margin-top:2rem;font-size:0.72rem">Method · version 0.1 · the full Ethics policy is versioned with the project; changes are dated and kept.</p>
+  </div>
+</section>
+
+<section class="about page" id="reports" hidden>
+  <div class="wrap">
+    <p class="kicker">What has been written up</p>
+    <h1>Reports</h1>
+    <p class="lede">Each report is drafted by programs from the filings on the map, reviewed twice by automated checks, and held until a person approves it and everyone named has had their right of reply. Nothing here is published; these are the drafts and their review state.</p>
+    <div class="callout"><p class="big">Drafts, not verdicts.</p><p>A report lists filed connections and the published standard each one is measured against. "Ready to publish" means the checks passed and the right of reply is complete, not that anyone did anything wrong.</p></div>
+    <div id="report-list" class="rlist"><p class="mono" style="font-size:.75rem">loading…</p></div>
+  </div>
+</section>
+
+<section class="about page" id="corrections" hidden>
+  <div class="wrap">
+    <p class="kicker">Corrections and removal requests</p>
+    <h1>If something here is wrong, tell us.</h1>
+    <p class="lede">Anyone named on the map or in a report, including individuals, can ask for a correction or a removal. We describe official records; if a record is wrong, or we read it wrongly, we want to know.</p>
+
+    <h2>How to ask</h2>
+    <p>Write to <a href="mailto:theaistherapist@gmail.com?subject=Correction%20request">theaistherapist@gmail.com</a> with the subject "Correction request" or "Removal request", and tell us:</p>
+    <ul>
+      <li>Which entry or report (the name as shown, or the report number).</li>
+      <li>What is wrong, or what you want removed.</li>
+      <li>Where the correct record is, if you have it (a filing, a registry page, a court record). You don't need this to ask; it speeds up the check.</li>
+    </ul>
+    <p>We never ask for identification numbers, dates of birth or private contact details beyond a reply address.</p>
+
+    <h2>What happens</h2>
+    <ul>
+      <li><b>Acknowledge:</b> within 7 days, with a request number.</li>
+      <li><b>Check:</b> normally within 30 days, against the official record the entry cites and any record you point us to.</li>
+      <li><b>Answer:</b> what we found and what we changed.</li>
+      <li><b>Correct:</b> the same day as the answer if we were wrong, openly: a dated correction note stays on the entry, and earlier versions remain available with the note attached.</li>
+    </ul>
+
+    <h2>What we correct, remove or keep</h2>
+    <ul>
+      <li><b>Wrong:</b> corrected, with a dated note saying what the record shows.</li>
+      <li><b>Accurate but out of date:</b> kept with its date; the newer record is added beside it.</li>
+      <li><b>Personal details beyond a public role</b> (home address, personal contacts, family, private life): removed on request, no reason needed.</li>
+      <li><b>An accurate record of a public role</b> (a directorship, an office held, a filing made): stays. Public records of public roles are what the map exists to show. Your comment is published with the entry.</li>
+      <li><b>Possible matches</b> (same name, not confirmed): never published; if one was shown by mistake it is removed.</li>
+    </ul>
+
+    <h2>Right of reply</h2>
+    <p>If you are named here and want to answer, send it. We will post it, in full, under your name, the day it arrives.</p>
+
+    <h2>Our own record</h2>
+    <p>Every request is logged (number, dates, what it concerned, what was decided), and every change made because of it is a logged edit in the audit log. Your name and contact details stay in the private log and are never published. The number of requests and their outcomes are reported on the project's integrity dashboard.</p>
+    <p class="mono" style="margin-top:2rem;font-size:0.72rem">Corrections · part of the Ethics policy, section 4.</p>
+  </div>
+</section>
+
+<script type="module" src="sky.js"></script>
+</body>
+</html>
