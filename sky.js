@@ -519,7 +519,7 @@ hits.addEventListener('click', ev => { const b = ev.target.closest('[data-id]');
 document.addEventListener('click', ev => { if (!ev.target.closest('.search')) hits.hidden = true; });
 
 // the reading pages (how to read it, method, corrections) sit over the sky; one at a time
-const PAGES = { 'nav-about': 'about', 'nav-method': 'method', 'nav-balance': 'balance-page', 'nav-corrections': 'corrections', 'nav-reports': 'reports' };
+const PAGES = { 'nav-about': 'about', 'nav-method': 'method', 'nav-balance': 'balance-page', 'nav-rulebook': 'rulebook-page', 'nav-corrections': 'corrections', 'nav-reports': 'reports' };
 function showPage(id) {
   for (const [nav, sec] of Object.entries(PAGES)) {
     const on = sec === id;
@@ -529,6 +529,7 @@ function showPage(id) {
   document.getElementById('nav-sky').classList.toggle('on', !id);
   if (id === 'reports') loadReports();
   if (id === 'balance-page') loadBalance();
+  if (id === 'rulebook-page') loadRulebook();
 }
 
 // Reports: the drafts on file, with their review state; a new draft can be asked for from an entity's card.
@@ -1059,7 +1060,7 @@ function renderBalancePage() {
   const r = balance, go = (id, text) => `<button type="button" class="lnk" data-go="${esc(id)}">${esc(text)}</button>`;
   const pct = v => v == null ? '—' : `${Math.round(v * 100)}%`;
   const ind = r.independence || {}, con = r.concentration || {}, sp = r.single_points || {}, ten = r.tenure || {}, ob = r.overboarding || {};
-  const indRows = (ind.flags || []).map(f => `<tr><td>${go(f.org, f.label)}</td><td>${f.directors}</td><td>${f.tied}</td><td>${f.directors ? Math.round(100 * (f.directors - f.tied) / f.directors) : 0}%</td><td>${(f.ties || []).map(t => `${esc(t.label)}: ${esc((t.why || []).join('; '))}`).join('<br>')}</td></tr>`).join('');
+  const indRows = (ind.flags || []).map(f => `<tr><td>${go(f.org, f.label)}</td><td>${f.directors}</td><td>${f.tied}</td><td>${f.directors ? Math.round(100 * (f.directors - f.tied) / f.directors) : 0}%</td><td>${(f.ties || []).map(t => `${t.person ? go(t.person, t.label) : esc(t.label)}: ${esc((t.why || []).join('; '))}`).join('<br>')}</td></tr>`).join('');
   const conRows = (con.domains || []).map(d => !d.organizations && !d.ownership_blocks
     ? `<tr><td><b>${esc(SHORT[d.domain.slice(-1)] || d.domain)}</b></td><td colspan="6">no shareholders to measure (government bodies and courts)</td></tr>`
     : `<tr><td><b>${esc(SHORT[d.domain.slice(-1)] || d.domain)}</b></td><td>${d.organizations}</td><td>${d.ownership_blocks}${d.blocks_above_5 != null ? ` (${d.blocks_above_5} above 5%)` : ''}</td><td>${d.hhi ?? '—'}</td><td>${pct(d.top4_reach_share)}</td><td>${pct(d.top4_family_reach_share ?? d.top4_reach_share)}</td><td>${(d.top_holders || []).slice(0, 3).map(h => `${go(h.id, h.label)} (${h.blocks})`).join(', ')}</td></tr>`).join('');
@@ -1085,4 +1086,63 @@ ${obRows ? `<table><thead><tr><th>Person</th><th>Seats, by the records</th></tr>
 <p class="std">Measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map. Every number here can change when a filing is added; nothing is a verdict. Click a name to open its connections.</p>
 </div>`;
   box.querySelectorAll('[data-go]').forEach(el => el.addEventListener('click', () => { showPage(null); openConstellation(el.dataset.go); }));
+}
+
+
+// ------------------------------------------------------------ Rulebook: the laws that bind the institutions on the map, held against nine gates
+// Josie 2026-10-23: "our weigh in on the rulebook": presence or absence of each gate, with the sentence from the law that shows it; never a grade.
+let rulebook = null, rulebookLoading = false, ruleOpen = null, ruleFilter = '';
+const CORES = [                                               // Josie 2026-10-23: "Does it: Protect Identity | Provide Transparency | Hold Integrity", the nine gates under them
+  ['Protect identity', ['notice', 'standing', 'symmetry']],
+  ['Provide transparency', ['access', 'self-report', 'who-wrote']],
+  ['Hold integrity', ['hearing', 'appeal', 'waiver']],
+];
+const GATE_KEYS = ['notice', 'standing', 'access', 'self-report', 'hearing', 'appeal', 'waiver'];   // the seven a pattern can read
+const ALL_GATES = CORES.flatMap(([, ks]) => ks);
+const GATE_SHORT = { notice: 'Notice', hearing: 'Hearing', appeal: 'Appeal', access: 'Access to the record', standing: 'Standing', 'self-report': 'Reports on itself', waiver: 'Waiver or sunset', symmetry: 'Symmetry', 'who-wrote': 'Who lobbied it' };
+async function loadRulebook() {
+  const box = document.getElementById('rulebook-body'); if (!box) return;
+  if (rulebook) { renderRulebook(); return; }
+  if (rulebookLoading) return;
+  rulebookLoading = true;
+  try { rulebook = await fetch(STATIC ? 'data/rulebook.json' : '/api/rulebook').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }); }
+  catch (e) { box.innerHTML = `<p class="mono" style="font-size:.78rem">the rulebook could not be read: ${esc(e.message)}</p>`; rulebookLoading = false; return; }
+  rulebookLoading = false; renderRulebook();
+}
+function renderRulebook() {
+  const box = document.getElementById('rulebook-body'); if (!box || !rulebook) return;
+  const rows = rulebook.rows.filter(r => !ruleFilter || (r.name + ' ' + (r.citation || '') + ' ' + (r.regulator || '')).toLowerCase().includes(ruleFilter));
+  const read = rulebook.rows.filter(r => !r.error);
+  const tally = Object.fromEntries(GATE_KEYS.map(k => [k, read.filter(r => r.gates && r.gates[k] && r.gates[k].found).length]));
+  const dot = (r, k) => { const g = r.gates && r.gates[k]; if (!g) return '<td class="g none">—</td>'; return g.found ? `<td class="g yes" title="${esc(g.quote || '')}">●<span class="n">${g.count > 1 ? g.count : ''}</span></td>` : '<td class="g no">·</td>'; };
+  const whoN = r => { const w = r.gates && r.gates['who-wrote']; if (!w) return null; const bb = w.by_bill || {}; return (w.count || 0) + (bb.filings || 0); };
+  const who = r => { const w = r.gates && r.gates['who-wrote']; if (!w) return '<td class="g none">—</td>'; const bb = w.by_bill || {}; const n = whoN(r); return `<td class="g${n ? ' yes' : ' no'}" title="lobbying filings by companies on the map that name the law or a bill of its own">${n ? n : (bb.omnibus_filings ? `<span class="n" title="only through an omnibus bill, kept apart">(${bb.omnibus_filings})</span>` : '·')}</td>`; };
+  const sym = r => { const y = r.gates && r.gates.symmetry; if (!y) return '<td class="g none">—</td>'; return `<td class="g eyes" title="needs eyes: penalty sentences naming only individuals / only entities">${y.on_individuals || 0}/${y.on_entities || 0}</td>`; };
+  const cell = (r, k) => k === 'who-wrote' ? who(r) : k === 'symmetry' ? sym(r) : dot(r, k);
+  const coreCount = (r, ks) => { const g = r.gates || {}; const found = ks.filter(k => k === 'who-wrote' ? whoN(r) : k === 'symmetry' ? false : g[k] && g[k].found).length; const scored = ks.filter(k => k !== 'symmetry').length; return `${found}/${scored}`; };
+  const line = r => `<tr class="rule${ruleOpen === r.id ? ' open' : ''}" data-rule="${esc(r.id)}"><td><button type="button" class="lnk" data-open="${esc(r.id)}">${esc(r.name)}</button><div class="n">${esc(r.citation || '')}${r.regulator ? ' · ' + esc(r.regulator) : ''}</div></td>`
+    + CORES.map(([, ks]) => ks.map(k => cell(r, k)).join('') + (r.error ? '<td class="g none">—</td>' : `<td class="g sum">${coreCount(r, ks)}</td>`)).join('') + '</tr>'
+    + (ruleOpen === r.id ? `<tr class="detail"><td colspan="${ALL_GATES.length + CORES.length + 1}">${detail(r)}</td></tr>` : '');
+  box.innerHTML = `<div class="bal rb">
+<p class="std">${rulebook.rows.length} rules. ${read.length} read in their own text${rulebook.usc_release ? ` (U.S. Code release ${esc(rulebook.usc_release)}; the cited section's own subchapter, or the whole chapter when it has none; CFR parts whole; other sources the cited page only)` : ''}. A filled dot means the gate was found in that text, with the sentence that shows it (hover, or open the rule). An empty dot means not found in the text read, nothing more. Symmetry needs eyes and is not scored. The last column is how many lobbying filings by companies on the map named the law or a bill of its own.</p>
+<p class="std">Of the ${read.length} read: ${GATE_KEYS.map(k => `${tally[k]} ${GATE_SHORT[k].toLowerCase()}`).join(' · ')}. "Found" counts the gates found under each question; symmetry is shown as counts (individuals / entities) and never scored.</p>
+<p><input type="search" id="rule-filter" placeholder="filter by name, citation or regulator" value="${esc(ruleFilter)}" style="width:100%;max-width:28rem;font:inherit;padding:.4rem .6rem;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface-sunk);color:var(--ink)"></p>
+<table><thead><tr><th rowspan="2">Rule</th>${CORES.map(([name, ks]) => `<th colspan="${ks.length + 1}" class="core">Does it ${esc(name.toLowerCase())}?</th>`).join('')}</tr>
+<tr>${CORES.map(([, ks]) => ks.map(k => `<th title="${esc(rulebook.labels && rulebook.labels[k] || GATE_SHORT[k])}">${esc(GATE_SHORT[k])}</th>`).join('') + '<th class="n">found</th>').join('')}</tr></thead><tbody>${rows.map(line).join('')}</tbody></table>
+<p class="std">The gates: Notice, must a person be told before the law is used on them. Hearing, can they answer before the decision is final. Appeal, is there a way to a court or an independent reviewer. Access to the record, can an ordinary person see the files the decision rests on. Standing, can the person enforce it themselves. Reports on itself, must the law report its own effects, publicly. Waiver or sunset, who can waive or exempt, does it expire. Symmetry, does it bind individuals harder than institutions (needs eyes). Who lobbied it, from the lobbying filings on the map.</p>
+<p class="std">Measured ${esc(rulebook.run || '')}. A pattern finds the words; a person confirms the meaning, which is why every yes carries its sentence.</p>
+</div>`;
+  const inp = document.getElementById('rule-filter');
+  inp.addEventListener('input', () => { ruleFilter = inp.value.trim().toLowerCase(); const pos = inp.selectionStart; renderRulebook(); const i2 = document.getElementById('rule-filter'); i2.focus(); i2.setSelectionRange(pos, pos); });
+  box.querySelectorAll('[data-open]').forEach(el => el.addEventListener('click', () => { ruleOpen = ruleOpen === el.dataset.open ? null : el.dataset.open; renderRulebook(); const row = document.querySelector(`tr[data-rule="${CSS.escape(ruleOpen || '')}"]`); if (row) row.scrollIntoView({ block: 'nearest' }); }));
+}
+function detail(r) {
+  if (r.error) return `<p class="std">Could not read: ${esc(r.error)}. <a href="${esc(r.url)}" target="_blank" rel="noopener">The cited page</a>.</p>`;
+  const g = r.gates || {};
+  const items = GATE_KEYS.map(k => { const x = g[k] || {}; return `<li><b>${esc(GATE_SHORT[k])}:</b> ${x.found ? `"${esc(x.quote || '')}"${x.count > 1 ? ` <span class="n">(+${x.count - 1} more)</span>` : ''}` : '<span class="n">not found in the text read</span>'}</li>`; });
+  const sy = g.symmetry || {};
+  items.push(`<li><b>Symmetry (needs eyes):</b> ${sy.penalty_sentences || 0} penalty sentences; ${sy.on_individuals || 0} name only individuals, ${sy.on_entities || 0} name only entities.${sy.quote_individual ? ` Individuals: "${esc(sy.quote_individual)}"` : ''}${sy.quote_entity ? ` Entities: "${esc(sy.quote_entity)}"` : ''}</li>`);
+  const w = g['who-wrote'] || {}, bb = w.by_bill || {};
+  items.push(`<li><b>Who lobbied it:</b> ${w.found == null ? 'not read' : (w.count ? `${w.count} filings by ${w.clients} clients through ${w.registrants} registrants name it` : 'no filing of a client on the map names this law')}${bb.filings ? `; ${bb.filings} name a bill that is or became it (${esc((bb.bills || []).join('; '))})` : ''}${bb.omnibus_filings ? `; ${bb.omnibus_filings} name an omnibus bill containing it, kept apart` : ''}.${(w.examples || []).length ? ' e.g. ' + w.examples.map(e => `${esc(e.posted)} ${esc(e.client)} ← ${esc(e.registrant)} (<a href="${esc(e.url)}" target="_blank" rel="noopener">filing</a>)`).join('; ') : ''}</li>`);
+  return `<p class="std">Read: ${esc(r.scope || '')}${r.heading ? ' · ' + esc(r.heading) : ''}${r.text_chars ? ` · ${r.text_chars.toLocaleString()} characters` : ''} · <a href="${esc(r.url)}" target="_blank" rel="noopener">the law</a>${r.requires ? `<br><b>What it requires:</b> ${esc(r.requires)}` : ''}${r.helps ? `<br><b>What helps:</b> ${esc(r.helps)}` : ''}</p><ul class="std">${items.join('')}</ul>`;
 }
