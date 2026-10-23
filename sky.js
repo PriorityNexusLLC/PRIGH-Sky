@@ -99,13 +99,14 @@ async function load() {
     dirty = true; if (gravity === 'flows') flowsStatus();
   });
   document.getElementById('loading').remove();
+  skyGenerated = res.generated.slice(0, 10);
   skyStatus = `${stars.length.toLocaleString()} entities · generated ${res.generated.slice(0, 10)}`
     + (res.building ? ' · the map changed: a new sky is being built, entities added since are not placed yet (reload in a few minutes)' : '')
     + ' · drag to orbit · wheel to zoom where you point · click a galaxy\'s name to fly to it · right-drag to move';
   status.textContent = skyStatus;
   fitAll();
 }
-let skyStatus = '';
+let skyStatus = '', skyGenerated = '';
 
 // ------------------------------------------------------------ camera
 function size() {
@@ -912,40 +913,123 @@ function openLoop(l) {
 
 
 // ------------------------------------------------------------ the read-only report (public copy): built here from the filed records, nothing sent anywhere
-// Josie 2026-10-23: no waiting period; anyone, including anyone named, gets the same report by pushing the button.
+// Josie 2026-10-23: the same shape as the drafted reports (Summary, Scope, Method, Findings, Limits, reply, Sources, Integrity),
+// held to the three cores without saying so; every kind of connection, the money trail beside the roles; no waiting period.
+const GATES = [
+  ['Identity', 'Official ID', 'every organization and person is tied to a registry identifier (SEC CIK, GLEIF LEI, IRS EIN, Bioguide, agency code)'],
+  ['Identity', 'Two facts', 'a name alone never links a person; a second independent fact must agree'],
+  ['Identity', 'One ID, one entity', 'duplicates are folded into one record with the reason logged; two different official IDs are never merged automatically'],
+  ['Transparency', 'Primary source', 'connections come from filings themselves (SEC forms, IRS Form 990, FEC and LDA filings, rosters, statutes), not from news or aggregators'],
+  ['Transparency', 'Receipt', 'each connection carries the filing reference and link'],
+  ['Transparency', 'Recency', 'a role counts as current only while a filing reports it; ended roles are kept with their dates'],
+  ['Integrity', 'No silent change', 'corrections are added as new records that point to the old one; nothing is overwritten'],
+  ['Integrity', 'Fingerprint', 'every record and every save is fingerprinted (SHA-256) in a hash-chained log'],
+  ['Integrity', 'Boundary crossing', 'links between sectors are measured and logged, not assumed to mean wrongdoing'],
+];
+const MONEY_TYPES = {
+  CORPORATE_PAC_CONTRIBUTED_TO: 'company PAC contributions', LOBBYIST_CONTRIBUTED_TO: "lobbyists' contributions", REGISTRANT_PAC_CONTRIBUTED_TO: "lobbying firms' PAC contributions",
+  FEDERAL_CONTRACTOR_FOR: 'federal contracts', FEDERAL_GRANT_FROM: 'federal grants', GRANT_FROM: 'grants', LOBBIES_FOR: 'lobbying (reported income)',
+  TRADED_SECURITIES_OF: 'reported trades in its securities', FOUNDATION_GRANT_TO: 'foundation grants',
+};
+const amountIn = t => { const m = /\$([\d,]+(?:\.\d+)?)/.exec(t || ''); return m ? parseFloat(m[1].replace(/,/g, '')) : null; };
+const ROLE_TYPES = new Set(['DIRECTOR_OF', 'OFFICER_OF', 'POSITION_AT', 'OFFICIAL_OF', 'REPRESENTATIVE_IN', 'SENATOR_IN', 'COMMITTEE_MEMBER_OF', 'TEN_PERCENT_OWNER_OF', 'BENEFICIAL_OWNER_OF', 'TRUSTEE_OF', 'MEMBER_OF']);
+const TO_SOURCE = new Set(['LOBBIES_FOR', 'FEDERAL_CONTRACTOR_FOR', 'FEDERAL_GRANT_FROM', 'GRANT_FROM']);   // the money runs toward the edge's source (the firm, the contractor, the grantee)
+const NOT_MONEY_TO = new Set(['TRADED_SECURITIES_OF']);                                                     // the value of trades: neither paid nor received by the company
 async function entityReport(c) {
-  const me = c.byId.get(c.center);
-  const mine = c.edges.filter(e => e.s === c.center || e.t === c.center).sort((a, b) => (b.active - a.active) || (b.date || '').localeCompare(a.date || ''));
+  const me = c.byId.get(c.center), isPerson = me.person;
   const other = e => c.byId.get(e.s === c.center ? e.t : e.s);
+  const direct = c.edges.filter(e => e.s === c.center || e.t === c.center).sort((a, b) => (b.active - a.active) || (b.date || '').localeCompare(a.date || ''));
+  const cur = direct.filter(e => e.active).length;
   const counts = { confirmed: 0, 'one source': 0, 'not checked yet': 0, alert: 0 };
-  for (const e of mine) counts[e.proof] = (counts[e.proof] || 0) + 1;
-  const byType = new Map();
-  for (const e of mine) { const k = e.type.replace(/_/g, ' ').toLowerCase(); if (!byType.has(k)) byType.set(k, []); byType.get(k).push(e); }
-  const ids = Object.entries(me.identity || {}).map(([k, v]) => `${esc(k)}: ${esc(v)}`).join(' · ') || 'no identifier';
+  for (const e of direct) counts[e.proof] = (counts[e.proof] || 0) + 1;
+  const noUrl = direct.filter(e => !e.url).length;
+  // organizations linked through a shared person (the same rule as the drafted reports)
+  const byNode = new Map();
+  for (const e of c.edges) { for (const x of [e.s, e.t]) { if (!byNode.has(x)) byNode.set(x, []); byNode.get(x).push(e); } }
+  const links = [], seen = new Set();
+  const push = (a, b, p, e1, e2) => { const k = [a < b ? a : b, a < b ? b : a, p].join('|'); if (!seen.has(k)) { seen.add(k); links.push({ a, b, p, e1, e2 }); } };
+  if (isPerson) {
+    const orgs = direct.filter(e => ROLE_TYPES.has(e.type)).map(e => [e.s === c.center ? e.t : e.s, e]).filter(([o]) => c.byId.get(o) && !c.byId.get(o).person);
+    for (let i = 0; i < orgs.length; i++) for (let j = i + 1; j < orgs.length; j++) if (orgs[i][0] !== orgs[j][0]) push(orgs[i][0], orgs[j][0], c.center, orgs[i][1], orgs[j][1]);
+  } else {
+    for (const e of direct) {
+      if (!ROLE_TYPES.has(e.type)) continue;                                   // a role shared, not a gift or a trade
+      const pid = e.s === c.center ? e.t : e.s, pn = c.byId.get(pid);
+      if (!pn || !pn.person) continue;
+      for (const f of byNode.get(pid) || []) { if (!ROLE_TYPES.has(f.type)) continue; const o = f.s === pid ? f.t : f.s; const on = c.byId.get(o); if (o !== c.center && on && !on.person) push(c.center, o, pid, e, f); }
+    }
+  }
+  const doms = id => new Set((c.byId.get(id) || {}).doms || []);
+  const crosses = l => ![...doms(l.a)].some(d => doms(l.b).has(d));
+  const cross = links.filter(crosses), same = links.filter(l => !crosses(l));
+  const people = new Set(links.map(l => l.p)), orgsLinked = new Set(links.flatMap(l => [l.a, l.b]).filter(x => x !== c.center));
+  // the money trail: filed amounts by kind, in and out
+  const money = new Map();
+  for (const e of direct) {
+    const kind = MONEY_TYPES[e.type]; if (!kind) continue;
+    const amt = amountIn(e.role);
+    const toSource = TO_SOURCE.has(e.type);
+    const dir = NOT_MONEY_TO.has(e.type) ? 'value' : ((e.s === c.center) !== toSource ? 'out' : 'in');
+    const m = money.get(kind) || { n: 0, stated: 0, out: 0, in: 0, value: 0, top: [] };
+    m.n++; if (amt != null) { m.stated++; m[dir] += amt; m.top.push([amt, (other(e) || {}).label || '', dir, e.url]); }
+    money.set(kind, m);
+  }
+  const sources = [...new Set(direct.map(e => e.source).filter(Boolean))].sort();
+  const dates = direct.map(e => e.date).filter(Boolean).sort();
+  const ids = Object.entries(me.identity || {}).map(([k, v]) => `${esc(k)} ${esc(v)}`).join(', ') || 'no identifier';
   const today = new Date().toISOString().slice(0, 10);
-  const rows = [...byType.entries()].map(([k, es]) => `<h3>${esc(k)} <span class="n">${es.length}</span></h3><table><thead><tr><th>with</th><th>as filed</th><th>date</th><th>source</th><th>checked</th><th>filing</th></tr></thead><tbody>`
-    + es.map(e => { const o = other(e) || {}; return `<tr class="${e.active ? '' : 'ended'}"><td>${esc(o.label || '')}${e.active ? '' : ' <i>(ended)</i>'}</td><td>${esc(e.role || '')}</td><td>${esc(e.date || '')}</td><td>${esc(e.source || '')}</td><td class="p-${esc(e.proof).replace(/ /g, '-')}">${esc(e.proof)}</td><td>${e.url ? `<a href="${esc(e.url)}">filing</a>` : ''}</td></tr>`; }).join('')
-    + `</tbody></table>`).join('');
-  const body = `<h1>${esc(me.label)}</h1>
-<p class="meta">${esc((me.type || 'entity').replace(/_/g, ' ').toLowerCase())} · field${me.doms.length > 1 ? 's' : ''} ${esc(me.doms.join(', ') || '—')} · ${ids}${me.place ? ' · ' + esc([me.place.city, me.place.state, me.place.country].filter(Boolean).join(', ')) : ''}</p>
-<p class="meta">Report built ${today} from the public sky (prioritynexusllc.github.io/PRIGH-Sky). Read-only. Nothing here was written by a person; every line is a filed record with its filing linked.</p>
-<h2>What the records show</h2>
-<p>${mine.length} filed connections: <b>${counts.confirmed}</b> confirmed by a second source, <b>${counts['one source']}</b> read from one source, <b>${counts['not checked yet']}</b> not checked yet${counts.alert ? `, <b>${counts.alert}</b> where the cited source changed` : ''}. Ended roles are kept with their dates.</p>
-${rows}
-<h2>What this report is not</h2>
-<ul>
-<li>Not a finding. A board seat, a contract, a contribution, a lobbying filing: each is a lawful, filed fact. Connected is not guilty.</li>
-<li>Not complete. The sky is a work in progress: not every register has been read, not every record checked. Missing is not the same as clean.</li>
-<li>Not a judgment on any person. People appear only in public roles, from the filings that name them in those roles.</li>
-</ul>
-<h2>If you are named here</h2>
+  const roleWord = e => (e.role || e.type.replace(/_/g, ' ').toLowerCase());
+  const row = e => { const o = other(e) || {}; const holder = e.s === c.center ? me : o, org = e.s === c.center ? o : me;
+    return `<tr class="${e.active ? '' : 'ended'}"><td>Filings report <b>${esc(holder.label || '')}</b> as ${esc(roleWord(e))} of <b>${esc(org.label || '')}</b></td><td>${e.active ? 'current' : 'ended'}</td><td>${esc(e.date || '')}</td><td>${esc(e.source || '')}</td><td class="p-${esc(e.proof).replace(/ /g, '-')}">${esc(e.proof)}</td><td>${e.url ? `<a href="${esc(e.url)}">filing</a>` : 'no link on file'}</td></tr>`; };
+  const linkRow = l => { const A = c.byId.get(l.a) || {}, B = c.byId.get(l.b) || {}, P = c.byId.get(l.p) || {};
+    return `<tr><td><b>${esc(A.label)}</b> and <b>${esc(B.label)}</b></td><td>${esc(P.label)}: ${esc(roleWord(l.e1))} at the first, ${esc(roleWord(l.e2))} at the second</td><td>${crosses(l) ? 'crosses sectors (' + esc([...doms(l.a)].join('')) + ' / ' + esc([...doms(l.b)].join('')) + ')' : 'within a sector'}</td><td>${l.e1.url ? `<a href="${esc(l.e1.url)}">filing</a>` : ''} ${l.e2.url ? `<a href="${esc(l.e2.url)}">filing</a>` : ''}</td></tr>`; };
+  const moneyRows = [...money.entries()].sort((a, b) => (b[1].in + b[1].out) - (a[1].in + a[1].out)).map(([kind, m]) => {
+    const top = m.top.sort((a, b) => b[0] - a[0]).slice(0, 5).map(([a, l, d, u]) => `${d === 'out' ? 'to' : d === 'in' ? 'from' : 'by'} ${esc(l)} ${esc(moneyFmt(a))}${u ? ` (<a href="${esc(u)}">filing</a>)` : ''}`).join('; ');
+    return `<tr><td>${esc(kind)}${m.value ? ' (value of trades, not money to or from it)' : ''}</td><td>${m.n}</td><td>${m.stated} of ${m.n}</td><td>${m.in ? esc(moneyFmt(m.in)) : '—'}</td><td>${m.out ? esc(moneyFmt(m.out)) : '—'}</td><td>${top}</td></tr>`; });
+  const moneyTotal = [...money.values()].reduce((a, m) => a + m.in + m.out, 0);
+  const summary = [`Public filings on record connect <b>${esc(me.label)}</b> to ${direct.length} ${isPerson ? 'organizations' : 'organizations and people'} directly (${cur} current, ${direct.length - cur} ended).`];
+  if (links.length) summary.push(isPerson
+    ? `Because filings report this person at each of them, those organizations are linked to one another: ${links.length} pair${links.length === 1 ? '' : 's'}, ${cross.length} crossing between sectors and ${same.length} within a sector.`
+    : `Through ${people.size} ${people.size === 1 ? 'person' : 'people'}, it is linked to ${orgsLinked.size} other organization${orgsLinked.size === 1 ? '' : 's'}; ${cross.length} of those links cross between sectors and ${same.length} stay within a sector.`);
+  if (money.size) summary.push(`Money on the record: ${[...money.keys()].join(', ')}; ${moneyFmt(moneyTotal)} paid or received where the filings state an amount (section 4.3).`);
+  summary.push(`${counts.confirmed} of the direct connections are confirmed by a second source; ${counts['not checked yet']} are not checked yet${counts.alert ? `; ${counts.alert} cite a source that has changed` : ''}.`);
+  const body = `<h1>${esc(me.label)}: connections on the public record</h1>
+<p class="meta">Published by Priority Nexus LLC · Systems Assurance Forensic Investigation &amp; Design · built ${today} in your browser from the public sky (prioritynexusllc.github.io/PRIGH-Sky) · read-only</p>
+<p><b>Signals for review, not findings of wrongdoing.</b> Everything below is what public filings report. Each item links to its filing so any reader can check it.</p>
+<h2>1. Summary</h2><p>${summary.join(' ')}</p>
+<h2>2. Scope</h2><ul>
+<li>Subject: ${esc(me.label)} (${ids})${me.place ? ', ' + esc([me.place.city, me.place.state, me.place.country].filter(Boolean).join(', ')) : ''}</li>
+<li>Sources: ${esc(sources.join(', ') || 'none')}</li>
+<li>Filing dates covered: ${dates.length ? esc(dates[0]) + ' to ' + esc(dates[dates.length - 1]) : 'n/a'}</li>
+<li>Not examined: private contracts, foreign registries not yet connected, news reporting, and any relationship that is not in a filing. The sky is a work in progress: not every register has been read.</li></ul>
+<h2>3. Method</h2><p>Nine checks, three for each core principle, applied to every record before it enters the map:</p>
+<ul>${GATES.map(([core, name, text]) => `<li><b>${core}: ${name}</b>: ${text}</li>`).join('')}</ul>
+<h3>How this report was made</h3>
+<p>Built by the page itself from official public records only; every item links to its filing. Each connection carries the result of automated checks: re-read from its own source, confirmed by a second official source where one exists. No person wrote or edited this page. Nothing here is an accusation or a finding of wrongdoing: it describes what the filings say.</p>
+<p><b>Disclosure.</b> Priority Nexus LLC takes funding two ways only: anonymously, never named; or openly, with a report on the giver next to every mention. Today it has no funders, no financial or business relationship with any organization or person in this report, and knows of no conflict of interest.</p>
+<h2>4. Findings</h2>
+<h3>4.1 Direct connections (${direct.length})</h3>
+${direct.length ? `<table><thead><tr><th>What the filings report</th><th>Status</th><th>Latest filing</th><th>Source</th><th>Checked</th><th>Filing</th></tr></thead><tbody>${direct.map(row).join('')}</tbody></table>` : '<p>No verified connections on record.</p>'}
+<h3>4.2 Organizations linked through a shared person (${links.length})</h3>
+${links.length ? `<table><thead><tr><th>Pair</th><th>Through</th><th>Sectors</th><th>Filings</th></tr></thead><tbody>${links.slice(0, 300).map(linkRow).join('')}</tbody></table>${links.length > 300 ? `<p class="meta">${links.length - 300} more pairs not listed.</p>` : ''}` : '<p>None on record.</p>'}
+<h3>4.3 Money on the record</h3>
+${money.size ? `<p>Amounts are the figures the filings state, summed; a record without a stated amount is counted but adds nothing to the sum. "In" is money this entity received; "out" is money it paid or gave.</p><table><thead><tr><th>Kind</th><th>Records</th><th>With an amount</th><th>In</th><th>Out</th><th>Largest</th></tr></thead><tbody>${moneyRows.join('')}</tbody></table>` : '<p>No money records on file for this entity: no contributions, contracts, grants, lobbying income or reported trades in the filings read.</p>'}
+<h3>4.4 Balance measures</h3><p>Independence, tenure, single-point and overboarding measures run on the whole map and are not computed on this page. The published standards and limits are on the Method page.</p>
+<h2>5. Limits</h2><ul>
+<li>${noUrl} of ${direct.length} direct connections carry no filing link on this copy; they are shown but should be read as unverified here.</li>
+<li>A connection is a filed fact: a board seat, a contract, a contribution, a lobbying filing. It says nothing about intent. Connected is not guilty.</li>
+<li>Only people in public roles appear, from the filings that name them in those roles. Nothing about private life is collected.</li>
+<li>The map is a work in progress. Missing is not the same as clean.</li></ul>
+<h2>6. If you are named here</h2>
 <p>Want to answer? Send it to <a href="mailto:theaistherapist@gmail.com?subject=Reply%3A%20${encodeURIComponent(me.label)}">theaistherapist@gmail.com</a>. We post it, in full, under your name, the day it arrives. A record wrong? Say which; it is corrected with a dated note.</p>
+<h2>7. All sources</h2>
+<ol>${direct.filter(e => e.url).map(e => `<li><a href="${esc(e.url)}">${esc(e.url)}</a> · ${esc(e.source || '')}${e.date ? ' · ' + esc(e.date) : ''}</li>`).join('')}</ol>
+<h2>8. Integrity</h2>
 <p class="meta" id="fp">fingerprint: computing…</p>`;
-  const css = `body{font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif;color:#1a1a1a;background:#fff;max-width:62rem;margin:2rem auto;padding:0 1.2rem}h1{font-family:Georgia,serif;font-size:2rem;margin:.2rem 0}h2{font-family:Georgia,serif;font-size:1.25rem;margin:1.6rem 0 .4rem;border-bottom:1px solid #ddd}h3{font-size:1rem;margin:1.2rem 0 .3rem;text-transform:capitalize}h3 .n{color:#777;font-weight:400}.meta{color:#555;font-size:.85rem}table{border-collapse:collapse;width:100%;font-size:.82rem}th,td{text-align:left;vertical-align:top;padding:.3rem .4rem;border-bottom:1px solid #eee}th{color:#555;font-weight:600}tr.ended td{color:#777}.p-confirmed{color:#1b7a3d}.p-one-source{color:#1d5fa8}.p-not-checked-yet{color:#777}.p-alert{color:#b3261e}a{color:#1d5fa8}@media print{a{color:#1a1a1a;text-decoration:none}}`;
-  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Report: ${esc(me.label)} · PRIGH</title><style>${css}</style></head><body>${body}</body></html>`;
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Report: ${esc(me.label)} · PRIGH</title></head><body>${body}</body></html>`;
   let fp = '';
   try { const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(html)); fp = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16); } catch (e) { fp = 'not available'; }
-  const final = html.replace('fingerprint: computing…', `fingerprint ${fp} · SHA-256 of this page as built, first 16 characters; the same records give the same fingerprint`);
+  const final = html.replace('fingerprint: computing…', `Fingerprint ${fp}: SHA-256 of this page as built, first 16 characters; the same records give the same fingerprint. Map data generated ${esc(skyGenerated || '')}. Every record on the map is fingerprinted in a hash-chained log kept with the project.`);
   let sec = document.getElementById('report-page');
   if (!sec) { sec = document.createElement('section'); sec.className = 'about page report-page'; sec.id = 'report-page'; document.body.appendChild(sec); }
   sec.innerHTML = `<div class="wrap report"><div class="btns no-print"><button class="btn primary" type="button" id="report-print">Print or save as PDF</button><button class="btn" type="button" id="report-close">Close</button></div>${final.replace(/^[\s\S]*<body>/, '').replace(/<\/body>[\s\S]*$/, '')}</div>`;
@@ -954,3 +1038,4 @@ ${rows}
   document.getElementById('report-close').addEventListener('click', () => { sec.hidden = true; });
   sec.scrollTop = 0;
 }
+const moneyFmt = v => v >= 1e9 ? `$${(v / 1e9).toFixed(2)}B` : v >= 1e6 ? `$${(v / 1e6).toFixed(2)}M` : v >= 1e3 ? `$${Math.round(v / 1e3).toLocaleString()}K` : `$${Math.round(v).toLocaleString()}`;
