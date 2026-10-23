@@ -519,7 +519,7 @@ hits.addEventListener('click', ev => { const b = ev.target.closest('[data-id]');
 document.addEventListener('click', ev => { if (!ev.target.closest('.search')) hits.hidden = true; });
 
 // the reading pages (how to read it, method, corrections) sit over the sky; one at a time
-const PAGES = { 'nav-about': 'about', 'nav-method': 'method', 'nav-corrections': 'corrections', 'nav-reports': 'reports' };
+const PAGES = { 'nav-about': 'about', 'nav-method': 'method', 'nav-balance': 'balance-page', 'nav-corrections': 'corrections', 'nav-reports': 'reports' };
 function showPage(id) {
   for (const [nav, sec] of Object.entries(PAGES)) {
     const on = sec === id;
@@ -528,6 +528,7 @@ function showPage(id) {
   }
   document.getElementById('nav-sky').classList.toggle('on', !id);
   if (id === 'reports') loadReports();
+  if (id === 'balance-page') loadBalance();
 }
 
 // Reports: the drafts on file, with their review state; a new draft can be asked for from an entity's card.
@@ -1039,3 +1040,49 @@ ${money.size ? `<p>Amounts are the figures the filings state, summed; a record w
   sec.scrollTop = 0;
 }
 const moneyFmt = v => v >= 1e9 ? `$${(v / 1e9).toFixed(2)}B` : v >= 1e6 ? `$${(v / 1e6).toFixed(2)}M` : v >= 1e3 ? `$${Math.round(v / 1e3).toLocaleString()}K` : `$${Math.round(v).toLocaleString()}`;
+
+
+// ------------------------------------------------------------ Balance: each published standard beside what the records show
+// Josie 2026-10-23: like the workbench's Balance tab, "no alarm or tags of alarm, just showing the same laws vs entities".
+let balance = null, balanceLoading = false;
+async function loadBalance() {
+  const box = document.getElementById('balance-body'); if (!box) return;
+  if (balance) { renderBalancePage(); return; }
+  if (balanceLoading) return;
+  balanceLoading = true;
+  try { balance = await fetch(STATIC ? 'data/balance.json' : '/api/balance').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }); }
+  catch (e) { box.innerHTML = `<p class="mono" style="font-size:.78rem">the measures could not be read: ${esc(e.message)}</p>`; balanceLoading = false; return; }
+  balanceLoading = false; renderBalancePage();
+}
+function renderBalancePage() {
+  const box = document.getElementById('balance-body'); if (!box || !balance) return;
+  const r = balance, go = (id, text) => `<button type="button" class="lnk" data-go="${esc(id)}">${esc(text)}</button>`;
+  const pct = v => v == null ? '—' : `${Math.round(v * 100)}%`;
+  const ind = r.independence || {}, con = r.concentration || {}, sp = r.single_points || {}, ten = r.tenure || {}, ob = r.overboarding || {};
+  const indRows = (ind.flags || []).map(f => `<tr><td>${go(f.org, f.label)}</td><td>${f.directors}</td><td>${f.tied}</td><td>${f.directors ? Math.round(100 * (f.directors - f.tied) / f.directors) : 0}%</td><td>${(f.ties || []).map(t => `${esc(t.label)}: ${esc((t.why || []).join('; '))}`).join('<br>')}</td></tr>`).join('');
+  const conRows = (con.domains || []).map(d => !d.organizations && !d.ownership_blocks
+    ? `<tr><td><b>${esc(SHORT[d.domain.slice(-1)] || d.domain)}</b></td><td colspan="6">no shareholders to measure (government bodies and courts)</td></tr>`
+    : `<tr><td><b>${esc(SHORT[d.domain.slice(-1)] || d.domain)}</b></td><td>${d.organizations}</td><td>${d.ownership_blocks}${d.blocks_above_5 != null ? ` (${d.blocks_above_5} above 5%)` : ''}</td><td>${d.hhi ?? '—'}</td><td>${pct(d.top4_reach_share)}</td><td>${pct(d.top4_family_reach_share ?? d.top4_reach_share)}</td><td>${(d.top_holders || []).slice(0, 3).map(h => `${go(h.id, h.label)} (${h.blocks})`).join(', ')}</td></tr>`).join('');
+  const spRows = (sp.flags || []).slice(0, 40).map(f => `<tr><td>${go(f.id, f.label)}</td><td>${(f.cut_off || 0).toLocaleString()}</td></tr>`).join('');
+  const tenRows = (ten.flags || []).slice(0, 80).map(f => `<tr><td>${go(f.person, f.label)}</td><td>${go(f.org, f.org_label)}</td><td>${f.years_at_least}</td><td>${esc(f.first_filing || '')} → ${esc(f.latest_filing || '')}</td></tr>`).join('');
+  const obRows = (ob.flags || []).map(f => `<tr><td>${go(f.person, f.label)}</td><td>${esc(f.why || '')}</td></tr>`).join('');
+  box.innerHTML = `<div class="bal">
+<h2>1. Board independence</h2>
+<p class="std">Standard: ${esc(ind.standard || '')}. The number: more than ${Math.round((ind.threshold || 0.5) * 100)}% of directors independent. Records: ${ind.boards_scored ?? '—'} boards with enough recorded directors to measure; the rows are boards where half or more of the recorded directors have a filed tie to the company (an officer role, a large stake, or a role at a large holder). A director with no filed tie here may have ties these filings do not show.</p>
+${indRows ? `<table><thead><tr><th>Board</th><th>Recorded directors</th><th>With a filed tie</th><th>Independent by the records</th><th>The ties, as filed</th></tr></thead><tbody>${indRows}</tbody></table>` : '<p class="std">Every scored board has a majority of recorded directors with no filed tie.</p>'}
+<h2>2. Concentration of ownership, by field</h2>
+<p class="std">Standard: ${esc(con.standard || '')}. The number: ${(con.threshold || 1800).toLocaleString()}. Records: every open ownership stake on the map counts as a block (each holder–company pair once); HHI measures how concentrated those blocks are among holders, 0 to 10,000; top-4 reach is the share of the field's organizations that the four most-connected holders own a block of or hold a seat at, counted as filed and again with a parent's units added back to the parent.</p>
+<table><thead><tr><th>Field</th><th>Organizations</th><th>Blocks</th><th>HHI</th><th>Top-4 reach, as filed</th><th>Top-4 reach, by family</th><th>Largest holders (blocks)</th></tr></thead><tbody>${conRows}</tbody></table>
+<h2>3. Single points</h2>
+<p class="std">Not a published standard: a measure of the network itself. In ${(sp.network_size || 0).toLocaleString()} connected entities, ${esc(sp.meaning || 'these are the entities whose removal would cut others off from the rest')}. Records: the count of entities that depend on each.</p>
+${spRows ? `<table><thead><tr><th>Entity</th><th>Entities that depend on it</th></tr></thead><tbody>${spRows}</tbody></table>` : '<p class="std">None at the display floor.</p>'}
+<h2>4. Length of board service</h2>
+<p class="std">Standard: ${esc(ten.standard || '')}. The number: ${ten.threshold || 9} years. Records: ${esc(ten.method || 'the first and latest filing that report the seat')}. The years shown are the least the filings prove.</p>
+${tenRows ? `<table><thead><tr><th>Person</th><th>Board</th><th>Years, at least</th><th>Filings</th></tr></thead><tbody>${tenRows}</tbody></table>${(ten.flags || []).length > 80 ? `<p class="std">${(ten.flags || []).length - 80} more not listed.</p>` : ''}` : '<p class="std">None on record.</p>'}
+<h2>5. Number of boards</h2>
+<p class="std">Standard: ${esc(ob.standard || '')}. The number: ${ob.threshold || 5} public-company boards. Also: ${esc(ob.ceo_standard || '')}. Records: current public-company board seats on the map per person.</p>
+${obRows ? `<table><thead><tr><th>Person</th><th>Seats, by the records</th></tr></thead><tbody>${obRows}</tbody></table>` : '<p class="std">None on record.</p>'}
+<p class="std">Measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map. Every number here can change when a filing is added; nothing is a verdict. Click a name to open its connections.</p>
+</div>`;
+  box.querySelectorAll('[data-go]').forEach(el => el.addEventListener('click', () => { showPage(null); openConstellation(el.dataset.go); }));
+}
