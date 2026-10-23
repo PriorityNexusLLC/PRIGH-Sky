@@ -1143,7 +1143,7 @@ function renderRulebook() {
 <p class="std"><b>The gates.</b> ${ALL_GATES.map(k => `<b>${esc(GATE_SHORT[k])}:</b> ${esc(GATE_HELP[k])}`).join(' ')}</p>
 <p class="std">Measured ${esc(rulebook.run || '')}. A pattern finds the words; a person confirms the meaning, which is why every yes carries its sentence.</p>
 </div>`;
-  const stick = () => { const first = box.querySelector('.rb thead tr:first-child th'); if (!first) return; const h = first.getBoundingClientRect().height; box.querySelectorAll('.rb thead tr:nth-child(2) th').forEach(th => { th.style.top = `${h}px`; }); };
+  const stick = () => { const first = box.querySelector('.rb thead tr:first-child th:not([rowspan])'); if (!first) return; const h = first.getBoundingClientRect().height; box.querySelectorAll('.rb thead tr:nth-child(2) th').forEach(th => { th.style.top = `${h}px`; }); };
   stick(); requestAnimationFrame(stick);
   if (!renderRulebook._resize) { renderRulebook._resize = true; window.addEventListener('resize', stick); }
   const inp = document.getElementById('rule-filter');
