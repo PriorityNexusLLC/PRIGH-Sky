@@ -41,8 +41,9 @@
   .hit:hover { background: var(--accent-soft); }
   .hit .d { width: 10px; height: 10px; border-radius: 50%; flex: none; }
   .hit .sub { color: var(--ink-soft); font-size: 0.78rem; margin-left: auto; font-family: var(--font-mono); }
-  .nav { display: flex; gap: 0.2rem; margin-left: auto; }
-  .nav button, .nav a { font-size: 0.86rem; color: var(--ink-soft); background: none; border: 0; padding: 0.35rem 0.5rem; text-decoration: none; }
+  .nav { display: flex; gap: 0.2rem; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; row-gap: 0; }
+  .nav button, .nav a { font-size: 0.86rem; color: var(--ink-soft); background: none; border: 0; padding: 0.35rem 0.5rem; text-decoration: none; white-space: nowrap; }
+  @media (max-width: 1000px) { .nav button, .nav a { font-size: 0.78rem; padding: 0.3rem 0.4rem; } }
   .nav button:hover, .nav a:hover { color: var(--accent); }
   .nav button.on { color: var(--ink); }
 
@@ -101,6 +102,7 @@
   .bal thead th { position: sticky; top: 0; z-index: 2; background: var(--paper); box-shadow: 0 1px 0 var(--line); } .rb thead tr:first-child th { white-space: nowrap; }
   .rb th.core { text-align: center; border-left: 1px solid var(--line-strong); color: var(--ink); font-family: var(--font-display); font-size: .95rem; } .rb td.sum { color: var(--ink); font-size: .8rem; border-right: 1px solid var(--line-strong); } .rb td.eyes { color: var(--ink-soft); font-size: .78rem; }
   .rb td.g { text-align: center; font-size: 1rem; white-space: nowrap; } .rb td.yes { color: #5fc48a; } .rb td.no { color: var(--ink-soft); } .rb td.none { color: var(--line-strong); } .rb .n { color: var(--ink-soft); font-size: .72rem; } .rb tr.open td { background: var(--surface); } .rb tr.detail td { background: var(--surface); padding: .6rem .8rem 1rem; } .rb ul.std { padding-left: 1.1rem; } .rb ul.std li { margin: .3rem 0; }
+  .rpt h1 { font-size: 1.6rem; margin: 2rem 0 .4rem; } .rpt h2 { margin-top: 1.5rem; } .rpt h3 { margin: 1.1rem 0 .3rem; } .rpt table { border-collapse: collapse; width: 100%; font-size: .8rem; margin: .4rem 0 1rem; } .rpt th, .rpt td { text-align: left; vertical-align: top; padding: .3rem .4rem; border-bottom: 1px solid var(--line); } .rpt th { color: var(--ink-soft); font-weight: 600; position: sticky; top: 0; background: var(--paper); z-index: 2; } .rpt .gen { color: var(--ink-soft); font-size: .78rem; }
   .report-page { z-index: 12; } .report h1 { margin-top: .4rem; } .report h3 { text-transform: capitalize; margin: 1.2rem 0 .3rem; } .report h3 .n { color: var(--ink-soft); font-weight: 400; }
   .report table { border-collapse: collapse; width: 100%; font-size: .8rem; } .report th, .report td { text-align: left; vertical-align: top; padding: .3rem .4rem; border-bottom: 1px solid var(--line); } .report th { color: var(--ink-soft); }
   .report tr.ended td { color: var(--ink-soft); } .report .p-confirmed { color: #5fc48a; } .report .p-one-source { color: #85a6ec; } .report .p-alert { color: #e06c5f; } .report .meta { color: var(--ink-soft); font-size: .85rem; }
@@ -140,6 +142,7 @@
     <button id="nav-method" type="button">Method</button>
     <button id="nav-balance" type="button" title="Each published standard beside what the records show">Balance</button>
     <button id="nav-rulebook" type="button" title="The laws that bind the institutions on the map, held against nine gates">Rulebook</button>
+    <button id="nav-november" type="button" title="What the filings show about the candidates on the November 2026 ballot">November 2026</button>
     <button id="nav-corrections" type="button">Corrections</button>
     <button id="nav-reports" hidden type="button">Reports</button>
     
@@ -304,6 +307,14 @@
     <h1>The laws that bind the institutions on the map, held against nine gates.</h1>
     <p>Each gate is something a law gives a person or withholds: notice, a hearing, an appeal, access to the record, the right to enforce it, a duty to report on itself, who can waive it. Present or absent, each with the sentence that shows it. Never a grade. The reader draws the conclusion.</p>
     <div id="rulebook-body"><p class="mono" style="font-size:.78rem">reading the rulebook…</p></div>
+  </div>
+</section>
+<section class="about page" id="november-page" hidden>
+  <div class="wrap">
+    <p class="kicker">November 2026</p>
+    <h1>What the filings show about the candidates on the ballot.</h1>
+    <p>Two readings of the public record: company PAC money to the 2026 candidates, and the committees those companies answer to. Patterns, not findings. Every number links to its FEC page.</p>
+    <div id="november-body" class="rpt"><p class="mono" style="font-size:.78rem">reading…</p></div>
   </div>
 </section>
 <section class="about page" id="corrections" hidden>

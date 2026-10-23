@@ -519,7 +519,7 @@ hits.addEventListener('click', ev => { const b = ev.target.closest('[data-id]');
 document.addEventListener('click', ev => { if (!ev.target.closest('.search')) hits.hidden = true; });
 
 // the reading pages (how to read it, method, corrections) sit over the sky; one at a time
-const PAGES = { 'nav-about': 'about', 'nav-method': 'method', 'nav-balance': 'balance-page', 'nav-rulebook': 'rulebook-page', 'nav-corrections': 'corrections', 'nav-reports': 'reports' };
+const PAGES = { 'nav-about': 'about', 'nav-method': 'method', 'nav-balance': 'balance-page', 'nav-rulebook': 'rulebook-page', 'nav-november': 'november-page', 'nav-corrections': 'corrections', 'nav-reports': 'reports' };
 function showPage(id) {
   for (const [nav, sec] of Object.entries(PAGES)) {
     const on = sec === id;
@@ -530,6 +530,7 @@ function showPage(id) {
   if (id === 'reports') loadReports();
   if (id === 'balance-page') loadBalance();
   if (id === 'rulebook-page') loadRulebook();
+  if (id === 'november-page') loadNovember();
 }
 
 // Reports: the drafts on file, with their review state; a new draft can be asked for from an entity's card.
@@ -1159,4 +1160,16 @@ function detail(r) {
   const w = g['who-wrote'] || {}, bb = w.by_bill || {};
   items.push(`<li><b>Who lobbied it:</b> ${w.found == null ? 'not read' : (w.count ? `${w.count} filings by ${w.clients} clients through ${w.registrants} registrants name it` : 'no filing of a client on the map names this law')}${bb.filings ? `; ${bb.filings} name a bill that is or became it (${esc((bb.bills || []).join('; '))})` : ''}${bb.omnibus_filings ? `; ${bb.omnibus_filings} name an omnibus bill containing it, kept apart` : ''}.${(w.examples || []).length ? ' e.g. ' + w.examples.map(e => `${esc(e.posted)} ${esc(e.client)} ← ${esc(e.registrant)} (<a href="${esc(e.url)}" target="_blank" rel="noopener">filing</a>)`).join('; ') : ''}</li>`);
   return `<p class="std">Read: ${esc(r.scope || '')}${r.heading ? ' · ' + esc(r.heading) : ''}${r.text_chars ? ` · ${r.text_chars.toLocaleString()} characters` : ''} · <a href="${esc(r.url)}" target="_blank" rel="noopener">the law</a>${r.requires ? `<br><b>What it requires:</b> ${esc(r.requires)}` : ''}${r.helps ? `<br><b>What helps:</b> ${esc(r.helps)}` : ''}</p><ul class="std">${items.join('')}</ul>`;
+}
+
+
+// ------------------------------------------------------------ November 2026: the two candidate reports, written by the project, served as pages
+let november = null;
+async function loadNovember() {
+  const box = document.getElementById('november-body'); if (!box) return;
+  if (!november) {
+    try { november = await fetch(STATIC ? 'data/november.json' : '/api/november').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }); }
+    catch (e) { box.innerHTML = `<p class="mono" style="font-size:.78rem">could not be read: ${esc(e.message)}</p>`; return; }
+  }
+  box.innerHTML = november.reports.map(r => `<h1>${esc(r.title)}</h1><p class="gen">written ${esc(r.generated)} from FEC filings and the House and Senate rosters · descriptive patterns, not findings</p>${r.html}`).join('<hr style="border:0;border-top:1px solid var(--line);margin:2.5rem 0">');
 }
