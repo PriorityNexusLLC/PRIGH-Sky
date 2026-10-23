@@ -430,7 +430,8 @@ function renderPanel(c, hops) {
     </div>
     <div class="btns">
       <button class="btn primary" id="hops" type="button">${hops === 1 ? 'Widen to 2 hops' : 'Narrow to 1 hop'}</button>
-      ${PUBLIC_PAGE ? '' : `<button class="btn" id="draft" type="button" title="Draft a report from the filings on the map: findings, limits, right of reply, fingerprint. A draft; nothing is published.">Draft a report</button>
+      ${PUBLIC_PAGE ? `<button class="btn" id="report" type="button" title="A read-only report built here, in your browser, from the filed records on this page: every connection with its filing, what is checked and what is not, the right of reply, a fingerprint. Printable.">Report on this entity</button>`
+        : `<button class="btn" id="draft" type="button" title="Draft a report from the filings on the map: findings, limits, right of reply, fingerprint. A draft; nothing is published.">Draft a report</button>
       <a class="btn" href="/#${encodeURIComponent(c.center)}" title="Open in the working viewer">Workbench</a>`}
     </div>
     <p class="kicker" style="color:var(--ink-soft)">${mine.length} filed connection${mine.length === 1 ? '' : 's'}</p>
@@ -450,6 +451,7 @@ function renderPanel(c, hops) {
   panel.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => openConstellation(b.dataset.go)));
   document.getElementById('hops').addEventListener('click', () => openConstellation(c.center, hops === 1 ? 2 : 1));
   const draftBtn = document.getElementById('draft'); if (draftBtn) draftBtn.addEventListener('click', ev => draftReport(c.center, ev.currentTarget));
+  const reportBtn = document.getElementById('report'); if (reportBtn) reportBtn.addEventListener('click', () => entityReport(c));
 }
 
 // ------------------------------------------------------------ interaction
@@ -906,4 +908,49 @@ function openLoop(l) {
     <p class="note">Three lawful, disclosed facts that the filings keep on three different pages. The sponsor introduced the bill; that is not the same as writing the provision the company cared about. Connected is not the same as culpable.</p>`;
   panel.classList.add('open'); dirty = true;
   panel.querySelectorAll('[data-go]').forEach(el => { if (!el.dataset.bound) { el.dataset.bound = '1'; el.addEventListener('click', () => openConstellation(el.dataset.go)); } });
+}
+
+
+// ------------------------------------------------------------ the read-only report (public copy): built here from the filed records, nothing sent anywhere
+// Josie 2026-10-23: no waiting period; anyone, including anyone named, gets the same report by pushing the button.
+async function entityReport(c) {
+  const me = c.byId.get(c.center);
+  const mine = c.edges.filter(e => e.s === c.center || e.t === c.center).sort((a, b) => (b.active - a.active) || (b.date || '').localeCompare(a.date || ''));
+  const other = e => c.byId.get(e.s === c.center ? e.t : e.s);
+  const counts = { confirmed: 0, 'one source': 0, 'not checked yet': 0, alert: 0 };
+  for (const e of mine) counts[e.proof] = (counts[e.proof] || 0) + 1;
+  const byType = new Map();
+  for (const e of mine) { const k = e.type.replace(/_/g, ' ').toLowerCase(); if (!byType.has(k)) byType.set(k, []); byType.get(k).push(e); }
+  const ids = Object.entries(me.identity || {}).map(([k, v]) => `${esc(k)}: ${esc(v)}`).join(' · ') || 'no identifier';
+  const today = new Date().toISOString().slice(0, 10);
+  const rows = [...byType.entries()].map(([k, es]) => `<h3>${esc(k)} <span class="n">${es.length}</span></h3><table><thead><tr><th>with</th><th>as filed</th><th>date</th><th>source</th><th>checked</th><th>filing</th></tr></thead><tbody>`
+    + es.map(e => { const o = other(e) || {}; return `<tr class="${e.active ? '' : 'ended'}"><td>${esc(o.label || '')}${e.active ? '' : ' <i>(ended)</i>'}</td><td>${esc(e.role || '')}</td><td>${esc(e.date || '')}</td><td>${esc(e.source || '')}</td><td class="p-${esc(e.proof).replace(/ /g, '-')}">${esc(e.proof)}</td><td>${e.url ? `<a href="${esc(e.url)}">filing</a>` : ''}</td></tr>`; }).join('')
+    + `</tbody></table>`).join('');
+  const body = `<h1>${esc(me.label)}</h1>
+<p class="meta">${esc((me.type || 'entity').replace(/_/g, ' ').toLowerCase())} · field${me.doms.length > 1 ? 's' : ''} ${esc(me.doms.join(', ') || '—')} · ${ids}${me.place ? ' · ' + esc([me.place.city, me.place.state, me.place.country].filter(Boolean).join(', ')) : ''}</p>
+<p class="meta">Report built ${today} from the public sky (prioritynexusllc.github.io/PRIGH-Sky). Read-only. Nothing here was written by a person; every line is a filed record with its filing linked.</p>
+<h2>What the records show</h2>
+<p>${mine.length} filed connections: <b>${counts.confirmed}</b> confirmed by a second source, <b>${counts['one source']}</b> read from one source, <b>${counts['not checked yet']}</b> not checked yet${counts.alert ? `, <b>${counts.alert}</b> where the cited source changed` : ''}. Ended roles are kept with their dates.</p>
+${rows}
+<h2>What this report is not</h2>
+<ul>
+<li>Not a finding. A board seat, a contract, a contribution, a lobbying filing: each is a lawful, filed fact. Connected is not guilty.</li>
+<li>Not complete. The sky is a work in progress: not every register has been read, not every record checked. Missing is not the same as clean.</li>
+<li>Not a judgment on any person. People appear only in public roles, from the filings that name them in those roles.</li>
+</ul>
+<h2>If you are named here</h2>
+<p>Want to answer? Send it to <a href="mailto:theaistherapist@gmail.com?subject=Reply%3A%20${encodeURIComponent(me.label)}">theaistherapist@gmail.com</a>. We post it, in full, under your name, the day it arrives. A record wrong? Say which; it is corrected with a dated note.</p>
+<p class="meta" id="fp">fingerprint: computing…</p>`;
+  const css = `body{font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif;color:#1a1a1a;background:#fff;max-width:62rem;margin:2rem auto;padding:0 1.2rem}h1{font-family:Georgia,serif;font-size:2rem;margin:.2rem 0}h2{font-family:Georgia,serif;font-size:1.25rem;margin:1.6rem 0 .4rem;border-bottom:1px solid #ddd}h3{font-size:1rem;margin:1.2rem 0 .3rem;text-transform:capitalize}h3 .n{color:#777;font-weight:400}.meta{color:#555;font-size:.85rem}table{border-collapse:collapse;width:100%;font-size:.82rem}th,td{text-align:left;vertical-align:top;padding:.3rem .4rem;border-bottom:1px solid #eee}th{color:#555;font-weight:600}tr.ended td{color:#777}.p-confirmed{color:#1b7a3d}.p-one-source{color:#1d5fa8}.p-not-checked-yet{color:#777}.p-alert{color:#b3261e}a{color:#1d5fa8}@media print{a{color:#1a1a1a;text-decoration:none}}`;
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Report: ${esc(me.label)} · PRIGH</title><style>${css}</style></head><body>${body}</body></html>`;
+  let fp = '';
+  try { const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(html)); fp = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16); } catch (e) { fp = 'not available'; }
+  const final = html.replace('fingerprint: computing…', `fingerprint ${fp} · SHA-256 of this page as built, first 16 characters; the same records give the same fingerprint`);
+  let sec = document.getElementById('report-page');
+  if (!sec) { sec = document.createElement('section'); sec.className = 'about page report-page'; sec.id = 'report-page'; document.body.appendChild(sec); }
+  sec.innerHTML = `<div class="wrap report"><div class="btns no-print"><button class="btn primary" type="button" id="report-print">Print or save as PDF</button><button class="btn" type="button" id="report-close">Close</button></div>${final.replace(/^[\s\S]*<body>/, '').replace(/<\/body>[\s\S]*$/, '')}</div>`;
+  sec.hidden = false;
+  document.getElementById('report-print').addEventListener('click', () => window.print());
+  document.getElementById('report-close').addEventListener('click', () => { sec.hidden = true; });
+  sec.scrollTop = 0;
 }
