@@ -26,7 +26,7 @@ let sectorMarks = [], subNames = {}; // sub-domain wedges inside each ball, and 
 // glides between them when the toggle flips, so the eye can follow who moves.
 const PUBLIC_PAGE = document.body.dataset.public === '1';      // the read-only public copy: no drafting, no workbench
 const STATIC = document.body.dataset.static === '1';           // the GitHub Pages copy: the server's answers written out as files under data/
-const shard = id => { let h = 0; for (const ch of id) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return (h % 256).toString(16).padStart(2, '0'); };
+const shard = id => { let h = 0; for (const ch of id) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return (h % 4096).toString(16).padStart(3, '0'); };
 const _shards = new Map();
 async function loadShard(kind, id) {
   const k = `${kind}/${shard(id)}`;
@@ -35,26 +35,29 @@ async function loadShard(kind, id) {
 }
 // the constellation, built here from edge and node shards: the same rule as the server (direct connections, and through a person their organizations; capped to 400)
 async function staticConstellation(nid, hops) {
+  // Shards are fetched together, not one after another, and the edges among the neighbours come only from shards already
+  // in hand (the center's and each person's): on a phone one tap costs a few hundred kilobytes, not the whole map.
   const edgesOf = async id => (await loadShard('edges', id))[id] || [];
   const nodeOf = async id => (await loadShard('nodes', id))[id];
+  const nodesOf = async ids => Object.fromEntries((await Promise.all(ids.map(nodeOf))).map((n, i) => [ids[i], n]));
+  const edgesLoaded = async id => { const k = `edges/${shard(id)}`; return _shards.has(k) ? ((await _shards.get(k))[id] || []) : []; };
   if (!(await nodeOf(nid))) return null;
   const keep = new Set([nid]); let frontier = [nid];
   for (let h = 0; h < hops; h++) {
     const nxt = [];
-    for (const u of frontier) for (const e of await edgesOf(u)) {
-      const v = e.s === u ? e.t : e.s;
-      if (keep.has(v)) continue;
-      keep.add(v); nxt.push(v);
-      const nv = await nodeOf(v);
-      if (nv && nv.person) for (const e2 of await edgesOf(v)) { const w = e2.s === v ? e2.t : e2.s; if (!keep.has(w)) { keep.add(w); nxt.push(w); } }
-    }
+    const lists = await Promise.all(frontier.map(edgesOf));
+    for (let i = 0; i < frontier.length; i++) for (const e of lists[i]) { const v = e.s === frontier[i] ? e.t : e.s; if (!keep.has(v)) { keep.add(v); nxt.push(v); } }
+    const nv = await nodesOf(nxt);
+    const people = nxt.filter(v => nv[v] && nv[v].person);
+    const plists = await Promise.all(people.map(edgesOf));
+    for (let i = 0; i < people.length; i++) for (const e2 of plists[i]) { const w = e2.s === people[i] ? e2.t : e2.s; if (!keep.has(w)) { keep.add(w); nxt.push(w); } }
     frontier = nxt;
   }
-  const nodes = {}; for (const x of keep) nodes[x] = await nodeOf(x);
+  const nodes = await nodesOf([...keep]);
   let ids = [...keep].filter(x => nodes[x]);
   if (ids.length > 400) ids = [nid, ...ids.filter(x => x !== nid).sort((a, b) => nodes[b].deg - nodes[a].deg).slice(0, 399)];
   const set = new Set(ids), seen = new Set(), edges = [];
-  for (const x of ids) for (const e of await edgesOf(x)) if (set.has(e.s) && set.has(e.t) && !seen.has(e.id)) { seen.add(e.id); edges.push(e); }
+  for (const x of ids) for (const e of await edgesLoaded(x)) if (set.has(e.s) && set.has(e.t) && !seen.has(e.id)) { seen.add(e.id); edges.push(e); }
   return { center: nid, nodes: ids.map(x => ({ ...nodes[x], id: x })), edges };
 }
 let gravity = 'connections', glide = 1, glideStart = 0, influenceNote = '';
@@ -109,6 +112,9 @@ async function load() {
 let skyStatus = '', skyGenerated = '';
 
 // ------------------------------------------------------------ camera
+const barH = () => document.querySelector('.bar')?.offsetHeight || 58;
+const PHONE = () => window.innerWidth <= 640;
+const panelW = (W, open) => (open && !PHONE()) ? Math.min(416, W * 0.92) : 0;        // on a phone the panel takes the bottom, not the side
 function size() {
   const dpr = window.devicePixelRatio || 1, W = window.innerWidth, H = window.innerHeight;
   if (canvas.width !== W * dpr || canvas.height !== H * dpr) { canvas.width = W * dpr; canvas.height = H * dpr; }
@@ -123,7 +129,7 @@ function project(p, W, H) {
   const zc = z2 + cam.dist;
   if (zc < 30) return null;
   const f = Math.min(W, H) * 0.95 / zc;
-  return { sx: W / 2 + cam.panX + x1 * f, sy: (H + 58) / 2 + cam.panY + y2 * f, f, z: zc };
+  return { sx: W / 2 + cam.panX + x1 * f, sy: (H + barH()) / 2 + cam.panY + y2 * f, f, z: zc };
 }
 function fitAll() {
   const pts = mode === 'sky' ? stars : con.nodes;
@@ -141,7 +147,7 @@ const zoom = (f, mx, my) => {
   if (mx != null) {
     const W = window.innerWidth, H = window.innerHeight;
     cam.panX = (mx - W / 2) - ((mx - W / 2) - cam.panX) * k;
-    cam.panY = (my - (H + 58) / 2) - ((my - (H + 58) / 2) - cam.panY) * k;
+    cam.panY = (my - (H + barH()) / 2) - ((my - (H + barH()) / 2) - cam.panY) * k;
   }
   cam.dist = after; dirty = true;
 };
@@ -401,7 +407,7 @@ async function openConstellation(id, hops = 1) {
   mode = 'constellation'; alpha = 1; hover = null;
   document.getElementById('nav-sky').textContent = '← Back to the sky';
   renderPanel(c, hops);
-  cam.tx = cam.ty = cam.tz = 0; cam.dist = 420 + Math.sqrt(c.nodes.length) * 40; cam.panX = -(panel.classList.contains('open') ? 190 : 0); cam.panY = 0;
+  cam.tx = cam.ty = cam.tz = 0; cam.dist = 420 + Math.sqrt(c.nodes.length) * 40; cam.panX = -(panel.classList.contains('open') && !PHONE() ? 190 : 0); cam.panY = 0;
   dirty = true;
   location.hash = id;
 }
@@ -467,9 +473,30 @@ function pick(sx, sy) {
   return best;
 }
 let drag = null;
+const fingers = new Map(); let pinch = null;                 // two fingers: zoom where they are and move the view; no click afterwards
 canvas.addEventListener('contextmenu', e => e.preventDefault());
-canvas.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY, moved: false, pan: e.button === 2 || e.shiftKey }; canvas.setPointerCapture(e.pointerId); canvas.classList.add('grabbing'); });
+canvas.addEventListener('pointerdown', e => {
+  fingers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (fingers.size >= 2) {
+    const [a, b] = [...fingers.values()];
+    pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2 }; drag = null; tip.hidden = true;
+  } else drag = { x: e.clientX, y: e.clientY, moved: false, pan: e.button === 2 || e.shiftKey };
+  canvas.setPointerCapture(e.pointerId); canvas.classList.add('grabbing');
+});
+const letGo = e => {
+  fingers.delete(e.pointerId);
+  if (fingers.size < 2) { const was = pinch; pinch = null; if (was) drag = null; }
+  if (canvas.hasPointerCapture(e.pointerId)) canvas.releasePointerCapture(e.pointerId);
+};
+canvas.addEventListener('pointercancel', e => { letGo(e); drag = null; canvas.classList.remove('grabbing'); });
 canvas.addEventListener('pointermove', e => {
+  if (fingers.has(e.pointerId)) fingers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pinch && fingers.size >= 2) {
+    const [a, b] = [...fingers.values()], d = Math.hypot(a.x - b.x, a.y - b.y), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+    if (!(mode === 'sky' && picture()) && pinch.d > 0) zoom(d / pinch.d, mx, my);
+    cam.panX += mx - pinch.mx; cam.panY += my - pinch.my;
+    pinch = { d, mx, my }; dirty = true; return;
+  }
   if (mode === 'sky' && gravity === 'flows') { drag = null; flowsHover(e); return; }
   if (mode === 'sky' && gravity === 'loops') { drag = null; loopsHover(e); return; }
   if (drag) {
@@ -488,6 +515,7 @@ canvas.addEventListener('pointermove', e => {
   } else tip.hidden = true;
 });
 canvas.addEventListener('pointerup', e => {
+  if (pinch || (fingers.size >= 2)) { letGo(e); return; }
   if (mode === 'sky' && gravity === 'flows') { const b = flowAt(e.clientX, e.clientY); if (b) { tip.hidden = true; openBand(b); } }
   else if (mode === 'sky' && gravity === 'loops') { const l = loopAt(e.clientX, e.clientY); if (l) { tip.hidden = true; openLoop(l); } }
   else if (drag && !drag.moved && !drag.pan) {
@@ -496,10 +524,11 @@ canvas.addEventListener('pointerup', e => {
     else { const h = pick(e.clientX, e.clientY); if (h) openConstellation(h.s.id); }
   }
   drag = null; canvas.classList.remove('grabbing');
-  if (canvas.hasPointerCapture(e.pointerId)) canvas.releasePointerCapture(e.pointerId);
+  letGo(e);
 });
 canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; zoom(Math.exp(-e.deltaY * 0.0012), e.clientX, e.clientY); }, { passive: false });
-window.addEventListener('resize', () => { dirty = true; });
+const setBar = () => document.documentElement.style.setProperty('--bar', barH() + 'px');
+setBar(); window.addEventListener('resize', () => { setBar(); dirty = true; });
 window.addEventListener('keydown', e => { if (e.key === ' ' && e.target === document.body) { spin = !spin; e.preventDefault(); } if (e.key === 'Escape' && mode === 'constellation') backToSky(); });
 
 // search
@@ -527,6 +556,7 @@ function showPage(id) {
     document.getElementById(nav).classList.toggle('on', on);
   }
   document.getElementById('nav-sky').classList.toggle('on', !id);
+  document.body.classList.toggle('paged', !!id);                    // a page covers the sky; the detail panel waits underneath until Sky is chosen again
   if (id === 'reports') loadReports();
   if (id === 'balance-page') loadBalance();
   if (id === 'rulebook-page') loadRulebook();
@@ -648,20 +678,20 @@ function flowsNote() {
 function drawFlows(W, H) {
   ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H);
   flowShapes = []; projected = [];
-  if (!flows) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the flows…', W / 2, (H + 58) / 2); return; }
+  if (!flows) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the flows…', W / 2, (H + barH()) / 2); return; }
   const doms = Object.keys(SHORT).filter(d => !(dimmed.size && dimmed.has(d)));
   const bs = bandsShown(), amount = byAmount();
   const weight = b => amount ? (b.amount || 0) : b.count;
   const open = panel.classList.contains('open');
   const legendEl = document.getElementById('legend'), noteEl = document.getElementById('flows-note');
-  const floor = legendEl ? Math.min(H, legendEl.getBoundingClientRect().top) : H;      // the legend bar must not cover a group's name
-  const cx = (W - (open ? Math.min(416, W * 0.92) : 0)) / 2;
-  const size = fl => Math.max(80, Math.min(W - (open ? Math.min(416, W * 0.92) : 0), fl - 58 - 100) / 2 - 92);
-  let fl = floor, R = size(fl), cy = (fl + 58) / 2 + 6;
+  const floor = Math.min(H, legendEl ? legendEl.getBoundingClientRect().top : H, open && PHONE() ? panel.getBoundingClientRect().top : H);      // the legend bar (and, on a phone, the open panel) must not cover a group's name
+  const PW = panelW(W, open), cx = (W - PW) / 2;
+  const size = fl => Math.max(80, Math.min(W - panelW(W, open), fl - barH() - 100) / 2 - 92);
+  let fl = floor, R = size(fl), cy = (fl + barH()) / 2 + 6;
   if (noteEl && !noteEl.hidden) {                                                       // the note sits bottom-left; if it would touch the circle, the circle sits above it
     const nb = noteEl.getBoundingClientRect();
     const dx = Math.max(0, (cx - R - 110) - nb.right), dy = Math.max(0, nb.top - (cy + R + 40));
-    if (dx === 0 && dy === 0) { fl = Math.min(floor, nb.top); R = size(fl); cy = (fl + 58) / 2 + 6; }
+    if (dx === 0 && dy === 0) { fl = Math.min(floor, nb.top); R = size(fl); cy = (fl + barH()) / 2 + 6; }
   }
   const total = {}; for (const d of doms) total[d] = 0;
   for (const b of bs) { total[b.from] += weight(b); total[b.to] += weight(b); }
@@ -716,7 +746,10 @@ function drawFlows(W, H) {
     ctx.lineWidth = 4; ctx.strokeStyle = PAPER; ctx.strokeText(SHORT[d], lx, ly - 8); ctx.fillStyle = color[d]; ctx.fillText(SHORT[d], lx, ly - 8);
     const nIn = bs.filter(b => b.to === d).reduce((a, b) => a + b.count, 0), nOut = bs.filter(b => b.from === d).reduce((a, b) => a + b.count, 0);
     ctx.font = '10px "IBM Plex Mono", ui-monospace, monospace';
-    const sub = `${d} · ${nOut.toLocaleString()} out · ${nIn.toLocaleString()} in`;
+    let sub = `${d} · ${nOut.toLocaleString()} out · ${nIn.toLocaleString()} in`;
+    const roomX = right ? W - PW - lx - 6 : left ? lx - 6 : Infinity;              // on a narrow screen the counts give way before the name does
+    if (ctx.measureText(sub).width > roomX) sub = `${nOut.toLocaleString()} out · ${nIn.toLocaleString()} in`;
+    if (ctx.measureText(sub).width > roomX) sub = `${d} · ${(nOut + nIn).toLocaleString()}`;
     ctx.strokeText(sub, lx, ly + 8); ctx.fillStyle = css('--ink-soft'); ctx.fillText(sub, lx, ly + 8);
   }
   ctx.globalAlpha = 1; ctx.textBaseline = 'alphabetic';
@@ -813,12 +846,12 @@ function loopsNote() {
 function drawLoops(W, H) {
   ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H);
   loopShapes = []; projected = [];
-  if (!loops) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the loops…', W / 2, (H + 58) / 2); return; }
+  if (!loops) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the loops…', W / 2, (H + barH()) / 2); return; }
   const ls = loopsShown();
-  const open = panel.classList.contains('open'), PW = open ? Math.min(416, W * 0.92) : 0;
+  const open = panel.classList.contains('open'), PW = panelW(W, open);
   const noteEl = document.getElementById('flows-note'), legendEl = document.getElementById('legend');
   const noteB = noteEl && !noteEl.hidden ? noteEl.getBoundingClientRect().bottom : 0;
-  const legendT = legendEl ? legendEl.getBoundingClientRect().top : H - 70;
+  const legendT = Math.min(legendEl ? legendEl.getBoundingClientRect().top : H - 70, open && PHONE() ? panel.getBoundingClientRect().top : H);
   const left = 24, right = W - PW - 24, top = Math.max(150, noteB + 44), bottom = Math.min(H - 70, legendT - 18);
   if (!ls.length) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('no loops to draw', (left + right) / 2, (top + bottom) / 2); return; }
   // order: members by gift total (largest at top), bills under their member, companies by their first bill
