@@ -116,7 +116,8 @@
     body.print-page > :not(.page) { display: none !important; }
     body.print-page .page[hidden] { display: none !important; }
     body.print-page .page { position: static; inset: auto; height: auto; overflow: visible; background: #fff; color: #111; padding: 0; }
-    body.print-page .page a { color: #111; text-decoration: none; }
+    body.print-page .page a { color: #1a3f8f; text-decoration: underline; }
+    body.print-page .page a[href^="http"]::after { content: " " attr(href); font-size: 0.7em; color: #555; word-break: break-all; }
     body.print-page .page th, body.print-page .page td { border-color: #ccc; }
     body.print-page .page h1, body.print-page .page h2 { break-after: avoid; }
     body.print-page .page table, body.print-page .page tr { break-inside: avoid; }
