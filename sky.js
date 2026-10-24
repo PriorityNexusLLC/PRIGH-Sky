@@ -437,8 +437,8 @@ function renderPanel(c, hops) {
     </div>
     <div class="btns">
       <button class="btn primary" id="hops" type="button">${hops === 1 ? 'Widen to 2 hops' : 'Narrow to 1 hop'}</button>
-      ${PUBLIC_PAGE ? `<button class="btn" id="report" type="button" title="A read-only report built here, in your browser, from the filed records on this page: every connection with its filing, what is checked and what is not, the right of reply, a fingerprint. Printable.">Report on this entity</button>`
-        : `<button class="btn" id="draft" type="button" title="Draft a report from the filings on the map: findings, limits, right of reply, fingerprint. A draft; nothing is published.">Draft a report</button>
+      ${PUBLIC_PAGE ? `<button class="btn" id="report" type="button" title="A read-only report built here, in your browser, from the filed records on this page: every connection with its filing, what is checked and what is not, how to respond, a fingerprint. Printable.">Report on this entity</button>`
+        : `<button class="btn" id="draft" type="button" title="Draft a report from the filings on the map: findings, limits, the route to respond, fingerprint. A draft; nothing is published.">Draft a report</button>
       <a class="btn" href="/#${encodeURIComponent(c.center)}" title="Open in the working viewer">Workbench</a>`}
     </div>
     <p class="kicker" style="color:var(--ink-soft)">${mine.length} filed connection${mine.length === 1 ? '' : 's'}</p>
