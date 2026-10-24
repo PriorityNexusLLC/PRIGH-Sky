@@ -107,7 +107,21 @@
   .report-page { z-index: 12; } .report h1 { margin-top: .4rem; } .report h3 { text-transform: capitalize; margin: 1.2rem 0 .3rem; } .report h3 .n { color: var(--ink-soft); font-weight: 400; }
   .report table { border-collapse: collapse; width: 100%; font-size: .8rem; } .report th, .report td { text-align: left; vertical-align: top; padding: .3rem .4rem; border-bottom: 1px solid var(--line); } .report th { color: var(--ink-soft); }
   .report tr.ended td { color: var(--ink-soft); } .report .p-confirmed { color: #5fc48a; } .report .p-one-source { color: #85a6ec; } .report .p-alert { color: #e06c5f; } .report .meta { color: var(--ink-soft); font-size: .85rem; }
-  @media print { body > :not(#report-page) { display: none !important; } #report-page { position: static; inset: auto; background: #fff; color: #111; padding: 0; } .no-print { display: none !important; } .report a { color: #111; } .report th, .report td { border-color: #ccc; } }
+  .page .btns { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.2rem 0 1.2rem; }
+  .page .btn { font-size: 0.82rem; color: var(--ink); background: var(--accent-soft); border: 0; border-radius: 8px; padding: 0.4rem 0.7rem; cursor: pointer; }
+  .page .btn.primary { background: var(--accent); color: #0f1320; font-weight: 600; }
+  @media print {
+    body:not(.print-page) > :not(#report-page) { display: none !important; }
+    #report-page { position: static; inset: auto; background: #fff; color: #111; padding: 0; }
+    body.print-page > :not(.page) { display: none !important; }
+    body.print-page .page[hidden] { display: none !important; }
+    body.print-page .page { position: static; inset: auto; height: auto; overflow: visible; background: #fff; color: #111; padding: 0; }
+    body.print-page .page a { color: #111; text-decoration: none; }
+    body.print-page .page th, body.print-page .page td { border-color: #ccc; }
+    body.print-page .page h1, body.print-page .page h2 { break-after: avoid; }
+    body.print-page .page table, body.print-page .page tr { break-inside: avoid; }
+    .no-print { display: none !important; } .report a { color: #111; } .report th, .report td { border-color: #ccc; }
+  }
   .about[hidden] { display: none; }
   .about .wrap { max-width: 44rem; margin: 0 auto; }
   .about .kicker { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
@@ -335,6 +349,7 @@
     <p class="kicker">November 2026</p>
     <h1>What the filings show about the candidates on the ballot.</h1>
     <p>Two readings of the public record: company PAC money to the 2026 candidates, and the committees those companies answer to. Patterns, not findings. Every number links to its FEC page.</p>
+    <div class="btns no-print"><button class="btn primary" type="button" id="november-print" title="Prints this page alone, or saves it as a PDF from the print dialog">Print or save as PDF</button></div>
     <div id="november-body" class="rpt"><p class="mono" style="font-size:.78rem">reading…</p></div>
   </div>
 </section>
@@ -379,6 +394,6 @@
   </div>
 </section>
 
-<script type="module" src="sky.js?v=2e544f24"></script>
+<script type="module" src="sky.js?v=3e05ccfa"></script>
 </body>
 </html>

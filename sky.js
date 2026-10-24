@@ -1198,8 +1198,16 @@ function detail(r) {
 
 // ------------------------------------------------------------ November 2026: the two candidate reports, written by the project, served as pages
 let november = null;
+function printPage() {                                   // print the open page alone (the print CSS hides the sky, the bar and the rest)
+  document.body.classList.add('print-page');
+  const done = () => document.body.classList.remove('print-page');
+  window.addEventListener('afterprint', done, { once: true });
+  setTimeout(() => { window.print(); setTimeout(done, 2000); }, 50);
+}
 async function loadNovember() {
   const box = document.getElementById('november-body'); if (!box) return;
+  const pb = document.getElementById('november-print');
+  if (pb && !pb.dataset.wired) { pb.dataset.wired = '1'; pb.addEventListener('click', printPage); }
   if (!november) {
     try { november = await fetch(STATIC ? 'data/november.json' : '/api/november').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }); }
     catch (e) { box.innerHTML = `<p class="mono" style="font-size:.78rem">could not be read: ${esc(e.message)}</p>`; return; }
