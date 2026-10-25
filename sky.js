@@ -1030,7 +1030,8 @@ async function entityReport(c) {
   if (money.size) summary.push(`Money on the record: ${[...money.keys()].join(', ')}; ${moneyFmt(moneyTotal)} paid or received where the filings state an amount (section 4.3).`);
   summary.push(`${counts.confirmed} of the direct connections are confirmed by a second source; ${counts['not checked yet']} are not checked yet${counts.alert ? `; ${counts.alert} cite a source that has changed` : ''}.`);
   const body = `<h1>${esc(me.label)}: connections on the public record</h1>
-<p class="meta">Published by Priority Nexus LLC · Systems Assurance Forensic Investigation &amp; Design · built ${today} in your browser from the public sky (prioritynexusllc.github.io/PRIGH-Sky) · read-only</p>
+<p class="meta">Built ${today} in a visitor's browser from the public map of Priority Nexus LLC (prioritynexusllc.github.io/PRIGH-Sky) · read-only</p>
+<p class="meta"><b>Not reviewed or approved by a person. This is not a report published by Priority Nexus.</b></p>
 <p><b>Signals for review, not findings of wrongdoing.</b> Everything below is what public filings report. Each item links to its filing so any reader can check it.</p>
 <h2>1. Summary</h2><p>${summary.join(' ')}</p>
 <h2>2. Scope</h2><ul>
