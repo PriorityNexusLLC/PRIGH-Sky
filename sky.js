@@ -1215,4 +1215,5 @@ async function loadNovember() {
     catch (e) { box.innerHTML = `<p class="mono" style="font-size:.78rem">could not be read: ${esc(e.message)}</p>`; return; }
   }
   box.innerHTML = november.reports.map(r => `<h1>${esc(r.title)}</h1><p class="gen">written ${esc(r.generated)} from FEC filings and the House and Senate rosters · descriptive patterns, not findings</p>${r.html}`).join('<hr style="border:0;border-top:1px solid var(--line);margin:2.5rem 0">');
+  box.querySelectorAll('a.map[data-go]').forEach(el => el.addEventListener('click', ev => { ev.preventDefault(); showPage(null); openConstellation(el.dataset.go); }));
 }
