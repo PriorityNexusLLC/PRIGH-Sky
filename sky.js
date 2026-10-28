@@ -111,7 +111,7 @@ async function load() {
   skyGenerated = res.generated.slice(0, 10);
   skyStatus = `${stars.length.toLocaleString()} entities · generated ${res.generated.slice(0, 10)}`
     + (res.building ? ' · the map changed: a new sky is being built, entities added since are not placed yet (reload in a few minutes)' : '')
-    + ' · drag to move · wheel, + and − to zoom · double-click to center there · click a domain chip or a galaxy's name to fly to it · click a star to open it · arrow keys move, 0 fits all';
+    + ' · drag to move · wheel, + and − to zoom · double-click to center there · click a domain chip or a galaxy\'s name to fly to it · click a star to open it · arrow keys move, 0 fits all';
   status.textContent = skyStatus;
   fitAll();
 }
