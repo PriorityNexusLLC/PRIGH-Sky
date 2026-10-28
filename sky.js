@@ -163,7 +163,7 @@ const zoom = (f, mx, my) => {
     cam.panY = (my - midY(H)) - ((my - midY(H)) - cam.panY) * k;
   }
   if (after > before && home && mode === 'sky') {
-    const t = after >= home.dist ? 1 : Math.min(1, (after - before) / Math.max(1, home.dist - before));   // this step's share of the way out
+    const t = after >= home.dist ? 1 : Math.min(1, Math.log(after / before) / Math.max(1e-6, Math.log(home.dist / before)));   // this step's share of the zoom steps left to the starting view, so every step moves the same share of the way home
     cam.tx += (home.x - cam.tx) * t; cam.ty += (home.y - cam.ty) * t; cam.tz += (home.z - cam.tz) * t;
     cam.panX *= 1 - t; cam.panY *= 1 - t;
     if (t >= 1 && !orbit3d) { cam.yaw = 0; cam.pitch = 0; }
