@@ -119,6 +119,8 @@ let skyStatus = '', skyGenerated = '';
 
 // ------------------------------------------------------------ camera
 const barH = () => document.querySelector('.bar')?.offsetHeight || 58;
+const legendH = () => document.getElementById('legend')?.offsetHeight || 0;   // the key along the bottom; the sky is centered between the two bars
+const midY = H => (H + barH() - legendH()) / 2;
 const PHONE = () => window.innerWidth <= 640;
 const panelW = (W, open) => (open && !PHONE()) ? Math.min(416, W * 0.92) : 0;        // on a phone the panel takes the bottom, not the side
 function size() {
@@ -135,7 +137,7 @@ function project(p, W, H) {
   const zc = z2 + cam.dist;
   if (zc < 30) return null;
   const f = Math.min(W, H) * 0.95 / zc;
-  return { sx: W / 2 + cam.panX + x1 * f, sy: (H + barH()) / 2 + cam.panY + y2 * f, f, z: zc };
+  return { sx: W / 2 + cam.panX + x1 * f, sy: midY(H) + cam.panY + y2 * f, f, z: zc };
 }
 function fitAll() {
   const pts = mode === 'sky' ? stars : con.nodes;
@@ -153,7 +155,7 @@ const zoom = (f, mx, my) => {
   if (mx != null) {
     const W = window.innerWidth, H = window.innerHeight;
     cam.panX = (mx - W / 2) - ((mx - W / 2) - cam.panX) * k;
-    cam.panY = (my - (H + barH()) / 2) - ((my - (H + barH()) / 2) - cam.panY) * k;
+    cam.panY = (my - midY(H)) - ((my - midY(H)) - cam.panY) * k;
   }
   cam.dist = after; dirty = true;
 };
@@ -536,7 +538,7 @@ canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' &
 canvas.addEventListener('dblclick', e => {                        // center the view on that spot and come closer (the one pointer-placed move)
   if (mode === 'sky' && picture()) return;
   const W = window.innerWidth, H = window.innerHeight;
-  cam.panX -= e.clientX - W / 2; cam.panY -= e.clientY - (H + barH()) / 2; zoom(1.8); tip.hidden = true;
+  cam.panX -= e.clientX - W / 2; cam.panY -= e.clientY - midY(H); zoom(1.8); tip.hidden = true;
 });
 // On-screen controls and keys: + / − zoom, fit, 3D on or off
 const ctl = id => document.getElementById(id);
@@ -706,7 +708,7 @@ function flowsNote() {
 function drawFlows(W, H) {
   ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H);
   flowShapes = []; projected = [];
-  if (!flows) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the flows…', W / 2, (H + barH()) / 2); return; }
+  if (!flows) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the flows…', W / 2, midY(H)); return; }
   const doms = Object.keys(SHORT).filter(d => !(dimmed.size && dimmed.has(d)));
   const bs = bandsShown(), amount = byAmount();
   const weight = b => amount ? (b.amount || 0) : b.count;
@@ -874,7 +876,7 @@ function loopsNote() {
 function drawLoops(W, H) {
   ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H);
   loopShapes = []; projected = [];
-  if (!loops) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the loops…', W / 2, (H + barH()) / 2); return; }
+  if (!loops) { ctx.fillStyle = css('--ink-soft'); ctx.font = '13px "IBM Plex Mono", ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('reading the loops…', W / 2, midY(H)); return; }
   const ls = loopsShown();
   const open = panel.classList.contains('open'), PW = panelW(W, open);
   const noteEl = document.getElementById('flows-note'), legendEl = document.getElementById('legend');

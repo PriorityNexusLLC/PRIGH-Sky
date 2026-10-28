@@ -147,20 +147,25 @@
   .rcard .links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.3rem; }
   .rcard .links a, .rcard .links button { font-size: 0.82rem; color: var(--ink); background: var(--accent-soft); border: 0; border-radius: 8px; padding: 0.35rem 0.65rem; text-decoration: none; }
   .empty { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.8rem; }
-  /* phones: the bar wraps to two rows (name + search, then the pages as one strip you can swipe), the key is one strip you can
-     swipe along the bottom, the detail panel rises from the bottom instead of the side, and the sky keeps the whole width. */
+  /* phones: the bar wraps (name + search, then the pages on one or two rows), the key at the bottom wraps into short
+     labelled rows so every option is on the screen with nothing to swipe (Josie 2026-10-28), the detail panel rises
+     from the bottom instead of the side, and the sky keeps the whole width between the two bars. */
   @media (max-width: 640px) {
     .wordmark span { display: none; } .nav a.alt { display: none; }
     .bar { flex-wrap: wrap; gap: 0.4rem 0.7rem; padding: 0.5rem 12px 0.3rem; }
     .search { flex: 1 1 auto; max-width: none; min-width: 0; }
     .search input { font-size: 16px; padding: 0.4rem 0.6rem; }
-    .nav { flex: 1 0 100%; margin-left: 0; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    .nav::-webkit-scrollbar { display: none; }
-    .nav button { font-size: 0.82rem; padding: 0.3rem 0.5rem; }
-    .legend { flex-wrap: nowrap; overflow-x: auto; gap: 0.7rem; padding: 0.3rem 12px; font-size: 0.72rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    .legend::-webkit-scrollbar { display: none; }
-    .legend .row { flex-wrap: nowrap; }
+    .nav { flex: 1 0 100%; margin-left: 0; flex-wrap: wrap; justify-content: flex-start; gap: 0 0.1rem; }
+    .nav button { font-size: 0.78rem; padding: 0.2rem 0.4rem; }
+    .legend { flex-wrap: wrap; gap: 0.2rem 0; padding: 0.3rem 12px 0.45rem; font-size: 0.7rem; align-items: flex-start; }
+    .legend .group { flex: 1 0 100%; white-space: normal; align-items: flex-start; gap: 0.35rem; }
+    .legend .group .k { flex: 0 0 3.9rem; padding-top: 0.22rem; font-size: 0.58rem; }
+    .legend .row { flex-wrap: wrap; gap: 0.2rem 0.22rem; }
+    .legend .sep { display: none; }
+    .legend .chip { font-size: 0.6rem; padding: 0.1rem 0.4rem; gap: 0.25rem; }
+    .legend .chip .d { width: 7px; height: 7px; }
     .legend .status { display: none; }
+    .ctl { right: 8px; gap: 5px; } .ctl button { width: 34px; height: 34px; font-size: 0.95rem; }
     .flows-note { left: 12px; right: 12px; max-width: none; font-size: 0.72rem; }
     .tip { max-width: 72vw; font-size: 0.78rem; }
     .panel { top: auto; left: 0; right: 0; bottom: 0; width: 100%; height: 56vh; border-left: 0; border-top: 1px solid var(--line); border-radius: 14px 14px 0 0; transform: translateY(105%); padding: 1rem 16px 2rem; }
@@ -408,6 +413,6 @@
   </div>
 </section>
 
-<script type="module" src="sky.js?v=e773a720"></script>
+<script type="module" src="sky.js?v=70434b76"></script>
 </body>
 </html>
