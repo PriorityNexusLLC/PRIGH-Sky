@@ -99,6 +99,10 @@ async function load() {
   chips.addEventListener('click', ev => {
     const b = ev.target.closest('[data-dom]'); if (!b) return;
     const d = b.dataset.dom;
+    if (!ev.shiftKey) {                                              // a click flies to that galaxy (Josie 2026-10-27: the outer ones were out of reach); Shift+click dims it
+      const m = domainMarks.find(x => x.d === d); if (m && mode === 'sky' && !picture()) { dimmed.delete(d); flyTo(m); chips.querySelectorAll('.chip').forEach(c => c.classList.toggle('off', dimmed.has(c.dataset.dom))); dirty = true; }
+      return;
+    }
     if (dimmed.has(d)) dimmed.delete(d); else dimmed.add(d);
     chips.querySelectorAll('.chip').forEach(c => c.classList.toggle('off', dimmed.has(c.dataset.dom)));
     dirty = true; if (gravity === 'flows') flowsStatus();
@@ -107,7 +111,7 @@ async function load() {
   skyGenerated = res.generated.slice(0, 10);
   skyStatus = `${stars.length.toLocaleString()} entities · generated ${res.generated.slice(0, 10)}`
     + (res.building ? ' · the map changed: a new sky is being built, entities added since are not placed yet (reload in a few minutes)' : '')
-    + ' · drag to move · wheel, + and − to zoom · arrow keys move, 0 fits all · click a name to fly to it · click a star to open it';
+    + ' · drag to move · wheel, + and − to zoom · double-click to center there · click a domain chip or a galaxy's name to fly to it · click a star to open it · arrow keys move, 0 fits all';
   status.textContent = skyStatus;
   fitAll();
 }
@@ -529,6 +533,11 @@ canvas.addEventListener('pointerup', e => {
   letGo(e);
 });
 canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; zoom(Math.exp(-e.deltaY * 0.0012)); }, { passive: false });   // from the middle of the view, never the pointer (Josie 2026-10-27)
+canvas.addEventListener('dblclick', e => {                        // center the view on that spot and come closer (the one pointer-placed move)
+  if (mode === 'sky' && picture()) return;
+  const W = window.innerWidth, H = window.innerHeight;
+  cam.panX -= e.clientX - W / 2; cam.panY -= e.clientY - (H + barH()) / 2; zoom(1.8); tip.hidden = true;
+});
 // On-screen controls and keys: + / − zoom, fit, 3D on or off
 const ctl = id => document.getElementById(id);
 ctl('zoom-in')?.addEventListener('click', () => { if (!(mode === 'sky' && picture())) zoom(1.35); });
