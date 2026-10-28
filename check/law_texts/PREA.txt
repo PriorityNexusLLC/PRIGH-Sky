@@ -1,0 +1,1304 @@
+Prison Rape Elimination Act (PREA) and its national standards
+34 U.S.C. §30301 et seq.; 28 C.F.R. Part 115
+Read from: subchapter /us/usc/t34/stII/ch217/schV (OLRC XML 119-124)
+Heading: MISCELLANEOUS
+
+SUBCHAPTER V— MISCELLANEOUS
+§ 21751. Model power of attorney legislation
+The Attorney General shall publish model power of attorney legislation for the purpose of preventing elder abuse.
+§ 21752. Best practices and model legislation for guardianship proceedings
+The Attorney General shall publish best practices for improving guardianship proceedings and model legislation relating to guardianship proceedings for the purpose of preventing elder abuse.
+CHAPTER 219— ASHANTI ALERT COMMUNICATIONS NETWORK
+§ 21901. Definitions
+In this chapter:
+(1) AMBER Alert communications network
+The term “AMBER Alert communications network” means the AMBER Alert communications network established under subtitle A of title III of the PROTECT Act ( 34 U.S.C. 20501 et seq.).
+(2) Ashanti Alert
+The term “Ashanti Alert” means an alert issued through the Ashanti Alert communications network, related to a missing adult.
+(3) Ashanti Alert communications network
+The term “Ashanti Alert communications network” means the national communications network established by the Attorney General under section 21902(a) of this title .
+(4) Ashanti Alert Coordinator of the Department of Justice; Coordinator
+The term “Ashanti Alert Coordinator of the Department of Justice” or “Coordinator” means the employee designated by the Attorney General to act as the national coordinator of the Ashanti Alert communications network under section 21903(a) of this title .
+(5) Ashanti Alert plan
+The term “Ashanti Alert plan” means a local element of the Ashanti Alert communications network.
+(6) Indian Tribe
+The term “Indian Tribe” means a federally recognized Indian Tribe or a Native village, Regional Corporation, or Village Corporation (as those terms are defined in section 1602 of title 43 ).
+(7) Missing adult
+The term “missing adult” means an individual who—
+(A) is older than the age for which an alert may be issued through the AMBER Alert communications network in the State or territory of an Indian Tribe in which the individual is identified as a missing individual;
+(B) is identified by a law enforcement agency as a missing individual; and
+(C) meets the requirements to be designated as a missing adult, as determined by the State in which, or the Indian Tribe in the territory of which, the individual is identified as a missing individual.
+(8) State
+The term “State” means each of the 50 States, the District of Columbia, the Commonwealth of Puerto Rico, the United States Virgin Islands, Guam, American Samoa, and the Commonwealth of the Northern Mariana Islands.
+§ 21902. Ashanti Alert communications network
+(a) In general
+The Attorney General shall, subject to the availability of appropriations, establish a national communications network within the Office of Justice Programs of the Department of Justice to provide assistance to regional and local search efforts for missing adults through the initiation, facilitation, and promotion of local elements of the network, in coordination with States, Indian Tribes, units of local government, law enforcement agencies, and other concerned entities with expertise in providing services to adults.
+(b) Integration with existing communications network
+In establishing the Ashanti Alert communications network under subsection (a), the Attorney General shall coordinate, when advisable, with missing person alert systems in existence as of December 31, 2018 , such as the AMBER Alert communications network and Silver Alert communications networks.
+§ 21903. Ashanti Alert Coordinator
+(a) National coordinator within Department of Justice
+The Attorney General shall designate an employee of the Office of Justice Programs of the Department of Justice to act as the national coordinator of the Ashanti Alert communications network.
+(b) Duties of the Coordinator
+In acting as the national coordinator of the Ashanti Alert communications network, the Coordinator shall—
+(1) work with States and Indian Tribes to encourage the development of additional Ashanti Alert plans in the network;
+(2) establish voluntary guidelines for States and Indian Tribes to use in developing Ashanti Alert plans that will promote compatible and integrated Ashanti Alert plans throughout the United States, including—
+(A) a list of the resources necessary to establish an Ashanti Alert plan;
+(B) criteria for evaluating whether a situation warrants issuing an Ashanti Alert, taking into consideration the need for the use of Ashanti Alerts to be limited in scope because the effectiveness of the Ashanti Alert communications network may be affected by overuse, including criteria to determine—
+(i) whether the mental capacity of an adult who is missing, and the circumstances of his or her disappearance, including any history of domestic violence, sexual assault, child abuse, or human trafficking, warrant the issuance of an Ashanti Alert; and
+(ii) whether the individual who reports that an adult is missing is an appropriate and credible source on which to base the issuance of an Ashanti Alert;
+(C) a description of the appropriate uses of the Ashanti Alert name to readily identify the nature of search efforts for missing adults; and
+(D) recommendations on how to protect the privacy, dignity, independence, autonomy, and safety of any missing adult who may be the subject of an Ashanti Alert;
+(3) develop proposed protocols for efforts to recover missing adults and to reduce the number of adults who are reported missing, including protocols for procedures that are needed from the time of initial notification of a law enforcement agency that the adult is missing through the time of the return of the adult to family, guardian, or domicile, as appropriate, including—
+(A) public safety communications protocol;
+(B) case management protocol;
+(C) command center operations;
+(D) reunification protocol;
+(E) incident review, evaluation, debriefing, and public information procedures; and
+(F) protocols for declining to issue an Ashanti Alert;
+(4) work with States and Indian Tribes to ensure appropriate regional coordination of various elements of the network;
+(5) establish an advisory group to assist States, Indian Tribes, units of local government, law enforcement agencies, and other entities involved in the Ashanti Alert communications network with initiating, facilitating, and promoting Ashanti Alert plans, which shall include—
+(A) to the maximum extent practicable, representation from the various geographic regions of the United States; and
+(B) members who are—
+(i) representatives of adult citizen advocacy groups, law enforcement agencies, victim service providers (as defined in section 12291(a) of this title ), and public safety communications;
+(ii) broadcasters, first responders, dispatchers, and radio station personnel; and
+(iii) representatives of any other individuals or organizations that the Coordinator determines are necessary to the success of the Ashanti Alert communications network; and
+(6) act as the nationwide point of contact for—
+(A) the development of the network; and
+(B) regional coordination of alerts for missing adults through the network.
+(c) Coordination
+(1) Coordination with other agencies
+The Coordinator shall coordinate and consult with the Secretary of Transportation, the Federal Communications Commission, the Assistant Secretary for Aging of the Department of Health and Human Services, and other appropriate offices of the Department of Justice, including the Office on Violence Against Women, in carrying out activities under this chapter.
+(2) State, tribal, and local coordination
+The Coordinator shall consult with local broadcasters and State, Tribal, and local law enforcement agencies in establishing minimum standards under section 21904 of this title and in carrying out other activities under this chapter, as appropriate.
+(d) Annual reports
+(1) In general
+Not later than 1 year after December 31, 2018 , and annually thereafter, the Coordinator shall submit to Congress a report on—
+(A) the activities of the Coordinator; and
+(B) the effectiveness and status of the Ashanti Alert plan of each State or Indian Tribe that has established or is in the process of establishing such a plan.
+(2) Contents
+Each report under paragraph (1) shall include—
+(A) a list of each State or Indian Tribe that has established an Ashanti Alert plan;
+(B) a list of each State or Indian Tribe that is in the process of establishing an Ashanti Alert plan;
+(C) for each State or Indian Tribe that has established an Ashanti Alert plan, to the extent the data is available—
+(i) the number of Ashanti Alerts issued;
+(ii) the number of missing adults located successfully;
+(iii) the average period of time between the issuance of an Ashanti Alert and the location of the missing adult for whom the Alert was issued;
+(iv) the State or Tribal agency or authority issuing Ashanti Alerts, and the process by which Ashanti Alerts are disseminated;
+(v) the cost of establishing and operating the Ashanti Alert plan;
+(vi) the criteria used by the State or Indian Tribe to determine whether to issue an Ashanti Alert; and
+(vii) the extent to which missing adults for whom Ashanti Alerts were issued crossed State lines or territorial borders of an Indian Tribe;
+(D) actions States and Indian Tribes have taken to protect the privacy and dignity of the missing adults for whom Ashanti Alerts are issued;
+(E) ways that States and Indian Tribes have facilitated and improved communication about missing adults between families, caregivers, law enforcement officials, and other authorities; and
+(F) any other information the Coordinator determines to be appropriate.
+§ 21904. Minimum standards for issuance and dissemination of alerts through Ashanti Alert communications network
+(a) Establishment of minimum standards
+Subject to subsection (b), the Coordinator shall establish minimum standards for—
+(1) the issuance of alerts through the Ashanti Alert communications network; and
+(2) the extent of the dissemination of alerts issued through the Ashanti Alert communications network.
+(b) Limitations
+(1) Dissemination of information
+The minimum standards established under subsection (a) shall, to the maximum extent practicable (as determined by the Coordinator in consultation with State, Tribal, and local law enforcement agencies), provide for the dissemination of appropriate information relating to the special needs of a missing adult (including health care needs) to the appropriate law enforcement, public health, and other public officials.
+(2) Geographic areas
+The minimum standards established under subsection (a) shall, to the maximum extent practicable (as determined by the Coordinator in consultation with State, Tribal, and local law enforcement agencies), provide that the dissemination of an alert through the Ashanti Alert communications network shall be limited to the geographic areas that the missing adult could reasonably reach, considering—
+(A) the circumstances and physical and mental condition of the missing adult;
+(B) the modes of transportation available to the missing adult; and
+(C) the circumstances of the disappearance.
+(3) Other requirements
+The minimum standards established under subsection (a) shall require that, in order for an Ashanti Alert to be issued for a missing adult, the missing adult—
+(A) suffers from a proven mental or physical disability, as documented by a source determined credible by an appropriate law enforcement agency; or
+(B) be missing under circumstances that indicate, as determined by an appropriate law enforcement agency—
+(i) that the physical safety of the missing adult may be endangered; or
+(ii) that the disappearance of the missing adult may not have been voluntary, including an abduction or kidnapping.
+(4) Safety, privacy, and civil liberties protections
+The minimum standards established under subsection (a) shall—
+(A) ensure that alerts issued through the Ashanti Alert communications network comply with all applicable Federal, State, Tribal, and local privacy laws and regulations;
+(B) include standards that specifically provide for the protection of the civil liberties and sensitive medical information of missing adults; and
+(C) include standards requiring, as appropriate, a review of relevant court records, prior contacts with law enforcement, and other information relevant to the missing adult or the individual reporting, in order to provide protections against domestic violence.
+(5) State, Tribal, and local voluntary coordination
+In establishing minimum standards under subsection (a), the Coordinator may not interfere with the system of voluntary coordination between local broadcasters and State, Tribal, and local law enforcement agencies for purposes of regional and local search efforts for missing adults that was in effect on the day before December 31, 2018 .
+§ 21905. Voluntary participation
+The minimum standards established under section 21904(a) of this title , and any other guidelines and programs established under section 21903 of this title , shall be adoptable on a voluntary basis only.
+§ 21906. Training and educational programs
+The Coordinator shall make available to States, Indian Tribes, units of local government, law enforcement agencies, and other concerned entities that are involved in initiating, facilitating, or promoting Ashanti Alert plans, including broadcasters, first responders, dispatchers, public safety communications personnel, and radio station personnel—
+(1) training and educational programs related to the Ashanti Alert communications network and the capabilities, limitations, and anticipated behaviors of missing adults, which the Coordinator shall update regularly to encourage the use of new tools, technologies, and resources in Ashanti Alert plans; and
+(2) informational materials, including brochures, videos, posters, and websites to support and supplement the training and educational programs described in paragraph (1).
+§ 21907. Authorization of appropriations
+There is authorized to be appropriated to the Attorney General $3,000,000 to carry out the Ashanti Alert communications network as authorized under this chapter for each of fiscal years 2019 through 2022.
+Subtitle III— Prevention of Particular Crimes
+CHAPTER 301— COMPUTER CRIMES AND INTELLECTUAL PROPERTY CRIMES
+§ 30101. State grant program for training and prosecution of computer crimes
+(a) In general
+Subject to the availability of amounts provided in advance in appropriations Acts, the Office of Justice Programs shall make a grant to each State, which shall be used by the State, in conjunction with units of local government, State and local courts, other States, or combinations thereof in accordance with subsection (b).
+(b) Use of grant amounts
+Grants under this section may be used to establish and develop programs to—
+(1) assist State and local law enforcement agencies in enforcing State and local criminal laws relating to computer crime, including infringement of copyrighted works over the Internet;
+(2) assist State and local law enforcement agencies in educating the public to prevent and identify computer crime, including infringement of copyrighted works over the Internet;
+(3) educate and train State and local law enforcement officers and prosecutors to conduct investigations and forensic analyses of evidence and prosecutions of computer crime, including infringement of copyrighted works over the Internet;
+(4) assist State and local law enforcement officers and prosecutors in acquiring computer and other equipment to conduct investigations and forensic analysis of evidence of computer crimes; and
+(5) facilitate and promote the sharing of Federal law enforcement expertise and information about the investigation, analysis, and prosecution of computer crimes with State and local law enforcement officers and prosecutors, including the use of multijurisdictional task forces.
+(c) Assurances
+To be eligible to receive a grant under this section, a State shall provide assurances to the Attorney General that the State—
+(1) has in effect laws that penalize computer crime, such as criminal laws prohibiting—
+(A) fraudulent schemes executed by means of a computer system or network;
+(B) the unlawful damaging, destroying, altering, deleting, removing of computer software, or data contained in a computer, computer system, computer program, or computer network; or
+(C) the unlawful interference with the operation of or denial of access to a computer, computer program, computer system, or computer network;
+(2) an assessment of the State and local resource needs, including criminal justice resources being devoted to the investigation and enforcement of computer crime laws; and
+(3) a plan for coordinating the programs funded under this section with other federally funded technical assistant and training programs, including directly funded local programs such as the Local Law Enforcement Block Grant program (described under the heading “Violent Crime Reduction Programs, State and Local Law Enforcement Assistance” of the Departments of Commerce, Justice, and State, the Judiciary, and Related Agencies Appropriations Act, 1998 ( Public Law 105–119 )).
+(d) Matching funds
+The Federal share of a grant received under this section may not exceed 90 percent of the costs of a program or proposal funded under this section unless the Attorney General waives, wholly or in part, the requirements of this subsection.
+(e) Authorization of appropriations
+(1) In general
+There is authorized to be appropriated to carry out this section $25,000,000 for each of fiscal years 2009 through 2013.
+(2) Limitations
+Of the amount made available to carry out this section in any fiscal year not more than 3 percent may be used by the Attorney General for salaries and administrative expenses.
+(3) Minimum amount
+Unless all eligible applications submitted by any State or unit of local government within such State for a grant under this section have been funded, such State, together with grantees within the State (other than Indian tribes), shall be allocated in each fiscal year under this section not less than 0.75 percent of the total amount appropriated in the fiscal year for grants pursuant to this section, except that the United States Virgin Islands, American Samoa, Guam, and the Northern Mariana Islands each shall be allocated 0.25 percent.
+(f) Grants to Indian tribes
+Notwithstanding any other provision of this section, the Attorney General may use amounts made available under this section to make grants to Indian tribes for use in accordance with this section.
+§ 30102. Development and support of cybersecurity forensic capabilities
+(a) In general
+The Attorney General shall establish such regional computer forensic laboratories as the Attorney General considers appropriate, and provide support to existing computer forensic laboratories, in order that all such computer forensic laboratories have the capability—
+(1) to provide forensic examinations with respect to seized or intercepted computer evidence relating to criminal activity (including cyberterrorism);
+(2) to provide training and education for Federal, State, and local law enforcement personnel and prosecutors regarding investigations, forensic analyses, and prosecutions of computer-related crime (including cyberterrorism);
+(3) to assist Federal, State, and local law enforcement in enforcing Federal, State, and local criminal laws relating to computer-related crime;
+(4) to facilitate and promote the sharing of Federal law enforcement expertise and information about the investigation, analysis, and prosecution of computer-related crime with State and local law enforcement personnel and prosecutors, including the use of multijurisdictional task forces; and
+(5) to carry out such other activities as the Attorney General considers appropriate.
+(b) Authorization of appropriations
+(1) Authorization
+There is hereby authorized to be appropriated in each fiscal year $50,000,000 for purposes of carrying out this section.
+(2) Availability
+Amounts appropriated pursuant to the authorization of appropriations in paragraph (1) shall remain available until expended.
+§ 30103. Local law enforcement grants
+(a) Omitted
+(b) Grants
+The Office of Justice Programs of the Department of Justice may make grants to eligible State or local law enforcement entities, including law enforcement agencies of municipal governments and public educational institutions, for training, prevention, enforcement, and prosecution of intellectual property theft and infringement crimes (in this subsection referred to as “IP–TIC grants”), in accordance with the following:
+(1) Use of IP–TIC grant amounts
+IP–TIC grants may be used to establish and develop programs to do the following with respect to the enforcement of State and local true name and address laws and State and local criminal laws on anti-infringement, anti-counterfeiting, and unlawful acts with respect to goods by reason of their protection by a patent, trademark, service mark, trade secret, or other intellectual property right under State or Federal law:
+(A) Assist State and local law enforcement agencies in enforcing those laws, including by reimbursing State and local entities for expenses incurred in performing enforcement operations, such as overtime payments and storage fees for seized evidence.
+(B) Assist State and local law enforcement agencies in educating the public to prevent, deter, and identify violations of those laws.
+(C) Educate and train State and local law enforcement officers and prosecutors to conduct investigations and forensic analyses of evidence and prosecutions in matters involving those laws.
+(D) Establish task forces that include personnel from State or local law enforcement entities, or both, exclusively to conduct investigations and forensic analyses of evidence and prosecutions in matters involving those laws.
+(E) Assist State and local law enforcement officers and prosecutors in acquiring computer and other equipment to conduct investigations and forensic analyses of evidence in matters involving those laws.
+(F) Facilitate and promote the sharing, with State and local law enforcement officers and prosecutors, of the expertise and information of Federal law enforcement agencies about the investigation, analysis, and prosecution of matters involving those laws and criminal infringement of copyrighted works, including the use of multijurisdictional task forces.
+(2) Eligibility
+To be eligible to receive an IP–TIC grant, a State or local government entity shall provide to the Attorney General, in addition to the information regularly required to be provided under the Financial Guide issued by the Office of Justice Programs and any other information required of Department of Justice’s grantees—
+(A) assurances that the State in which the government entity is located has in effect laws described in paragraph (1);
+(B) an assessment of the resource needs of the State or local government entity applying for the grant, including information on the need for reimbursements of base salaries and overtime costs, storage fees, and other expenditures to improve the investigation, prevention, or enforcement of laws described in paragraph (1); and
+(C) a plan for coordinating the programs funded under this section with other federally funded technical assistance and training programs, including directly funded local programs such as the Edward Byrne Memorial Justice Assistance Grant Program authorized by subpart 1 of part E of title I of the Omnibus Crime Control and Safe Streets Act of 1968 ( 42 U.S.C. 3750 et seq.). 1
+(3) Matching funds
+The Federal share of an IP–TIC grant may not exceed 50 percent of the costs of the program or proposal funded by the IP–TIC grant.
+(4) Authorization of appropriations
+(A) Authorization
+There is authorized to be appropriated to carry out this subsection the sum of $25,000,000 for each of fiscal years 2009 through 2013.
+(B) Limitation
+Of the amount made available to carry out this subsection in any fiscal year, not more than 3 percent may be used by the Attorney General for salaries and administrative expenses.
+§ 30104. Improved investigative and forensic resources for enforcement of laws related to intellectual property crimes
+(a) In general
+Subject to the availability of appropriations to carry out this subsection, the Attorney General, in consultation with the Director of the Federal Bureau of Investigation, shall, with respect to crimes related to the theft of intellectual property—
+(1) ensure that there are at least 10 additional operational agents of the Federal Bureau of Investigation designated to support the Computer Crime and Intellectual Property Section of the Criminal Division of the Department of Justice in the investigation and coordination of intellectual property crimes;
+(2) ensure that any Computer Hacking and Intellectual Property Crime Unit in the Department of Justice is supported by at least 1 agent of the Federal Bureau of Investigation (in addition to any agent supporting such unit as of October 13, 2008 ) to support such unit for the purpose of investigating or prosecuting intellectual property crimes;
+(3) ensure that all Computer Hacking and Intellectual Property Crime Units located at an office of a United States Attorney are assigned at least 2 Assistant United States Attorneys responsible for investigating and prosecuting computer hacking or intellectual property crimes; and
+(4) ensure the implementation of a regular and comprehensive training program—
+(A) the purpose of which is to train agents of the Federal Bureau of Investigation in the investigation and prosecution of such crimes and the enforcement of laws related to intellectual property crimes; and
+(B) that includes relevant forensic training related to investigating and prosecuting intellectual property crimes.
+(b) Organized crime plan
+Subject to the availability of appropriations to carry out this subsection, and not later than 180 days after October 13, 2008 , the Attorney General, through the United States Attorneys’ Offices, the Computer Crime and Intellectual Property section, and the Organized Crime and Racketeering section of the Department of Justice, and in consultation with the Federal Bureau of Investigation and other Federal law enforcement agencies, such as the Department of Homeland Security, shall create and implement a comprehensive, long-range plan to investigate and prosecute international organized crime syndicates engaging in or supporting crimes relating to the theft of intellectual property.
+(c) Authorization
+There are authorized to be appropriated to carry out this section $10,000,000 for each of fiscal years 2009 through 2013.
+§ 30105. Additional funding for resources to investigate and prosecute intellectual property crimes and other criminal activity involving computers
+(a) Additional funding for resources
+(1) Authorization
+In addition to amounts otherwise authorized for resources to investigate and prosecute intellectual property crimes and other criminal activity involving computers, there are authorized to be appropriated for each of the fiscal years 2009 through 2013—
+(A) $10,000,000 to the Director of the Federal Bureau of Investigation; and
+(B) $10,000,000 to the Attorney General for the Criminal Division of the Department of Justice.
+(2) Availability
+Any amounts appropriated under paragraph (1) shall remain available until expended.
+(b) Use of additional funding
+Funds made available under subsection (a) shall be used by the Director of the Federal Bureau of Investigation and the Attorney General, for the Federal Bureau of Investigation and the Criminal Division of the Department of Justice, respectively, to—
+(1) hire and train law enforcement officers to—
+(A) investigate intellectual property crimes and other crimes committed through the use of computers and other information technology, including through the use of the Internet; and
+(B) assist in the prosecution of such crimes; and
+(2) enable relevant units of the Department of Justice, including units responsible for investigating computer hacking or intellectual property crimes, to procure advanced tools of forensic science and expert computer forensic assistance, including from non-governmental entities, to investigate, prosecute, and study such crimes.
+§ 30106. Annual reports
+(a) Report of the Attorney General
+Not later than 1 year after October 13, 2008 , and annually thereafter, the Attorney General shall submit a report to Congress on actions taken to carry out sections 30103 to 30106 of this title. The initial report required under this subsection shall be submitted by May 1, 2009 . All subsequent annual reports shall be submitted by May 1st of each fiscal year thereafter. The report required under this subsection may be submitted as part of the annual performance report of the Department of Justice, and shall include the following:
+(1) With respect to grants issued under section 30103 of this title , the number and identity of State and local law enforcement grant applicants, the number of grants issued, the dollar value of each grant, including a break down of such value showing how the recipient used the funds, the specific purpose of each grant, and the reports from recipients of the grants on the efficacy of the program supported by the grant. The Department of Justice shall use the information provided by the grant recipients to produce a statement for each individual grant. Such statement shall state whether each grantee has accomplished the purposes of the grant as established in section 30103(b) of this title . Those grantees not in compliance with the requirements of sections 30103 to 30106 of this title shall be subject, but not limited to, sanctions as described in the Financial Guide issued by the Office of Justice Programs at the Department of Justice.
+(2) With respect to the additional agents of the Federal Bureau of Investigation authorized under paragraphs (1) and (2) of section 30104(a) of this title , the number of investigations and actions in which such agents were engaged, the type of each action, the resolution of each action, and any penalties imposed in each action.
+(3) With respect to the training program authorized under section 30104(a)(4) of this title , the number of agents of the Federal Bureau of Investigation participating in such program, the elements of the training program, and the subject matters covered by the program.
+(4) With respect to the organized crime plan authorized under section 30104(b) of this title , the number of organized crime investigations and prosecutions resulting from such plan.
+(5) With respect to the authorizations under section 30105 of this title —
+(A) the number of law enforcement officers hired and the number trained;
+(B) the number and type of investigations and prosecutions resulting from the hiring and training of such law enforcement officers;
+(C) the defendants involved in any such prosecutions;
+(D) any penalties imposed in each such successful prosecution;
+(E) the advanced tools of forensic science procured to investigate, prosecute, and study computer hacking or intellectual property crimes; and
+(F) the number and type of investigations and prosecutions in such tools were used.
+(6) Any other information that the Attorney General may consider relevant to inform Congress on the effective use of the resources authorized under sections 30103, 30104, and 30105 of this title.
+(7) A summary of the efforts, activities, and resources the Department of Justice has allocated to the enforcement, investigation, and prosecution of intellectual property crimes, including—
+(A) a review of the policies and efforts of the Department of Justice related to the prevention and investigation of intellectual property crimes, including efforts at the Office of Justice Programs, the Criminal Division of the Department of Justice, the Executive Office of United States Attorneys, the Office of the Attorney General, the Office of the Deputy Attorney General, the Office of Legal Policy, and any other agency or bureau of the Department of Justice whose activities relate to intellectual property;
+(B) a summary of the overall successes and failures of such policies and efforts;
+(C) a review of the investigative and prosecution activity of the Department of Justice with respect to intellectual property crimes, including—
+(i) the number of investigations initiated related to such crimes;
+(ii) the number of arrests related to such crimes; and
+(iii) the number of prosecutions for such crimes, including—
+(I) the number of defendants involved in such prosecutions;
+(II) whether the prosecution resulted in a conviction; and
+(III) the sentence and the statutory maximum for such crime, as well as the average sentence imposed for such crime; and
+(D) a Department-wide assessment of the staff, financial resources, and other resources (such as time, technology, and training) devoted to the enforcement, investigation, and prosecution of intellectual property crimes, including the number of investigators, prosecutors, and forensic specialists dedicated to investigating and prosecuting intellectual property crimes.
+(8) A summary of the efforts, activities, and resources that the Department of Justice has taken to—
+(A) minimize duplicating the efforts, materials, facilities, and procedures of any other Federal agency responsible for the enforcement, investigation, or prosecution of intellectual property crimes; and
+(B) enhance the efficiency and consistency with which Federal funds and resources are expended to enforce, investigate, or prosecute intellectual property crimes, including the extent to which the Department has utilized existing personnel, materials, technologies, and facilities.
+(b) Initial report of the Attorney General
+The first report required to be submitted by the Attorney General under subsection (a) shall include a summary of the efforts, activities, and resources the Department of Justice has allocated in the 5 years prior to October 13, 2008 , as well as the 1-year period following such date, to the enforcement, investigation, and prosecution of intellectual property crimes, including—
+(1) a review of the policies and efforts of the Department of Justice related to the prevention and investigation of intellectual property crimes, including efforts at the Office of Justice Programs, the Criminal Division of the Department of Justice, the Executive Office of United States Attorneys, the Office of the Attorney General, the Office of the Deputy Attorney General, the Office of Legal Policy, and any other agency or bureau of the Department of Justice whose activities relate to intellectual property;
+(2) a summary of the overall successes and failures of such policies and efforts;
+(3) a review of the investigative and prosecution activity of the Department of Justice with respect to intellectual property crimes, including—
+(A) the number of investigations initiated related to such crimes;
+(B) the number of arrests related to such crimes; and
+(C) the number of prosecutions for such crimes, including—
+(i) the number of defendants involved in such prosecutions;
+(ii) whether the prosecution resulted in a conviction; and
+(iii) the sentence and the statutory maximum for such crime, as well as the average sentence imposed for such crime; and
+(4) a Department-wide assessment of the staff, financial resources, and other resources (such as time, technology, and training) devoted to the enforcement, investigation, and prosecution of intellectual property crimes, including the number of investigators, prosecutors, and forensic specialists dedicated to investigating and prosecuting intellectual property crimes.
+(c) Report of the FBI
+Not later than 1 year after October 13, 2008 , and annually thereafter, the Director of the Federal Bureau of Investigation shall submit a report to Congress on actions taken to carry out sections 30103 to 30106 of this title. The initial report required under this subsection shall be submitted by May 1, 2009 . All subsequent annual reports shall be submitted by May 1st of each fiscal year thereafter. The report required under this subsection may be submitted as part of the annual performance report of the Department of Justice, and shall include—
+(1) a review of the policies and efforts of the Bureau related to the prevention and investigation of intellectual property crimes;
+(2) a summary of the overall successes and failures of such policies and efforts;
+(3) a review of the investigative and prosecution activity of the Bureau with respect to intellectual property crimes, including—
+(A) the number of investigations initiated related to such crimes;
+(B) the number of arrests related to such crimes; and
+(C) the number of prosecutions for such crimes, including—
+(i) the number of defendants involved in such prosecutions;
+(ii) whether the prosecution resulted in a conviction; and
+(iii) the sentence and the statutory maximum for such crime, as well as the average sentence imposed for such crime; and
+(4) a Bureau-wide assessment of the staff, financial resources, and other resources (such as time, technology, and training) devoted to the enforcement, investigation, and prosecution of intellectual property crimes, including the number of investigators, prosecutors, and forensic specialists dedicated to investigating and prosecuting intellectual property crimes.
+(d) Initial report of the FBI
+The first report required to be submitted by the Director of the Federal Bureau of Investigation under subsection (c) shall include a summary of the efforts, activities, and resources the Federal Bureau of Investigation has allocated in the 5 years prior to October 13, 2008 , as well as the 1-year period following such date to the enforcement, investigation, and prosecution of intellectual property crimes, including—
+(1) a review of the policies and efforts of the Bureau related to the prevention and investigation of intellectual property crimes;
+(2) a summary of the overall successes and failures of such policies and efforts;
+(3) a review of the investigative and prosecution activity of the Bureau with respect to intellectual property crimes, including—
+(A) the number of investigations initiated related to such crimes;
+(B) the number of arrests related to such crimes; and
+(C) the number of prosecutions for such crimes, including—
+(i) the number of defendants involved in such prosecutions;
+(ii) whether the prosecution resulted in a conviction; and
+(iii) the sentence and the statutory maximum for such crime, as well as the average sentence imposed for such crime; and
+(4) a Bureau-wide assessment of the staff, financial resources, and other resources (such as time, technology, and training) devoted to the enforcement, investigation, and prosecution of intellectual property crimes, including the number of investigators, prosecutors, and forensic specialists dedicated to investigating and prosecuting intellectual property crimes.
+§ 30107. Local law enforcement grants for enforcement of cybercrimes
+(a) Definitions
+In this section:
+(1) Computer
+The term “computer” includes a computer network and an interactive electronic device.
+(2) Cybercrime against individuals
+The term “cybercrime against individuals”—
+(A) means a criminal offense applicable in the area under the jurisdiction of the relevant State, Indian Tribe, or unit of local government that involves the use of a computer to harass, threaten, stalk, extort, coerce, cause fear to, or intimidate an individual, or without consent distribute intimate images of an adult, except that use of a computer need not be an element of such an offense; and
+(B) does not include the use of a computer to cause harm to a commercial entity, government agency, or non-natural person.
+(3) Indian tribe; State; Tribal government; unit of local government
+The terms “Indian Tribe”, “State”, “Tribal government”, and “unit of local government” have the meanings given such terms in section 12291(a) of this title , as amended by this Act.
+(b) Authorization of grant program
+Subject to the availability of appropriations, the Attorney General shall award grants under this section to States, Indian Tribes, and units of local government for the prevention, enforcement, and prosecution of cybercrimes against individuals.
+(c) Application
+(1) In general
+To request a grant under this section, the chief executive officer of a State, Tribal government, or unit of local government shall submit an application to the Attorney General not later than 90 days after the date on which funds to carry out this section are appropriated for a fiscal year, in such form as the Attorney General may require.
+(2) Contents
+An application submitted under paragraph (1) shall include the following:
+(A) A certification that Federal funds made available under this section will not be used to supplant State, Tribal, or local funds, but will be used to increase the amounts of such funds that would, in the absence of Federal funds, be made available for law enforcement activities.
+(B) An assurance that, not later than 30 days before the application (or any amendment to the application) was submitted to the Attorney General, the application (or amendment) was submitted for review to the governing body of the State, Tribe, or unit of local government (or to an organization designated by that governing body).
+(C) An assurance that, before the application (or any amendment to the application) was submitted to the Attorney General—
+(i) the application (or amendment) was made public; and
+(ii) an opportunity to comment on the application (or amendment) was provided to citizens, to neighborhood or community-based organizations, and to victim service providers, to the extent applicable law or established procedure makes such an opportunity available;
+(D) An assurance that, for each fiscal year covered by an application, the applicant shall maintain and report such data, records, and information (programmatic and financial) as the Attorney General may reasonably require.
+(E) A certification, made in a form acceptable to the Attorney General and executed by the chief executive officer of the applicant (or by another officer of the applicant, if qualified under regulations promulgated by the Attorney General), that—
+(i) the programs to be funded by the grant meet all the requirements of this section;
+(ii) all the information contained in the application is correct;
+(iii) there has been appropriate coordination with affected agencies; and
+(iv) the applicant will comply with all provisions of this section and all other applicable Federal laws.
+(F) A certification that the State, Tribe, or in the case of a unit of local government, the State in which the unit of local government is located, has in effect criminal laws which prohibit cybercrimes against individuals.
+(G) A certification that any equipment described in subsection (d)(8) purchased using grant funds awarded under this section will be used primarily for investigations and forensic analysis of evidence in matters involving cybercrimes against individuals.
+(d) Use of funds
+Grants awarded under this section may be used only for programs that provide—
+(1) training for State, Tribal, or local law enforcement personnel relating to cybercrimes against individuals, including—
+(A) training such personnel to identify and protect victims of cybercrimes against individuals, provided that the training is developed in collaboration with victim service providers;
+(B) training such personnel to utilize Federal, State, Tribal, local, and other resources to assist victims of cybercrimes against individuals;
+(C) training such personnel to identify and investigate cybercrimes against individuals;
+(D) training such personnel to enforce and utilize the laws that prohibit cybercrimes against individuals;
+(E) training such personnel to utilize technology to assist in the investigation of cybercrimes against individuals and enforcement of laws that prohibit such crimes; and
+(F) the payment of overtime incurred as a result of such training;
+(2) training for State, Tribal, or local prosecutors, judges, and judicial personnel relating to cybercrimes against individuals, including—
+(A) training such personnel to identify, investigate, prosecute, or adjudicate cybercrimes against individuals;
+(B) training such personnel to utilize laws that prohibit cybercrimes against individuals;
+(C) training such personnel to utilize Federal, State, Tribal, local, and other resources to assist victims of cybercrimes against individuals; and
+(D) training such personnel to utilize technology to assist in the prosecution or adjudication of acts of cybercrimes against individuals, including the use of technology to protect victims of such crimes;
+(3) training for State, Tribal, or local emergency dispatch personnel relating to cybercrimes against individuals, including—
+(A) training such personnel to identify and protect victims of cybercrimes against individuals;
+(B) training such personnel to utilize Federal, State, Tribal, local, and other resources to assist victims of cybercrimes against individuals;
+(C) training such personnel to utilize technology to assist in the identification of and response to cybercrimes against individuals; and
+(D) the payment of overtime incurred as a result of such training;
+(4) assistance to State, Tribal, or local law enforcement agencies in enforcing laws that prohibit cybercrimes against individuals, including expenses incurred in performing enforcement operations, such as overtime payments;
+(5) assistance to State, Tribal, or local law enforcement agencies in educating the public in order to prevent, deter, and identify violations of laws that prohibit cybercrimes against individuals;
+(6) assistance to State, Tribal, or local law enforcement agencies to support the placement of victim assistants to serve as liaisons between victims of cybercrimes against individuals and personnel of law enforcement agencies;
+(7) assistance to State, Tribal, or local law enforcement agencies to establish task forces that operate solely to conduct investigations, forensic analyses of evidence, and prosecutions in matters involving cybercrimes against individuals;
+(8) assistance to State, Tribal, or local law enforcement agencies and prosecutors in acquiring computers, computer equipment, and other equipment necessary to conduct investigations and forensic analysis of evidence in matters involving cybercrimes against individuals, including expenses incurred in the training, maintenance, or acquisition of technical updates necessary for the use of such equipment for the duration of a reasonable period of use of such equipment;
+(9) assistance in the facilitation and promotion of sharing, with State, Tribal, and local law enforcement agencies and prosecutors, of the expertise and information of Federal law enforcement agencies about the investigation, analysis, and prosecution of matters involving laws that prohibit cybercrimes against individuals, including the use of multijurisdictional task forces; or
+(10) assistance to State, Tribal, and local law enforcement and prosecutors in processing interstate extradition requests for violations of laws involving cybercrimes against individuals, including expenses incurred in the extradition of an offender from one State to another.
+(e) Reports to the Attorney General
+On the date that is 1 year after the date on which a State, Indian Tribe, or unit of local government receives a grant under this section, and annually thereafter, the chief executive officer of the State, Tribal government, or unit of local government shall submit to the Attorney General a report which contains—
+(1) a summary of the activities carried out during the previous year with any grant received under this section by such State, Indian Tribe, or unit of local government;
+(2) an evaluation of the results of such activities; and
+(3) such other information as the Attorney General may reasonably require.
+(f) Reports to Congress
+Not later than November 1 of each even-numbered fiscal year, the Attorney General shall submit to the Committee on the Judiciary of the House of Representatives and the Committee on the Judiciary of the Senate a report that contains a compilation of the information contained in the reports submitted under subsection (e).
+(g) Authorization of appropriations
+(1) In general
+There are authorized to be appropriated to carry out this section $10,000,000 for each of fiscal years 2023 through 2027.
+(2) Limitation
+Of the amount made available under paragraph (1) in any fiscal year, not more than 5 percent may be used for evaluation, monitoring, technical assistance, salaries, and administrative expenses.
+§ 30108. National Resource Center grant
+(a) Definitions
+In this section:
+(1) Cybercrime against individuals
+The term “cybercrime against individuals” has the meaning given such term in section 30107 of this title .
+(2) Eligible entity
+The term “eligible entity” means a nonprofit private organization that—
+(A) focuses on cybercrimes against individuals;
+(B) provides documentation to the Attorney General demonstrating experience working directly on issues of cybercrimes against individuals; and
+(C) includes on the organization’s advisory board representatives who—
+(i) have a documented history of working directly on issues of cybercrimes against individuals;
+(ii) have a history of working directly with victims of cybercrimes against individuals; and
+(iii) are geographically and culturally diverse.
+(b) Authorization of grant program
+Subject to the availability of appropriations, the Attorney General shall award a grant under this section to an eligible entity for the purpose of the establishment and maintenance of a National Resource Center on Cybercrimes Against Individuals to provide resource information, training, and technical assistance to improve the capacity of individuals, organizations, governmental entities, and communities to prevent, enforce, and prosecute cybercrimes against individuals.
+(c) Application
+(1) In general
+To request a grant under this section, an eligible entity shall submit an application to the Attorney General not later than 90 days after the date on which funds to carry out this section are appropriated for fiscal year 2022 in such form as the Attorney General may require.
+(2) Contents
+An application submitted under paragraph (1) shall include the following:
+(A) An assurance that, for each fiscal year covered by the application, the applicant will maintain and report such data, records, and information (programmatic and financial) as the Attorney General may reasonably require.
+(B) A certification, made in a form acceptable to the Attorney General, that—
+(i) the programs funded by the grant meet all the requirements of this section;
+(ii) all the information contained in the application is correct; and
+(iii) the applicant will comply with all provisions of this section and all other applicable Federal laws.
+(d) Use of funds
+The eligible entity awarded a grant under this section shall use such amounts for the establishment and maintenance of a National Resource Center on Cybercrimes Against Individuals, which shall—
+(1) offer a comprehensive array of technical assistance and training resources to Federal, State, and local governmental agencies, community-based organizations, and other professionals and interested parties related to cybercrimes against individuals, including programs and research related to victims;
+(2) maintain a resource library which shall collect, prepare, analyze, and disseminate information and statistics related to—
+(A) the incidence of cybercrimes against individuals;
+(B) the enforcement and prosecution of laws relating to cybercrimes against individuals; and
+(C) the provision of supportive services and resources for victims, including victims from underserved populations, of cybercrimes against individuals; and
+(3) conduct research related to—
+(A) the causes of cybercrimes against individuals;
+(B) the effect of cybercrimes against individuals on victims of such crimes; and
+(C) model solutions to prevent or deter cybercrimes against individuals or to enforce the laws relating to cybercrimes against individuals.
+(e) Duration of grant
+(1) In general
+A grant awarded under this section shall be awarded for a period of 5 years.
+(2) Renewal
+A grant under this section may be renewed for additional 5-year periods if the Attorney General determines that the funds made available to the recipient were used in a manner described in subsection (d), and if the recipient resubmits an application described in subsection (c) in such form, and at such time, as the Attorney General may reasonably require.
+(f) Subgrants
+The eligible entity awarded a grant under this section may make subgrants to other nonprofit private organizations with relevant subject matter expertise in order to establish and maintain the National Resource Center on Cybercrimes Against Individuals in accordance with subsection (d).
+(g) Reports to the Attorney General
+On the date that is 1 year after the date on which an eligible entity receives a grant under this section, and annually thereafter for the duration of the grant period, the entity shall submit to the Attorney General a report which contains—
+(1) a summary of the activities carried out under the grant program during the previous year;
+(2) an evaluation of the results of such activities; and
+(3) such other information as the Attorney General may reasonably require.
+(h) Reports to Congress
+Not later than November 1 of each even-numbered fiscal year, the Attorney General shall submit to the Committee on the Judiciary of the House of Representatives and the Committee on the Judiciary of the Senate a report that contains a compilation of the information contained in the reports submitted under subsection (g).
+(i) Authorization of appropriations
+There are authorized to be appropriated to carry out this section $4,000,000 for each of fiscal years 2023 through 2027.
+§ 30109. National strategy, classification, and reporting on cybercrime
+(a) Definitions
+In this section:
+(1) Computer
+The term “computer” includes a computer network and any interactive electronic device.
+(2) Cybercrime against individuals
+The term “cybercrime against individuals” has the meaning given the term in section 30107 of this title .
+(b) National strategy
+The Attorney General shall develop a national strategy to—
+(1) reduce the incidence of cybercrimes against individuals;
+(2) coordinate investigations of cybercrimes against individuals by Federal law enforcement agencies;
+(3) increase the number of Federal prosecutions of cybercrimes against individuals; and
+(4) develop an evaluation process that measures rates of cybercrime victimization and prosecutorial rates among Tribal and culturally specific communities.
+(c) Classification of cybercrimes against individuals for purposes of crime reports
+In accordance with the authority of the Attorney General under section 534 of title 28 , the Director of the Federal Bureau of Investigation shall—
+(1) design and create within the Uniform Crime Reports a category for offenses that constitute cybercrimes against individuals;
+(2) to the extent feasible, within the category established under paragraph (1), establish subcategories for each type of cybercrime against individuals that is an offense under Federal or State law;
+(3) classify the category established under paragraph (1) as a Part I crime in the Uniform Crime Reports; and
+(4) classify each type of cybercrime against individuals that is an offense under Federal or State law as a Group A offense for the purpose of the National Incident-Based Reporting System.
+(d) Annual summary
+The Attorney General shall publish an annual summary of the information reported in the Uniform Crime Reports and the National Incident-Based Reporting System relating to cybercrimes against individuals, including an evaluation of the implementation process for the national strategy developed under subsection (b) and outcome measurements on its impact on Tribal and culturally specific communities.
+§ 30110. Improved investigative and forensic resources for enforcement of laws related to cybercrimes against individuals
+Subject to the availability of appropriations to carry out this section, the Attorney General, in consultation with the Director of the Federal Bureau of Investigation and the Secretary of Homeland Security, including the Executive Associate Director of Homeland Security Investigations, shall, with respect to cybercrimes against individuals—
+(1) ensure that there are not fewer than 10 additional operational agents of the Federal Bureau of Investigation designated to support the Criminal Division of the Department of Justice in the investigation and coordination of cybercrimes against individuals;
+(2) ensure that each office of a United States Attorney designates at least 1 Assistant United States Attorney as responsible for investigating and prosecuting cybercrimes against individuals; and
+(3) ensure the implementation of a regular and comprehensive training program—
+(A) the purpose of which is to train agents of the Federal Bureau of Investigation in the investigation and prosecution of such crimes and the enforcement of laws related to cybercrimes against individuals; and
+(B) that includes relevant forensic training related to investigating and prosecuting cybercrimes against individuals.
+§ 30111. Training and technical assistance for States
+The Attorney General, in consultation with the Secretary of Homeland Security, the Director of the United States Secret Service, the Executive Associate Director of Homeland Security Investigations, and nongovernmental and survivor stakeholders, shall create, compile, evaluate, and disseminate materials and information, and provide the necessary training and technical assistance, to assist States and units of local government in—
+(1) investigating, prosecuting, pursuing, preventing, understanding, and mitigating the impact of—
+(A) physical, sexual, and psychological abuse of cybercrime victims, including victims of human trafficking that is facilitated by interactive computer services;
+(B) exploitation of cybercrime victims; and
+(C) deprioritization of cybercrime; and
+(2) assessing, addressing, and mitigating the physical and psychological trauma to victims of cybercrime.
+CHAPTER 303— PRISON RAPE ELIMINATION
+§ 30301. Findings
+Congress makes the following findings:
+(1) 2,100,146 persons were incarcerated in the United States at the end of 2001: 1,324,465 in Federal and State prisons and 631,240 in county and local jails. In 1999, there were more than 10,000,000 separate admissions to and discharges from prisons and jails.
+(2) Insufficient research has been conducted and insufficient data reported on the extent of prison rape. However, experts have conservatively estimated that at least 13 percent of the inmates in the United States have been sexually assaulted in prison. Many inmates have suffered repeated assaults. Under this estimate, nearly 200,000 inmates now incarcerated have been or will be the victims of prison rape. The total number of inmates who have been sexually assaulted in the past 20 years likely exceeds 1,000,000.
+(3) Inmates with mental illness are at increased risk of sexual victimization. America’s jails and prisons house more mentally ill individuals than all of the Nation’s psychiatric hospitals combined. As many as 16 percent of inmates in State prisons and jails, and 7 percent of Federal inmates, suffer from mental illness.
+(4) Young first-time offenders are at increased risk of sexual victimization. Juveniles are 5 times more likely to be sexually assaulted in adult rather than juvenile facilities—often within the first 48 hours of incarceration.
+(5) Most prison staff are not adequately trained or prepared to prevent, report, or treat inmate sexual assaults.
+(6) Prison rape often goes unreported, and inmate victims often receive inadequate treatment for the severe physical and psychological effects of sexual assault—if they receive treatment at all.
+(7) HIV and AIDS are major public health problems within America’s correctional facilities. In 2000, 25,088 inmates in Federal and State prisons were known to be infected with HIV/AIDS. In 2000, HIV/AIDS accounted for more than 6 percent of all deaths in Federal and State prisons. Infection rates for other sexually transmitted diseases, tuberculosis, and hepatitis B and C are also far greater for prisoners than for the American population as a whole. Prison rape undermines the public health by contributing to the spread of these diseases, and often giving a potential death sentence to its victims.
+(8) Prison rape endangers the public safety by making brutalized inmates more likely to commit crimes when they are released—as 600,000 inmates are each year.
+(9) The frequently interracial character of prison sexual assaults significantly exacerbates interracial tensions, both within prison and, upon release of perpetrators and victims from prison, in the community at large.
+(10) Prison rape increases the level of homicides and other violence against inmates and staff, and the risk of insurrections and riots.
+(11) Victims of prison rape suffer severe physical and psychological effects that hinder their ability to integrate into the community and maintain stable employment upon their release from prison. They are thus more likely to become homeless and/or require government assistance.
+(12) Members of the public and government officials are largely unaware of the epidemic character of prison rape and the day-to-day horror experienced by victimized inmates.
+(13) The high incidence of sexual assault within prisons involves actual and potential violations of the United States Constitution. In Farmer v. Brennan, 511 U.S. 825 (1994), the Supreme Court ruled that deliberate indifference to the substantial risk of sexual assault violates prisoners’ rights under the Cruel and Unusual Punishments Clause of the Eighth Amendment. The Eighth Amendment rights of State and local prisoners are protected through the Due Process Clause of the Fourteenth Amendment. Pursuant to the power of Congress under Section Five of the Fourteenth Amendment, Congress may take action to enforce those rights in States where officials have demonstrated such indifference. States that do not take basic steps to abate prison rape by adopting standards that do not generate significant additional expenditures demonstrate such indifference. Therefore, such States are not entitled to the same level of Federal benefits as other States.
+(14) The high incidence of prison rape undermines the effectiveness and efficiency of United States Government expenditures through grant programs such as those dealing with health care; mental health care; disease prevention; crime prevention, investigation, and prosecution; prison construction, maintenance, and operation; race relations; poverty; unemployment and homelessness. The effectiveness and efficiency of these federally funded grant programs are compromised by the failure of State officials to adopt policies and procedures that reduce the incidence of prison rape in that the high incidence of prison rape—
+(A) increases the costs incurred by Federal, State, and local jurisdictions to administer their prison systems;
+(B) increases the levels of violence, directed at inmates and at staff, within prisons;
+(C) increases health care expenditures, both inside and outside of prison systems, and reduces the effectiveness of disease prevention programs by substantially increasing the incidence and spread of HIV, AIDS, tuberculosis, hepatitis B and C, and other diseases;
+(D) increases mental health care expenditures, both inside and outside of prison systems, by substantially increasing the rate of post-traumatic stress disorder, depression, suicide, and the exacerbation of existing mental illnesses among current and former inmates;
+(E) increases the risks of recidivism, civil strife, and violent crime by individuals who have been brutalized by prison rape; and
+(F) increases the level of interracial tensions and strife within prisons and, upon release of perpetrators and victims, in the community at large.
+(15) The high incidence of prison rape has a significant effect on interstate commerce because it increases substantially—
+(A) the costs incurred by Federal, State, and local jurisdictions to administer their prison systems;
+(B) the incidence and spread of HIV, AIDS, tuberculosis, hepatitis B and C, and other diseases, contributing to increased health and medical expenditures throughout the Nation;
+(C) the rate of post-traumatic stress disorder, depression, suicide, and the exacerbation of existing mental illnesses among current and former inmates, contributing to increased health and medical expenditures throughout the Nation; and
+(D) the risk of recidivism, civil strife, and violent crime by individuals who have been brutalized by prison rape.
+§ 30302. Purposes
+The purposes of this chapter are to—
+(1) establish a zero-tolerance standard for the incidence of prison rape in prisons in the United States;
+(2) make the prevention of prison rape a top priority in each prison system;
+(3) develop and implement national standards for the detection, prevention, reduction, and punishment of prison rape;
+(4) increase the available data and information on the incidence of prison rape, consequently improving the management and administration of correctional facilities;
+(5) standardize the definitions used for collecting data on the incidence of prison rape;
+(6) increase the accountability of prison officials who fail to detect, prevent, reduce, and punish prison rape;
+(7) protect the Eighth Amendment rights of Federal, State, and local prisoners;
+(8) increase the efficiency and effectiveness of Federal expenditures through grant programs such as those dealing with health care; mental health care; disease prevention; crime prevention, investigation, and prosecution; prison construction, maintenance, and operation; race relations; poverty; unemployment; and homelessness; and
+(9) reduce the costs that prison rape imposes on interstate commerce.
+§ 30303. National prison rape statistics, data, and research
+(a) Annual comprehensive statistical review
+(1) In general
+The Bureau of Justice Statistics of the Department of Justice (in this section referred to as the “Bureau”) shall carry out, for each calendar year, a comprehensive statistical review and analysis of the incidence and effects of prison rape. The statistical review and analysis shall include, but not be limited to the identification of the common characteristics of—
+(A) both victims and perpetrators of prison rape; and
+(B) prisons and prison systems with a high incidence of prison rape.
+(2) Considerations
+In carrying out paragraph (1), the Bureau shall consider—
+(A) how rape should be defined for the purposes of the statistical review and analysis;
+(B) how the Bureau should collect information about staff-on-inmate sexual assault;
+(C) how the Bureau should collect information beyond inmate self-reports of prison rape;
+(D) how the Bureau should adjust the data in order to account for differences among prisons as required by subsection (c)(3);
+(E) the categorization of prisons as required by subsection (c)(4); and
+(F) whether a preliminary study of prison rape should be conducted to inform the methodology of the comprehensive statistical review.
+(3) Solicitation of views
+The Bureau of Justice Statistics shall solicit views from representatives of the following: State departments of correction; county and municipal jails; juvenile correctional facilities; former inmates; victim advocates; researchers; and other experts in the area of sexual assault.
+(4) Sampling techniques
+The review and analysis under paragraph (1) shall be based on a random sample, or other scientifically appropriate sample, of not less than 10 percent of all Federal, State, and county prisons, and a representative sample of municipal prisons. The selection shall include at least one prison from each State. The selection of facilities for sampling shall be made at the latest practicable date prior to conducting the surveys and shall not be disclosed to any facility or prison system official prior to the time period studied in the survey. Selection of a facility for sampling during any year shall not preclude its selection for sampling in any subsequent year.
+(5) Surveys
+In carrying out the review and analysis under paragraph (1), the Bureau shall, in addition to such other methods as the Bureau considers appropriate, use surveys and other statistical studies of current and former inmates from a sample of Federal, State, county, and municipal prisons. The Bureau shall ensure the confidentiality of each survey participant, except as authorized in paragraph (7).
+(6) Participation in survey
+Federal, State, or local officials or facility administrators that receive a request from the Bureau under subsection (a)(4) or (5) will be required to participate in the national survey and provide access to any inmates under their legal custody.
+(7) Reporting on child abuse and neglect
+Nothing in section 10134 or 10231 of this title or any other provision of law, including paragraph (5), shall prevent the Bureau (including its agents), in carrying out the review and analysis under paragraph (1), from reporting to the designated public officials such information (and only such information) regarding child abuse or child neglect with respect to which the statutes or regulations of a State (or a political subdivision thereof) require prompt reporting.
+(b) Review Panel on Prison Rape
+(1) Establishment
+To assist the Bureau in carrying out the review and analysis under subsection (a), there is established, within the Department of Justice, the Review Panel on Prison Rape (in this section referred to as the “Panel”).
+(2) Membership
+(A) Composition
+The Panel shall be composed of 3 members, each of whom shall be appointed by the Attorney General, in consultation with the Secretary of Health and Human Services.
+(B) Qualifications
+Members of the Panel shall be selected from among individuals with knowledge or expertise in matters to be studied by the Panel.
+(3) Public hearings
+(A) In general
+The duty of the Panel shall be to carry out, for each calendar year, public hearings concerning the operation of the three prisons with the highest incidence of prison rape and the two prisons with the lowest incidence of prison rape in each category of facilities identified under subsection (c)(4). The Panel shall hold a separate hearing regarding the three Federal or State prisons with the highest incidence of prison rape. The purpose of these hearings shall be to collect evidence to aid in the identification of common characteristics of both victims and perpetrators of prison rape, and the identification of common characteristics of prisons and prison systems with a high incidence of prison rape, and the identification of common characteristics of prisons and prison systems that appear to have been successful in deterring prison rape.
+(B) Testimony at hearings
+(i) Public officials
+In carrying out the hearings required under subparagraph (A), the Panel shall request the public testimony of Federal, State, and local officials (and organizations that represent such officials), including the warden or director of each prison, who bears responsibility for the prevention, detection, and punishment of prison rape at each entity, and the head of the prison system encompassing such prison.
+(ii) Victims
+The Panel may request the testimony of prison rape victims, organizations representing such victims, and other appropriate individuals and organizations.
+(C) Subpoenas
+(i) Issuance
+The Panel may issue subpoenas for the attendance of witnesses and the production of written or other matter.
+(ii) Enforcement
+In the case of contumacy or refusal to obey a subpoena, the Attorney General may in a Federal court of appropriate jurisdiction obtain an appropriate order to enforce the subpoena.
+(c) Reports
+(1) In general
+Not later than June 30 of each year, the Attorney General shall submit a report on the activities of the Bureau and the Review Panel, with respect to prison rape, for the preceding calendar year to—
+(A) Congress; and
+(B) the Secretary of Health and Human Services.
+(2) Contents
+The report required under paragraph (1) shall include—
+(A) with respect to the effects of prison rape, statistical, sociological, and psychological data;
+(B) with respect to the incidence of prison rape—
+(i) statistical data aggregated at the Federal, State, prison system, and prison levels;
+(ii) a listing of those institutions in the representative sample, separated into each category identified under subsection (c)(4) and ranked according to the incidence of prison rape in each institution; and
+(iii) an identification of those institutions in the representative sample that appear to have been successful in deterring prison rape; and
+(C) a listing of any prisons in the representative sample that did not cooperate with the survey conducted pursuant to this section.
+(3) Data adjustments
+In preparing the information specified in paragraph (2), the Attorney General shall use established statistical methods to adjust the data as necessary to account for differences among institutions in the representative sample, which are not related to the detection, prevention, reduction and punishment of prison rape, or which are outside the control of the State, prison, or prison system, in order to provide an accurate comparison among prisons. Such differences may include the mission, security level, size, and jurisdiction under which the prison operates. For each such adjustment made, the Attorney General shall identify and explain such adjustment in the report.
+(4) Categorization of prisons
+The report shall divide the prisons surveyed into three categories. One category shall be composed of all Federal and State prisons. The other two categories shall be defined by the Attorney General in order to compare similar institutions.
+(d) Contracts and grants
+In carrying out its duties under this section, the Attorney General may—
+(1) provide grants for research through the National Institute of Justice; and
+(2) contract with or provide grants to any other entity the Attorney General deems appropriate.
+(e) Authorization of appropriations
+There are authorized to be appropriated $15,000,000 for each of fiscal years 2004 through 2010 to carry out this section.
+§ 30304. Prison rape prevention and prosecution
+(a) Information and assistance
+(1) National clearinghouse
+There is established within the National Institute of Corrections a national clearinghouse for the provision of information and assistance to Federal, State, and local authorities responsible for the prevention, investigation, and punishment of instances of prison rape.
+(2) Training and education
+The National Institute of Corrections shall conduct periodic training and education programs for Federal, State, and local authorities responsible for the prevention, investigation, and punishment of instances of prison rape.
+(b) Reports
+(1) In general
+Not later than September 30 of each year, the National Institute of Corrections shall submit a report to Congress and the Secretary of Health and Human Services. This report shall be available to the Director of the Bureau of Justice Statistics.
+(2) Contents
+The report required under paragraph (1) shall summarize the activities of the Department of Justice regarding prison rape abatement for the preceding calendar year.
+(c) Authorization of appropriations
+There are authorized to be appropriated $5,000,000 for each of fiscal years 2004 through 2010 to carry out this section.
+§ 30305. Grants to protect inmates and safeguard communities
+(a) Grants authorized
+From amounts made available for grants under this section, the Attorney General shall make grants to States to assist those States in ensuring that budgetary circumstances (such as reduced State and local spending on prisons) do not compromise efforts to protect inmates (particularly from prison rape) and to safeguard the communities to which inmates return. The purpose of grants under this section shall be to provide funds for personnel, training, technical assistance, data collection, and equipment to prevent and prosecute prisoner rape.
+(b) Use of grant amounts
+Amounts received by a grantee under this section may be used by the grantee, directly or through subgrants, only for one or more of the following activities:
+(1) Protecting inmates
+Protecting inmates by—
+(A) undertaking efforts to more effectively prevent prison rape;
+(B) investigating incidents of prison rape; or
+(C) prosecuting incidents of prison rape.
+(2) Safeguarding communities
+Safeguarding communities by—
+(A) making available, to officials of State and local governments who are considering reductions to prison budgets, training and technical assistance in successful methods for moderating the growth of prison populations without compromising public safety, including successful methods used by other jurisdictions;
+(B) developing and utilizing analyses of prison populations and risk assessment instruments that will improve State and local governments’ understanding of risks to the community regarding release of inmates in the prison population;
+(C) preparing maps demonstrating the concentration, on a community-by-community basis, of inmates who have been released, to facilitate the efficient and effective—
+(i) deployment of law enforcement resources (including probation and parole resources); and
+(ii) delivery of services (such as job training and substance abuse treatment) to those released inmates;
+(D) promoting collaborative efforts, among officials of State and local governments and leaders of appropriate communities, to understand and address the effects on a community of the presence of a disproportionate number of released inmates in that community; or
+(E) developing policies and programs that reduce spending on prisons by effectively reducing rates of parole and probation revocation without compromising public safety.
+(c) Grant requirements
+(1) Period
+A grant under this section shall be made for a period of not more than 2 years.
+(2) Maximum
+The amount of a grant under this section may not exceed $1,000,000.
+(3) Matching
+The Federal share of a grant under this section may not exceed 50 percent of the total costs of the project described in the application submitted under subsection (d) for the fiscal year for which the grant was made under this section.
+(d) Applications
+(1) In general
+To request a grant under this section, the chief executive of a State shall submit an application to the Attorney General at such time, in such manner, and accompanied by such information as the Attorney General may require.
+(2) Contents
+Each application required by paragraph (1) shall—
+(A) (i) include the certification of the chief executive that the State receiving such grant has adopted all national prison rape standards that, as of the date on which the application was submitted, have been promulgated under this chapter; or
+(ii) demonstrate to the Attorney General, in such manner as the Attorney General shall require, that the State receiving such grant is actively working to adopt and achieve full compliance with the national prison rape standards described in clause (i);
+(B) specify with particularity the preventative, prosecutorial, or administrative activities to be undertaken by the State with the amounts received under the grant; and
+(C) in the case of an application for a grant for one or more activities specified in paragraph (2) of subsection (b)—
+(i) review the extent of the budgetary circumstances affecting the State generally and describe how those circumstances relate to the State’s prisons;
+(ii) describe the rate of growth of the State’s prison population over the preceding 10 years and explain why the State may have difficulty sustaining that rate of growth; and
+(iii) explain the extent to which officials (including law enforcement officials) of State and local governments and victims of crime will be consulted regarding decisions whether, or how, to moderate the growth of the State’s prison population.
+(e) Reports by grantee
+(1) In general
+The Attorney General shall require each grantee to submit, not later than 90 days after the end of the period for which the grant was made under this section, a report on the activities carried out under the grant. The report shall identify and describe those activities and shall contain an evaluation of the effect of those activities on—
+(A) the number of incidents of prison rape, and the grantee’s response to such incidents; and
+(B) the safety of the prisons, and the safety of the communities in which released inmates are present.
+(2) Dissemination
+The Attorney General shall ensure that each report submitted under paragraph (1) is made available under the national clearinghouse established under section 30304 of this title .
+(f) State defined
+In this section, the term “State” includes the District of Columbia, the Commonwealth of Puerto Rico, and any other territory or possession of the United States.
+(g) Authorization of appropriations
+(1) In general
+There are authorized to be appropriated for grants under this section $40,000,000 for each of fiscal years 2004 through 2010.
+(2) Limitation
+Of amounts made available for grants under this section, not less than 50 percent shall be available only for activities specified in paragraph (1) of subsection (b).
+§ 30306. National Prison Rape Elimination Commission
+(a) Establishment
+There is established a commission to be known as the National Prison Rape Elimination Commission (in this section referred to as the “Commission”).
+(b) Members
+(1) In general
+The Commission shall be composed of 9 members, of whom—
+(A) 3 shall be appointed by the President;
+(B) 2 shall be appointed by the Speaker of the House of Representatives, unless the Speaker is of the same party as the President, in which case 1 shall be appointed by the Speaker of the House of Representatives and 1 shall be appointed by the minority leader of the House of Representatives;
+(C) 1 shall be appointed by the minority leader of the House of Representatives (in addition to any appointment made under subparagraph (B));
+(D) 2 shall be appointed by the majority leader of the Senate, unless the majority leader is of the same party as the President, in which case 1 shall be appointed by the majority leader of the Senate and 1 shall be appointed by the minority leader of the Senate; and
+(E) 1 member appointed by the minority leader of the Senate (in addition to any appointment made under subparagraph (D)).
+(2) Persons eligible
+Each member of the Commission shall be an individual who has knowledge or expertise in matters to be studied by the Commission.
+(3) Consultation required
+The President, the Speaker and minority leader of the House of Representatives, and the majority leader and minority leader of the Senate shall consult with one another prior to the appointment of the members of the Commission to achieve, to the maximum extent possible, fair and equitable representation of various points of view with respect to the matters to be studied by the Commission.
+(4) Term
+Each member shall be appointed for the life of the Commission.
+(5) Time for initial appointments
+The appointment of the members shall be made not later than 60 days after September 4, 2003 .
+(6) Vacancies
+A vacancy in the Commission shall be filled in the manner in which the original appointment was made, and shall be made not later than 60 days after the date on which the vacancy occurred.
+(c) Operation
+(1) Chairperson
+Not later than 15 days after appointments of all the members are made, the President shall appoint a chairperson for the Commission from among its members.
+(2) Meetings
+The Commission shall meet at the call of the chairperson. The initial meeting of the Commission shall take place not later than 30 days after the initial appointment of the members is completed.
+(3) Quorum
+A majority of the members of the Commission shall constitute a quorum to conduct business, but the Commission may establish a lesser quorum for conducting hearings scheduled by the Commission.
+(4) Rules
+The Commission may establish by majority vote any other rules for the conduct of Commission business, if such rules are not inconsistent with this chapter or other applicable law.
+(d) Comprehensive study of the impacts of prison rape
+(1) In general
+The Commission shall carry out a comprehensive legal and factual study of the penalogical, physical, mental, medical, social, and economic impacts of prison rape in the United States on—
+(A) Federal, State, and local governments; and
+(B) communities and social institutions generally, including individuals, families, and businesses within such communities and social institutions.
+(2) Matters included
+The study under paragraph (1) shall include—
+(A) a review of existing Federal, State, and local government policies and practices with respect to the prevention, detection, and punishment of prison rape;
+(B) an assessment of the relationship between prison rape and prison conditions, and of existing monitoring, regulatory, and enforcement practices that are intended to address any such relationship;
+(C) an assessment of pathological or social causes of prison rape;
+(D) an assessment of the extent to which the incidence of prison rape contributes to the spread of sexually transmitted diseases and to the transmission of HIV;
+(E) an assessment of the characteristics of inmates most likely to commit prison rape and the effectiveness of various types of treatment or programs to reduce such likelihood;
+(F) an assessment of the characteristics of inmates most likely to be victims of prison rape and the effectiveness of various types of treatment or programs to reduce such likelihood;
+(G) an assessment of the impacts of prison rape on individuals, families, social institutions and the economy generally, including an assessment of the extent to which the incidence of prison rape contributes to recidivism and to increased incidence of sexual assault;
+(H) an examination of the feasibility and cost of conducting surveillance, undercover activities, or both, to reduce the incidence of prison rape;
+(I) an assessment of the safety and security of prison facilities and the relationship of prison facility construction and design to the incidence of prison rape;
+(J) an assessment of the feasibility and cost of any particular proposals for prison reform;
+(K) an identification of the need for additional scientific and social science research on the prevalence of prison rape in Federal, State, and local prisons;
+(L) an assessment of the general relationship between prison rape and prison violence;
+(M) an assessment of the relationship between prison rape and levels of training, supervision, and discipline of prison staff; and
+(N) an assessment of existing Federal and State systems for reporting incidents of prison rape, including an assessment of whether existing systems provide an adequate assurance of confidentiality, impartiality and the absence of reprisal.
+(3) Report
+(A) Distribution
+Not later than 5 years after the date of the initial meeting of the Commission, the Commission shall submit a report on the study carried out under this subsection to—
+(i) the President;
+(ii) the Congress;
+(iii) the Attorney General;
+(iv) the Secretary of Health and Human Services;
+(v) the Director of the Federal Bureau of Prisons;
+(vi) the chief executive of each State; and
+(vii) the head of the department of corrections of each State.
+(B) Contents
+The report under subparagraph (A) shall include—
+(i) the findings and conclusions of the Commission;
+(ii) recommended national standards for reducing prison rape;
+(iii) recommended protocols for preserving evidence and treating victims of prison rape; and
+(iv) a summary of the materials relied on by the Commission in the preparation of the report.
+(e) Recommendations
+(1) In general
+In conjunction with the report submitted under subsection (d)(3), the Commission shall provide the Attorney General and the Secretary of Health and Human Services with recommended national standards for enhancing the detection, prevention, reduction, and punishment of prison rape.
+(2) Matters included
+The information provided under paragraph (1) shall include recommended national standards relating to—
+(A) the classification and assignment of prisoners, using proven standardized instruments and protocols, in a manner that limits the occurrence of prison rape;
+(B) the investigation and resolution of rape complaints by responsible prison authorities, local and State police, and Federal and State prosecution authorities;
+(C) the preservation of physical and testimonial evidence for use in an investigation of the circumstances relating to the rape;
+(D) acute-term trauma care for rape victims, including standards relating to—
+(i) the manner and extent of physical examination and treatment to be provided to any rape victim; and
+(ii) the manner and extent of any psychological examination, psychiatric care, medication, and mental health counseling to be provided to any rape victim;
+(E) referrals for long-term continuity of care for rape victims;
+(F) educational and medical testing measures for reducing the incidence of HIV transmission due to prison rape;
+(G) post-rape prophylactic medical measures for reducing the incidence of transmission of sexual diseases;
+(H) the training of correctional staff sufficient to ensure that they understand and appreciate the significance of prison rape and the necessity of its eradication;
+(I) the timely and comprehensive investigation of staff sexual misconduct involving rape or other sexual assault on inmates;
+(J) ensuring the confidentiality of prison rape complaints and protecting inmates who make complaints of prison rape;
+(K) creating a system for reporting incidents of prison rape that will ensure the confidentiality of prison rape complaints, protect inmates who make prison rape complaints from retaliation, and assure the impartial resolution of prison rape complaints;
+(L) data collection and reporting of—
+(i) prison rape;
+(ii) prison staff sexual misconduct; and
+(iii) the resolution of prison rape complaints by prison officials and Federal, State, and local investigation and prosecution authorities; and
+(M) such other matters as may reasonably be related to the detection, prevention, reduction, and punishment of prison rape.
+(3) Limitation
+The Commission shall not propose a recommended standard that would impose substantial additional costs compared to the costs presently expended by Federal, State, and local prison authorities.
+(f) Consultation with accreditation organizations
+In developing recommended national standards for enhancing the detection, prevention, reduction, and punishment of prison rape, the Commission shall consider any standards that have already been developed, or are being developed simultaneously to the deliberations of the Commission. The Commission shall consult with accreditation organizations responsible for the accreditation of Federal, State, local or private prisons, that have developed or are currently developing standards related to prison rape. The Commission will also consult with national associations representing the corrections profession that have developed or are currently developing standards related to prison rape.
+(g) Hearings
+(1) In general
+The Commission shall hold public hearings. The Commission may hold such hearings, sit and act at such times and places, take such testimony, and receive such evidence as the Commission considers advisable to carry out its duties under this section.
+(2) Witness expenses
+Witnesses requested to appear before the Commission shall be paid the same fees as are paid to witnesses under section 1821 of title 28 . The per diem and mileage allowances for witnesses shall be paid from funds appropriated to the Commission.
+(h) Information from Federal or State agencies
+The Commission may secure directly from any Federal department or agency such information as the Commission considers necessary to carry out its duties under this section. The Commission may request the head of any State or local department or agency to furnish such information to the Commission.
+(i) Personnel matters
+(1) Travel expenses
+The members of the Commission shall be allowed travel expenses, including per diem in lieu of subsistence, at rates authorized for employees of agencies under subchapter I of chapter 57 of title 5 while away from their homes or regular places of business in the performance of service for the Commission.
+(2) Detail of Federal employees
+With the affirmative vote of ⅔ of the Commission, any Federal Government employee, with the approval of the head of the appropriate Federal agency, may be detailed to the Commission without reimbursement, and such detail shall be without interruption or loss of civil service status, benefits, or privileges.
+(3) Procurement of temporary and intermittent services
+Upon the request of the Commission, the Attorney General shall provide reasonable and appropriate office space, supplies, and administrative assistance.
+(j) Contracts for research
+(1) National Institute of Justice
+With a ⅔ affirmative vote, the Commission may select nongovernmental researchers and experts to assist the Commission in carrying out its duties under this chapter. The National Institute of Justice shall contract with the researchers and experts selected by the Commission to provide funding in exchange for their services.
+(2) Other organizations
+Nothing in this subsection shall be construed to limit the ability of the Commission to enter into contracts with other entities or organizations for research necessary to carry out the duties of the Commission under this section.
+(k) Subpoenas
+(1) Issuance
+The Commission may issue subpoenas for the attendance of witnesses and the production of written or other matter.
+(2) Enforcement
+In the case of contumacy or refusal to obey a subpoena, the Attorney General may in a Federal court of appropriate jurisdiction obtain an appropriate order to enforce the subpoena.
+(3) Confidentiality of documentary evidence
+Documents provided to the Commission pursuant to a subpoena issued under this subsection shall not be released publicly without the affirmative vote of ⅔ of the Commission.
+(l) Authorization of appropriations
+There are authorized to be appropriated such sums as may be necessary to carry out this section.
+(m) Termination
+The Commission shall terminate on the date that is 60 days after the date on which the Commission submits the reports required by this section.
+(n) Exemption
+The Commission shall be exempt from chapter 10 of title 5.
+§ 30307. Adoption and effect of national standards
+(a) Publication of proposed standards
+(1) Final rule
+Not later than 1 year after receiving the report specified in section 30306(d)(3) of this title , the Attorney General shall publish a final rule adopting national standards for the detection, prevention, reduction, and punishment of prison rape.
+(2) Independent judgment
+The standards referred to in paragraph (1) shall be based upon the independent judgment of the Attorney General, after giving due consideration to the recommended national standards provided by the Commission under section 30306(e) of this title , and being informed by such data, opinions, and proposals that the Attorney General determines to be appropriate to consider.
+(3) Limitation
+The Attorney General shall not establish a national standard under this section that would impose substantial additional costs compared to the costs presently expended by Federal, State, and local prison authorities. The Attorney General may, however, provide a list of improvements for consideration by correctional facilities.
+(4) Transmission to States
+Within 90 days of publishing the final rule under paragraph (1), the Attorney General shall transmit the national standards adopted under such paragraph to the chief executive of each State, the head of the department of corrections of each State, and to the appropriate authorities in those units of local government who oversee operations in one or more prisons.
+(b) Applicability to Federal Bureau of Prisons
+The national standards referred to in subsection (a) shall apply to the Federal Bureau of Prisons immediately upon adoption of the final rule under subsection (a)(4).
+(c) Applicability to detention facilities operated by the Department of Homeland Security
+(1) In general
+Not later than 180 days after March 7, 2013 , the Secretary of Homeland Security shall publish a final rule adopting national standards for the detection, prevention, reduction, and punishment of rape and sexual assault in facilities that maintain custody of aliens detained for a violation of the immigrations laws of the United States.
+(2) Applicability
+The standards adopted under paragraph (1) shall apply to detention facilities operated by the Department of Homeland Security and to detention facilities operated under contract with the Department.
+(3) Compliance
+The Secretary of Homeland Security shall—
+(A) assess compliance with the standards adopted under paragraph (1) on a regular basis; and
+(B) include the results of the assessments in performance evaluations of facilities completed by the Department of Homeland Security.
+(4) Considerations
+In adopting standards under paragraph (1), the Secretary of Homeland Security shall give due consideration to the recommended national standards provided by the Commission under section 30306(e) of this title .
+(5) Definition
+As used in this section, the term “detention facilities operated under contract with the Department” includes, but is not limited to contract detention facilities and detention facilities operated through an intergovernmental service agreement with the Department of Homeland Security.
+(d) Applicability to custodial facilities operated by the Department of Health and Human Services
+(1) In general
+Not later than 180 days after March 7, 2013 , the Secretary of Health and Human Services shall publish a final rule adopting national standards for the detection, prevention, reduction, and punishment of rape and sexual assault in facilities that maintain custody of unaccompanied alien children (as defined in section 279(g) of title 6 ).
+(2) Applicability
+The standards adopted under paragraph (1) shall apply to facilities operated by the Department of Health and Human Services and to facilities operated under contract with the Department.
+(3) Compliance
+The Secretary of Health and Human Services shall—
+(A) assess compliance with the standards adopted under paragraph (1) on a regular basis; and
+(B) include the results of the assessments in performance evaluations of facilities completed by the Department of Health and Human Services.
+(4) Considerations
+In adopting standards under paragraph (1), the Secretary of Health and Human Services shall give due consideration to the recommended national standards provided by the Commission under section 30306(e) of this title .
+(e) Eligibility for Federal funds
+(1) Covered programs
+(A) In general
+For purposes of this subsection, a grant program is covered by this subsection if, and only if—
+(i) the program is carried out by or under the authority of the Attorney General;
+(ii) the program may provide amounts to States for prison purposes; and
+(iii) the program is not administered by the Office on Violence Against Women of the Department of Justice.
+(B) List
+For each fiscal year, the Attorney General shall prepare a list identifying each program that meets the criteria of subparagraph (A) and provide that list to each State.
+(2) Adoption of national standards
+(A) In general
+For each fiscal year, any amount that a State would otherwise receive for prison purposes for that fiscal year under a grant program covered by this subsection shall be reduced by 5 percent, unless the chief executive officer of the State submits to the Attorney General proof of compliance with this chapter through—
+(i) a certification that the State has adopted, and is in full compliance with, the national standards described in subsection (a); or
+(ii) an assurance that the State intends to adopt and achieve full compliance with those national standards so as to ensure that a certification under clause (i) may be submitted in future years, which includes—
+(I) a commitment that not less than 5 percent of such amount shall be used for this purpose; or
+(II) a request that the Attorney General hold 5 percent of such amount in abeyance pursuant to the requirements of subparagraph (E).
+(B) Rules for certification
+(i) In general
+A chief executive officer of a State who submits a certification under this paragraph shall also provide the Attorney General with—
+(I) a list of the prisons under the operational control of the executive branch of the State;
+(II) a list of the prisons listed under subclause (I) that were audited during the most recently concluded audit year;
+(III) all final audit reports for prisons listed under subclause (I) that were completed during the most recently concluded audit year; and
+(IV) a proposed schedule for completing an audit of all the prisons listed under subclause (I) during the following 3 audit years.
+(ii) Audit appeal exception
+Beginning on the date that is 3 years after December 16, 2016 , a chief executive officer of a State may submit a certification that the State is in full compliance pursuant to subparagraph (A)(i) even if a prison under the operational control of the executive branch of the State has an audit appeal pending.
+(C) Rules for assurances
+(i) In general
+A chief executive officer of a State who submits an assurance under subparagraph (A)(ii) shall also provide the Attorney General with—
+(I) a list of the prisons under the operational control of the executive branch of the State;
+(II) a list of the prisons listed under subclause (I) that were audited during the most recently concluded audit year;
+(III) an explanation of any barriers the State faces to completing required audits;
+(IV) all final audit reports for prisons listed under subclause (I) that were completed during the most recently concluded audit year;
+(V) a proposed schedule for completing an audit of all prisons under the operational control of the executive branch of the State during the following 3 audit years; and
+(VI) an explanation of the State’s current degree of implementation of the national standards.
+(ii) Additional requirement
+A chief executive officer of a State who submits an assurance under subparagraph (A)(ii)(I) shall, before receiving the applicable funds described in subparagraph (A)(ii)(I), also provide the Attorney General with a proposed plan for the expenditure of the funds during the applicable grant period.
+(iii) Accounting of funds
+A chief executive officer of a State who submits an assurance under subparagraph (A)(ii)(I) shall, in a manner consistent with the applicable grant reporting requirements, submit to the Attorney General a detailed accounting of how the funds described in subparagraph (A) were used.
+(D) Sunset of assurance option
+(i) In general
+On the date that is 3 years after December 16, 2016 , subclause (II) of subparagraph (A)(ii) shall cease to have effect.
+(ii) Additional sunset
+On the date that is 6 years after December 16, 2016 , clause (ii) of subparagraph (A) shall cease to have effect.
+(iii) Emergency assurances
+(I) Request
+Notwithstanding clause (ii), during the 2-year period beginning 6 years after December 16, 2016 , a chief executive officer of a State who certifies that the State has audited not less than 90 percent of prisons under the operational control of the executive branch of the State may request that the Attorney General allow the chief executive officer to submit an emergency assurance in accordance with subparagraph (A)(ii) as in effect on the day before the date on which that subparagraph ceased to have effect under clause (ii) of this subparagraph.
+(II) Grant of request
+The Attorney General shall grant a request submitted under subclause (I) within 60 days upon a showing of good cause.
+(E) Disposition of funds held in abeyance
+(i) In general
+If the chief executive officer of a State who has submitted an assurance under subparagraph (A)(ii)(II) subsequently submits a certification under subparagraph (A)(i) during the 3-year period beginning on December 16, 2016 , the Attorney General will release all funds held in abeyance under subparagraph (A)(ii)(II) to be used by the State in accordance with the conditions of the grant program for which the funds were provided.
+(ii) Release of funds
+If the chief executive officer of a State who has submitted an assurance under subparagraph (A)(ii)(II) is unable to submit a certification during the 3-year period beginning on December 16, 2016 , but does assure the Attorney General that ⅔ of prisons under the operational control of the executive branch of the State have been audited at least once, the Attorney General shall release all of the funds of the State held in abeyance to be used in adopting and achieving full compliance with the national standards, if the State agrees to comply with the applicable requirements in clauses (ii) and (iii) of subparagraph (C).
+(iii) Redistribution of funds
+If the chief executive officer of a State who has submitted an assurance under subparagraph (A)(ii)(II) is unable to submit a certification during the 3-year period beginning on December 16, 2016 , and does not assure the Attorney General that ⅔ of prisons under the operational control of the executive branch of the State have been audited at least once, the Attorney General shall redistribute the funds of the State held in abeyance to other States to be used in accordance with the conditions of the grant program for which the funds were provided.
+(F) Publication of audit results
+Not later than 1 year after December 16, 2016 , the Attorney General shall request from each State, and make available on an appropriate Internet website, all final audit reports completed to date for prisons under the operational control of the executive branch of each State. The Attorney General shall update such website annually with reports received from States under subparagraphs (B)(i) and (C)(i).
+(G) Report on implementation of national standards
+Not later than 2 years after December 16, 2016 , the Attorney General shall issue a report to the Committee on the Judiciary of the Senate and the Committee on the Judiciary of the House of Representatives on the status of implementation of the national standards and the steps the Department, in conjunction with the States and other key stakeholders, is taking to address any unresolved implementation issues.
+(3) Report on noncompliance
+Not later than September 30 of each year, the Attorney General shall publish a report listing each grantee that is not in compliance with the national standards adopted pursuant to subsection (a).
+(4) Cooperation with survey
+For each fiscal year, any amount that a State receives for that fiscal year under a grant program covered by this subsection shall not be used for prison purposes (and shall be returned to the grant program if no other authorized use is available), unless the chief executive of the State submits to the Attorney General a certification that neither the State, nor any political subdivision or unit of local government within the State, is listed in a report issued by the Attorney General pursuant to section 30303(c)(2)(C) of this title .
+(5) Redistribution of amounts
+Amounts under a grant program not granted by reason of a reduction under paragraph (2), or returned by reason of the prohibition in paragraph (4), shall be granted to one or more entities not subject to such reduction or such prohibition, subject to the other laws governing that program.
+(6) Implementation
+The Attorney General shall establish procedures to implement this subsection, including procedures for effectively applying this subsection to discretionary grant programs.
+(7) Effective date
+(A) Requirement of adoption of standards
+The first grants to which paragraph (2) applies are grants for the second fiscal year beginning after the date on which the national standards under subsection (a) are finalized.
+(B) Requirement for cooperation
+The first grants to which paragraph (4) applies are grants for the fiscal year beginning after September 4, 2003 .
+(8) Standards for auditors
+(A) In general
+(i) Background checks for auditors
+An individual seeking certification by the Department of Justice to serve as an auditor of prison compliance with the national standards described in subsection (a) shall, upon request, submit fingerprints in the manner determined by the Attorney General for criminal history record checks of the applicable State and Federal Bureau of Investigation repositories.
+(ii) Certification agreements
+Each auditor certified under this paragraph shall sign a certification agreement that includes the provisions of, or provisions that are substantially similar to, the Bureau of Justice Assistance’s Auditor Certification Agreement in use in April 2018.
+(iii) Auditor evaluation
+The PREA Management Office of the Bureau of Justice Assistance shall evaluate all auditors based on the criteria contained in the certification agreement. In the case that an auditor fails to comply with a certification agreement or to conduct audits in accordance with the PREA Auditor Handbook, audit methodology, and instrument approved by the PREA Management Office, the Office may take remedial or disciplinary action, as appropriate, including decertifying the auditor in accordance with subparagraph (B).
+(B) Auditor decertification
+(i) In general
+The PREA Management Office may suspend an auditor’s certification during an evaluation of an auditor’s performance under subparagraph (A)(iii). The PREA Management Office shall promptly publish the names of auditors who have been decertified, and the reason for decertification. Auditors who have been decertified or are on suspension may not participate in audits described in subsection (a), including as an agent of a certified auditor.
+(ii) Notification
+In the case that an auditor is decertified, the PREA Management Office shall inform each facility or agency at which the auditor performed an audit during the relevant 3-year audit cycle, and may recommend that the agency repeat any affected audits, if appropriate.
+(C) Audit assignments
+The PREA Management Office shall establish a system, to be administered by the Office, for assigning certified auditors to Federal, State, and local facilities.
+(D) Disclosure of documentation
+The Director of the Bureau of Prisons shall comply with each request for documentation necessary to conduct an audit under subsection (a), which is made by a certified auditor in accordance with the provisions of the certification agreement described in subparagraph (A)(ii). The Director of the Bureau of Prisons may require an auditor to sign a confidentiality agreement or other agreement designed to address the auditor’s use of personally identifiable information, except that such an agreement may not limit an auditor’s ability to provide all such documentation to the Department of Justice, as required under section 115.401(j) of title 28, Code of Federal Regulations.
+§ 30308. Requirement that accreditation organizations adopt accreditation standards
+(a) Eligibility for Federal grants
+Notwithstanding any other provision of law, an organization responsible for the accreditation of Federal, State, local, or private prisons, jails, or other penal facilities may not receive any new Federal grants during any period in which such organization fails to meet any of the requirements of subsection (b).
+(b) Requirements
+To be eligible to receive Federal grants, an accreditation organization referred to in subsection (a) must meet the following requirements:
+(1) At all times after 90 days after September 4, 2003 , the organization shall have in effect, for each facility that it is responsible for accrediting, accreditation standards for the detection, prevention, reduction, and punishment of prison rape.
+(2) At all times after 1 year after the date of the adoption of the final rule under section 30307(a)(4) of this title , the organization shall, in addition to any other such standards that it may promulgate relevant to the detection, prevention, reduction, and punishment of prison rape, adopt accreditation standards consistent with the national standards adopted pursuant to such final rule.
+§ 30309. Definitions
+In this chapter, the following definitions shall apply:
+(1) Carnal knowledge
+The term “carnal knowledge” means contact between the penis and the vulva or the penis and the anus, including penetration of any sort, however slight.
+(2) Inmate
+The term “inmate” means any person incarcerated or detained in any facility who is accused of, convicted of, sentenced for, or adjudicated delinquent for, violations of criminal law or the terms and conditions of parole, probation, pretrial release, or diversionary program.
+(3) Jail
+The term “jail” means a confinement facility of a Federal, State, or local law enforcement agency to hold—
+(A) persons pending adjudication of criminal charges; or
+(B) persons committed to confinement after adjudication of criminal charges for sentences of 1 year or less.
+(4) HIV
+The term “HIV” means the human immunodeficiency virus.
+(5) Oral sodomy
+The term “oral sodomy” means contact between the mouth and the penis, the mouth and the vulva, or the mouth and the anus.
+(6) Police lockup
+The term “police lockup” means a temporary holding facility of a Federal, State, or local law enforcement agency to hold—
+(A) inmates pending bail or transport to jail;
+(B) inebriates until ready for release; or
+(C) juveniles pending parental custody or shelter placement.
+(7) Prison
+The term “prison” means any confinement facility of a Federal, State, or local government, whether administered by such government or by a private organization on behalf of such government, and includes—
+(A) any local jail or police lockup; and
+(B) any juvenile facility used for the custody or care of juvenile inmates.
+(8) Prison rape
+The term “prison rape” includes the rape of an inmate in the actual or constructive control of prison officials.
+(9) Rape
+The term “rape” means—
+(A) the carnal knowledge, oral sodomy, sexual assault with an object, or sexual fondling of a person, forcibly or against that person’s will;
+(B) the carnal knowledge, oral sodomy, sexual assault with an object, or sexual fondling of a person not forcibly or against the person’s will, where the victim is incapable of giving consent because of his or her youth or his or her temporary or permanent mental or physical incapacity; or
+(C) the carnal knowledge, oral sodomy, sexual assault with an object, or sexual fondling of a person achieved through the exploitation of the fear or threat of physical violence or bodily injury.
+(10) Sexual assault with an object
+The term “sexual assault with an object” means the use of any hand, finger, object, or other instrument to penetrate, however slightly, the genital or anal opening of the body of another person.
+(11) Sexual fondling
+The term “sexual fondling” means the touching of the private body parts of another person (including the genitalia, anus, groin, breast, inner thigh, or buttocks) for the purpose of sexual gratification.
+(12) Exclusions
+The terms and conditions described in paragraphs (9) and (10) shall not apply to—
+(A) custodial or medical personnel gathering physical evidence, or engaged in other legitimate medical treatment, in the course of investigating prison rape;
+(B) the use of a health care provider’s hands or fingers or the use of medical devices in the course of appropriate medical treatment unrelated to prison rape; or
+(C) the use of a health care provider’s hands or fingers and the use of instruments to perform body cavity searches in order to maintain security and safety within the prison or detention facility, provided that the search is conducted in a manner consistent with constitutional requirements.
+CHAPTER 305— HATE CRIMES
+§ 30501. Findings
+Congress makes the following findings:
+(1) The incidence of violence motivated by the actual or perceived race, color, religion, national origin, gender, sexual orientation, gender identity, or disability of the victim poses a serious national problem.
+(2) Such violence disrupts the tranquility and safety of communities and is deeply divisive.
+(3) State and local authorities are now and will continue to be responsible for prosecuting the overwhelming majority of violent crimes in the United States, including violent crimes motivated by bias. These authorities can carry out their responsibilities more effectively with greater Federal assistance.
+(4) Existing Federal law is inadequate to address this problem.
+(5) A prominent characteristic of a violent crime motivated by bias is that it devastates not just the actual victim and the family and friends of the victim, but frequently savages the community sharing the traits that caused the victim to be selected.
+(6) Such violence substantially affects interstate commerce in many ways, including the following:
+(A) The movement of members of targeted groups is impeded, and members of such groups are forced to move across State lines to escape the incidence or risk of such violence.
+(B) Members of targeted groups are prevented from purchasing goods and services, obtaining or sustaining employment, or participating in other commercial activity.
+(C) Perpetrators cross State lines to commit such violence.
+(D) Channels, facilities, and instrumentalities of interstate commerce are used to facilitate the commission of such violence.
+(E) Such violence is committed using articles that have traveled in interstate commerce.
+(7) For generations, the institutions of slavery and involuntary servitude were defined by the race, color, and ancestry of those held in bondage. Slavery and involuntary servitude were enforced, both prior to and after the adoption of the 13th amendment to the Constitution of the United States, through widespread public and private violence directed at persons because of their race, color, or ancestry, or perceived race, color, or ancestry. Accordingly, eliminating racially motivated violence is an important means of eliminating, to the extent possible, the badges, incidents, and relics of slavery and involuntary servitude.
+(8) Both at the time when the 13th, 14th, and 15th amendments to the Constitution of the United States were adopted, and continuing to date, members of certain religious and national origin groups were and are perceived to be distinct “races”. Thus, in order to eliminate, to the extent possible, the badges, incidents, and relics of slavery, it is necessary to prohibit assaults on the basis of real or perceived religions or national origins, at least to the extent such religions or national origins were regarded as races at the time of the adoption of the 13th, 14th, and 15th amendments to the Constitution of the United States.
+(9) Federal jurisdiction over certain violent crimes motivated by bias enables Federal, State, and local authorities to work together as partners in the investigation and prosecution of such crimes.
+(10) The problem of crimes motivated by bias is sufficiently serious, widespread, and interstate in nature as to warrant Federal assistance to States, local jurisdictions, and Indian tribes.
+§ 30502. Definitions
+In this division—
+(1) the term “crime of violence” has the meaning given that term in section 16 of title 18 ;
+(2) the term “hate crime” has the meaning given that term in section 280003(a) of the Violent Crime Control and Law Enforcement Act of 1994 ( Public Law 103–322 ; 108 Stat. 2096 ), as amended by this Act;
+(3) the term “local” means a county, city, town, township, parish, village, or other general purpose political subdivision of a State; and
+(4) the term “State” includes the District of Columbia, Puerto Rico, and any other territory or possession of the United States.
+§ 30503. Support for criminal investigations and prosecutions by State, local, and tribal law enforcement officials
+(a) Assistance other than financial assistance
+(1) In general
+At the request of a State, local, or tribal law enforcement agency, the Attorney General may provide technical, forensic, prosecutorial, or any other form of assistance in the criminal investigation or prosecution of any crime that—
+(A) constitutes a crime of violence;
+(B) constitutes a felony under the State, local, or tribal laws; and
+(C) is motivated by prejudice based on the actual or perceived race, color, religion, national origin, gender, sexual orientation, gender identity, or disability of the victim, or is a violation of the State, local, or tribal hate crime laws.
+(2) Priority
+In providing assistance under paragraph (1), the Attorney General shall give priority to crimes committed by offenders who have committed crimes in more than one State and to rural jurisdictions that have difficulty covering the extraordinary expenses relating to the investigation or prosecution of the crime.
+(b) Grants
+(1) In general
+The Attorney General may award grants to State, local, and tribal law enforcement agencies for extraordinary expenses associated with the investigation and prosecution of hate crimes.
+(2) Office of Justice Programs
+In implementing the grant program under this subsection, the Office of Justice Programs shall work closely with grantees to ensure that the concerns and needs of all affected parties, including community groups and schools, colleges, and universities, are addressed through the local infrastructure developed under the grants.
+(3) Application
+(A) In general
+Each State, local, and tribal law enforcement agency that desires a grant under this subsection shall submit an application to the Attorney General at such time, in such manner, and accompanied by or containing such information as the Attorney General shall reasonably require.
+(B) Date for submission
+Applications submitted pursuant to subparagraph (A) shall be submitted during the 60-day period beginning on a date that the Attorney General shall prescribe.
+(C) Requirements
+A State, local, and tribal law enforcement agency applying for a grant under this subsection shall—
+(i) describe the extraordinary purposes for which the grant is needed;
+(ii) certify that the State, local government, or Indian tribe lacks the resources necessary to investigate or prosecute the hate crime;
+(iii) demonstrate that, in developing a plan to implement the grant, the State, local, and tribal law enforcement agency has consulted and coordinated with nonprofit, nongovernmental victim services programs that have experience in providing services to victims of hate crimes; and
+(iv) certify that any Federal funds received under this subsection will be used to supplement, not supplant, non-Federal funds that would otherwise be available for activities funded under this subsection.
+(4) Deadline
+An application for a grant under this subsection shall be approved or denied by the Attorney General not later than 180 business days after the date on which the Attorney General receives the application.
+(5) Grant amount
+A grant under this subsection shall not exceed $100,000 for any single jurisdiction in any 1-year period.
+(6) Report
+Not later than December 31, 2011 , the Attorney General shall submit to Congress a report describing the applications submitted for grants under this subsection, the award of such grants, and the purposes for which the grant amounts were expended.
+(7) Authorization of appropriations
+There is authorized to be appropriated to carry out this subsection $5,000,000 for each of fiscal years 2010, 2011, and 2012.
+§ 30504. Grant program
+(a) Authority to award grants
+The Office of Justice Programs of the Department of Justice may award grants, in accordance with such regulations as the Attorney General may prescribe, to State, local, or tribal programs designed to combat hate crimes committed by juveniles, including programs to train local law enforcement officers in identifying, investigating, prosecuting, and preventing hate crimes.
+(b) Authorization of appropriations
+There are authorized to be appropriated such sums as may be necessary to carry out this section.
+§ 30505. Severability
+If any provision of this division, an amendment made by this division, or the application of such provision or amendment to any person or circumstance is held to be unconstitutional, the remainder of this division, the amendments made by this division, and the application of the provisions of such to any person or circumstance shall not be affected thereby.
+§ 30506. Rule of construction
+For purposes of construing this division and the amendments made by this division the following shall apply:
+(1) In general
+Nothing in this division shall be construed to allow a court, in any criminal trial for an offense described under this division or an amendment made by this division, in the absence of a stipulation by the parties, to admit evidence of speech, beliefs, association, group membership, or expressive conduct unless that evidence is relevant and admissible under the Federal Rules of Evidence. Nothing in this division is intended to affect the existing rules of evidence.
+(2) Violent acts
+This division applies to violent acts motivated by actual or perceived race, color, religion, national origin, gender, sexual orientation, gender identity, or disability of a victim.
+(3) Construction and application
+Nothing in this division, or an amendment made by this division, shall be construed or applied in a manner that infringes any rights under the first amendment to the Constitution of the United States. Nor shall anything in this division, or an amendment made by this division, be construed or applied in a manner that substantially burdens a person’s exercise of religion (regardless of whether compelled by, or central to, a system of religious belief), speech, expression, or association, unless the Government demonstrates that application of the burden to the person is in furtherance of a compelling governmental interest and is the least restrictive means of furthering that compelling governmental interest, if such exercise of religion, speech, expression, or association was not intended to—
+(A) plan or prepare for an act of physical violence; or
+(B) incite an imminent act of physical violence against another.
+(4) Free expression
+Nothing in this division shall be construed to allow prosecution based solely upon an individual’s expression of racial, religious, political, or other beliefs or solely upon an individual’s membership in a group advocating or espousing such beliefs.
+(5) First amendment
+Nothing in this division, or an amendment made by this division, shall be construed to diminish any rights under the first amendment to the Constitution of the United States.
+(6) Constitutional protections
+Nothing in this division shall be construed to prohibit any constitutionally protected speech, expressive conduct or activities (regardless of whether compelled by, or central to, a system of religious belief), including the exercise of religion protected by the first amendment to the Constitution of the United States and peaceful picketing or demonstration. The Constitution of the United States does not protect speech, conduct or activities consisting of planning for, conspiring to commit, or committing an act of violence.
+§ 30507. Jabara-Heyer NO HATE Act
+(a) Short title
+This section may be cited as the “Khalid Jabara and Heather Heyer National Opposition to Hate, Assault, and Threats to Equality Act of 2021” or the “Jabara-Heyer NO HATE Act”.
+(b) Findings
+Congress finds the following:
+(1) The incidence of violence known as hate crimes, or crimes motivated by bias, poses a serious national problem.
+(2) According to data obtained by the Federal Bureau of Investigation, the incidence of such violence increased in 2019, the most recent year for which data is available.
+(3) In 1990, Congress enacted the Hate Crime Statistics Act ( Public Law 101–275 ; 28 U.S.C. 534 note)  1 to provide the Federal Government, law enforcement agencies, and the public with data regarding the incidence of hate crime. The Hate Crime Statistics Act and the Matthew Shepard and James Byrd, Jr. Hate Crimes Prevention Act (division E of Public Law 111–84 ; 123 Stat. 2835 )  1 have enabled Federal authorities to understand and, where appropriate, investigate and prosecute hate crimes.
+(4) A more complete understanding of the national problem posed by hate crime is in the public interest and supports the Federal interest in eradicating bias-motivated violence referenced in section 249(b)(1)(C) of title 18 .
+(5) However, a complete understanding of the national problem posed by hate crimes is hindered by incomplete data from Federal, State, and local jurisdictions through the Uniform Crime Reports program authorized under section 534 of title 28 and administered by the Federal Bureau of Investigation.
+(6) Multiple factors contribute to the provision of inaccurate and incomplete data regarding the incidence of hate crime through the Uniform Crime Reports program. A significant contributing factor is the quality and quantity of training that State and local law enforcement agencies receive on the identification and reporting of suspected bias-motivated crimes.
+(7) The problem of crimes motivated by bias is sufficiently serious, widespread, and interstate in nature as to warrant Federal financial assistance to States and local jurisdictions.
+(8) Federal financial assistance with regard to certain violent crimes motivated by bias enables Federal, State, and local authorities to work together as partners in the investigation and prosecution of such crimes.
+(c) Definitions
+In this section:
+(1) Hate crime
+The term “hate crime” means an act described in section 245, 247, or 249 of title 18 or in section 3631 of title 42 .
+(2) Priority agency
+The term “priority agency” means—
+(A) a law enforcement agency of a unit of local government that serves a population of not less than 100,000, as computed by the Federal Bureau of Investigation; or
+(B) a law enforcement agency of a unit of local government that—
+(i) serves a population of not less than 50,000 and less than 100,000, as computed by the Federal Bureau of Investigation; and
+(ii) has reported no hate crimes through the Uniform Crime Reports program in each of the 3 most recent calendar years for which such data is available.
+(3) State
+The term “State” has the meaning given the term in section 10251 of this title .
+(4) Uniform Crime Reports
+The term “Uniform Crime Reports” means the reports authorized under section 534 of title 28 and administered by the Federal Bureau of Investigation that compile nationwide criminal statistics for use—
+(A) in law enforcement administration, operation, and management; and
+(B) to assess the nature and type of crime in the United States.
+(5) Unit of local government
+The term “unit of local government” has the meaning given the term in section 10251 of this title .
+(d) Reporting of hate crimes
+(1) Implementation grants
+(A) In general
+The Attorney General may make grants to States and units of local government to assist the State or unit of local government in implementing the National Incident-Based Reporting System, including to train employees in identifying and classifying hate crimes in the National Incident-Based Reporting System.
+(B) Priority
+In making grants under subparagraph (A), the Attorney General shall give priority to States and units of local government that develop and implement the programs and activities described in subsection (f)(2)(A).
+(2) Reporting
+(A) Compliance
+(i) In general
+Except as provided in clause (ii), in each fiscal year beginning after the date that is 3 years after the date on which a State or unit of local government first receives a grant under paragraph (1), the State or unit of local government shall provide to the Attorney General, through the Uniform Crime Reporting system, information pertaining to hate crimes committed in that jurisdiction during the preceding fiscal year.
+(ii) Extensions; waiver
+The Attorney General—
+(I) may provide a 120-day extension to a State or unit of local government that is making good faith efforts to comply with clause (i); and
+(II) shall waive the requirements of clause (i) if compliance with that subparagraph by a State or unit of local government would be unconstitutional under the constitution of the State or of the State in which the unit of local government is located, respectively.
+(B) Failure to comply
+If a State or unit of local government that receives a grant under paragraph (1) fails to substantially comply with subparagraph (A) of this paragraph, the State or unit of local government shall repay the grant in full, plus reasonable interest and penalty charges allowable by law or established by the Attorney General.
+(e) Grants for State-run hate crime hotlines
+(1) Grants authorized
+(A) In general
+The Attorney General shall make grants to States to create State-run hate crime reporting hotlines.
+(B) Grant period
+A grant made under subparagraph (A) shall be for a period of not more than 5 years.
+(2) Hotline requirements
+A State shall ensure, with respect to a hotline funded by a grant under paragraph (1), that—
+(A) the hotline directs individuals to—
+(i) law enforcement if appropriate; and
+(ii) local support services;
+(B) any personally identifiable information that an individual provides to an agency of the State through the hotline is not directly or indirectly disclosed, without the consent of the individual, to—
+(i) any other agency of that State;
+(ii) any other State;
+(iii) the Federal Government; or
+(iv) any other person or entity;
+(C) the staff members who operate the hotline are trained to be knowledgeable about—
+(i) applicable Federal, State, and local hate crime laws; and
+(ii) local law enforcement resources and applicable local support services; and
+(D) the hotline is accessible to—
+(i) individuals with limited English proficiency, where appropriate; and
+(ii) individuals with disabilities.
+(3) Best practices
+The Attorney General shall issue guidance to States on best practices for implementing the requirements of paragraph (2).
+(f) Information collection by States and units of local government
+(1) Definitions
+In this subsection:
+(A) Covered agency
+The term “covered agency” means—
+(i) a State law enforcement agency; and
+(ii) a priority agency.
+(B) Eligible entity
+The term “eligible entity” means—
+(i) a State; or
+(ii) a unit of local government that has a priority agency.
+(2) Grants
+(A) In general
+The Attorney General may make grants to eligible entities to assist covered agencies within the jurisdiction of the eligible entity in conducting law enforcement activities or crime reduction programs to prevent, address, or otherwise respond to hate crime, particularly as those activities or programs relate to reporting hate crimes through the Uniform Crime Reports program, including—
+(i) adopting a policy on identifying, investigating, and reporting hate crimes;
+(ii) developing a standardized system of collecting, analyzing, and reporting the incidence of hate crime;
+(iii) establishing a unit specialized in identifying, investigating, and reporting hate crimes;
+(iv) engaging in community relations functions related to hate crime prevention and education such as—
+(I) establishing a liaison with formal community-based organizations or leaders; and
+(II) conducting public meetings or educational forums on the impact of hate crimes, services available to hate crime victims, and the relevant Federal, State, and local laws pertaining to hate crimes; and
+(v) providing hate crime trainings for agency personnel.
+(B) Subgrants
+A State that receives a grant under subparagraph (A) may award a subgrant to a unit of local government within the State for the purposes under that subparagraph, except that a unit of local government may provide funding from such a subgrant to any law enforcement agency of the unit of local government.
+(3) Information required of States and units of local government
+(A) In general
+For each fiscal year in which a State or unit of local government receives a grant or subgrant under paragraph (2), the State or unit of local government shall—
+(i) collect information from each law enforcement agency that receives funding from the grant or subgrant summarizing the law enforcement activities or crime reduction programs conducted by the agency to prevent, address, or otherwise respond to hate crime, particularly as those activities or programs relate to reporting hate crimes through the Uniform Crime Reports program; and
+(ii) submit to the Attorney General a report containing the information collected under clause (i).
+(B) Semiannual law enforcement agency report
+(i) In general
+In collecting the information required under subparagraph (A)(i), a State or unit of local government shall require each law enforcement agency that receives funding from a grant or subgrant awarded to the State or unit of local government under paragraph (2) to submit a semiannual report to the State or unit of local government that includes a summary of the law enforcement activities or crime reduction programs conducted by the agency during the reporting period to prevent, address, or otherwise respond to hate crime, particularly as those activities or programs relate to reporting hate crimes through the Uniform Crime Reports program.
+(ii) Contents
+In a report submitted under clause (i), a law enforcement agency shall, at a minimum, disclose—
+(I) whether the agency has adopted a policy on identifying, investigating, and reporting hate crimes;
+(II) whether the agency has developed a standardized system of collecting, analyzing, and reporting the incidence of hate crime;
+(III) whether the agency has established a unit specialized in identifying, investigating, and reporting hate crimes;
+(IV) whether the agency engages in community relations functions related to hate crime, such as—
+(aa) establishing a liaison with formal community-based organizations or leaders; and
+(bb) conducting public meetings or educational forums on the impact of hate crime, services available to hate crime victims, and the relevant Federal, State, and local laws pertaining to hate crime; and
+(V) the number of hate crime trainings for agency personnel, including the duration of the trainings, conducted by the agency during the reporting period.
+(4) Compliance and redirection of funds
+(A) In general
+Except as provided in subparagraph (B), beginning not later than 1 year after May 20, 2021 , a State or unit of local government receiving a grant or subgrant under paragraph (2) shall comply with paragraph (3).
+(B) Extensions; waiver
+The Attorney General—
+(i) may provide a 120-day extension to a State or unit of local government that is making good faith efforts to collect the information required under paragraph (3); and
+(ii) shall waive the requirements of paragraph (3) for a State or unit of local government if compliance with that subsection by the State or unit of local government would be unconstitutional under the constitution of the State or of the State in which the unit of local government is located, respectively.
+(g) Requirements of the Attorney General
+(1) Information collection and analysis; report
+In order to improve the accuracy of data regarding the incidence of hate crime provided through the Uniform Crime Reports program, and promote a more complete understanding of the national problem posed by hate crime, the Attorney General shall—
+(A) collect and analyze the information provided by States and units of local government under subsection (f) for the purpose of developing policies related to the provision of accurate data obtained under the Hate Crime Statistics Act ( Public Law 101–275 ; 28 U.S.C. 534 note)  1 by the Federal Bureau of Investigation; and
+(B) for each calendar year beginning after May 20, 2021 , publish and submit to Congress a report based on the information collected and analyzed under subparagraph (A).
+(2) Contents of report
+A report submitted under paragraph (1) shall include—
+(A) a qualitative analysis of the relationship between—
+(i) the number of hate crimes reported by State law enforcement agencies or other law enforcement agencies that received funding from a grant or subgrant awarded under paragraph (2) through the Uniform Crime Reports program; and
+(ii) the nature and extent of law enforcement activities or crime reduction programs conducted by those agencies to prevent, address, or otherwise respond to hate crime; and
+(B) a quantitative analysis of the number of State law enforcement agencies and other law enforcement agencies that received funding from a grant or subgrant awarded under paragraph (2) that have—
+(i) adopted a policy on identifying, investigating, and reporting hate crimes;
+(ii) developed a standardized system of collecting, analyzing, and reporting the incidence of hate crime;
+(iii) established a unit specialized in identifying, investigating, and reporting hate crimes;
+(iv) engaged in community relations functions related to hate crime, such as—
+(I) establishing a liaison with formal community-based organizations or leaders; and
+(II) conducting public meetings or educational forums on the impact of hate crime, services available to hate crime victims, and the relevant Federal, State, and local laws pertaining to hate crime; and
+(v) conducted hate crime trainings for agency personnel during the reporting period, including—
+(I) the total number of trainings conducted by each agency; and
+(II) the duration of the trainings described in subclause (I).
+(h) Omitted
+Subtitle IV— Criminal Records and Information
+CHAPTER 401— CHILD ABUSE CRIME INFORMATION AND BACKGROUND CHECKS
+§ 40101. Reporting child abuse crime information
+(a) In general
+In each State, an authorized criminal justice agency of the State shall report child abuse crime information to, or index child abuse crime information in, the national criminal history background check system. A criminal justice agency may satisfy the requirement of this subsection by reporting or indexing all felony and serious misdemeanor arrests and dispositions.
+(b) Provision of State child abuse crime records through national criminal history background check system
+(1) Not later than 180 days after December 20, 1993 , the Attorney General shall, subject to availability of appropriations—
+(A) investigate the criminal history records system of each State and determine for each State a timetable by which the State should be able to provide child abuse crime records on an on-line basis through the national criminal history background check system;
+(B) in consultation with State officials, establish guidelines for the reporting or indexing of child abuse crime information, including guidelines relating to the format, content, and accuracy of criminal history records and other procedures for carrying out this chapter; and
+(C) notify each State of the determinations made pursuant to subparagraphs (A) and (B).
+(2) The Attorney General shall require as a part of each State timetable that the State—
+(A) by not later than the date that is 5 years after December 20, 1993 , have in a computerized criminal history file at least 80 percent of the final dispositions that have been rendered in all identifiable child abuse crime cases in which there has been an event of activity within the last 5 years;
+(B) continue to maintain a reporting rate of at least 80 percent for final dispositions in all identifiable child abuse crime cases in which there has been an event of activity within the preceding 5 years; and
+(C) take steps to achieve 100 percent disposition reporting, including data quality audits and periodic notices to criminal justice agencies identifying records that lack final dispositions and requesting those dispositions.
+(c) Liaison
+An authorized agency of a State shall maintain close liaison with the National Center on Child Abuse and Neglect, the National Center for Missing and Exploited Children, and the National Center for the Prosecution of Child Abuse for the exchange of technical assistance in cases of child abuse.
+(d) Annual summary
+(1) The Attorney General shall publish an annual statistical summary of child abuse crimes.
+(2) The annual statistical summary described in paragraph (1) shall not contain any information that may reveal the identity of any particular victim or alleged violator.
+(e) Annual report
+The Attorney General shall, subject to the availability of appropriations, publish an annual summary of each State’s progress in reporting child abuse crime information to the national criminal history background check system.
+(f) Study of child abuse offenders
+(1) Not later than 180 days after December 20, 1993 , the Administrator of the Office of Juvenile Justice and Delinquency Prevention shall begin a study based on a statistically significant sample of convicted child abuse offenders and other relevant information to determine—
+(A) the percentage of convicted child abuse offenders who have more than 1 conviction for an offense involving child abuse;
+(B) the percentage of convicted child abuse offenders who have been convicted of an offense involving child abuse in more than 1 State; and
+(C) the extent to which and the manner in which instances of child abuse form a basis for convictions for crimes other than child abuse crimes.
+(2) Not later than 2 years after December 20, 1993 , the Administrator shall submit a report to the Chairman of the Committee on the Judiciary of the Senate and the Chairman of the Committee on the Judiciary of the House of Representatives containing a description of and a summary of the results of the study conducted pursuant to paragraph (1).
+§ 40102. Background checks
+(a) In general
+(1) A State may have in effect procedures (established by State statute or regulation) that require qualified entities designated by the State to contact an authorized agency of the State to request a nationwide background check for the purpose of determining whether a covered individual has been convicted of a crime that bears upon the covered individual’s fitness to have responsibility for the safety and well-being of children, the elderly, or individuals with disabilities.
+(2) The authorized agency shall access and review State and Federal criminal history records through the national criminal history background check system and shall make reasonable efforts to respond to the inquiry within 15 business days.
+(3) (A) The Attorney General shall establish a program, in accordance with this section, to provide qualified entities located in States that do not have in effect procedures described in paragraph (1), or qualified entities located in States that do not prohibit the use of the program established under this paragraph, with access to national criminal history background checks on, and criminal history reviews of, covered individuals. In any case where the use of a Federal national criminal history background check program is required pursuant to Federal law as of the effective date of this subparagraph, the program under this subparagraph may not be used.
+(B) A qualified entity described in subparagraph (A) may submit to the appropriate designated entity a request for a national criminal history background check on, and a criminal history review of, a covered individual. Qualified entities making a request under this paragraph shall comply with the guidelines set forth in subsection (b), and with any additional applicable procedures set forth by the Attorney General or by the State in which the entity is located.
+(b) Guidelines
+The procedures established under subsection (a) shall require—
+(1) that no qualified entity may request a background check of a covered individual under subsection (a) unless the covered individual first provides a set of fingerprints and completes and signs a statement that—
+(A) contains the name, address, and date of birth appearing on a valid identification document (as defined in section 1028 of title 18 ) of the covered individual;
+(B) the covered individual has not been convicted of a crime and, if the covered individual has been convicted of a crime, contains a description of the crime and the particulars of the conviction;
+(C) notifies the covered individual that the entity may request a background check under subsection (a);
+(D) notifies the covered individual of the covered individual’s rights under paragraph (2); and
+(E) notifies the covered individual that prior to the completion of the background check the qualified entity may choose to deny the covered individual access to a person to whom the qualified entity provides care;
+(2) that the State, or in a State that does not have in effect procedures described in subsection (a)(1), the designated entity, ensures that—
+(A) each covered individual who is the subject of a background check under subsection (a) is entitled to obtain a copy of any background check report;
+(B) each covered individual who is the subject of a background check under subsection (a) is provided a process by which the covered individual may appeal the results of the background check to challenge the accuracy or completeness of the information contained in the background report of the covered individual and obtain a prompt determination as to the validity of such challenge before a final determination is made by the authorized agency;
+(C) (i) each covered individual described in subparagraph (B) is given notice of the opportunity to appeal;
+(ii) each covered individual described in subparagraph (B) will receive instructions on how to complete the appeals process if the covered individual wishes to challenge the accuracy or completeness of the information contained in the background report of the covered individual; and  1
+(iii) the appeals process is completed in a timely manner for each covered individual described in subparagraph (B);  2
+(iv) the appeals process is consistent with title VII of the Civil Rights Act of 1964 ( 42 U.S.C. 2000e et seq.); and
+(D) an authorized agency, upon receipt of a background check report lacking disposition data, shall conduct research in whatever State and local recordkeeping systems are available in order to obtain complete data;
+(3) that an authorized agency or designated entity, as applicable,, 3 upon receipt of a background check report lacking disposition data, shall conduct research in whatever State and local recordkeeping systems are available in order to obtain complete data;
+(4) that the authorized agency or designated entity, as applicable, shall make a determination whether the covered individual has been convicted of, or is under pending indictment for, a crime that bears upon the covered individual’s fitness to have responsibility for the safety and well-being of children, the elderly, or individuals with disabilities and shall convey that determination to the qualified entity; and
+(5) that any background check under subsection (a) and the results thereof shall be handled in accordance with the requirements of Public Law 92–544 , except that this paragraph does not apply to any request by a qualified entity for a national criminal fingerprint background check pursuant to subsection (a)(3).
+(c) Regulations
+(1) The Attorney General may by regulation prescribe such other measures as may be required to carry out the purposes of this chapter, including measures relating to the security, confidentiality, accuracy, use, misuse, and dissemination of information, and audits and recordkeeping.
+(2) The Attorney General shall, to the maximum extent possible, encourage the use of the best technology available in conducting background checks.
+(d) Liability
+A qualified entity shall not be liable in an action for damages solely for failure to conduct a criminal background check on a covered individual, nor shall a State or political subdivision thereof nor any agency, officer or employee thereof,, 3 nor shall any designated entity nor any officer or employee thereof, be liable in an action for damages for the failure of a qualified entity (other than itself) to take action adverse to a covered individual who was the subject of a background check.
+(e) Fees
+(1) State program
+In the case of a background check conducted pursuant to a State requirement adopted after December 20, 1993 , conducted with fingerprints on a covered individual, the fees collected by authorized State agencies and the Federal Bureau of Investigation may not exceed the actual cost of the background check conducted with fingerprints.
+(2) Federal program
+In the case of a national criminal history background check and criminal history review conducted pursuant to the procedures established pursuant to subsection (a)(3), the fees collected by a designated entity shall be set at a level that will ensure the recovery of the full costs of providing all such services. The designated entity shall remit the appropriate portion of such fee to the Attorney General, which amount is in accordance with the amount published in the Federal Register to be collected for the provision of a criminal history background check by the Federal Bureau of Investigation.
+(3) Ensuring fees do not discourage volunteers
+A fee system under this subsection shall be established in a manner that ensures that fees to qualified entities for background checks do not discourage volunteers from participating in programs to care for children, the elderly, or individuals with disabilities. A fee charged to a qualified entity that is not organized under section 501(c)(3) of title 26 may not be less than the total sum of the costs of the Federal Bureau of Investigation and the designated entity.
+(f) National criminal history background check and criminal history review program
+(1) National criminal history background check
+Upon a designated entity receiving notice of a request submitted by a qualified entity pursuant to subsection (a)(3), the designated entity shall forward the request to the Attorney General, who shall, acting through the Director of the Federal Bureau of Investigation, complete a fingerprint-based check of the national criminal history background check system, and provide the information received in response to such national criminal history background check to the appropriate designated entity. The designated entity may, upon request from a qualified entity, complete a check of a State criminal history database.
+(2) Criminal history review
+(A) Designated entities
+The Attorney General shall designate, and enter into an agreement with, one or more entities to make determinations described in subparagraph (B). The Attorney General may not designate and enter into an agreement with a Federal agency under this subparagraph.
+(B) Determinations
+A designated entity shall, upon the receipt of the information described in paragraph (1), make a determination of fitness described in subsection (b)(4), using the criteria described in subparagraph (C).
+(C) Criminal history review criteria
+The Attorney General shall, by rule, establish the criteria for use by designated entities in making a determination of fitness described in subsection (b)(4). Such criteria shall be based on the criteria established pursuant to section 108(a)(3)(G)(i) of the Prosecutorial Remedies and Other Tools to end the Exploitation of Children Today Act of 2003 ( 34 U.S.C. 40102 note) and section 9858f of title 42 .
+§ 40103. Funding for improvement of child abuse crime information
+(a) Omitted
+(b) Additional funding grants for improvement of child abuse crime information
+(1) The Attorney General shall, subject to appropriations and with preference to States that, as of December 20, 1993 , have in computerized criminal history files the lowest percentages of charges and dispositions of identifiable child abuse cases, make a grant to each State to be used—
+(A) for the computerization of criminal history files for the purposes of this chapter;
+(B) for the improvement of existing computerized criminal history files for the purposes of this chapter;
+(C) to improve accessibility to the national criminal history background check system for the purposes of this chapter;
+(D) to assist the State in the transmittal of criminal records to, or the indexing of criminal history record in, the national criminal history background check system for the purposes of this chapter; and
+(E) to assist the State in paying all or part of the cost to the State of conducting background checks on persons who are employed by or volunteer with a public, not-for-profit, or voluntary qualified entity to reduce the amount of fees charged for such background checks.
+(2) There are authorized to be appropriated for grants under paragraph (1) a total of $20,000,000 for fiscal years 1999, 2000, 2001, and 2002.
+(c) Withholding State funds
+Effective 1 year after December 20, 1993 , the Attorney General may reduce, by up to 10 percent, the allocation to a State for a fiscal year under title I of the Omnibus Crime Control and Safe Streets Act of 1968 [ 34 U.S.C. 10101 et seq.] that is not in compliance with the requirements of this chapter.
+§ 40104. Definitions
+For the purposes of this chapter—
+(1) the term “authorized agency” means a division or office of a State designated by a State to report, receive, or disseminate information under this chapter;
+(2) the term “child” means a person who is a child for purposes of the criminal child abuse law of a State;
+(3) the term “child abuse crime” means a crime committed under any law of a State that involves the physical or mental injury, sexual abuse or exploitation, negligent treatment, or maltreatment of a child by any person;
+(4) the term “child abuse crime information” means the following facts concerning a person who has been arrested for, or has been convicted of, a child abuse crime: full name, race, sex, date of birth, height, weight, fingerprints, a brief description of the child abuse crime or offenses for which the person has been arrested or has been convicted, the disposition of the charge, and any other information that the Attorney General determines may be useful in identifying persons arrested for, or convicted of, a child abuse crime;
+(5) the term “care” means the provision of care, treatment, education, training, instruction, supervision, or recreation to children, the elderly, or individuals with disabilities;
+(6) the term “identifiable child abuse crime case” means a case that can be identified by the authorized criminal justice agency of the State as involving a child abuse crime by reference to the statutory citation or descriptive label of the crime as it appears in the criminal history record;
+(7) the term “individuals with disabilities” means persons with a mental or physical impairment who require assistance to perform one or more daily living tasks;
+(8) the term “national criminal history background check system” means the criminal history record system maintained by the Federal Bureau of Investigation based on fingerprint identification or any other method of positive identification;
+(9) the term “covered individual” means an individual—
+(A) who has, seeks to have, or may have access to children, the elderly, or individuals with disabilities, served by a qualified entity; and
+(B) who—
+(i) is employed by or volunteers with, or seeks to be employed by or volunteer with, a qualified entity; or
+(ii) owns or operates, or seeks to own or operate, a qualified entity;
+(10) the term “qualified entity” means a business or organization, whether public, private, for-profit, not-for-profit, or voluntary, that provides care or care placement services, including a business or organization that licenses or certifies others to provide care or care placement services;
+(11) the term “State” means a State, the District of Columbia, the Commonwealth of Puerto Rico, American Samoa, the Virgin Islands, Guam, and the Trust Territories of the Pacific; and
+(12) the term “designated entity” means an entity designated by the Attorney General under section 40102(f)(2)(A) of this title .
+CHAPTER 403— CRIMINAL JUSTICE IDENTIFICATION, INFORMATION, AND COMMUNICATION
+SUBCHAPTER I— CRIME IDENTIFICATION TECHNOLOGY
+§ 40301. State grant program for criminal justice identification, information, and communication
+(a) In general
+Subject to the availability of amounts provided in advance in appropriations Acts, the Office of Justice Programs relying principally on the expertise of the Bureau of Justice Statistics shall make a grant to each State, in a manner consistent with the national criminal history improvement program, which shall be used by the State, in conjunction with units of local government, State and local courts, other States, or combinations thereof, to establish or upgrade an integrated approach to develop information and identification technologies and systems to—
+(1) upgrade criminal history and criminal justice record systems, including systems operated by law enforcement agencies and courts;
+(2) improve criminal justice identification;
+(3) promote compatibility and integration of national, State, and local systems for—
+(A) criminal justice purposes;
+(B) firearms eligibility determinations;
+(C) identification of all individuals who have been convicted of a crime punishable by imprisonment for a term exceeding 1 year  1
+(D) identification of sexual offenders;
+(E) identification of domestic violence offenders; and
+(F) background checks for other authorized purposes unrelated to criminal justice; and
+(4) capture information for statistical and research purposes to improve the administration of criminal justice.
+(b) Use of grant amounts
+Grants under this section may be used for programs to establish, develop, update, or upgrade—
+(1) State centralized, automated, adult and juvenile criminal history record information systems, including arrest and disposition reporting;
+(2) automated fingerprint identification systems that are compatible with standards established by the National Institute of Standards and Technology and interoperable with the Integrated Automated Fingerprint Identification System (IAFIS) of the Federal Bureau of Investigation;
+(3) finger imaging, live scan, and other automated systems to digitize fingerprints and to communicate prints in a manner that is compatible with standards established by the National Institute of Standards and Technology and interoperable with systems operated by States and by the Federal Bureau of Investigation;
+(4) programs and systems to facilitate full participation in the Interstate Identification Index of the National Crime Information Center;
+(5) systems to facilitate full participation in any compact relating to the Interstate Identification Index of the National Crime Information Center;
+(6) systems to facilitate full participation in the national instant criminal background check system established under section 40901(b) of this title for firearms eligibility determinations, including through increased efforts to pre-validate the contents of felony conviction records and domestic violence records to expedite eligibility determinations, and measures and resources necessary to establish and achieve compliance with an implementation plan under section 40917 of this title ;
+(7) integrated criminal justice information systems to manage and communicate criminal justice information among law enforcement agencies, courts, prosecutors, and corrections agencies;
+(8) noncriminal history record information systems relevant to firearms eligibility determinations for availability and accessibility to the national instant criminal background check system established under section 103(b) of the Brady Handgun Violence Prevention Act ( 18 U.S.C. 922 note);  2
+(9) court-based criminal justice information systems that promote—
+(A) reporting of dispositions to central State repositories and to the Federal Bureau of Investigation; and
+(B) compatibility with, and integration of, court systems with other criminal justice information systems;
+(10) ballistics identification and information programs that are compatible and integrated with the National Integrated Ballistics Network (NIBN);
+(11) the capabilities of forensic science programs and medical examiner programs related to the administration of criminal justice, including programs leading to accreditation or certification of individuals or departments, agencies, or laboratories, and programs relating to the identification and analysis of deoxyribonucleic acid;
+(12) sexual offender identification and registration systems;
+(13) domestic violence offender identification and information systems;
+(14) programs for fingerprint-supported background checks capability for noncriminal justice purposes, including youth service employees and volunteers and other individuals in positions of responsibility, if authorized by Federal or State law and administered by a government agency;
+(15) criminal justice information systems with a capacity to provide statistical and research products including incident-based reporting systems that are compatible with the National Incident-Based Reporting System (NIBRS) and uniform crime reports;
+(16) multiagency, multijurisdictional communications systems among the States to share routine and emergency information among Federal, State, and local law enforcement agencies;
+(17) the capability of the criminal justice system to deliver timely, accurate, and complete criminal history record information to child welfare agencies, organizations, and programs that are engaged in the assessment of risk and other activities related to the protection of children, including protection against child sexual abuse, and placement of children in foster care; and
+(18) notwithstanding subsection (c), antiterrorism purposes as they relate to any other uses under this section or for other antiterrorism programs.
+(c) Assurances
+(1) In general
+To be eligible to receive a grant under this section, a State shall provide assurances to the Attorney General that the State has the capability to contribute pertinent information to the national instant criminal background check system established under section 103(b) of the Brady Handgun Violence Prevention Act ( 18 U.S.C. 922 note). 2
+(2) Information sharing
+Such assurances shall include a provision that ensures that a statewide strategy for information sharing systems is underway, or will be initiated, to improve the functioning of the criminal justice system, with an emphasis on integration of all criminal justice components, law enforcement, courts, prosecution, corrections, and probation and parole. The strategy shall be prepared after consultation with State and local officials with emphasis on the recommendation of officials whose duty it is to oversee, plan, and implement integrated information technology systems, and shall contain—
+(A) a definition and analysis of “integration” in the State and localities developing integrated information sharing systems;
+(B) an assessment of the criminal justice resources being devoted to information technology;
+(C) Federal, State, regional, and local information technology coordination requirements;
+(D) an assurance that the individuals who developed the grant application took into consideration the needs of all branches of the State Government and specifically sought the advice of the chief of the highest court of the State with respect to the application;
+(E) State and local resource needs;
+(F) the establishment of statewide priorities for planning and implementation of information technology systems; and
+(G) a plan for coordinating the programs funded under this subchapter with other federally funded information technology programs, including directly funded local programs such as the Edward Byrne Justice Assistance Grant Program and the M.O.R.E. program established pursuant to part Q of title I of the Omnibus Crime Control and Safe Streets Act of 1968 [ 34 U.S.C. 10381 et seq.].
+(d) Matching funds
+The Federal share of a grant received under this subchapter may not exceed 90 percent of the costs of a program or proposal funded under this subchapter unless the State has achieved compliance with an implementation plan under section 40917 of this title or the Attorney General waives, wholly or in part, the requirements of this subsection.
+(e) Authorization of appropriations
+(1) In general
+There is authorized to be appropriated to carry out this section $250,000,000 for each of fiscal years 2018 through 2022.
+(2) Limitations
+Of the amount made available to carry out this section in any fiscal year—
+(A) not more than 3 percent may be used by the Attorney General for salaries and administrative expenses;
+(B) not more than 5 percent may be used for technical assistance, training and evaluations, and studies commissioned by Bureau of Justice Statistics of the Department of Justice (through discretionary grants or otherwise) in furtherance of the purposes of this section; and
+(C) the Attorney General shall ensure the amounts are distributed on an equitable geographic basis.
+(f) Grants to Indian tribes
+Notwithstanding any other provision of this section, the Attorney General may use amounts made available under this section to make grants to Indian tribes for use in accordance with this section.
+§ 40302. Funding for improvement of criminal records
+(1) Grants for the improvement of criminal records
+The Attorney General, through the Bureau of Justice Statistics, shall, subject to appropriations and with preference to States that, as of March 23, 2018 , have the lowest percent currency of case dispositions in computerized criminal history files and that will utilize funding under this subsection to prioritize the identification and transmittal of felony conviction records and domestic violence records, make a grant to each State to be used—
+(A) for the creation of a computerized criminal history record system or improvement of an existing system;
+(B) to improve accessibility to the national instant criminal background system;
+(C) to assist the State in the transmittal of criminal records to the national system; and
+(D) to establish and achieve compliance with an implementation plan under section 40917 of this title .
+(2) Authorization of appropriations
+There are authorized to be appropriated for grants under paragraph (1) a total of $200,000,000 for fiscal year 1994 and all fiscal years thereafter.

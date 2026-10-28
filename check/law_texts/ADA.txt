@@ -1,0 +1,390 @@
+Americans with Disabilities Act
+42 U.S.C. 12101 et seq.
+Read from: subchapter /us/usc/t42/ch124/schII (OLRC XML 119-124)
+Heading: DRUG-FREE PUBLIC HOUSING
+
+SUBCHAPTER II— DRUG-FREE PUBLIC HOUSING
+§ 11921. Statement of purpose
+The purpose of this subchapter is to reaffirm the principle that decent affordable shelter is a basic necessity, and the general welfare of the Nation and the health and living standards of its people require better coordination and training in drug prevention programs among the public officials and agencies responsible for administering the public housing programs of the Nation.
+§ 11922. Clearinghouse on drug abuse in public housing
+(a) Establishment
+The Secretary of Housing and Urban Development shall establish, in the Office of Public Housing in the Department of Housing and Urban Development, a clearinghouse to receive, collect, process, and assemble information regarding the abuse of controlled substances in public housing projects.
+(b) Functions
+The clearinghouse established under subsection (a) shall—
+(1) respond to inquiries by members of the public requesting assistance in investigating, studying, and working on the problem of the abuse of controlled substances; and
+(2) receive, collect, process, assemble, and provide information on programs, authorities, institutions, and agencies, that may further assist members of the public requesting information from the clearinghouse.
+§ 11923. Regional training program on drug abuse in public housing
+(a) Establishment
+The Secretary shall establish a regional training program for the training of public housing officials, to better prepare and educate the officials to confront the widespread abuse of controlled substances in the communities in which the officials work.
+(b) Operation
+The regional training program established under subsection (a) shall be conducted within 12 months after November 18, 1988 , by a national training unit established by the Secretary.
+§ 11924. Definitions
+For purposes of this subchapter:
+(1) Controlled substance
+The term “controlled substance” has the meaning given such term in section 802 of title 21 .
+(2) Secretary
+The term “Secretary” means the Secretary of Housing and Urban Development.
+§ 11925. Regulations
+Not later than 6 months after November 18, 1988 , the Secretary shall issue any regulations necessary to carry out this subchapter.
+CHAPTER 125— RENEWABLE ENERGY AND ENERGY EFFICIENCY TECHNOLOGY COMPETITIVENESS
+§ 12001. Finding, purpose, and general authority
+(a) Finding
+The Congress finds that it is in the national security and economic interest of the United States to foster greater efficiency in the use of available energy supplies and greater use of renewable energy technologies.
+(b) Purpose
+It is the purpose of this chapter to authorize the Secretary of Energy, acting in accordance with section 13541 of this title , to pursue an aggressive national program of research, development, demonstration, and commercial application of renewable energy and energy efficiency technologies in order to ensure a stable and secure future energy supply by—
+(1) achieving as soon as practicable cost competitive use of those technologies without need of Federal financial incentives;
+(2) establishing long-term Federal research goals and multiyear funding levels;
+(3) directing the Secretary to undertake initiatives to improve the ability of the private sector to commercialize in the near term renewable energy and energy efficiency technologies; and
+(4) fostering collaborative efforts involving the private sector through government support of a program of demonstration and commercial application projects.
+(c) General authority
+The Secretary, acting in accordance with section 13541 of this title , is authorized and directed to—
+(1) pursue a program of research, development, demonstration, and commercial application with the private sector, to achieve the purpose of this chapter, including the goals established under section 12003 of this title ; and
+(2) undertake demonstration and commercial application projects as provided in section 12005 of this title .
+§ 12002. Definitions
+As used in this chapter—
+(1) the term “invention” means an invention or discovery that is patented or for which a patent may be obtained under title 35, or any novel variety of plant that is protected or for which plant variety protection may be obtained under the Plant Variety Protection Act ( 7 U.S.C. 2321 et seq.) and that is conceived or reduced to practice as a result of work under an agreement entered into under this chapter;
+(2) the term “non-Federal person” means an entity located in the United States, the controlling interest (as defined by the Secretary) of which is held by persons of the United States, including—
+(A) a for-profit business;
+(B) a private foundation;
+(C) a nonprofit organization such as a university;
+(D) a trade or professional society; and
+(E) a unit of State or local government;
+(3) the term “Secretary” means the Secretary of Energy;
+(4) the term “small business”, with respect to a participant in any demonstration and commercial application project under this chapter, means a private firm that does not exceed the numerical size standard promulgated by the Small Business Administration under section 632(a) of title 15 for the Standard Industrial Classification (SIC) code designated by the Secretary of Energy as the primary business activity to be undertaken in the demonstration and commercial application project;
+(5) the term “source reduction” means any practice which—
+(A) reduces the amount of any hazardous substance, pollutant, or contaminant entering any waste stream or otherwise released into the environment, including fugitive emissions, prior to recycling, treatment, or disposal; and
+(B) reduces the hazards to the public health and the environment associated with the release of such substances, pollutants, or contaminants,
+including equipment or technology modifications, process or procedure modifications, reformulation or redesign of products, substitution of raw materials, and improvements in housekeeping, maintenance, training, and inventory control, but not including any practice which alters the physical, chemical, or biological characteristics or the volume of a hazardous substance, pollutant, or contaminant through a process or activity which itself is not integral to and necessary for the production of a product or the providing of a service;  1
+(6) the term “United States” means the several States, the District of Columbia, the Commonwealth of Puerto Rico, the United States Virgin Islands, Guam, American Samoa, the Commonwealth of the Northern Mariana Islands, and any other Commonwealth, territory, or possession of the United States.
+§ 12003. National goals and multi-year funding for Federal alcohol from biomass and other technology programs
+(a) National goals
+The following are declared to be the national goals for the alcohol from biomass and other energy technology programs being carried out by the Secretary:
+(1) Alcohol from biomass
+(A) In general, the goal of the Alcohol From Biomass Program shall be to advance research and development to a point where alcohol from biomass technology is cost-competitive with conventional hydrocarbon transportation fuels, and to promote the integration of this technology into the transportation fuel sector of the economy.
+(B) (i) Specific goals for producing ethanol from biomass shall be to—
+(I) reduce the cost of alcohol to 70 cents per gallon;
+(II) improve the overall biomass carbohydrate conversion efficiency to 91 percent;
+(III) reduce the capital cost component of the cost of alcohol to 23 cents per gallon; and
+(IV) reduce the operating and maintenance component of the cost of alcohol to 47 cents per gallon.
+(ii) Specific goals for producing methanol from biomass shall be to—
+(I) reduce the cost of alcohol to 47 cents per gallon; and
+(II) reduce the capital component of the cost of alcohol to 16 cents per gallon.
+(2) Other technologies
+The Secretary shall submit to the Congress, as part of the first report submitted under section 12006 of this title , recommendations for specific cost goals and other pertinent goals for 1995 for Department of Energy research, development, and demonstration programs in Biofuels Energy Systems, Biodiesel Energy Systems, Hydrogen Energy Systems, Solar Buildings Energy Systems, Marine Energy Systems, Geothermal Energy Systems, Low-Head Hydro, and Energy Storage Systems.
+(b) Amended goals
+Whenever the Secretary determines that any of the goals established under this section is no longer appropriate, the Secretary shall notify Congress, as part of a report submitted under section 12006 of this title , of the reason for the determination and provide an amended goal that is consistent with the purpose stated in section 12001(b) of this title .
+(c) Authorizations
+There are authorized to be appropriated to the Secretary for the following renewable energy research, development, and demonstration programs: the Biofuels Energy Systems Program, the Hydrogen Energy Systems Program, the Solar Buildings Energy Systems Program, the Marine Energy Systems Program, and the Geothermal Energy Systems Program—
+(1) not to exceed $113,000,000 for fiscal year 1991, of which—
+(A) not to exceed $19,000,000 shall be available for the Geothermal Energy Systems Program; and
+(B) not to exceed $4,000,000 shall be available for the Hydrogen Energy Systems Program; and
+(2) not to exceed $121,000,000 for fiscal year 1992, of which—
+(A) not to exceed $20,500,000 shall be available for the Geothermal Energy Systems Program; and
+(B) not to exceed $5,000,000 shall be available for the Hydrogen Energy Systems Program.
+Each of the President’s annual budget requests submitted to Congress after December 11, 1989 , shall include as separate line items each of the categories of renewable energy programs described in this subsection.
+§ 12004. Energy efficiency authorizations
+There are authorized to be appropriated to the Secretary for the following energy efficiency research, development, and demonstration programs: transportation, industrial, buildings and community systems, multi-sector, and policy and management—
+(1) not to exceed $201,100,000 for fiscal year 1991, of which—
+(A) not to exceed $68,300,000 shall be available for the transportation program; and
+(B) not to exceed $53,500,000 shall be available for the industrial program; and
+(2) not to exceed $210,600,000 for fiscal year 1992, of which—
+(A) not to exceed $71,000,000 shall be available for the transportation program; and
+(B) not to exceed $54,700,000 shall be available for the industrial program.
+§ 12005. Demonstration and commercial application projects
+(a) Purpose
+The purpose of this section is to direct the Secretary to further the commercialization of renewable energy and energy efficiency technologies through a five-year program.
+(b) Demonstration and commercial application projects
+(1) Establishment
+(A) The Secretary shall solicit proposals for demonstration and commercial application projects for renewable energy and energy efficiency technologies pursuant to subsection (c). Such projects may include projects for—
+(i) the production and sale of electricity, thermal energy, or other forms of energy using a renewable energy technology;
+(ii) increasing the efficiency of energy use; and
+(iii) improvements in, or expansion of, facilities for the manufacture of renewable energy or energy efficiency technologies.
+(B) Requirements .—
+Each project selected under this section shall include at least one for-profit business. Activities supported under this section shall be performed in the United States. Each project under this section shall require the manufacture and reproduction substantially within the United States for commercial sale of any invention or product that may result from the project.
+(2) Forms of financial assistance
+(A) In supporting projects selected under subsection (c), the Secretary may choose from among the forms of agreements described in section 13541 of this title .
+(B) In supporting projects selected under subsection (c), the Secretary may also enter into agreements with private lenders to pay a portion of the interest on loans made for such projects.
+(3) Cost sharing
+Cost sharing for projects under this section shall be conducted according to the procedures described in section 13542(b) and (c) of this title.
+(4) Advisory Committee
+(A) The Secretary shall establish an Advisory Committee on Demonstration and Commercial Application of Renewable Energy and Energy Efficiency Technologies (in this chapter referred to as the “Advisory Committee”) to advise the Secretary on the development of the solicitation and evaluation criteria for projects under this section, and on otherwise carrying out his responsibilities under this section. The Secretary shall appoint members to the Advisory Committee, including at least one member representing—
+(i) the Secretary of Commerce;
+(ii) the National Laboratories of the Department of Energy;
+(iii) the Solar Energy Research Institute;
+(iv) the Electric Power Research Institute;
+(v) the Gas Research Institute;
+(vi) the National Institute of Building Sciences;
+(vii) the National Institute of Standards and Technology;
+(viii) associations of firms in the major renewable energy manufacturing industries; and
+(ix) associations of firms in the major energy efficiency manufacturing industries.
+Nothing in this subparagraph shall be construed to require the Secretary to reestablish the Advisory Committee in place under this subsection as of October 24, 1992 , or to perform again any duties performed by such advisory committee before October 24, 1992 .
+(B) Not later than 18 months after October 24, 1992 , the Advisory Committee shall provide the Secretary with a report assessing the implementation of the program under this section, including specific recommendations for improvements or changes to the program and solicitation process. The Secretary shall transmit such report and, if any, the Secretary’s recommendations to the Congress.
+(c) Selection of projects
+(1) Solicitation
+(A) Not later than 9 months after October 24, 1992 , the Secretary shall solicit proposals for projects under this section. The Secretary may make additional solicitations for proposals if the Secretary determines that such solicitations are necessary to carry out this section.
+(B) A solicitation for proposals under this paragraph shall establish a closing date for receipt of proposals. The Secretary may, if necessary, extend the closing date for receipt of proposals for a period not to exceed 90 days.
+(C) Each solicitation under this paragraph shall include a description of the criteria, developed by the Secretary, according to which proposals will be evaluated. In developing such criteria, the Secretary shall consider—
+(i) the need for Federal involvement to commercialize the technology or speed commercialization of the technology;
+(ii) the potential for the technology to have significant market penetration;
+(iii) the potential energy efficiency gains or energy supply contributions of the technology;
+(iv) potential environmental improvements associated with the technology;
+(v) the export potential of the technology;
+(vi) the likelihood that the proposal is technically sufficient to achieve the objective of the solicitation;
+(vii) the degree to which non-Federal financial participation is involved in the proposal;
+(viii) the business and financial history of the proposer or proposers; and
+(ix) any other factor the Secretary considers appropriate.
+(2) Project technologies
+Projects under this section may include the following technologies:
+(A) Conversion of cellulosic biomass to liquid fuels.
+(B) Ethanol and ethanol byproduct processes.
+(C) Direct combustion or gasification of biomass.
+(D) Biofuels energy systems.
+(E) Photovoltaics, including utility scale and remote applications.
+(F) Solar thermal, including solar water heating.
+(G) Wind energy.
+(H) High temperature and low temperature geothermal energy.
+(I) Fuel cells, including transportation and stationary applications.
+(J) Nondefense high-temperature superconducting electricity technology.
+(K) Source reduction technology.
+(L) Factory-made housing.
+(M) Advanced district cooling.
+(3) Project selection
+The Secretary shall, within 120 days after the closing date established under paragraph (1)(B), select proposals to receive financial assistance under this section. In selecting proposals under this paragraph, the Secretary shall—
+(A) consider each proposal’s ability to meet the criteria developed pursuant to paragraph (1)(C); and
+(B) attempt to achieve technological and geographic diversity.
+(d) Authorization of appropriations
+There are authorized to be appropriated to the Secretary for carrying out this section $50,000,000 for fiscal year 1994.
+§ 12006. Reports
+(a) Report by Secretary
+One year after December 11, 1989 , and annually thereafter, the Secretary shall report to Congress on the programs and projects supported under this chapter and the progress being made toward accomplishing the goals and purposes set forth in this chapter.
+(b) National renewable energy and energy efficiency management plan
+(1) The Secretary, in consultation with the Advisory Committee, shall prepare a three-year management plan to be administered and carried out by the Secretary in the conduct of activities under this chapter.
+(2) After opportunity for public comment and consideration, as appropriate, of such comment, the Secretary shall publish the plan.
+(3) In addition to describing the Secretary’s intentions for administering this chapter, the plan shall include a comprehensive strategy for assisting the private sector—
+(A) in commercializing the renewable energy and energy efficiency technologies developed under this chapter; and
+(B) in meeting competition from foreign suppliers of products derived from renewable energy and energy efficiency technologies.
+(4) The plan shall address the role of federally-assisted research, development, and demonstration in the achievement of applicable national policy goals of the National Energy Policy Plan required under section 7321 of this title and the plan developed under section 5905 of this title .
+(5) In addition, the Plan  1 shall—
+(A) contain a detailed assessment of program needs, objectives, and priorities for each of the programs authorized under section 12005 of this title ;
+(B) use a uniform prioritization methodology to facilitate cost-benefit analyses of proposals in various program areas;
+(C) establish milestones for setting forth specific technology transfer activities under each program area;
+(D) include annual and five-year cost estimates for individual programs under this chapter; and
+(E) identify program areas for which funding levels have been changed from the previous year’s Plan. 1
+(6) Within one year after October 24, 1992 , the Secretary shall submit a revised management plan under this section to Congress. Thereafter, the Secretary shall submit a management plan every three years at the time of submittal of the President’s annual budget submission to the Congress.
+(c) Report on options
+As part of the first report submitted under subsection (a), the Secretary shall submit to Congress a report analyzing options available to the Secretary under existing law to assist the private sector with the timely commercialization of wind, photovoltaic, solar thermal, biofuels, hydrogen, solar buildings, marine, geothermal, low-head hydro, and energy storage renewable energy technologies and energy efficiency technologies through emphasis on development and demonstration assistance to specific technologies in the research, development, and demonstration programs of the Department of Energy that are near commercial application.
+§ 12007. No antitrust immunity or defenses
+Nothing in this chapter shall be deemed to convey to any person, partnership, corporation, or other entity immunity from civil or criminal liability under any antitrust law or to create defenses to actions under any antitrust law. As used in this section, “antitrust laws” means those Acts set forth in section 12 of title 15 .
+CHAPTER 126— EQUAL OPPORTUNITY FOR INDIVIDUALS WITH DISABILITIES
+§ 12101. Findings and purpose
+(a) Findings
+The Congress finds that—
+(1) physical or mental disabilities in no way diminish a person’s right to fully participate in all aspects of society, yet many people with physical or mental disabilities have been precluded from doing so because of discrimination; others who have a record of a disability or are regarded as having a disability also have been subjected to discrimination;
+(2) historically, society has tended to isolate and segregate individuals with disabilities, and, despite some improvements, such forms of discrimination against individuals with disabilities continue to be a serious and pervasive social problem;
+(3) discrimination against individuals with disabilities persists in such critical areas as employment, housing, public accommodations, education, transportation, communication, recreation, institutionalization, health services, voting, and access to public services;
+(4) unlike individuals who have experienced discrimination on the basis of race, color, sex, national origin, religion, or age, individuals who have experienced discrimination on the basis of disability have often had no legal recourse to redress such discrimination;
+(5) individuals with disabilities continually encounter various forms of discrimination, including outright intentional exclusion, the discriminatory effects of architectural, transportation, and communication barriers, overprotective rules and policies, failure to make modifications to existing facilities and practices, exclusionary qualification standards and criteria, segregation, and relegation to lesser services, programs, activities, benefits, jobs, or other opportunities;
+(6) census data, national polls, and other studies have documented that people with disabilities, as a group, occupy an inferior status in our society, and are severely disadvantaged socially, vocationally, economically, and educationally;
+(7) the Nation’s proper goals regarding individuals with disabilities are to assure equality of opportunity, full participation, independent living, and economic self-sufficiency for such individuals; and
+(8) the continuing existence of unfair and unnecessary discrimination and prejudice denies people with disabilities the opportunity to compete on an equal basis and to pursue those opportunities for which our free society is justifiably famous, and costs the United States billions of dollars in unnecessary expenses resulting from dependency and nonproductivity.
+(b) Purpose
+It is the purpose of this chapter—
+(1) to provide a clear and comprehensive national mandate for the elimination of discrimination against individuals with disabilities;
+(2) to provide clear, strong, consistent, enforceable standards addressing discrimination against individuals with disabilities;
+(3) to ensure that the Federal Government plays a central role in enforcing the standards established in this chapter on behalf of individuals with disabilities; and
+(4) to invoke the sweep of congressional authority, including the power to enforce the fourteenth amendment and to regulate commerce, in order to address the major areas of discrimination faced day-to-day by people with disabilities.
+§ 12102. Definition of disability
+As used in this chapter:
+(1) Disability
+The term “disability” means, with respect to an individual—
+(A) a physical or mental impairment that substantially limits one or more major life activities of such individual;
+(B) a record of such an impairment; or
+(C) being regarded as having such an impairment (as described in paragraph (3)).
+(2) Major life activities
+(A) In general
+For purposes of paragraph (1), major life activities include, but are not limited to, caring for oneself, performing manual tasks, seeing, hearing, eating, sleeping, walking, standing, lifting, bending, speaking, breathing, learning, reading, concentrating, thinking, communicating, and working.
+(B) Major bodily functions
+For purposes of paragraph (1), a major life activity also includes the operation of a major bodily function, including but not limited to, functions of the immune system, normal cell growth, digestive, bowel, bladder, neurological, brain, respiratory, circulatory, endocrine, and reproductive functions.
+(3) Regarded as having such an impairment
+For purposes of paragraph (1)(C):
+(A) An individual meets the requirement of “being regarded as having such an impairment” if the individual establishes that he or she has been subjected to an action prohibited under this chapter because of an actual or perceived physical or mental impairment whether or not the impairment limits or is perceived to limit a major life activity.
+(B) Paragraph (1)(C) shall not apply to impairments that are transitory and minor. A transitory impairment is an impairment with an actual or expected duration of 6 months or less.
+(4) Rules of construction regarding the definition of disability
+The definition of “disability” in paragraph (1) shall be construed in accordance with the following:
+(A) The definition of disability in this chapter shall be construed in favor of broad coverage of individuals under this chapter, to the maximum extent permitted by the terms of this chapter.
+(B) The term “substantially limits” shall be interpreted consistently with the findings and purposes of the ADA Amendments Act of 2008.
+(C) An impairment that substantially limits one major life activity need not limit other major life activities in order to be considered a disability.
+(D) An impairment that is episodic or in remission is a disability if it would substantially limit a major life activity when active.
+(E) (i) The determination of whether an impairment substantially limits a major life activity shall be made without regard to the ameliorative effects of mitigating measures such as—
+(I) medication, medical supplies, equipment, or appliances, low-vision devices (which do not include ordinary eyeglasses or contact lenses), prosthetics including limbs and devices, hearing aids and cochlear implants or other implantable hearing devices, mobility devices, or oxygen therapy equipment and supplies;
+(II) use of assistive technology;
+(III) reasonable accommodations or auxiliary aids or services; or
+(IV) learned behavioral or adaptive neurological modifications.
+(ii) The ameliorative effects of the mitigating measures of ordinary eyeglasses or contact lenses shall be considered in determining whether an impairment substantially limits a major life activity.
+(iii) As used in this subparagraph—
+(I) the term “ordinary eyeglasses or contact lenses” means lenses that are intended to fully correct visual acuity or eliminate refractive error; and
+(II) the term “low-vision devices” means devices that magnify, enhance, or otherwise augment a visual image.
+§ 12103. Additional definitions
+As used in this chapter:
+(1) Auxiliary aids and services
+The term “auxiliary aids and services” includes—
+(A) qualified interpreters or other effective methods of making aurally delivered materials available to individuals with hearing impairments;
+(B) qualified readers, taped texts, or other effective methods of making visually delivered materials available to individuals with visual impairments;
+(C) acquisition or modification of equipment or devices; and
+(D) other similar services and actions.
+(2) State
+The term “State” means each of the several States, the District of Columbia, the Commonwealth of Puerto Rico, Guam, American Samoa, the Virgin Islands of the United States, the Trust Territory of the Pacific Islands, and the Commonwealth of the Northern Mariana Islands.”.
+SUBCHAPTER I— EMPLOYMENT
+§ 12111. Definitions
+As used in this subchapter:
+(1) Commission
+The term “Commission” means the Equal Employment Opportunity Commission established by section 2000e–4 of this title .
+(2) Covered entity
+The term “covered entity” means an employer, employment agency, labor organization, or joint labor-management committee.
+(3) Direct threat
+The term “direct threat” means a significant risk to the health or safety of others that cannot be eliminated by reasonable accommodation.
+(4) Employee
+The term “employee” means an individual employed by an employer. With respect to employment in a foreign country, such term includes an individual who is a citizen of the United States.
+(5) Employer
+(A) In general
+The term “employer” means a person engaged in an industry affecting commerce who has 15 or more employees for each working day in each of 20 or more calendar weeks in the current or preceding calendar year, and any agent of such person, except that, for two years following the effective date of this subchapter, an employer means a person engaged in an industry affecting commerce who has 25 or more employees for each working day in each of 20 or more calendar weeks in the current or preceding year, and any agent of such person.
+(B) Exceptions
+The term “employer” does not include—
+(i) the United States, a corporation wholly owned by the government of the United States, or an Indian tribe; or
+(ii) a bona fide private membership club (other than a labor organization) that is exempt from taxation under section 501(c) of title 26 .
+(6) Illegal use of drugs
+(A) In general
+The term “illegal use of drugs” means the use of drugs, the possession or distribution of which is unlawful under the Controlled Substances Act [ 21 U.S.C. 801 et seq.]. Such term does not include the use of a drug taken under supervision by a licensed health care professional, or other uses authorized by the Controlled Substances Act or other provisions of Federal law.
+(B) Drugs
+The term “drug” means a controlled substance, as defined in schedules I through V of section 202 of the Controlled Substances Act [ 21 U.S.C. 812 ].
+(7) Person, etc.
+The terms “person”, “labor organization”, “employment agency”, “commerce”, and “industry affecting commerce”, shall have the same meaning given such terms in section 2000e of this title .
+(8) Qualified individual
+The term “qualified individual” means an individual who, with or without reasonable accommodation, can perform the essential functions of the employment position that such individual holds or desires. For the purposes of this subchapter, consideration shall be given to the employer’s judgment as to what functions of a job are essential, and if an employer has prepared a written description before advertising or interviewing applicants for the job, this description shall be considered evidence of the essential functions of the job.
+(9) Reasonable accommodation
+The term “reasonable accommodation” may include—
+(A) making existing facilities used by employees readily accessible to and usable by individuals with disabilities; and
+(B) job restructuring, part-time or modified work schedules, reassignment to a vacant position, acquisition or modification of equipment or devices, appropriate adjustment or modifications of examinations, training materials or policies, the provision of qualified readers or interpreters, and other similar accommodations for individuals with disabilities.
+(10) Undue hardship
+(A) In general
+The term “undue hardship” means an action requiring significant difficulty or expense, when considered in light of the factors set forth in subparagraph (B).
+(B) Factors to be considered
+In determining whether an accommodation would impose an undue hardship on a covered entity, factors to be considered include—
+(i) the nature and cost of the accommodation needed under this chapter;
+(ii) the overall financial resources of the facility or facilities involved in the provision of the reasonable accommodation; the number of persons employed at such facility; the effect on expenses and resources, or the impact otherwise of such accommodation upon the operation of the facility;
+(iii) the overall financial resources of the covered entity; the overall size of the business of a covered entity with respect to the number of its employees; the number, type, and location of its facilities; and
+(iv) the type of operation or operations of the covered entity, including the composition, structure, and functions of the workforce of such entity; the geographic separateness, administrative, or fiscal relationship of the facility or facilities in question to the covered entity.
+§ 12112. Discrimination
+(a) General rule
+No covered entity shall discriminate against a qualified individual on the basis of disability in regard to job application procedures, the hiring, advancement, or discharge of employees, employee compensation, job training, and other terms, conditions, and privileges of employment.
+(b) Construction
+As used in subsection (a), the term “discriminate against a qualified individual on the basis of disability” includes—
+(1) limiting, segregating, or classifying a job applicant or employee in a way that adversely affects the opportunities or status of such applicant or employee because of the disability of such applicant or employee;
+(2) participating in a contractual or other arrangement or relationship that has the effect of subjecting a covered entity’s qualified applicant or employee with a disability to the discrimination prohibited by this subchapter (such relationship includes a relationship with an employment or referral agency, labor union, an organization providing fringe benefits to an employee of the covered entity, or an organization providing training and apprenticeship programs);
+(3) utilizing standards, criteria, or methods of administration—
+(A) that have the effect of discrimination on the basis of disability; or
+(B) that perpetuate the discrimination of others who are subject to common administrative control;
+(4) excluding or otherwise denying equal jobs or benefits to a qualified individual because of the known disability of an individual with whom the qualified individual is known to have a relationship or association;
+(5) (A) not making reasonable accommodations to the known physical or mental limitations of an otherwise qualified individual with a disability who is an applicant or employee, unless such covered entity can demonstrate that the accommodation would impose an undue hardship on the operation of the business of such covered entity; or
+(B) denying employment opportunities to a job applicant or employee who is an otherwise qualified individual with a disability, if such denial is based on the need of such covered entity to make reasonable accommodation to the physical or mental impairments of the employee or applicant;
+(6) using qualification standards, employment tests or other selection criteria that screen out or tend to screen out an individual with a disability or a class of individuals with disabilities unless the standard, test or other selection criteria, as used by the covered entity, is shown to be job-related for the position in question and is consistent with business necessity; and
+(7) failing to select and administer tests concerning employment in the most effective manner to ensure that, when such test is administered to a job applicant or employee who has a disability that impairs sensory, manual, or speaking skills, such test results accurately reflect the skills, aptitude, or whatever other factor of such applicant or employee that such test purports to measure, rather than reflecting the impaired sensory, manual, or speaking skills of such employee or applicant (except where such skills are the factors that the test purports to measure).
+(c) Covered entities in foreign countries
+(1) In general
+It shall not be unlawful under this section for a covered entity to take any action that constitutes discrimination under this section with respect to an employee in a workplace in a foreign country if compliance with this section would cause such covered entity to violate the law of the foreign country in which such workplace is located.
+(2) Control of corporation
+(A) Presumption
+If an employer controls a corporation whose place of incorporation is a foreign country, any practice that constitutes discrimination under this section and is engaged in by such corporation shall be presumed to be engaged in by such employer.
+(B) Exception
+This section shall not apply with respect to the foreign operations of an employer that is a foreign person not controlled by an American employer.
+(C) Determination
+For purposes of this paragraph, the determination of whether an employer controls a corporation shall be based on—
+(i) the interrelation of operations;
+(ii) the common management;
+(iii) the centralized control of labor relations; and
+(iv) the common ownership or financial control,
+of the employer and the corporation.
+(d) Medical examinations and inquiries
+(1) In general
+The prohibition against discrimination as referred to in subsection (a) shall include medical examinations and inquiries.
+(2) Preemployment
+(A) Prohibited examination or inquiry
+Except as provided in paragraph (3), a covered entity shall not conduct a medical examination or make inquiries of a job applicant as to whether such applicant is an individual with a disability or as to the nature or severity of such disability.
+(B) Acceptable inquiry
+A covered entity may make preemployment inquiries into the ability of an applicant to perform job-related functions.
+(3) Employment entrance examination
+A covered entity may require a medical examination after an offer of employment has been made to a job applicant and prior to the commencement of the employment duties of such applicant, and may condition an offer of employment on the results of such examination, if—
+(A) all entering employees are subjected to such an examination regardless of disability;
+(B) information obtained regarding the medical condition or history of the applicant is collected and maintained on separate forms and in separate medical files and is treated as a confidential medical record, except that—
+(i) supervisors and managers may be informed regarding necessary restrictions on the work or duties of the employee and necessary accommodations;
+(ii) first aid and safety personnel may be informed, when appropriate, if the disability might require emergency treatment; and
+(iii) government officials investigating compliance with this chapter shall be provided relevant information on request; and
+(C) the results of such examination are used only in accordance with this subchapter.
+(4) Examination and inquiry
+(A) Prohibited examinations and inquiries
+A covered entity shall not require a medical examination and shall not make inquiries of an employee as to whether such employee is an individual with a disability or as to the nature or severity of the disability, unless such examination or inquiry is shown to be job-related and consistent with business necessity.
+(B) Acceptable examinations and inquiries
+A covered entity may conduct voluntary medical examinations, including voluntary medical histories, which are part of an employee health program available to employees at that work site. A covered entity may make inquiries into the ability of an employee to perform job-related functions.
+(C) Requirement
+Information obtained under subparagraph (B) regarding the medical condition or history of any employee are subject to the requirements of subparagraphs (B) and (C) of paragraph (3).
+§ 12113. Defenses
+(a) In general
+It may be a defense to a charge of discrimination under this chapter that an alleged application of qualification standards, tests, or selection criteria that screen out or tend to screen out or otherwise deny a job or benefit to an individual with a disability has been shown to be job-related and consistent with business necessity, and such performance cannot be accomplished by reasonable accommodation, as required under this subchapter.
+(b) Qualification standards
+The term “qualification standards” may include a requirement that an individual shall not pose a direct threat to the health or safety of other individuals in the workplace.
+(c) Qualification standards and tests related to uncorrected vision
+Notwithstanding section 12102(4)(E)(ii) of this title , a covered entity shall not use qualification standards, employment tests, or other selection criteria based on an individual’s uncorrected vision unless the standard, test, or other selection criteria, as used by the covered entity, is shown to be job-related for the position in question and consistent with business necessity.
+(d) Religious entities
+(1) In general
+This subchapter shall not prohibit a religious corporation, association, educational institution, or society from giving preference in employment to individuals of a particular religion to perform work connected with the carrying on by such corporation, association, educational institution, or society of its activities.
+(2) Religious tenets requirement
+Under this subchapter, a religious organization may require that all applicants and employees conform to the religious tenets of such organization.
+(e) List of infectious and communicable diseases
+(1) In general
+The Secretary of Health and Human Services, not later than 6 months after July 26, 1990 , shall—
+(A) review all infectious and communicable diseases which may be transmitted through handling the food supply;
+(B) publish a list of infectious and communicable diseases which are transmitted through handling the food supply;
+(C) publish the methods by which such diseases are transmitted; and
+(D) widely disseminate such information regarding the list of diseases and their modes of transmissability  1 to the general public.
+Such list shall be updated annually.
+(2) Applications
+In any case in which an individual has an infectious or communicable disease that is transmitted to others through the handling of food, that is included on the list developed by the Secretary of Health and Human Services under paragraph (1), and which cannot be eliminated by reasonable accommodation, a covered entity may refuse to assign or continue to assign such individual to a job involving food handling.
+(3) Construction
+Nothing in this chapter shall be construed to preempt, modify, or amend any State, county, or local law, ordinance, or regulation applicable to food handling which is designed to protect the public health from individuals who pose a significant risk to the health or safety of others, which cannot be eliminated by reasonable accommodation, pursuant to the list of infectious or communicable diseases and the modes of transmissability  1 published by the Secretary of Health and Human Services.
+§ 12114. Illegal use of drugs and alcohol
+(a) Qualified individual with a disability
+For purposes of this subchapter, a qualified individual with a disability shall not include any employee or applicant who is currently engaging in the illegal use of drugs, when the covered entity acts on the basis of such use.
+(b) Rules of construction
+Nothing in subsection (a) shall be construed to exclude as a qualified individual with a disability an individual who—
+(1) has successfully completed a supervised drug rehabilitation program and is no longer engaging in the illegal use of drugs, or has otherwise been rehabilitated successfully and is no longer engaging in such use;
+(2) is participating in a supervised rehabilitation program and is no longer engaging in such use; or
+(3) is erroneously regarded as engaging in such use, but is not engaging in such use;
+except that it shall not be a violation of this chapter for a covered entity to adopt or administer reasonable policies or procedures, including but not limited to drug testing, designed to ensure that an individual described in paragraph (1) or (2) is no longer engaging in the illegal use of drugs.
+(c) Authority of covered entity
+A covered entity—
+(1) may prohibit the illegal use of drugs and the use of alcohol at the workplace by all employees;
+(2) may require that employees shall not be under the influence of alcohol or be engaging in the illegal use of drugs at the workplace;
+(3) may require that employees behave in conformance with the requirements established under chapter 81 of title 41;
+(4) may hold an employee who engages in the illegal use of drugs or who is an alcoholic to the same qualification standards for employment or job performance and behavior that such entity holds other employees, even if any unsatisfactory performance or behavior is related to the drug use or alcoholism of such employee; and
+(5) may, with respect to Federal regulations regarding alcohol and the illegal use of drugs, require that—
+(A) employees comply with the standards established in such regulations of the Department of Defense, if the employees of the covered entity are employed in an industry subject to such regulations, including complying with regulations (if any) that apply to employment in sensitive positions in such an industry, in the case of employees of the covered entity who are employed in such positions (as defined in the regulations of the Department of Defense);
+(B) employees comply with the standards established in such regulations of the Nuclear Regulatory Commission, if the employees of the covered entity are employed in an industry subject to such regulations, including complying with regulations (if any) that apply to employment in sensitive positions in such an industry, in the case of employees of the covered entity who are employed in such positions (as defined in the regulations of the Nuclear Regulatory Commission); and
+(C) employees comply with the standards established in such regulations of the Department of Transportation, if the employees of the covered entity are employed in a transportation industry subject to such regulations, including complying with such regulations (if any) that apply to employment in sensitive positions in such an industry, in the case of employees of the covered entity who are employed in such positions (as defined in the regulations of the Department of Transportation).
+(d) Drug testing
+(1) In general
+For purposes of this subchapter, a test to determine the illegal use of drugs shall not be considered a medical examination.
+(2) Construction
+Nothing in this subchapter shall be construed to encourage, prohibit, or authorize the conducting of drug testing for the illegal use of drugs by job applicants or employees or making employment decisions based on such test results.
+(e) Transportation employees
+Nothing in this subchapter shall be construed to encourage, prohibit, restrict, or authorize the otherwise lawful exercise by entities subject to the jurisdiction of the Department of Transportation of authority to—
+(1) test employees of such entities in, and applicants for, positions involving safety-sensitive duties for the illegal use of drugs and for on-duty impairment by alcohol; and
+(2) remove such persons who test positive for illegal use of drugs and on-duty impairment by alcohol pursuant to paragraph (1) from safety-sensitive duties in implementing subsection (c).
+§ 12115. Posting notices
+Every employer, employment agency, labor organization, or joint labor-management committee covered under this subchapter shall post notices in an accessible format to applicants, employees, and members describing the applicable provisions of this chapter, in the manner prescribed by section 2000e–10 of this title .
+§ 12116. Regulations
+Not later than 1 year after July 26, 1990 , the Commission shall issue regulations in an accessible format to carry out this subchapter in accordance with subchapter II of chapter 5 of title 5.
+§ 12117. Enforcement
+(a) Powers, remedies, and procedures
+The powers, remedies, and procedures set forth in sections 2000e–4, 2000e–5, 2000e–6, 2000e–8, and 2000e–9 of this title shall be the powers, remedies, and procedures this subchapter provides to the Commission, to the Attorney General, or to any person alleging discrimination on the basis of disability in violation of any provision of this chapter, or regulations promulgated under section 12116 of this title , concerning employment.
+(b) Coordination
+The agencies with enforcement authority for actions which allege employment discrimination under this subchapter and under the Rehabilitation Act of 1973 [ 29 U.S.C. 701 et seq.] shall develop procedures to ensure that administrative complaints filed under this subchapter and under the Rehabilitation Act of 1973 are dealt with in a manner that avoids duplication of effort and prevents imposition of inconsistent or conflicting standards for the same requirements under this subchapter and the Rehabilitation Act of 1973. The Commission, the Attorney General, and the Office of Federal Contract Compliance Programs shall establish such coordinating mechanisms (similar to provisions contained in the joint regulations promulgated by the Commission and the Attorney General at part 42 of title 28 and part 1691 of title 29, Code of Federal Regulations, and the Memorandum of Understanding between the Commission and the Office of Federal Contract Compliance Programs dated January 16, 1981 (46 Fed. Reg. 7435, January 23, 1981 )) in regulations implementing this subchapter and Rehabilitation Act of 1973 not later than 18 months after July 26, 1990 .

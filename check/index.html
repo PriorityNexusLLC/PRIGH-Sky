@@ -1,0 +1,760 @@
+<meta charset="utf-8">
+<title>Nine Gates - Three Ethics: Accountability Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a dark header band with the law picker; under it the scorecard (nine gates, three ethics), then the gates.
+   The rule's text sits in a side panel on wide screens. Evidence folds away under each gate until asked for.
+   Type: Public Sans (the U.S. government's own plain-reading face) for everything; IBM Plex Mono, small, only for record text.
+   Color: warm stone and bark, with clay, ochre and moss for the three ethics. */
+:root {
+  --bg: #f4f2ee; --surface: #ffffff; --sunk: #f7f5f1; --ink: #1f1c18; --muted: #6b645a; --line: #e3ddd3; --line2: #d4ccbf;
+  --band: #26221d; --band-ink: #f4efe7; --band-muted: #b9ae9f; --accent: #8a5a44;
+  --c-identity: #8a5a44; --c-transparency: #93742a; --c-integrity: #56693f;
+  --yes: #3f6a3a; --yes-bg: #e6efe2; --no: #a2412a; --no-bg: #f7e4dc; --unk: #8a6a1f; --unk-bg: #f5ecd5;
+  --quote-bg: #f1ede6; --shadow: 0 1px 2px rgba(38,34,29,.06), 0 6px 20px rgba(38,34,29,.06);
+  --f-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #161411; --surface: #1f1c18; --sunk: #1a1815; --ink: #ece6dc; --muted: #a49a8c; --line: #322d27; --line2: #403a32;
+  --band: #0f0d0b; --band-ink: #f4efe7; --band-muted: #9d9284; --accent: #d29a7c;
+  --c-identity: #d29a7c; --c-transparency: #d4b062; --c-integrity: #9fb684;
+  --yes: #9fcf92; --yes-bg: #233021; --no: #ee9a82; --no-bg: #3a221b; --unk: #e2c068; --unk-bg: #342c17;
+  --quote-bg: #26221d; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #161411; --surface: #1f1c18; --sunk: #1a1815; --ink: #ece6dc; --muted: #a49a8c; --line: #322d27; --line2: #403a32;
+  --band: #0f0d0b; --band-ink: #f4efe7; --band-muted: #9d9284; --accent: #d29a7c;
+  --c-identity: #d29a7c; --c-transparency: #d4b062; --c-integrity: #9fb684;
+  --yes: #9fcf92; --yes-bg: #233021; --no: #ee9a82; --no-bg: #3a221b; --unk: #e2c068; --unk-bg: #342c17;
+  --quote-bg: #26221d; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25); color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--f-body); margin: 0; }
+.pad { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.inner { max-width: 1200px; margin: 0 auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+
+.band { background: var(--band); color: var(--band-ink); padding-block: 28px 30px; }
+.band .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.brand { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--band-muted); }
+nav { display: inline-flex; background: rgba(255,255,255,.07); border-radius: 999px; padding: 4px; gap: 2px; }
+nav a { color: var(--band-muted); text-decoration: none; font-size: 14px; font-weight: 600; padding: 7px 16px; border-radius: 999px; }
+nav a[aria-current=page] { background: var(--band-ink); color: var(--band); }
+.band h1 { font-weight: 800; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.08; letter-spacing: -.02em; margin: 22px 0 6px; text-wrap: balance; }
+.band h1 span { color: var(--band-muted); font-weight: 600; }
+.band .lede { color: var(--band-muted); max-width: 62ch; margin: 0 0 22px; font-size: 17px; }
+.picker { max-width: 760px; }
+.picker input { width: 100%; font: 500 17px var(--f-body); padding: 15px 18px; border-radius: 12px; border: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.chips button { font: 600 13px var(--f-body); color: var(--band-muted); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.chips button[aria-pressed=true] { background: var(--band-ink); color: var(--band); border-color: var(--band-ink); }
+.chips button span { opacity: .7; font-weight: 500; }
+#lawResults { list-style: none; margin: 8px 0 0; padding: 6px; background: var(--surface); border-radius: 12px; box-shadow: var(--shadow); max-height: 360px; overflow-y: auto; }
+#lawResults li button { display: block; width: 100%; text-align: left; background: none; border: 0; border-radius: 8px; padding: 9px 12px; font: 500 15px var(--f-body); color: var(--ink); cursor: pointer; }
+#lawResults li button:hover, #lawResults li button:focus-visible { background: var(--sunk); outline: none; }
+#lawResults li small { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+#lawResults .count { padding: 6px 12px 8px; color: var(--muted); font-size: 13px; }
+#lawInfo .now { color: var(--band-ink); font-weight: 700; font-size: 15px; display: block; margin-bottom: 4px; }
+#lawInfo { color: var(--band-muted); font-size: 13px; margin: 10px 0 0; max-width: 760px; }
+#lawInfo a { color: var(--band-ink); }
+#lawInfo details { margin-top: 6px; }
+#lawInfo summary { cursor: pointer; color: var(--band-ink); }
+
+main { padding-block: 28px 64px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 28px; align-items: start; }
+@media (max-width: 980px) { .cols { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+
+.result { padding: 22px 24px; display: grid; gap: 18px; margin-bottom: 28px; }
+.result h2 { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.result .docname { font-size: 21px; font-weight: 800; margin: 2px 0 0; letter-spacing: -.01em; }
+.strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 640px) { .strip { grid-template-columns: minmax(0, 1fr); } }
+.core { border-radius: 12px; background: var(--sunk); padding: 14px; border-top: 4px solid var(--cc); }
+.core .name { font-weight: 800; color: var(--cc); font-size: 15px; }
+.core .state { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.core ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.core li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 8px; font-size: 14px; }
+.core li .ans { font-size: 13px; font-weight: 700; }
+.ic { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--line); color: var(--muted); font-size: 12px; font-weight: 800; line-height: 1; }
+.ic.yes, .ans.yes { color: var(--yes); } .ic.yes { background: var(--yes-bg); }
+.ic.no, .ans.no { color: var(--no); } .ic.no { background: var(--no-bg); }
+.ic.unk, .ans.unk { color: var(--unk); } .ic.unk { background: var(--unk-bg); }
+.summary { margin: 0; font-size: 15px; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+button { font: 600 14px var(--f-body); border-radius: 10px; padding: 9px 16px; cursor: pointer; border: 1px solid var(--line2); background: var(--surface); color: var(--ink); }
+button:hover { border-color: var(--muted); }
+button.primary { background: var(--band); border-color: var(--band); color: var(--band-ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+pre#out { white-space: pre-wrap; font: 11px/1.45 var(--f-mono); background: var(--quote-bg); border-radius: 10px; padding: 12px; max-height: 300px; overflow: auto; margin: 0; }
+
+.group { margin-bottom: 30px; }
+.group h3 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 12px; font-size: 22px; font-weight: 800; letter-spacing: -.01em; flex-wrap: wrap; }
+.group h3 i { font-style: normal; font-size: 15px; font-weight: 500; color: var(--muted); }
+.group h3::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--cc); align-self: center; }
+.gate { padding: 20px 22px; display: grid; gap: 14px; margin-bottom: 14px; }
+.gh { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; }
+.num { width: 40px; height: 40px; border-radius: 12px; background: var(--sunk); border: 1px solid var(--line); color: var(--cc); display: grid; place-items: center; font-weight: 800; font-size: 17px; }
+.gname { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--cc); }
+.gate .q { font-weight: 700; font-size: 19px; line-height: 1.35; margin: 2px 0 0; text-wrap: balance; }
+.choices { display: inline-flex; background: var(--sunk); border: 1px solid var(--line); border-radius: 12px; padding: 4px; gap: 4px; justify-self: start; flex-wrap: wrap; }
+.choices button { border: 0; background: transparent; border-radius: 9px; padding: 8px 16px; font-weight: 600; color: var(--muted); }
+.choices button[aria-pressed=true].yes { background: var(--yes-bg); color: var(--yes); }
+.choices button[aria-pressed=true].no { background: var(--no-bg); color: var(--no); }
+.choices button[aria-pressed=true].unk { background: var(--unk-bg); color: var(--unk); }
+.verdict { margin: 0; font-size: 16px; line-height: 1.55; padding: 12px 14px; background: var(--sunk); border-radius: 10px; border-left: 3px solid var(--cc); }
+.auto { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--muted); }
+details.ev > summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--accent); list-style: none; }
+details.ev > summary::-webkit-details-marker { display: none; }
+details.ev > summary::before { content: "+ "; }
+details.ev[open] > summary::before { content: "\2212  "; }
+.ev-in { display: grid; gap: 12px; padding-top: 12px; }
+label.lbl { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; }
+input[type=text], select, textarea { width: 100%; font: inherit; color: var(--ink); background: var(--sunk); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.look { font-size: 14px; color: var(--muted); margin: 0; }
+.quoteRow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: start; }
+.gate textarea { font: 10.5px/1.45 var(--f-mono); letter-spacing: -.03em; background: var(--quote-bg); min-height: 44px; }
+.gate textarea.note { font: 14px/1.5 var(--f-body); letter-spacing: 0; background: var(--sunk); }
+.warn { font-size: 13px; color: var(--unk); margin: 0; }
+.where { font-size: 13px; color: var(--muted); margin: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.where b { color: var(--ink); }
+.reading { background: var(--sunk); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; font-size: 14px; }
+.reading .head { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--cc); }
+.reading .sub { display: grid; gap: 6px; }
+.reading .sub .t { font-weight: 700; }
+.reading .sub .t span { font-weight: 400; color: var(--muted); }
+.reading blockquote { margin: 0; font: 10.5px/1.45 var(--f-mono); letter-spacing: -.03em; background: var(--quote-bg); border-radius: 8px; padding: 8px 10px; color: var(--muted); }
+.gate .plainw { --cc: var(--accent); }
+.plainw { font-size: 15px; line-height: 1.55; padding: 8px 12px; border-left: 3px solid var(--cc); background: var(--surface); border-radius: 0 8px 8px 0; }
+.plainw .pwl { display: block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.reading .use2 { justify-self: start; font-size: 12px; padding: 5px 12px; }
+.reading .fine { font-size: 12px; color: var(--muted); margin: 0; }
+
+.doc { padding: 20px; display: grid; gap: 14px; position: sticky; top: 16px; }
+@media (max-width: 980px) { .doc { position: static; } }
+.doc h2 { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.row2 { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 10px; }
+textarea#docText { min-height: 380px; font: 10.5px/1.45 var(--f-mono); letter-spacing: -.03em; resize: vertical; }
+.hint { font-size: 13px; color: var(--muted); margin: 0; }
+.example { font-size: 13px; background: var(--unk-bg); border-radius: 10px; padding: 8px 12px; margin: 0; }
+
+#method { padding: 32px 36px; max-width: 820px; }
+#method h2 { font-size: 30px; font-weight: 800; letter-spacing: -.01em; margin: 0 0 14px; }
+#method .lead { font-size: 21px; line-height: 1.45; font-weight: 600; color: var(--accent); margin: 0 0 22px; padding-left: 16px; border-left: 3px solid var(--accent); }
+#method h3 { font-size: 19px; font-weight: 800; margin: 28px 0 8px; }
+#method p, #method li { max-width: 68ch; }
+#method ul { padding-left: 1.2em; display: grid; gap: 8px; margin: 0; }
+[hidden] { display: none !important; }
+body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display: none !important; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 6px 0 4px; }
+.step { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: var(--bg); display: flex; flex-direction: column; align-items: flex-start; }
+.step .n { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; font-size: 14px; }
+.step h4 { font-size: 17px; font-weight: 800; margin: 10px 0 6px; }
+.step p { margin: 0; font-size: 15px; line-height: 1.5; }
+.step .big { display: block; font-size: 26px; font-weight: 800; letter-spacing: -.01em; margin: auto 0 0; padding-top: 12px; color: var(--accent); }
+.step .small { display: block; font-size: 13px; color: var(--muted); }
+@media (max-width: 760px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) { #method { padding: 22px 20px; } .gate { padding: 16px; } .result { padding: 18px; } }
+</style>
+
+<header class="band pad">
+  <div class="inner">
+    <div class="top">
+      <span class="brand">Priority Nexus · Accountability Check</span>
+      <nav>
+        <a href="#check" id="tabCheck">Check</a>
+        <a href="#method" id="tabMethod">Method</a>
+        <a href="https://prioritynexusllc.github.io/PRIGH-Sky/" class="site" title="The map: who is connected to whom, from official records">PRIGH Sky</a>
+        <a href="https://prioritynexusllc.github.io/" class="site" title="Priority Nexus LLC">Priority Nexus</a>
+      </nav>
+    </div>
+    <h1>Nine Gates <span>· Three Ethics</span></h1>
+    <p class="lede">Pick a law, or paste any rule you live under. Nine plain questions show whether it lets you act for yourself, or only through someone else.</p>
+    <div class="picker">
+      <label class="lbl" for="lawSearch" style="color:var(--band-muted)">Find a law Priority Nexus has read</label>
+      <input type="search" id="lawSearch" autocomplete="off" placeholder="Loading every federal law…" aria-controls="lawResults">
+      <div class="chips" id="chips" role="group" aria-label="Show"></div>
+      <ul id="lawResults" hidden></ul>
+    </div>
+    <div id="lawInfo" hidden></div>
+  </div>
+</header>
+
+<main class="pad">
+  <div class="inner">
+    <div class="cols" id="check">
+      <div style="min-width:0">
+        <section class="result card" aria-live="polite">
+          <div>
+            <h2>Result</h2>
+            <p class="docname" id="resultName"></p>
+          </div>
+          <div class="strip" id="strip"></div>
+          <p class="summary" id="summary"></p>
+          <div class="actions">
+            <button class="primary" id="copyBtn">Copy the report</button>
+            <button id="showBtn">Show the report</button>
+            <button id="newBtn">Start a new check</button>
+          </div>
+          <pre id="out" hidden></pre>
+        </section>
+        <div class="gates" id="gates"></div>
+      </div>
+
+      <aside class="doc card" aria-label="The rule being checked">
+        <h2>The rule</h2>
+        <div class="row2">
+          <div><label class="lbl" for="docName">What are you checking?</label><input type="text" id="docName"></div>
+          <div><label class="lbl" for="docType">Kind</label>
+            <select id="docType">
+              <option value="terms">Terms / contract</option>
+              <option value="law">Law / regulation</option>
+              <option value="policy">Policy / rules</option>
+              <option value="other">Something else</option>
+            </select></div>
+        </div>
+        <div>
+          <label class="lbl" for="docText">The text</label>
+          <textarea id="docText" spellcheck="false"></textarea>
+        </div>
+        <p class="hint">Select a sentence here, then press <b>Use selected text</b> under a question to quote it.</p>
+        <p class="example" id="exampleNote">This is a made-up example so you can see how it works. Press <b>Start a new check</b> to use your own.</p>
+      </aside>
+    </div>
+
+    <section id="method" class="card" hidden>
+    <h2>Method</h2>
+    <p class="lead">All decent questions to complex answers, not for judgement or coercion, only clarity: a big complex picture drawn into a legible map.</p>
+    <p>This check asks nine questions of any rule a person lives under. It does not decide who is good or bad. It asks three things: does the rule leave people in charge of themselves, can it be seen clearly, and does it treat everyone it touches fairly.</p>
+    <h3>How the answers are made</h3>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h4>Collect</h4>
+        <p>Programs download the official law in full, straight from the government: the whole U.S. Code and the whole eCFR (federal rules).</p>
+        <span class="big">15,735</span><span class="small">chapters and parts read so far</span></div>
+      <div class="step"><span class="n">2</span><h4>Weigh</h4>
+        <p>For each gate, the program finds the sentences that answer it, counts them, and checks who can act: the person, or only someone else. It follows the laws a law points to, one step out.</p>
+        <span class="big">15,979</span><span class="small">laws you can search on the Check page</span></div>
+      <div class="step"><span class="n">3</span><h4>Write in</h4>
+        <p>The program writes its answer into each gate, with the quote, the link and a plain-words version beside the original. A person reads it and can change any answer.</p>
+        <span class="big">1,427</span><span class="small">passages put in plain words</span></div>
+    </div>
+    <h3>Why we do this: friction</h3>
+    <p>Every moving system carries friction. Our goal is to protect the positive friction and set boundaries to the negative frictions in the way of sovereignty.</p>
+    <p>We call what we protect the whimsy loop: freedom to be, to do, to choose, to learn, without the constant constraints of outside pressure and friction pushing against the three cores and nine gates.</p>
+    <p>Friction is the pressure a rule puts on the people it touches. Every rule has some. The question is whether that pressure has a way out.</p>
+    <ul>
+      <li><b>Positive friction</b> has a way out. A rule that slows a decision so a person can be told, can answer, can appeal or can go to court puts pressure on everyone, and gives that pressure somewhere to go. That friction protects people, and we protect it.</li>
+      <li><b>Negative friction</b> is pressure with no way out. The rule itself is not the problem. The problem is the door that should open and doesn't: no notice, no hearing, no appeal, no way to sue. That is where we look for boundaries.</li>
+    </ul>
+    <p>The nine gates measure this. Notice, a hearing, an appeal and a way to sue are the doors. When a gate shows none of them, the pressure on a person has nowhere to go, and the page says so with the words of the rule itself.</p>
+    <h3>How the answers work</h3>
+    <ul>
+      <li>Every answer points to words in the rule itself. An answer without a quote is an opinion, and the report shows it that way.</li>
+      <li>"Can't tell" is an honest answer. What the text leaves out is reported, not guessed.</li>
+      <li>The same nine questions apply to every rule and every author: a company, a government, a school, a church, a group, a person.</li>
+      <li>All nine answers are shown together. One "no" does not hide the rest.</li>
+      <li>The full report can be copied, so anyone can hold it against the original text and check it.</li>
+      <li>For laws Priority Nexus has read, the page shows the passages our program found for each gate, with the count and a link to the law. A program finds words, not meaning: a passage can say the opposite of what the gate hopes for. The person answering reads it and decides.</li>
+      <li>Under every gate are links to official public records where the answer can be looked up.</li>
+      <li>Every gate asks the same thing: can people do it for themselves? A door only counts if a person can use it. A hearing for the company being fined, or the government's right to sue, is not a door for the people. When only an agency, an official or a lawyer can act, the page says "only through" and names them, because that shows who speaks for people, who decides for them, and who keeps them from deciding for themselves.</li>
+      <li>For the doors (notice, a hearing, a way to court, seeing the record, the law reporting on itself, and a person's own right to sue), the answer reads the whole: the law itself and the laws it points to. To keep that honest, the program goes one step out only, follows only citations that land on an exact chapter or part it has read, and names the law, sentence and link for every door it finds elsewhere. A law's own ban on court review always comes first. Every law it points to is listed with a link, with how many times it is cited.</li>
+      <li>"Not written in the part we read" means the program did not find it in the part of the law it read. The law may not have it, it may sit in another law, or it may be worded in a way the search misses. For federal laws, a general law, the Administrative Procedure Act (5 U.S.C. 702), gives court review of most agency actions even when the law itself says nothing. The page says when an answer rests on that general law, and when a law bars court review of some of its decisions.</li>
+      <li>Each passage our program found also has a plain-words version, written with AI under fixed rules: every person, action, condition and "unless" is kept; nothing is added; "shall" becomes "must" and every "not" stays. The original always sits right above it, so anyone can check one against the other.</li>
+    </ul>
+    <h3>What it does not do</h3>
+    <p>It does not judge what anyone intended. It does not tell you what to do. It asks simple questions of sovereignty and shows where the answers came from.</p>
+  </section>
+  </div>
+</main>
+
+<script>
+const CORES = [
+  { id: "identity", name: "Identity", color: "var(--c-identity)", blurb: "Does it leave you in charge of yourself?" },
+  { id: "transparency", name: "Transparency", color: "var(--c-transparency)", blurb: "Can you see where it came from and how it works?" },
+  { id: "integrity", name: "Integrity", color: "var(--c-integrity)", blurb: "Does it treat everyone it touches fairly?" }
+];
+const GATES = [
+  { core: "identity", name: "Autonomy", q: "Can you say no, leave, or get out without losing what is yours?",
+    look: { terms: "cancelling, closing your account, getting your data or money back", law: "appeals, hearings, ways to object or opt out", policy: "exceptions, appeals, who can override a decision", other: "any way out, or any way to say no" } },
+  { core: "identity", name: "Coercion", q: "Are you agreeing freely, without pressure or penalty?",
+    look: { terms: "\"by using this you agree\", changes without asking you, penalties for leaving", law: "penalties for asking questions, deadlines too short to meet", policy: "consequences for refusing or questioning", other: "pressure, deadlines, threats, guilt" } },
+  { core: "identity", name: "Boundary", q: "Does it leave your personal information alone, or say exactly what it takes and why?",
+    look: { terms: "data collected, shared, sold, kept; who your data goes to", law: "records kept about people, who can see them", policy: "what is recorded about you and who sees it", other: "anything taken from you or about you" } },
+  { core: "transparency", name: "Origin", q: "Can you tell who wrote it, who pays for it, and who benefits?",
+    look: { terms: "the company's real legal name and owner", law: "sponsors, lobbying, who asked for it", policy: "who wrote it and who approved it", other: "author, owner, funder" } },
+  { core: "transparency", name: "Plain words", q: "Can an ordinary reader understand what it actually does?",
+    look: { terms: "defined terms, long cross-references, \"including but not limited to\"", law: "\"notwithstanding\", references to other laws you would have to look up", policy: "jargon, vague words like \"as appropriate\"", other: "anything you had to read three times" } },
+  { core: "transparency", name: "Verification", q: "Can someone outside check that it does what it says?",
+    look: { terms: "audits, reports, a way to see what they hold about you", law: "public reports, inspector reviews, public records", policy: "published results, records you can request", other: "any way to check without trusting them" } },
+  { core: "integrity", name: "Friction", q: "Do the costs and burdens fall evenly, or mostly on the people with the least power?",
+    look: { terms: "who pays fees, who must do paperwork, who carries the risk", law: "who must file, prove, wait, or pay", policy: "who has to do the work to comply", other: "who carries the load" } },
+  { core: "integrity", name: "Fair exchange", q: "Does what you give match what you get back?",
+    look: { terms: "licenses to your content, fees, rights you give up", law: "what people give up and what they get", policy: "what is asked of you and what you receive", other: "the trade, both sides" } },
+  { core: "integrity", name: "Consequence", q: "If it fails or harms someone, does the side that wrote it answer for it?",
+    look: { terms: "liability caps, forced arbitration, class-action waivers", law: "a right to sue, penalties for officials, who enforces it", policy: "who is held responsible when it goes wrong", other: "who pays when it breaks" } }
+];
+
+const SRC = {
+  ecfr: ["eCFR (federal rules)", "https://www.ecfr.gov/"],
+  usc: ["U.S. Code", "https://uscode.house.gov/"],
+  fedreg: ["Federal Register", "https://www.federalregister.gov/"],
+  regs: ["Regulations.gov (public comments)", "https://www.regulations.gov/"],
+  congress: ["Congress.gov (bills, sponsors)", "https://www.congress.gov/"],
+  lda: ["Lobbying disclosures", "https://lda.gov/"],
+  fec: ["FEC (campaign money)", "https://www.fec.gov/data/"],
+  edgar: ["SEC EDGAR (company filings, owners)", "https://www.sec.gov/edgar/search/"],
+  gleif: ["GLEIF (parent companies)", "https://search.gleif.org/"],
+  irs: ["IRS nonprofit search (Form 990)", "https://apps.irs.gov/app/eos/"],
+  ftc: ["FTC cases", "https://www.ftc.gov/legal-library/browse/cases-proceedings"],
+  cfpb: ["CFPB complaints", "https://www.consumerfinance.gov/data-research/consumer-complaints/"],
+  gao: ["GAO reports", "https://www.gao.gov/"],
+  ig: ["Inspector General reports", "https://www.oversight.gov/"],
+  spend: ["USAspending (federal money)", "https://www.usaspending.gov/"],
+  pacer: ["Federal court records (PACER)", "https://pacer.uscourts.gov/"]
+};
+const WHERE = [
+  ["ecfr", "cfpb", "ftc"],
+  ["ftc", "cfpb", "fedreg"],
+  ["ftc", "edgar", "fedreg"],
+  ["edgar", "gleif", "lda", "congress", "fec", "irs"],
+  ["usc", "ecfr", "fedreg"],
+  ["gao", "ig", "spend", "regs"],
+  ["regs", "fedreg", "cfpb"],
+  ["edgar", "spend", "irs"],
+  ["pacer", "ftc", "ig"]
+];
+// Which of Priority Nexus's own law gates speak to each of the nine (approved by Josie 2026-10-26).
+const SITE = [["hearing", "appeal"], ["notice"], [], ["who-wrote"], [], ["access", "self-report"], ["symmetry"], [], ["standing", "waiver"]];
+let RULEBOOK = null;
+
+const SAMPLE = {
+  name: "PhotoNest app terms (made-up example)", type: "terms",
+  text: `PHOTONEST TERMS OF SERVICE (example text)
+
+1. Agreement. By creating an account or using PhotoNest, you agree to these Terms. We may change these Terms at any time. Continued use after a change means you accept it.
+
+2. Your content. You keep ownership of your photos. You grant PhotoNest a worldwide, royalty-free, perpetual license to use, copy, modify, and share your content for any purpose related to our business.
+
+3. Your data. We collect your name, email, device identifiers, location, and the contents of your photos. We share data with advertising partners and affiliates.
+
+4. Cancelling. You may close your account at any time in Settings. Fees already paid are not refunded.
+
+5. Disputes. Any dispute will be resolved by binding individual arbitration. You waive any right to a jury trial or to join a class action.
+
+6. Liability. Our total liability to you will not exceed the greater of $10 or the amount you paid us in the last 12 months.
+
+7. Who we are. PhotoNest is operated by PhotoNest Holdings LLC.`,
+  answers: {
+    0: { a: "yes", quote: "You may close your account at any time in Settings.", note: "You can leave, but money paid is not returned." },
+    1: { a: "no", quote: "Continued use after a change means you accept it.", note: "They can change the deal without asking." },
+    2: { a: "no", quote: "We share data with advertising partners and affiliates.", note: "" },
+    3: { a: "unk", quote: "PhotoNest is operated by PhotoNest Holdings LLC.", note: "A company name, but no owner or address." },
+    7: { a: "no", quote: "a worldwide, royalty-free, perpetual license to use, copy, modify, and share your content", note: "" },
+    8: { a: "no", quote: "will not exceed the greater of $10", note: "Also forced arbitration in section 5." }
+  }
+};
+
+let state;
+const KEY = "nine-gates-check-v1";
+const blank = () => ({ name: "", type: "other", text: "", example: false, answers: GATES.map(() => ({ a: "", quote: "", note: "" })) });
+function fromSample() {
+  const s = blank(); s.name = SAMPLE.name; s.type = SAMPLE.type; s.text = SAMPLE.text; s.example = true;
+  for (const [i, v] of Object.entries(SAMPLE.answers)) s.answers[i] = { ...v };
+  return s;
+}
+function load() { try { const raw = localStorage.getItem(KEY); if (raw) return JSON.parse(raw); } catch (e) {} return null; }
+// A picked law's text comes from law_texts/ each time, so it is not kept in the browser.
+function save() { try { localStorage.setItem(KEY, JSON.stringify(state.lawId ? { ...state, text: "" } : state)); } catch (e) {} }
+function loadLawText(id) {
+  const box = $("docText");
+  box.value = "Loading the law's text…";
+  fetch("law_texts/" + id.replace(/[^A-Za-z0-9._-]/g, "_") + ".txt").then(r => r.ok ? r.text() : null).catch(() => null).then(t => {
+    if (state.lawId !== id) return;
+    state.text = t || "";
+    box.value = t || "";
+    box.placeholder = t ? "" : "This law's text is on its source page. Open the law (link above) and paste the part you are checking.";
+  });
+}
+
+const LABEL = { yes: "Yes", no: "No", unk: "Can't tell" };
+const $ = id => document.getElementById(id);
+
+function renderGates() {
+  const host = $("gates"); host.innerHTML = "";
+  CORES.forEach(core => {
+    const g = document.createElement("section"); g.className = "group"; g.style.setProperty("--cc", core.color);
+    g.innerHTML = `<h3>${core.name} <i>${core.blurb}</i></h3>`;
+    GATES.forEach((gate, i) => {
+      if (gate.core !== core.id) return;
+      const ans = state.answers[i];
+      const card = document.createElement("article"); card.className = "gate card";
+      // The answer and its one-sentence summary sit on top; the evidence folds away until asked for.
+      card.innerHTML = `
+        <div class="gh"><span class="num">${i + 1}</span>
+          <div><div class="gname">${gate.name}</div><p class="q">${gate.q}</p></div></div>
+        <div class="choices" role="group" aria-label="Answer for gate ${i + 1}">
+          ${["yes", "no", "unk"].map(k => `<button type="button" class="${k}" data-k="${k}" aria-pressed="${ans.a === k}">${LABEL[k]}</button>`).join("")}
+        </div>
+        ${ans.auto && ans.note ? `<p class="verdict">${esc(ans.note)}</p>` : ""}
+        ${ans.auto ? `<p class="auto">Priority Nexus answer, from our program's reading. Open the evidence and change it if it's wrong.</p>` : ""}
+        <details class="ev"><summary>See the evidence</summary><div class="ev-in">
+          <p class="look">Look for: <span data-look></span></p>
+          <div>
+            <label class="lbl" for="quote${i}">The line this answer rests on</label>
+            <div class="quoteRow">
+              <textarea id="quote${i}" placeholder="Quote the exact words from the text"></textarea>
+              <button type="button" data-use>Use selected text</button>
+            </div>
+          </div>
+          <div data-pq></div>
+          <p class="warn" data-warn hidden>No quote yet. An answer without a quote is only an opinion.</p>
+          <div data-reading></div>
+          <p class="where"><b>Where to look:</b> ${WHERE[i].map(k => `<a href="${SRC[k][1]}" target="_blank" rel="noopener">${SRC[k][0]}</a>`).join("")}</p>
+          <div><label class="lbl" for="note${i}">Your note (optional)</label><textarea class="note" id="note${i}" placeholder="In your own words"></textarea></div>
+        </div></details>`;
+      card.querySelector("[data-look]").textContent = gate.look[state.type] || gate.look.other;
+      const q = card.querySelector(`#quote${i}`), n = card.querySelector(`#note${i}`);
+      q.value = ans.quote; n.value = ans.note;
+      card.querySelectorAll(".choices button").forEach(b => b.addEventListener("click", () => {
+        ans.a = ans.a === b.dataset.k ? "" : b.dataset.k;
+        if (ans.auto) { ans.auto = false; const p = card.querySelector(".auto"); if (p) p.textContent = "Changed by you."; }
+        card.querySelectorAll(".choices button").forEach(x => x.setAttribute("aria-pressed", ans.a === x.dataset.k));
+        update(card, i);
+      }));
+      q.addEventListener("input", () => { ans.quote = q.value; update(card, i); });
+      n.addEventListener("input", () => { ans.note = n.value; save(); });
+      card.querySelector("[data-use]").addEventListener("click", () => {
+        const t = $("docText"); const sel = t.value.slice(t.selectionStart, t.selectionEnd).trim();
+        if (sel) { q.value = sel; ans.quote = sel; update(card, i); } else { t.focus(); }
+      });
+      fillReading(card.querySelector("[data-reading]"), i, q, card);
+      // The law keeps its own words in the quote box; the plain-words version sits right under it.
+      card._pq = card.querySelector("[data-pq]");
+      card._pq.innerHTML = pw(ans.quote);
+      card._warn = card.querySelector("[data-warn]");
+      card._warn.hidden = !(ans.a && !ans.quote.trim() && !ans.auto);
+      g.appendChild(card);
+    });
+    host.appendChild(g);
+  });
+}
+let INDEX = null, FILTER = "all";
+const CACHE = {};
+function currentLaw() {
+  if (!state.lawId) return null;
+  return CACHE[state.lawId] || (RULEBOOK && RULEBOOK.laws.find(l => l.id === state.lawId)) || null;
+}
+// Returns the law, fetching its title's file from all_laws/ the first time.
+function getLaw(id) {
+  const rb = RULEBOOK && RULEBOOK.laws.find(l => l.id === id);
+  if (rb || CACHE[id]) return Promise.resolve(rb || CACHE[id]);
+  const row = INDEX && INDEX.laws.find(r => r[0] === id);
+  if (!row) return Promise.resolve(null);
+  return fetch("all_laws/" + row[2] + ".json").then(r => r.ok ? r.json() : []).catch(() => [])
+    .then(list => { list.forEach(l => CACHE[l.id] = l); return CACHE[id] || null; });
+}
+const PW_LABEL = "Plain-words version, written with AI. Check it against the original.";
+const pw = q => { const t = RULEBOOK && RULEBOOK.plain && q ? RULEBOOK.plain[q] : null;
+  return t ? `<div class="plainw"><span class="pwl">In plain words</span>${esc(t)}</div>` : ""; };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+function fillReading(host, i, quoteBox, card) {
+  const law = currentLaw();
+  if (!law) return;
+  const keys = SITE[i];
+  if (!keys.length) {
+    const e = law.extra;
+    if (!e) { host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING</span><p class="fine">We don't hold this law's full text, so our program could not read this gate. This one is read by a person.</p></div>`; return; }
+    const item = (label, note, q) => `<div class="sub"><span class="t">${esc(label)} <span>· ${esc(note)}</span></span>${q ? `<blockquote>${esc(q)}</blockquote>${pw(q)}<button type="button" class="use2" data-q="${esc(q)}">Use this passage</button>` : ""}</div>`;
+    let parts = "";
+    if (i === 2) { const b = e.boundary;
+      parts = item("What it takes from you", `${b.takes} sentence${b.takes === 1 ? "" : "s"} found`, b.quote_takes) + item("The limits it puts on that", `${b.limits} sentence${b.limits === 1 ? "" : "s"} found`, b.quote_limits); }
+    else if (i === 4) { const p = e["plain-words"];
+      parts = item("How hard it is to read", `reading grade ${p.grade}; ${p.long_sentences} of ${p.sentences} sentences run 60 words or more; ${p.crossrefs} cross-references`, null) + item("Its longest sentence", "", p.quote_longest); }
+    else { const f = e["fair-exchange"];
+      parts = item("What a person gives", `${f.gives} sentence${f.gives === 1 ? "" : "s"} found`, f.quote_gives) + item("What a person gets", `${f.gets} sentence${f.gets === 1 ? "" : "s"} found`, f.quote_gets); }
+    host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING · ${esc(law.name)}</span>${parts}
+      <p class="fine">Found by our program's word search. A passage can say the opposite of what the gate hopes for. Read it, then answer.</p>
+      ${RULEBOOK && RULEBOOK.plain ? `<p class="fine">${PW_LABEL}</p>` : ""}</div>`;
+    host.querySelectorAll("[data-q]").forEach(b => b.addEventListener("click", () => {
+      quoteBox.value = b.dataset.q; state.answers[i].quote = b.dataset.q; update(card, i);
+    }));
+    return;
+  }
+  const parts = keys.map(k => {
+    const g = law.gates[k]; if (!g) return "";
+    if (k === "who-wrote") {
+      if (g.unchecked) return `<div class="sub"><span class="t">${esc(g.label)} <span>· not checked yet: lobbying filings are matched to the Rulebook's laws only</span></span></div>`;
+      if (!g.found) return `<div class="sub"><span class="t">${esc(g.label)} <span>· no lobbying filing on our map names this law</span></span></div>`;
+      return `<div class="sub"><span class="t">${esc(g.label)} <span>· ${g.count} filing${g.count === 1 ? "" : "s"} name it</span></span>
+        <span>Clients: ${g.clients.map(esc).join(", ")}</span>
+        <span>${g.examples.map(e => `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.client)}, ${esc(e.posted)}</a>`).join(" · ")}</span></div>`;
+    }
+    if (k === "symmetry") {
+      return `<div class="sub"><span class="t">${esc(g.label)} <span>· penalty sentences naming only individuals: ${g.individuals ?? 0}, only institutions: ${g.entities ?? 0}</span></span>
+        ${g.qi ? `<blockquote>${esc(g.qi)}</blockquote>${pw(g.qi)}<button type="button" class="use2" data-q="${esc(g.qi)}">Use this passage</button>` : ""}
+        ${g.qe ? `<blockquote>${esc(g.qe)}</blockquote>${pw(g.qe)}<button type="button" class="use2" data-q="${esc(g.qe)}">Use this passage</button>` : ""}</div>`;
+    }
+    if (!g.found) return `<div class="sub"><span class="t">${esc(g.label)} <span>· not written in the part we read</span></span></div>`;
+    return `<div class="sub"><span class="t">${esc(g.label)} <span>· ${g.count} passage${g.count === 1 ? "" : "s"} found</span></span>
+      <blockquote>${esc(g.quote)}</blockquote>${pw(g.quote)}<button type="button" class="use2" data-q="${esc(g.quote)}">Use this passage</button></div>`;
+  }).join("");
+  let apaLine = "";
+  if (law.whole) {
+    const borrowed = keys.filter(k => law.whole[k] && law.whole[k].found && law.whole[k].from !== "self");
+    if (borrowed.length) apaLine += `<span class="head">FROM THE LAWS IT POINTS TO</span>` + borrowed.map(k => {
+      const w = law.whole[k];
+      return `<div class="sub"><span class="t">${esc(law.gates[k] ? law.gates[k].label : k)} <span>· in <a href="${esc(w.url)}" target="_blank" rel="noopener">${esc(w.from)}</a>${w.general ? " (Administrative Procedure Act)" : ""}</span></span>
+        ${w.quote ? `<blockquote>${esc(w.quote)}</blockquote>${pw(w.quote)}<button type="button" class="use2" data-q="${esc(w.quote)}">Use this passage</button>` : ""}</div>`;
+    }).join("");
+  } else if (i === 0 || i === 8) {
+    const apa = law.apa;
+    apaLine = `<p class="fine">General laws, like the Administrative Procedure Act, may still give a hearing or court review.</p>`;
+    if (i === 0 && apa && apa.precluded && apa.quote)
+      apaLine += `<div class="sub"><span class="t">This law bars court review of some decisions</span><blockquote>${esc(apa.quote)}</blockquote>${pw(apa.quote)}</div>`;
+  }
+  host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING · ${esc(law.name)}</span>${parts}${apaLine}
+    <p class="fine">Found by our program's word search on ${esc(law.run || RULEBOOK.run)}. A passage can say the opposite of what the gate hopes for. Read it, then answer.</p>
+    ${RULEBOOK && RULEBOOK.plain ? `<p class="fine">${PW_LABEL}</p>` : ""}</div>`;
+  host.querySelectorAll("[data-q]").forEach(b => b.addEventListener("click", () => {
+    quoteBox.value = b.dataset.q; state.answers[i].quote = b.dataset.q; update(card, i);
+  }));
+}
+// Priority Nexus's own answer for a gate, from what the program found (draft rule, 2026-10-26).
+function siteAnswer(law, i) {
+  const g = k => law.gates[k] || {};
+  const pick = (a, quote, note) => ({ a, quote: quote || "", note, auto: true });
+  const both = (k1, k2, yesNote, noNote) => {
+    const f1 = g(k1).found, f2 = g(k2).found;
+    if (f1 && f2) return pick("yes", g(k2).quote || g(k1).quote, yesNote);
+    if (!f1 && !f2) return pick("no", "", noNote);
+    const k = f1 ? k1 : k2;
+    return pick("unk", g(k).quote, `Found: ${g(k).label.toLowerCase()}. Not written in the part we read: ${g(f1 ? k2 : k1).label.toLowerCase()}.`);
+  };
+  // Doors count only when a person can use them (Josie 2026-10-26). Without the full text we can't tell who a door serves.
+  if (!law.answers3 && [0, 1, 5, 8].includes(i))
+    return pick("unk", "", "We don't hold this law's full text, so we can't tell whether its doors are for people or only for companies and government.");
+  // Reading the whole (Josie 2026-10-26, option 2): a door counts when it is written in this law or in a law it points to
+  // (one step out), each with its source named. law.whole comes from law_gates_all.py; without it, this law's own text only.
+  if (law.whole && [0, 1, 5, 8].includes(i)) {
+    const W = law.whole;
+    const where = w => w.from === "self" ? "written in this law" : `in ${w.from}${w.general ? " (the Administrative Procedure Act, a general law)" : ", a law this one points to"}`;
+    // Josie 2026-10-26: can people do it themselves, or only through someone else? Name who decides for them.
+    // A door borrowed from another law may only cover the people that law covers, so it is "maybe", never a plain yes.
+    const own = w => w.found && (w.from === "self" || w.general);
+    const say = (label, w) => w.found === null ? `${label}: this law bars court review of some decisions.`
+      : own(w) ? `${label}: yes, you can yourself, ${where(w)}.`
+      : w.found ? `${label}: maybe, only if you are covered by ${w.from}, another law this one points to.`
+      : (w.through && w.through.length) ? `${label}: only through ${w.through.join(", ")}. You can't do it yourself.`
+      : `${label}: not written in this law or the laws it points to.`;
+    const firstQ = (...ws) => { const w = ws.find(w => w.found && w.from === "self") || ws.find(w => w.found) || ws.find(w => w.found === null);
+      return w ? (w.quote || "") : ((ws.find(w => w.quote_through) || {}).quote_through || ""); };
+    const two = (k1, l1, k2, l2) => {
+      const a = W[k1], b = W[k2];
+      const v = a.found === null || b.found === null ? "unk" : own(a) && own(b) ? "yes" : !a.found && !b.found ? "no" : "unk";
+      return pick(v, firstQ(a, b), `${say(l1, a)} ${say(l2, b)}`);
+    };
+    const one = (k, l) => { const w = W[k]; return pick(own(w) ? "yes" : w.found ? "unk" : "no", firstQ(w), say(l, w)); };
+    if (i === 0) return two("hearing", "A chance to answer", "appeal", "A way to a court");
+    if (i === 1) return one("notice", "Notice before it is used on a person");
+    if (i === 5) return two("access", "Seeing the record", "self-report", "The law reporting on itself");
+    return one("standing", "A person enforcing it in court themselves");
+  }
+  switch (i) {
+    case 0: {
+      // A federal law with no court review written in still falls under the APA's general review (5 U.S.C. 702),
+      // unless the law itself bars review somewhere; then it's Can't tell. (Josie 2026-10-26: "go ahead with those changes")
+      const apa = law.apa;
+      if (apa && !g("appeal").found) {
+        const h = g("hearing").found;
+        if (apa.precluded) return pick("unk", apa.quote, `No court review written in this law, and the law bars court review of some decisions. The Administrative Procedure Act may cover the rest.${h ? " A hearing is written in." : ""}`);
+        return pick(h ? "yes" : "unk", g("hearing").quote || "", `Court review comes from the Administrative Procedure Act (5 U.S.C. 702), not from this law's own text.${h ? " A hearing is written in." : " No hearing is written in the part we read."}`);
+      }
+      return both("hearing", "appeal", "A hearing and a way to a court or reviewer are both written in.", "No hearing and no way to a court or reviewer written in the part we read.");
+    }
+    case 1: return g("notice").found ? pick("yes", g("notice").quote, "Notice before it is used on a person is written in.")
+                                     : pick("no", "", "No notice before it is used on a person written in the part we read.");
+    case 3: { const w = g("who-wrote");
+      if (w.unchecked) return pick("unk", "", "Not checked yet. Lobbying filings are matched to the Rulebook's laws so far, not to every chapter and part.");
+      return w.found ? pick("yes", "", `${w.count} lobbying filing${w.count === 1 ? "" : "s"} name this law. Clients: ${(w.clients || []).join(", ")}.`)
+                     : pick("unk", "", "No lobbying filing on our map names this law. That does not mean nobody lobbied."); }
+    case 5: return both("access", "self-report", "People can see the record, and the law must report on itself.", "No record access and no self-report written in the part we read.");
+    case 6: { const s = g("symmetry"), a = s.individuals || 0, b = s.entities || 0;
+      if (!a && !b) return pick("unk", "", "No penalty sentences that name only individuals or only institutions.");
+      return a > b ? pick("no", s.qi, `More penalty sentences name only individuals (${a}) than only institutions (${b}).`)
+                   : pick("yes", s.qe, `Penalty sentences naming only institutions (${b}) are at least as many as those naming only individuals (${a}).`); }
+    case 8: return g("standing").found ? pick("yes", g("standing").quote, "A person can enforce it in court themselves.")
+                                       : pick("no", "", "No way found for a person to enforce it themselves; only the agency can.");
+    case 2: case 4: case 7: {
+      // Boundary, Plain words, Fair exchange: rules approved by Josie 2026-10-26 (gates_extra.py)
+      const a3 = law.answers3, e = law.extra;
+      if (!a3) return pick("unk", "", "We don't hold this law's full text, so our program could not read this gate. It needs a person to read it.");
+      if (i === 2) { const b = e.boundary;
+        return pick(a3.boundary, b.quote_limits || b.quote_takes || "", b.takes ? `${b.takes} sentence${b.takes === 1 ? "" : "s"} take personal information; ${b.limits} put limits on it.` : "No sentence found that takes personal information."); }
+      if (i === 4) { const p = e["plain-words"];
+        return pick(a3["plain-words"], p.quote_longest || "", `Reading grade ${p.grade}. ${p.long_sentences} of ${p.sentences} sentences run 60 words or more. ${p.crossrefs} cross-references to other sections.`); }
+      const f = e["fair-exchange"];
+      return pick(a3["fair-exchange"], (f.gives > f.gets ? f.quote_gives : f.quote_gets) || "", `What a person gives is found ${f.gives} times; what a person gets, ${f.gets} times.`);
+    }
+    default: return pick("unk", "", "Our program has no search for this gate. This one needs a person to read it.");
+  }
+}
+const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who" };
+// One list to search: the Rulebook's laws first, then every U.S. Code chapter and eCFR part.
+function allRows() {
+  const rb = RULEBOOK ? RULEBOOK.laws.map(l => [l.id, l.name, null, "rulebook", l.citation || ""]) : [];
+  return rb.concat(INDEX ? INDEX.laws : []);
+}
+function fillChips() {
+  const rows = allRows(), n = k => rows.filter(r => k === "all" || r[3] === k).length;
+  const keys = ["all", "rulebook", "people", "business", "government", "mixed", "unclear"];
+  const name = { all: "Everything", rulebook: "The Rulebook", ...BINDS };
+  $("chips").innerHTML = keys.filter(k => n(k)).map(k =>
+    `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}">${name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
+  $("chips").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    FILTER = b.dataset.k; fillChips(); showResults(true);
+  }));
+  $("lawSearch").placeholder = `Search ${rows.length.toLocaleString()} laws by name or citation, like "privacy" or "42 U.S.C."`;
+}
+function showResults(open) {
+  const q = $("lawSearch").value.toLowerCase().split(/\s+/).filter(Boolean);
+  const ul = $("lawResults");
+  if (!q.length && !open) { ul.hidden = true; return; }
+  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) &&
+    q.every(w => (r[0] + " " + r[1] + " " + (r[4] || "")).toLowerCase().includes(w)));
+  ul.hidden = false;
+  ul.innerHTML = `<li class="count">${hits.length.toLocaleString()} law${hits.length === 1 ? "" : "s"}${hits.length > 50 ? ", showing the first 50. Type more words to narrow it." : ""}</li>` +
+    hits.slice(0, 50).map(r => `<li><button type="button" data-id="${esc(r[0])}">${esc(r[1])}
+      <small>${esc(r[3] === "rulebook" ? r[4] : r[0])} · ${r[3] === "rulebook" ? "The Rulebook" : BINDS[r[3]] || ""}</small></button></li>`).join("");
+  ul.querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => pickLaw(b.dataset.id)));
+}
+$("lawSearch").addEventListener("input", () => showResults(false));
+$("lawSearch").addEventListener("focus", () => showResults(false));
+document.addEventListener("click", e => { if (!e.target.closest(".picker")) $("lawResults").hidden = true; });
+function showLawInfo() {
+  const law = currentLaw(), info = $("lawInfo");
+  info.hidden = !law;
+  if (law) info.innerHTML = `<span class="now">Checking: ${esc(law.name)}${law.citation ? " · " + esc(law.citation) : ""}</span>Read from: ${esc(law.scope || law.kind || "the cited page")}. <a href="${esc(law.url)}" target="_blank" rel="noopener">Open the law at its source</a>.` +
+    (law.refs && law.refs.length ? `<details><summary>Laws this one points to (${law.refs.length})</summary>${law.refs.map(r => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.id)}</a> (${r.n})`).join(" · ")}</details>` : "");
+}
+function pickLaw(id) {
+  $("lawResults").hidden = true; $("lawSearch").value = "";
+  getLaw(id).then(law => {
+    if (!law) return;
+    if (law.id !== state.lawId) {
+      // A different law is a new check: start its answers fresh.
+      const fresh = blank(); fresh.lawId = law.id; fresh.type = "law";
+      fresh.name = law.name + (law.citation ? " (" + law.citation + ")" : "");
+      fresh.answers = GATES.map((_, i) => siteAnswer(law, i));
+      state = fresh;
+    }
+    save(); renderAll();
+    loadLawText(law.id);
+    document.querySelector(".result").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+function update(card, i) {
+  const ans = state.answers[i];
+  card._warn.hidden = !(ans.a && !ans.quote.trim() && !ans.auto);
+  if (card._pq) card._pq.innerHTML = pw(ans.quote);
+  renderResult(); save();
+}
+
+function coreState(idx) {
+  const a = idx.map(i => state.answers[i].a);
+  if (a.includes("no")) return "At least one no";
+  if (a.every(x => x === "yes")) return "All yes";
+  if (a.every(x => x === "")) return "Not started";
+  return "Still open";
+}
+function renderResult() {
+  const strip = $("strip"); strip.innerHTML = "";
+  CORES.forEach(core => {
+    const idx = GATES.map((g, i) => g.core === core.id ? i : -1).filter(i => i >= 0);
+    const el = document.createElement("div"); el.className = "core"; el.style.setProperty("--cc", core.color);
+    const mark = { yes: "✓", no: "✕", unk: "?", "": "·" };
+    el.innerHTML = `<div class="name">${core.name}</div><div class="state">${coreState(idx)}</div>
+      <ul>${idx.map(i => { const a = state.answers[i].a;
+        return `<li><span class="ic ${a}" aria-hidden="true">${mark[a]}</span><span>${GATES[i].name}</span><span class="ans ${a}">${LABEL[a] || "Not answered"}</span></li>`; }).join("")}</ul>`;
+    strip.appendChild(el);
+  });
+  $("resultName").textContent = state.name || "Untitled check";
+  const c = { yes: 0, no: 0, unk: 0, "": 0 }; let noQuote = 0;
+  state.answers.forEach(a => { c[a.a]++; if (a.a && !a.quote.trim() && !a.auto) noQuote++; });
+  let s = `${c.yes} yes, ${c.no} no, ${c.unk} can't tell, ${c[""]} not answered.`;
+  if (noQuote) s += ` ${noQuote} answer${noQuote > 1 ? "s have" : " has"} no quote yet.`;
+  $("summary").textContent = s;
+  if (!$("out").hidden) $("out").textContent = reportText();
+}
+function reportText() {
+  const lines = [`NINE GATES - THREE ETHICS: ACCOUNTABILITY CHECK`, state.name || "(untitled)", ""];
+  CORES.forEach(core => {
+    lines.push(core.name.toUpperCase());
+    GATES.forEach((g, i) => {
+      if (g.core !== core.id) return;
+      const a = state.answers[i];
+      lines.push(`  ${i + 1}. ${g.name}: ${LABEL[a.a] || "Not answered"}${a.auto ? " (Priority Nexus answer, from the program's reading)" : ""}`);
+      lines.push(`     Question: ${g.q}`);
+      if (a.quote.trim()) lines.push(`     From the text: "${a.quote.trim()}"`);
+      if (a.note.trim()) lines.push(`     Note: ${a.note.trim()}`);
+    });
+    lines.push("");
+  });
+  lines.push($("summary").textContent);
+  return lines.join("\n");
+}
+
+function renderAll() {
+  $("docName").value = state.name; $("docType").value = state.type; $("docText").value = state.text;
+  $("exampleNote").hidden = !state.example;
+  showLawInfo();
+  renderGates(); renderResult();
+}
+$("docName").addEventListener("input", e => { state.name = e.target.value; save(); });
+$("docType").addEventListener("change", e => { state.type = e.target.value; save(); renderGates(); });
+$("docText").addEventListener("input", e => { state.text = e.target.value; save(); });
+$("showBtn").addEventListener("click", () => {
+  const o = $("out"); o.hidden = !o.hidden; $("showBtn").textContent = o.hidden ? "Show the report" : "Hide the report";
+  if (!o.hidden) o.textContent = reportText();
+});
+$("copyBtn").addEventListener("click", () => {
+  const t = reportText(); const b = $("copyBtn");
+  const done = msg => { b.textContent = msg; setTimeout(() => b.textContent = "Copy the report", 1800); };
+  const fallback = () => {
+    const o = $("out"); o.hidden = false; o.textContent = t; $("showBtn").textContent = "Hide the report";
+    const r = document.createRange(); r.selectNodeContents(o); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    done("Selected. Press Ctrl+C");
+  };
+  try { navigator.clipboard.writeText(t).then(() => done("Copied"), fallback); } catch (e) { fallback(); }
+});
+let armed = false;
+$("newBtn").addEventListener("click", () => {
+  const b = $("newBtn");
+  if (!armed) { armed = true; b.textContent = "Click again to clear everything"; setTimeout(() => { armed = false; b.textContent = "Start a new check"; }, 3000); return; }
+  armed = false; b.textContent = "Start a new check";
+  state = blank(); save(); renderAll(); $("docName").focus();
+});
+
+function showTab() {
+  const method = location.hash === "#method";
+  $("check").hidden = method; $("method").hidden = !method;
+  document.body.classList.toggle("on-method", method);
+  $("tabCheck").setAttribute("aria-current", method ? "false" : "page");
+  $("tabMethod").setAttribute("aria-current", method ? "page" : "false");
+}
+document.querySelectorAll("nav a[href^='#']").forEach(a => a.addEventListener("click", e => {
+  e.preventDefault(); history.replaceState(null, "", a.getAttribute("href")); showTab();
+}));
+
+state = load() || fromSample();
+renderAll(); showTab();
+if (state.lawId) loadLawText(state.lawId);
+Promise.all([
+  fetch("rulebook_readings.json").then(r => r.ok ? r.json() : null).catch(() => null),
+  fetch("all_laws/index.json").then(r => r.ok ? r.json() : null).catch(() => null)
+]).then(([d, ix]) => {
+  RULEBOOK = d; INDEX = ix; fillChips();
+  if (state.lawId) getLaw(state.lawId).then(() => { showLawInfo(); renderGates(); });
+});
+</script>

@@ -1,0 +1,658 @@
+Truthful Cost or Pricing Data (TINA)
+10 U.S.C. §3701 et seq.
+Read from: subchapter /us/usc/t10/stA/ptV/sptC/ch249/schIII (OLRC XML 119-124)
+Heading: OTHER AUTHORITIES RELATING TO MULTIYEAR CONTRACTS
+
+SUBCHAPTER III— OTHER AUTHORITIES RELATING TO MULTIYEAR CONTRACTS
+§ 3551. Multiyear procurement authority: purchase of dinitrogen tetroxide, hydrazine, and hydrazine-related products
+(a) Ten-Year Contract Period .—
+The Secretary of Defense may enter into a contract for a period of up to 10 years for the purchase of dinitrogen tetroxide, hydrazine, and hydrazine-related products for the support of a United States national security program or a United States space program.
+(b) Extensions .—
+A contract entered into for more than one year under the authority of subsection (a) may be extended for a total of not more than 10 years pursuant to any option or options set forth in the contract.
+CHAPTER 251— SIMPLIFIED ACQUISITION PROCEDURES
+§ 3571. Simplified acquisition threshold
+(a) Simplified Acquisition Threshold .—
+For purposes of acquisitions by agencies named in section 3063 of this title , the simplified acquisition threshold is as specified in section 134 of title 41 .
+(b) Inapplicable Laws .—
+No law properly listed in the Federal Acquisition Regulation pursuant to section 1905 of title 41 shall apply to or with respect to a contract or subcontract that is not greater than the simplified acquisition threshold.
+§ 3572. Implementation of simplified acquisition procedures
+The simplified acquisition procedures contained in the Federal Acquisition Regulation pursuant to section 1901 of title 41 shall apply as provided in such section to the agencies named in section 3063 of this title .
+§ 3573. Micro-purchase threshold
+The micro-purchase threshold for the Department of Defense is $10,000.
+CHAPTER 253— RAPID ACQUISITION PROCEDURES
+§ 3601. Procedures for urgent acquisition and deployment of capabilities needed in response to urgent operational needs or vital national security interest
+(a) Procedures.—
+(1) In general .—
+The Secretary of Defense shall prescribe procedures for the urgent acquisition and deployment of capabilities needed in response to urgent operational needs. The capabilities for which such procedures may be used in response to an urgent operational need are those—
+(A) that, subject to such exceptions as the Secretary considers appropriate for purposes of this section—
+(i) can be fielded within a period of two to 24 months;
+(ii) do not require substantial development effort;
+(iii) are based on technologies that are proven and available; and
+(iv) can appropriately be acquired under fixed-price contracts;
+(B) that can be developed or procured under a rapid acquisition pathway; or
+(C) with respect to an armed attack by a country of concern (as defined in section 1(m) of the State Department Basic Authorities Act of 1956 ( 22 U.S.C. 2651a(m) )), to which the United States is not a party, for purposes of—
+(i) replenishing United States stockpiles of defense articles when such stockpiles are diminished as a result of the United States providing defense articles in response to such armed attack by a country of concern against—
+(I) a United States ally (as that term is defined in section 201(d) of the Act of December 2, 1942 , titled “To provide benefits for the injury, disability, death, or enemy detention of employees of contractors with the United States, and for other purposes” ( 56 Stat. 1028 , chapter 668; 42 U.S.C. 1711(d) )); or
+(II) a United States partner; or
+(ii) contracting for the movement or delivery of defense articles transferred to such ally or partner through the President’s drawdown authorities under sections 506(a)(1) and 614 of the Foreign Assistance Act of 1961 ( 22 U.S.C. 2318(a)(1) and 2364) in connection with such response.
+(2) Rapid acquisition pathway defined .—
+In this section, the term “rapid acquisition pathway” means the rapid prototyping or the rapid fielding acquisition pathway authorized under section 3602 of this title .
+(b) Matters to Be Included .—
+The procedures prescribed under subsection (a) shall include the following:
+(1) A process for streamlined communications between the Chairman of the Joint Chiefs of Staff, the acquisition community, and the research and development community, including—
+(A) a process for the commanders of the combatant commands and the Chairman of the Joint Chiefs of Staff to communicate their needs to the acquisition community and the research and development community; and
+(B) a process for the acquisition community and the research and development community to propose capabilities that meet the needs communicated by the combatant commands and the Chairman of the Joint Chiefs of Staff.
+(2) Procedures for demonstrating, rapidly acquiring, and deploying a capability proposed pursuant to paragraph (1)(B), including—
+(A) a process for demonstrating and evaluating for current operational purposes the performance of the capability;
+(B) a process for developing an acquisition and funding strategy for the deployment of the capability; and
+(C) a process for making deployment and utilization determinations based on information obtained pursuant to subparagraphs (A) and (B).
+(3) A process to determine the disposition of a capability, including termination (demilitarization or disposal), continued sustainment, or transition to a program of record.
+(4) Specific procedures in accordance with section 3602 of this title .
+(c) Response to Combat Emergencies and Certain Urgent Operational Needs.—
+(1) Determination of need for urgent acquisition and deployment .—
+(A) In the case of any capability that, as determined in writing by the Secretary of Defense, is urgently needed to eliminate a documented deficiency that has resulted in combat casualties, or is likely to result in combat casualties, the Secretary may use the procedures developed under this section in order to accomplish the urgent acquisition and deployment of the needed capability.
+(B) In the case of any capability that, as determined in writing by the Secretary of Defense, is urgently needed to eliminate a documented deficiency that impacts an ongoing or anticipated contingency operation and that, if left unfulfilled, could potentially result in loss of life or critical mission failure, the Secretary may use the procedures developed under this section in order to accomplish the urgent acquisition and deployment of the needed capability.
+(C) (i) In the case of any cyber capability that, as determined in writing by the Secretary of Defense, is urgently needed to eliminate a deficiency that as the result of a cyber attack has resulted in critical mission failure, the loss of life, property destruction, or economic effects, or if left unfilled is likely to result in critical mission failure, the loss of life, property destruction, or economic effects, the Secretary may use the procedures developed under this section in order to accomplish the urgent acquisition and deployment of the needed offensive or defensive cyber capability.
+(ii) In this subparagraph, the term “cyber attack” means a deliberate action to alter, disrupt, deceive, degrade, or destroy computer systems or networks or the information or programs resident in or transiting these systems or networks.
+(2) Designation of senior official responsible .—
+(A) (i) Except as provided under clause (ii), whenever the Secretary of Defense makes a determination under subparagraph (A), (B), or (C) of paragraph (1) that a capability is urgently needed to eliminate a deficiency described in that subparagraph, the Secretary shall designate a senior official of the Department of Defense to ensure that the needed capability is acquired and deployed as quickly as possible, with a goal of awarding a contract for the acquisition of the capability within 15 days.
+(ii) Clause (i) does not apply to an acquisition initiated in the case of a determination by the Secretary of Defense that funds are necessary to immediately initiate a project under a rapid acquisition pathway if the designated official for acquisitions using such pathway is a service acquisition executive.
+(B) Upon designation of a senior official under subparagraph (A) with respect to a needed capability, the Secretary shall authorize that senior official to waive any provision of law or regulation described in subsection (d) that such senior official determines in writing would unnecessarily impede the urgent acquisition and deployment of such capability. In a case in which such capability cannot be acquired without an extensive delay, the senior official shall require that an interim solution be implemented and deployed using the procedures developed under this section to minimize adverse consequences resulting from the urgent need.
+(3) Use of funds .—
+(A) Subject to subparagraph (C), in any fiscal year in which the Secretary of Defense makes a determination described in subparagraph (A), (B), or (C) of paragraph (1) with respect to a capability, or upon the Secretary making a determination that funds are necessary to immediately initiate a project under a rapid acquisition pathway based on a compelling national security need, the Secretary may use any funds available to the Department of Defense to urgently acquire and deploy such capability or immediately initiate such project, respectively, if the determination includes a written finding that the use of such funds is necessary to address in a timely manner the deficiency documented or identified under such subparagraph (A), (B), or (C) or the compelling national security need identified for purposes of such section 804 pathway, 1 respectively.
+(B) The authority provided by this section may only be used to acquire capability—
+(i) in the case of determinations by the Secretary under paragraph (1)(A), in an amount aggregating not more than $200,000,000 during any fiscal year;
+(ii) in the case of determinations by the Secretary under paragraph (1)(B), in an amount aggregating not more than $200,000,000 during any fiscal year;
+(iii) in the case of determinations by the Secretary under paragraph (1)(C), in an amount aggregating not more than $200,000,000 during any fiscal year; and
+(iv) in the case of a determination by the Secretary that funds are necessary to immediately initiate a project under a rapid acquisition pathway, in an amount aggregating not more than $50,000,000 during any fiscal year.
+(C) In exercising the authority under this section—
+(i) none of the amounts appropriated for Operation and Maintenance may be used to carry out this section except for amounts appropriated for—
+(I) Operation and Maintenance, Defense-wide;
+(II) Operation and Maintenance, Army;
+(III) Operation and Maintenance, Navy;
+(IV) Operation and Maintenance, Marine Corps;
+(V) Operation and Maintenance, Air Force; or
+(VI) Operation and Maintenance, Space Force; and
+(ii) when funds are utilized for sustainment purposes, this authority may not be used for more than 2 years.
+(4) Notification to congressional defense committees .—
+(A) In the case of a determination by the Secretary of Defense under subparagraph (A) or (C) of paragraph (1), the Secretary shall notify the congressional defense committees of the determination within 15 days after the date of the determination.
+(B) In the case of a determination by the Secretary under paragraph (1)(B), the Secretary shall notify the congressional defense committees of the determination at least 10 days before the date on which the determination is effective.
+(C) In the case of a determination by the Secretary under paragraph (3)(A) that funds are necessary to immediately initiate a project under a rapid acquisition pathway, the Secretary shall notify the congressional defense committees of the determination within 10 days after the date of the use of such funds.
+(D) A notice under this paragraph shall include the following:
+(i) Identification of the capability to be acquired.
+(ii) The amount anticipated to be expended for the acquisition.
+(iii) The source of funds for the acquisition.
+(E) A notice under this paragraph shall fulfill any requirement to provide notification to Congress for a program (referred to as a “new start program”) that has not previously been specifically authorized by law or for which funds have not previously been appropriated.
+(F) A notice under this paragraph shall be provided in consultation with the Director of the Office of Management and Budget.
+(5) Limitation on officers with authority .—
+The authority to make determinations under subparagraph (A), (B), or (C) of paragraph (1) and under paragraph (3)(A) that funds are necessary to immediately initiate a project under a rapid acquisition pathway, to designate a senior official responsible under paragraph (3), and to provide notification to the congressional defense committees under paragraph (4) may be exercised only by the Secretary of Defense or the Deputy Secretary of Defense.
+(d) Authority to Waive Certain Laws and Regulations.—
+(1) Authority .—
+Following a determination described in subsection (c)(1), the senior official designated in accordance with subsection (c)(2), with respect to that designation, may waive any provision of law or regulation addressing—
+(A) the establishment of a requirement or specification for the capability to be acquired;
+(B) the research, development, test, and evaluation of the capability to be acquired;
+(C) the production, fielding, and sustainment of the capability to be acquired; or
+(D) the solicitation, selection of sources, and award of the contracts for procurement of the capability to be acquired.
+(2) Limitations .—
+Nothing in this subsection authorizes the waiver of—
+(A) the requirements of this section;
+(B) any provision of law imposing civil or criminal penalties; or
+(C) any provision of law governing the proper expenditure of appropriated funds.
+(e) Operational Assessments.—
+(1) In general .—
+The process prescribed under subsection (b)(2)(A) for demonstrating and evaluating for current operational purposes the performance of a capability proposed pursuant to subsection (b)(1)(B) shall include the following:
+(A) An operational assessment in accordance with procedures prescribed by the Director of Operational Test and Evaluation.
+(B) A requirement to provide information about any deficiency of the capability in meeting the original requirements for the capability (as stated in a statement of the urgent operational need or similar document) to the deployment decision-making authority.
+(2) Limitation .—
+The process prescribed under subsection (b)(2)(A) may not include a requirement for any deficiency of capability identified in the operational assessment to be the determining factor in deciding whether to deploy the capability.
+(3) Director of operational test and evaluation access .—
+If a capability is deployed under the procedures prescribed pursuant to this section, or under any other authority, before operational test and evaluation of the capability is completed, the Director of Operational Test and Evaluation shall have access to operational records and data relevant to such capability in accordance with section 139(e)(3) of this title for the purpose of completing operational test and evaluation of the capability. Such access shall be provided in a time and manner determined by the Secretary of Defense consistent with requirements of operational security and other relevant operational requirements.
+§ 3602. Middle tier of acquisition for rapid prototyping and rapid fielding
+(a) Guidance Required .—
+The Under Secretary of Defense for Acquisition and Sustainment, in consultation with the Comptroller of the Department of Defense and the Vice Chairman of the Joint Chiefs of Staff, shall establish pathways as described under subsection (b) to establish a process for conducting middle tier acquisitions for programs or projects that are intended to be completed in a period of two to five years.
+(b) Acquisition Pathways .—
+The Under Secretary of Defense for Acquisition and Sustainment shall establish the following two acquisition pathways:
+(1) Rapid prototyping .—
+The rapid prototyping pathway shall provide for the use of innovative technologies to rapidly develop fieldable prototypes to demonstrate new capabilities and meet emerging military needs. The objective of an acquisition program or project under this pathway shall be to field a prototype that can be demonstrated in an operational environment and provide for a residual operational capability within five years of the development of an approved requirement.
+(2) Rapid fielding .—
+The rapid fielding pathway shall provide for the use of proven technologies to field production quantities of new or upgraded systems with minimal development required. The objective of an acquisition program or project under this pathway shall be to begin production within six months and complete fielding within five years of the development of an approved requirement.
+(c) Expedited Process.—
+(1) In general .—
+Before using the authority under this section, the Under Secretary shall develop a streamlined and coordinated requirements, budget, and acquisition process that results in the development of an approved requirement for each acquisition program or project in a period of not more than six months from the time that the process is initiated. Programs or projects carried out under the authority of this section shall not be subject to the Joint Capabilities Integration and Development System Manual and Department of Defense Directive 5000.01.
+(2) Rapid prototyping .—
+With respect to the rapid prototyping pathway, the process described in paragraph (1) shall include—
+(A) a merit-based process for the consideration of innovative technologies and new capabilities to meet needs communicated by the Joint Chiefs of Staff and the combatant commanders;
+(B) a process for developing and implementing acquisition and funding strategies for a program or project to be carried out under such pathway;
+(C) a process for demonstrating and evaluating the performance of fieldable prototypes developed pursuant to such program or project in an operational environment;
+(D) a process for transitioning successful prototypes to new or existing acquisition programs for production and fielding under the rapid fielding pathway or the major capability acquisition pathway (as defined under Department of Defense Instruction 5000.85 or successor instruction); and
+(E) a process for iterating prototyping and fielding within the rapid prototyping pathway that may use a process described in paragraph (4)(F).
+(3) Rapid fielding .—
+With respect to the rapid fielding pathway, the process described in paragraph (1) shall include—
+(A) a merit-based process for the consideration of existing products and proven technologies to meet needs communicated by the Joint Chiefs of Staff and the combatant commanders;
+(B) a process for demonstrating performance and evaluating for current operational purposes the proposed products and technologies;
+(C) a process for developing and implementing acquisition and funding strategies for a program or project to be carried out under such pathway;
+(D) a process for considering lifecycle costs and addressing issues of logistics support and system interoperability; and
+(E) a process for identifying and exploiting opportunities to use the rapid fielding pathway to reduce total ownership costs.
+(4) Streamlined procedures .—
+The process described in paragraph (1) may provide for any of the following streamlined procedures:
+(A) The service acquisition executive of the military department concerned may appoint a program manager for a program or project for which the authority under this section is used from among candidates from among civilian employees or members of the armed forces who have significant and relevant experience managing large and complex programs.
+(B) A program manager appointed under subparagraph (A) may be provided staff positions for a technical staff, including experts in business management, cost estimation, contracting, auditing, engineering, certification, testing, and logistics, to enable the program manager to manage the program without the technical assistance of another element of the Department of Defense to the maximum extent practicable.
+(C) A program manager appointed under subparagraph (A) may, in coordination with the users of the good or service to be acquired under such a program or project and the test community, to make trade-offs among life-cycle costs, requirements, and schedules to meet the goals of the program or project.
+(D) Each service acquisition executive, acting in coordination with the defense acquisition executive, may serve as the decision authority for a program or project for which the authority under this section is used, or shall delegate such decision authority.
+(E) A program manager appointed under subparagraph (A) may seek an expedited waiver from any regulatory requirement, or in the case of a statutory requirement, a waiver from Congress, that the program manager determines adds cost, schedule, or performance delays with little or no value to the management of such program or project.
+(F) If an operational capability is fielded for a program or project for which the authority under this section is used, the appropriate service acquisition executive may permit continuous iterative prototyping and fielding under the same program or project for an unlimited number of subsequent periods, where each period is intended to be five years.
+§ 3603. Software acquisition pathways
+(a) Software Acquisition and Development Pathways .—
+The Secretary of Defense shall establish pathways as described under subsection (b) to provide for the efficient and effective acquisition, development, integration, and timely delivery of software and covered hardware.
+(b) Pathways .—
+The Secretary of Defense may establish as many pathways under this section as the Secretary determines appropriate and shall establish the following pathways:
+(1) Applications .—
+The applications pathway shall provide for the use of rapid development and implementation of applications and other software or software improvements operated by the Department of Defense, which may include applications and associated procurement of covered hardware (including modifications of a type not customarily available in the commercial marketplace to meet Department requirements), commercially available cloud computing platforms, and other nondevelopmental items.
+(2) Embedded systems .—
+The embedded systems pathway shall provide for the rapid development and insertion of upgrades and improvements for software and covered hardware embedded in weapon systems and other hardware systems unique to the Department of Defense.
+(c) Requirements for Pathways .—
+A pathway established under this section shall provide for the use of proven technologies and solutions to continuously engineer and deliver capabilities for software and covered hardware.
+(d) Considerations for Use of Authority .—
+In using the authority under this section, the Secretary shall consider how such use will—
+(1) initiate the engineering of new software capabilities quickly and, if applicable, the integration of such capabilities into covered hardware;
+(2) demonstrate the viability and effectiveness of such capabilities for operational use not later than one year after the date on which funds are first obligated to acquire or develop software; and
+(3) allow for the continuous updating and delivery of new capabilities not less frequently than annually to iteratively meet a requirement.
+(e) Treatment Not as Major Defense Acquisition Program .—
+Software and covered hardware acquired or developed using the authority under this section shall not be treated as a major defense acquisition program for purposes of section 4201 of title 10 , United States Code, or Department of Defense Directive 5000.01 without the specific designation of such software and covered hardware by the Under Secretary of Defense for Acquisition and Sustainment or a service acquisition executive.
+(f) Risk-based Approach .—
+The Secretary of Defense shall use a risk-based approach for the consideration of innovative technologies and new capabilities for software and covered hardware to be acquired or developed under this authority to meet needs communicated by the Joint Chiefs of Staff and the combatant commanders.
+(g) Expedited Process.—
+(1) In general .—
+A pathway established under this section shall provide for—
+(A) a streamlined and coordinated requirements, budget, and acquisition process to support rapid fielding of software applications and of software upgrades to embedded systems for operational use in a period of not more than one year from the time that the process is initiated;
+(B) the collection of data on software and covered hardware fielded; and
+(C) continuous engagement with the users of software and covered hardware to support—
+(i) engineering activities of the Department of Defense; and
+(ii) delivery of software and covered hardware for operational use in periods of not more than one year.
+(2) Expedited software requirements process.—
+(A) Inapplicability of joint capabilities integration and development system manual .—
+Software and covered hardware acquisition or development conducted under the authority of this section shall not be subject to the Joint Capabilities Integration and Development System Manual, except pursuant to a modified process specifically provided for the acquisition or development of software by the Vice Chairman of the Joint Chiefs of Staff, in consultation with Under Secretary of Defense for Acquisition and Sustainment and each service acquisition executive.
+(B) Inapplicability of defense acquisition system directive .—
+Software and covered hardware acquisition or development conducted under the authority of this section shall not be subject to Department of Defense Directive 5000.01, except when specifically provided for the acquisition or development of software by the Under Secretary of Defense for Acquisition and Sustainment, in consultation with the Vice Chairman of the Joint Chiefs of Staff and each service acquisition executive.
+(h) Elements .—
+In implementing a pathway established under the authority of this section, the Secretary shall tailor requirements relating to—
+(1) iterative development of requirements for software and covered hardware to be acquired or developed under the authority of this section through engagement with the user community and through user feedback, in order to continuously define and update priorities for such requirements;
+(2) early identification of the warfighter or user needs including the rationale for how software and covered hardware to be acquired or developed under the authority of this section will be tailored to address such needs;
+(3) initial contract requirements and format, including the use of summary-level lists of problems in existing software and desired features or capabilities of new or upgraded software;
+(4) continuous refinement and prioritization of contract requirements, informed by continuous engagement with users throughout the period of development and implementation of software and covered hardware to be acquired or developed under this section;
+(5) continuous consideration of issues related to lifecycle costs, technical data rights, and systems interoperability;
+(6) planning for support of capabilities of software to be acquired or developed under this section if the software developer stops supporting the software;
+(7) rapid contracting procedures, including expedited timeframes for making awards, selecting contract types, defining teaming arrangements, and defining options;
+(8) program execution processes, including supporting development and test infrastructure, automation and tools, digital engineering, data collection and sharing with Department of Defense stakeholders and with Congress, the role of developmental and operational testing activities, key decision-making and oversight events, and supporting processes and activities (such as independent costing activity, operational demonstration, and performance metrics);
+(9) assurances that cybersecurity metrics of the software to be acquired or developed, such as metrics relating to the density of vulnerabilities within the code of such software, the time from vulnerability identification to patch availability, the existence of common weaknesses within such code, and other cybersecurity metrics based on widely-recognized standards and industry best practices, are generated and made available to the Department of Defense and the congressional defense committees;
+(10) administrative procedures, including procedures relating to who may initiate and approve an acquisition under this authority, the roles and responsibilities of persons implementing or supporting the use of authority under this section, team selection and staffing process, governance and oversight roles and responsibilities, and appropriate independent technology assessments, testing, and cost estimation (including relevant thresholds or designation criteria);
+(11) mechanisms and waivers designed to ensure flexibility in the implementation of a pathway under this section, including the use of other transaction authority, broad agency announcements, and other procedures; and
+(12) mechanisms the Secretary will use for appropriate reporting to Congress on the use of the authority under this section, including notice of initiation of the use of a pathway and data regarding individual programs or acquisition activities, how acquisition activities are reflected in budget justification materials or requests to reprogram appropriated funds, and compliance with other reporting requirements.
+(i) Definitions .—
+In this section:
+(1) The term “covered hardware” means hardware—
+(A) that is a commercial product (as defined in section 103 of title 41 ) or a nondevelopmental item; and
+(B) in which software acquired under this section is embedded.
+(2) The term “nondevelopmental item” has the meaning given in section 110 of title 41 .
+§ 3604. Program to accelerate the procurement and fielding of innovative technologies
+(a) Program .—
+Subject to availability of appropriations, the Secretary of Defense shall establish a competitive, merit-based program to accelerate the procurement and fielding of innovative technologies by, with respect to such technologies—
+(1) reducing acquisition or life-cycle costs;
+(2) addressing technical risks;
+(3) improving the timeliness and thoroughness of test and evaluation outcomes; and
+(4) rapidly implementing such technologies to directly support defense missions.
+(b) Guidelines.—
+(1) In general .—
+The Secretary shall issue guidelines for the operation of the program established under this section.
+(2) Contents .—
+At a minimum, the guidelines for the operation of the program established under this section required under paragraph (1) shall provide for the following:
+(A) The issuance of one or more solicitations for proposals by the Department of Defense in support of the program, with a priority established for technologies developed by small business concerns (as defined under section 3 of the Small Business Act ( 15 U.S.C. 632 )) or nontraditional defense contractors (as defined under section 3014 of this title ).
+(B) The issuance of not more than two solicitations for proposals by the Department of Defense in support of the program each fiscal year for innovative technologies from entities that, during the one-year period preceding the issuance of the solicitation, have not performed on contracts and subcontracts for the Department under which the aggregate obligations of the Department to such entity for such period exceeds $400,000,000.
+(C) A process for—
+(i) the review of proposals received in response to a solicitation issued under subparagraph (A) by the Secretary of Defense and by each Secretary of a military department;
+(ii) the merit-based selection of the most promising cost-effective proposals; and
+(iii) the procurement of goods or services offered by such a proposal through contracts, cooperative agreements, other transaction authority, or by another appropriate process.
+(c) Amount .—
+The total amount of funding provided for any proposal selected for an award under the program established under this section shall be greater than or equal to $10,000,000 and shall not exceed $50,000,000, unless the Secretary (or designee of the Secretary) approves a greater amount of funding.
+(d) Data Collection.—
+(1) Plan required before implementation .—
+The Secretary of Defense may not provide funding under this section until the date on which the Secretary—
+(A) completes a plan for carrying out the data collection required under paragraph (2); and
+(B) submits the plan to the congressional defense committees.
+(2) Data collection required .—
+The Secretary of Defense shall collect and analyze data on the program established under this section for the purposes of—
+(A) developing and sharing best practices for achieving the objectives of the program;
+(B) providing information on the implementation of the program and related policy issues; and
+(C) reporting to the congressional defense committees as required under subsection (e).
+(e) Biannual Report .—
+Not later than March 1 and September 1 of each year beginning after the date of the enactment of this section, the Secretary of Defense shall submit to the congressional defense committees a report on the program established under this section.
+(f) Congressional Notification .—
+The Secretary of Defense shall notify the congressional defense committees within 30 days after funding has been provided for a proposal selected for an award under the program established under this section.
+§ 3605. Authority to acquire consumption-based solutions
+(a) Authority .—
+The Secretary of Defense and the Secretaries of the military departments may acquire services through consumption-based solutions.
+(b) Guidance Required .—
+The Secretary of Defense shall amend the Department of Defense Supplement to the Federal Acquisition Regulation to implement the authority under subsection (a), including creating a new subcategory of services under part 237 of the Department of Defense Supplement to the Federal Acquisition Regulation, entitled “Consumption-based solutions”, that—
+(1) is any combination of hardware, equipment, software, labor, or services that together provides a seamless capability;
+(2) has the ability to be metered and billed based on actual usage;
+(3) has predetermined pricing at fixed-price units;
+(4) requires the awardee to notify the Department of Defense contracting officer when consumption under the contract reaches 75 percent and 90 percent of the funded amount, respectively, of the contract; and
+(5) treats modifications to a contract entered into under the authority established in subsection (a) to add new features or capabilities in an amount less than or equal to 25 percent of the total value of such contract, as originally awarded, as procurements made using competitive procedures for the purposes of chapter 221 of this title.
+(c) Funding .—
+Amounts authorized to be appropriated for acquisitions using the authority under subsection (a)—
+(1) may be used for expenses for—
+(A) research, development, test and evaluation;
+(B) procurement;
+(C) production;
+(D) modification; and
+(E) operation and maintenance; and
+(2) may be used to enter into incrementally funded contracts or other agreements, including advanced payments.
+(d) Consumption-based Solution Defined .—
+In this section, the term “consumption-based solution” means a model under which a service is provided to the Department of Defense and may utilize any combination of software, hardware or equipment, data, and labor or services that provides a capability that is metered and billed based on actual usage at fixed-price units.
+(e) Rule of Construction .—
+Nothing in this section shall be construed to prohibit the use of the authority created under this section in combination with another contract type provided for under the Department of Defense Supplement to the Federal Acquisition Regulation.
+CHAPTER 255— CONTRACTING WITH OR THROUGH OTHER AGENCIES
+§ 3651. [Reserved]
+[Reserved]
+CHAPTER 257— CONTRACTS FOR LONG-TERM LEASE OR CHARTER OF VESSELS, AIRCRAFT, AND COMBAT VEHICLES
+§ 3671. Requirement for authorization by law of certain contracts relating to vessels, aircraft, and combat vehicles
+(a) (1) The Secretary of a military department may make a contract for the lease of a vessel, aircraft, or combat vehicle or for the provision of a service through use by a contractor of a vessel, aircraft, or combat vehicle only as provided in subsection (b) if—
+(A) the contract will be a long-term lease or charter; or
+(B) the terms of the contract provide for a substantial termination liability on the part of the United States.
+(2) The Secretary of a military department may make a contract that is an agreement to lease or charter or an agreement to provide services and that is (or will be) accompanied by a contract for the actual lease, charter, or provision of services only as provided in subsection (b) if the contract for the actual lease, charter, or provision of services is (or will be) a contract described in paragraph (1).
+(b) (1) The Secretary may make a contract described in subsection (a)(1) if—
+(A) the Secretary has been specifically authorized by law to make the contract;
+(B) before a solicitation for proposals for the contract was issued the Secretary notified the congressional defense committees of the Secretary’s intention to issue such a solicitation;
+(C) the Secretary has notified those committees of the proposed contract and provided a detailed description of the terms of the proposed contract and a justification for entering into the proposed contract rather than providing for the lease, charter, or services involved through purchase of the vessel, aircraft, or combat vehicle to be used under the contract, and a period of 30 days of continuous session of Congress has expired following the date on which notice was received by such committees; and
+(D) the Secretary has certified to those committees—
+(i) that entering into the proposed contract as a means of obtaining the vessel, aircraft, or combat vehicle is the most cost-effective means of obtaining such vessel, aircraft, or combat vehicle; and
+(ii) that the Secretary has determined that the lease complies with all applicable laws, Office of Management and Budget circulars, and Department of Defense regulations.
+(2) For purposes of paragraph (1)(C), the continuity of a session of Congress is broken only by an adjournment of the Congress sine die, and the days on which either House is not in session because of an adjournment of more than three days to a day certain are excluded in a computation of such 30-day period.
+(3) Upon receipt of a notice under paragraph (1)(C), a committee identified in paragraph (1)(B) may request the Inspector General of the Department of Defense or the Comptroller General of the United States to conduct a review of the proposed contract to determine whether or not such contract meets the requirements of this section.
+(4) If a review is requested under paragraph (3), the Inspector General of the Department of Defense or the Comptroller General of the United States, as the case may be, shall submit to the Secretary and the congressional defense committees a report on such review before the expiration of the period specified in paragraph (1)(C).
+(5) In the case of a contract described in subsection (a)(1)(B), the commander of the special operations command may make a contract without regard to this subsection if funds are available and obligated for the full cost of the contract (including termination costs) on or before the date the contract is awarded.
+§ 3672. Requirement of specific authorization by law for appropriation, and for obligation and expenditure, of funds for certain contracts relating to aircraft, naval vessels, and combat vehicles
+(a) Limitation .—
+Funds may not be appropriated for any fiscal year to or for any armed force or obligated or expended for—
+(1) the long-term lease or charter of any aircraft, naval vessel, or combat vehicle; or
+(2) for the lease or charter of any aircraft, naval vessel, or combat vehicle the terms of which provide for a substantial termination liability on the part of the United States,
+unless funds for that purpose have been specifically authorized by law.
+(b) Matter to Be Submitted to Congress .—
+(1) Whenever a request is submitted to Congress for the authorization of the long-term lease or charter of aircraft, naval vessels, or combat vehicles or for the authorization of a lease or charter of aircraft, naval vessels, or combat vehicles which provides for a substantial termination liability on the part of the United States, the Secretary of Defense shall submit with that request an analysis of the cost to the United States (including lost tax revenues) of any such lease or charter arrangement compared with the cost to the United States of direct procurement of the aircraft, naval vessels, or combat vehicles by the United States.
+(2) Any such analysis shall be reviewed and evaluated by the Director of the Office of Management and Budget and the Secretary of the Treasury within 30 days after the date on which the request and analysis are submitted to Congress. The Director and Secretary shall conduct such review and evaluation on the basis of the guidelines issued pursuant to section 3676 of this title and shall report to Congress in writing on the results of their review and evaluation at the earliest practicable date, but in no event more than 45 days after the date on which the request and analysis are submitted to the Congress.
+(3) Whenever a request is submitted to Congress for the authorization of funds for the Department of Defense for the long-term lease or charter of aircraft, naval vessels, or combat vehicles authorized under this chapter, the Secretary of Defense—
+(A) shall indicate in the request what portion of the requested funds is attributable to capital-hire; and
+(B) shall reflect such portion in the appropriate procurement account in the request.
+§ 3673. Limitation on indemnification
+Funds appropriated to the Department of Defense may not be used to indemnify any person under the terms of a contract entered into under this chapter—
+(1) for any amount paid or due by any person to the United States for any liability arising under the Internal Revenue Code of 1986; or
+(2) to pay any attorneys’ fees in connection with such contract.
+§ 3674. Long-term lease or charter defined; substantial termination liability
+(a) Long-term Lease or Charter.—
+(1) General rule.—
+(A) In this chapter, the term “long-term lease or charter” (except as provided in paragraph (2)) means a lease, charter, service contract, or conditional sale agreement—
+(i) the term of which is for a period of five years or longer or more than one-half the useful life of the vessel, aircraft, or combat vehicle; or
+(ii) the initial term of which is for a period of less than five years but which contains an option to renew or extend the agreement for a period which, when added to the initial term (or any previous renewal or extension), is five years or longer.
+(B) Such term includes the extension or renewal of a lease or charter agreement if the term of the extension or renewal thereof is for a period of five years or longer or if the term of the lease or charter agreement being extended or renewed was for a period of five years or longer.
+(2) Special rule.—
+(A) In the case of an agreement under which the lessor first places the property in service under the agreement or the property has been in service for less than one year and there is allowable to the lessor or charterer an investment tax credit or depreciation for the property leased, chartered, or otherwise provided under the agreement under section 168 of the Internal Revenue Code of 1986 (unless the lessor or charterer has elected depreciation on a straightline method for such property), the term “long-term lease or charter” means a lease, charter, service contract, or conditional sale agreement—
+(i) the term of which is for a period of three years or longer; or
+(ii) the initial term of which is for a period of less than three years but which contains an option to renew or extend the agreement for a period which, when added to the initial term (or any previous renewal or extension), is three years or longer.
+(B) Such term includes the extension or renewal of a lease or charter agreement if the term of the extension or renewal thereof is for a period of three years or longer or if the term of the lease or charter agreement being extended or renewed was for a period of three years or longer.
+(b) Substantial Termination Liability .—
+For the purposes of this chapter, the United States shall be considered to have a substantial termination liability under a contract—
+(1) if there is an agreement by the United States under the contract to pay an amount not less than the amount equal to 25 percent of the value of the vessel, aircraft, or combat vehicle under lease or charter, calculated on the basis of the present value of the termination liability of the United States under such charter or lease (as determined under regulations prescribed by the Secretary of Defense); or
+(2) if (as determined under regulations prescribed by the Secretary of Defense) the sum of—
+(A) the present value of the amount of the termination liability of the United States under the contract as of the end of the term of the contract (exclusive of any option to extend the contract); and
+(B) the present value of the total of the payments to be made by the United States under the contract (excluding any option to extend the contract) attributable to capital-hire,
+is more than one-half the price of the vessel, aircraft, or combat vehicle involved.
+§ 3675. Capital lease or lease-purchase treated as an acquisition
+(a) In General .—
+If a lease or charter covered by this chapter is a capital lease or a lease-purchase—
+(1) the lease or charter shall be treated as an acquisition and shall be subject to all applicable statutory and regulatory requirements for the acquisition of aircraft, naval vessels, or combat vehicles; and
+(2) funds appropriated to the Department of Defense for operation and maintenance may not be obligated or expended for the lease or charter.
+(b) Definitions .—
+In this section, the terms “capital lease” and “lease-purchase” have the meanings given those terms in Appendix B to Office of Management and Budget Circular A–11, as in effect on January 6, 2006 .
+§ 3676. Guidelines
+The Director of the Office of Management and Budget and the Secretary of the Treasury shall jointly issue guidelines for determining under what circumstances the Department of Defense may use lease or charter arrangements for aircraft, naval vessels, and combat vehicles rather than directly procuring such aircraft, vessels, and combat vehicles.
+§ 3677. Contracts for lease or use of vessels for a term of greater than two years but less than five years: prior notice to congressional committees
+The Secretary of a military department may make a contract for the lease of a vessel or for the provision of a service through use by a contractor of a vessel, the term of which is for a period of greater than two years, but less than five years, only if—
+(1) the Secretary has notified the congressional defense committees of the proposed contract and included in such notification—
+(A) a detailed description of the terms of the proposed contract and a justification for entering into the proposed contract rather than obtaining the capability provided for by the lease, charter, or services involved through purchase of the vessel;
+(B) a determination that entering into the proposed contract as a means of obtaining the vessel is the most cost-effective means of obtaining such vessel; and
+(C) a plan for meeting the requirement provided by the proposed contract upon completion of the term of the lease contract; and
+(2) a period of 60 days has expired following the date on which notice was received by such committees.
+[§ 3678. Repealed. Pub. L. 119–60, div. A, title VIII, § 811(a)(6) , Dec. 18, 2025 , 139 Stat. 948 ]
+CHAPTER 258— OTHER TYPES OF CONTRACTS USED FOR PROCUREMENTS FOR PARTICULAR PURPOSES
+§ 3681. Leasing of commercial vehicles and equipment
+The Secretary of Defense may use leasing in the acquisition of commercial vehicles and equipment whenever the Secretary determines that such leasing is practicable and efficient.
+Subpart D— General Contracting Provisions
+CHAPTER 271— TRUTHFUL COST OR PRICING DATA (TRUTH IN NEGOTIATIONS)
+§ 3701. Definitions
+In this chapter:
+(1) Cost or pricing data .—
+The term “cost or pricing data” means all facts that, as of the date of agreement on the price of a contract (or the price of a contract modification), or, if applicable consistent with section 3706(a)(2) of this title , another date agreed upon between the parties, a prudent buyer or seller would reasonably expect to affect price negotiations significantly. Such term does not include information that is judgmental, but does include the factual information from which a judgment was derived.
+(2) Subcontract .—
+The term “subcontract” includes a transfer of commercial products or commercial services between divisions, subsidiaries, or affiliates of a contractor or a subcontractor.
+§ 3702. Required cost or pricing data and certification
+(a) When Required .—
+The head of an agency shall require offerors, contractors, and subcontractors to make cost or pricing data available as follows:
+(1) Offeror for prime contract .—
+An offeror for a prime contract under a chapter 137 legacy provision to be entered into using procedures other than sealed-bid procedures that is only expected to receive one bid shall be required to submit cost or pricing data before the award of a contract if—
+(A) in the case of a prime contract entered into after June 30, 2026 , the price of the contract to the United States is expected to exceed $10,000,000; and
+(B) in the case of a prime contract entered into on or before June 30, 2026 , the price of the contract to the United States is expected to exceed $2,000,000.
+(2) Contractor .—
+The contractor for a prime contract under a chapter 137 legacy provision shall be required to submit cost or pricing data before the pricing of a change or modification to the contract if the price adjustment is expected to exceed $10,000,000.
+(3) Offeror for subcontract .—
+(A) An offeror for a subcontract (at any tier) of a contract under this chapter shall be required to submit cost or pricing data before the award of the subcontract if the prime contractor and each higher-tier subcontractor have been required to make available cost or pricing data under this chapter and—
+(i) in the case of a prime contract entered into after June 30, 2026 , the price of the subcontract is expected to exceed $10,000,000; or
+(ii) in the case of a prime contract entered into on or before June 30, 2026 , the price of the subcontract is expected to exceed $2,000,000.. 1
+(B) (i) An offeror for a subcontract (at any tier) of a contract under this chapter that is required to submit cost or pricing data under subparagraph (A) with respect to such subcontract may submit prices paid for the covered goods and services of such offeror for such subcontract under this clause if—
+(I) such offeror is a nontraditional defense contractor (as defined in section 3014 of this title );
+(II) the prices to be submitted are prices that were paid for the same goods and services as such covered goods and services; and
+(III) the price of such subcontract is not expected to exceed $5,000,000.
+(ii) The submission of prices paid under clause (i) by an offeror with respect to a subcontract shall be deemed to be the submission of cost or pricing data by such offeror with respect to such subcontract as required by subparagraph (A) if a contracting officer of the Department of Defense determines that the prices submitted under such clause are fair and reasonable based on supported cost or pricing data within the last 12 months.
+(iii) In this subparagraph, the term “covered goods and services” means, with respect to an offeror for a subcontract (at any tier), the goods and services such offeror would provide under such subcontract.
+(4) Subcontractor .—
+The subcontractor for a subcontract covered by paragraph (3) shall be required to submit cost or pricing data before the pricing of a change or modification to the subcontract if the price adjustment is expected to exceed $2,000,000.
+(b) Certification .—
+A person required, as an offeror, contractor, or subcontractor, to submit cost or pricing data under subsection (a) (or required by the head of the agency concerned to submit such data under section 3704 of this title ) shall be required to certify that, to the best of the person’s knowledge and belief, the cost or pricing data submitted are accurate, complete, and current.
+(c) To Whom Submitted .—
+Cost or pricing data required to be submitted under subsection (a) (or under section 3704 of this title ), and a certification required to be submitted under subsection (b), shall be submitted—
+(1) in the case of a submission by a prime contractor (or an offeror for a prime contract), to the contracting officer for the contract (or to a designated representative of the contracting officer); or
+(2) in the case of a submission by a subcontractor (or an offeror for a subcontract), to the prime contractor.
+(d) Applicability of Chapter .—
+Except as provided under section 3703 of this title , this chapter applies to contracts entered into by the head of an agency on behalf of a foreign government.
+(e) Subcontracts Not Affected by Waiver .—
+A waiver of requirements for submission of certified cost or pricing data that is granted under section 3703(a)(3) of this title in the case of a contract or subcontract does not waive the requirement under subsection (a)(3) for submission of cost or pricing data in the case of subcontracts under that contract or subcontract unless the head of the procuring activity granting the waiver determines that the requirement under that subsection should be waived in the case of such subcontracts and justifies in writing the reasons for the determination.
+(f) Modifications to Prior Contracts .—
+Under subsection (a), in connection with a prime contract entered into on or before June 30, 2018 , the head of the agency that entered into such contract shall modify the contract as soon as practicable to reflect paragraphs (1) and (2) of such subsection, without requiring consideration.
+(g) Adjustment of Amounts .—
+Effective on October 1 of each year that is divisible by 5, each amount set forth in subsection (a) shall be adjusted in accordance with section 1908 of title 41 .
+§ 3703. Exceptions
+(a) In general .—
+Submission of certified cost or pricing data shall not be required under section 3702 of this title in the case of a contract, a subcontract, or modification of a contract or subcontract—
+(1) for which the price agreed upon is based on—
+(A) adequate price competition; or
+(B) prices set by law or regulation;
+(2) for the acquisition of a commercial product or a commercial service;
+(3) in an exceptional case when the head of the procuring activity, without delegation, determines that the requirements of this chapter may be waived and justifies in writing the reasons for such determination; or
+(4) to the extent such data—
+(A) relates to an offset agreement in connection with a contract for the sale of a weapon system or defense-related item to a foreign country or foreign firm; and
+(B) does not relate to a contract or subcontract under the offset agreement for work performed in such foreign country or by such foreign firm that is directly related to the weapon system or defense-related item being purchased under the contract.
+(b) Modifications of contracts and subcontracts for commercial products or commercial services .—
+In the case of a modification of a contract or subcontract for a commercial product or commercial services that is not covered by the exception to the submission of certified cost or pricing data in paragraph (1) or (2) of subsection (a), submission of certified cost or pricing data shall not be required under section 3702 of this title if—
+(1) the contract or subcontract being modified is a contract or subcontract for which submission of certified cost or pricing data may not be required by reason of paragraph (1) or (2) of subsection (a); and
+(2) the modification would not change the contract or subcontract, as the case may be, from a contract or subcontract for the acquisition of a commercial product or commercial services to a contract or subcontract for the acquisition of an item other than a commercial product or commercial services.
+(c) Noncommercial modifications of commercial products .—
+(1) The exception in subsection (a)(2) does not apply to cost or pricing data on noncommercial modifications of a commercial product that are expected to cost, in the aggregate, more than the amount specified in section 3702(a)(1)(A) of this title , as adjusted from time to time under section 3702(g) of this title , or 5 percent of the total price of the contract (at the time of contract award), whichever is greater.
+(2) In this subsection, the term “noncommercial modification”, with respect to a commercial product, means a modification of such product that is not a modification described in section 103(3)(A) of title 41 .
+(3) Nothing in paragraph (1) shall be construed—
+(A) to limit the applicability of the exception in paragraph (1) or (3) of subsection (a) to cost or pricing data on a noncommercial modification of a commercial product; or
+(B) to require the submission of cost or pricing data on any aspect of an acquisition of a commercial product other than the cost and pricing of noncommercial modifications of such product.
+(d) Commercial product or commercial service determination .—
+(1) For purposes of applying the exception under subsection (a)(2) to the required submission of certified cost or pricing data, the contracting officer may presume that a prior commercial product or commercial service determination made by a military department, a Defense Agency, or another component of the Department of Defense shall serve as a determination for subsequent procurements of such product or service.
+(2) If the contracting officer does not make the presumption described in paragraph (1) and instead chooses to proceed with a procurement of a product or service previously determined to be a commercial product or a commercial service using procedures other than the procedures authorized for the procurement of a commercial product or a commercial service, as the case may be, the contracting officer shall request a review of the commercial product or commercial service determination by the head of the contracting activity.
+(3) Not later than 30 days after receiving a request for review of a determination under paragraph (2), the head of a contracting activity shall—
+(A) confirm that the prior determination was appropriate and still applicable; or
+(B) issue a revised determination with a written explanation of the basis for the revision.
+(e) A contracting officer shall consider evidence provided by an offeror of recent purchase prices paid by the Government for the same or similar commercial products or commercial services in establishing price reasonableness on a subsequent purchase if the contracting officer is satisfied that the prices previously paid remain a valid reference for comparison after considering the totality of other relevant factors such as the time elapsed since the prior purchase and any differences in the quantities purchased or applicable terms and conditions.
+(f) Determination by prime contractor .—
+A prime contractor required to submit certified cost or pricing data under section 3702 of this title with respect to a prime contract shall be responsible for determining whether a subcontract under such contract qualifies for an exception under subsection (a)(1) from such requirement.
+§ 3704. Cost or pricing data on below-threshold contracts
+(a) Authority to require submission .—
+Subject to subsection (b), when certified cost or pricing data are not required to be submitted by section 3702 of this title for a contract, subcontract, or modification of a contract or subcontract, such data may nevertheless be required to be submitted by the head of the procuring activity, but only if the head of the procuring activity determines that such data are necessary for the evaluation by the agency of the reasonableness of the price of the contract, subcontract, or modification of a contract or subcontract. In any case in which the head of the procuring activity requires such data to be submitted under this section, the head of the procuring activity shall justify in writing the reason for such requirement.
+(b) Exception .—
+The head of the procuring activity may not require certified cost or pricing data to be submitted under this subsection for any contract or subcontract, or modification of a contract or subcontract, covered by the exceptions in paragraph (1) or (2) of section 3703(a) of this title .
+(c) Delegation of authority prohibited .—
+The head of a procuring activity may not delegate functions under this subsection.
+§ 3705. Submission of other information
+(a) Authority to require submission .—
+When certified cost or pricing data are not required to be submitted under this chapter for a contract, subcontract, or modification of a contract or subcontract, the offeror shall be required to submit to the contracting officer data other than certified cost or pricing data (if requested by the contracting officer), to the extent necessary to determine the reasonableness of the price of the contract, subcontract, or modification of the contract or subcontract. Except in the case of a contract or subcontract covered by the exceptions in section 3703(a)(1) of this title , the contracting officer shall require that the data submitted include, at a minimum, appropriate information on the prices at which the same item or similar items have previously been sold that is adequate for evaluating the reasonableness of the price for the procurement. If the contracting officer determines that the offeror does not have access to and cannot provide sufficient information on prices for the same or similar items to determine the reasonableness of price, the contracting officer shall require the submission of information on prices for similar levels of work or effort on related products or services, prices for alternative solutions or approaches, and other information that is relevant to the determination of a fair and reasonable price. Contracting officers shall not determine the price of a contract or subcontract to be fair and reasonable based solely on historical prices paid by the Government.
+(b) Ineligibility for award .—
+(1) In the event the contracting officer is unable to determine proposed prices are fair and reasonable by any other means, an offeror who fails to make a good faith effort to comply with a reasonable request to submit data in accordance with subsection (a) is ineligible for award unless the head of the contracting activity, or the designee of the head of contracting activity, determines that it is in the best interest of the Government to make the award to that offeror, based on consideration of pertinent factors, including the following:
+(A) The effort to obtain the data.
+(B) Availability of other sources of supply of the item or service.
+(C) The urgency or criticality of the Government’s need for the item or service.
+(D) Reasonableness of the price of the contract, subcontract, or modification of the contract or subcontract based on information available to the contracting officer.
+(E) Rationale or justification made by the offeror for not providing the requested data.
+(F) Risk to the Government if award is not made.
+(2) (A) Any new determination made by the head of the contracting activity under paragraph (1) shall be reported to the Principal Director, Defense Pricing and Contracting on a quarterly basis.
+(B) The Under Secretary of Defense for Acquisition and Sustainment, or a designee, shall produce an annual report identifying offerors that have denied multiple requests for submission of uncertified cost or pricing data over the preceding three-year period, but nevertheless received an award. The report shall identify products or services offered by such offerors that should undergo should-cost analysis. The Secretary of Defense may include a notation on such offerors in the system used by the Federal Government to monitor or record contractor past performance. The Under Secretary shall assess the extent to which these offerors are sole source providers within the defense industrial base and shall develop strategies to incentivize new entrants into the industrial base to increase the availability of other sources of supply for the product or service. The Under Secretary shall make appropriate portions of the report available to the leadership of the offerors named in such report.
+(C) The Under Secretary of Defense for Acquisition and Sustainment shall develop a framework for revising what constitutes a denial of uncertified cost or pricing data, including—
+(i) identifying situations under which such denials occur to exclude situations outside the control of the offeror or Federal Government;
+(ii) identifying whether such denial is from the prime contractor or subcontractor; and
+(iii) developing an appropriate timeframe for requiring submission of uncertified cost or pricing data before a request for such data is considered a denial, including a standardized determination of a starting point and conclusion for such requests.
+(3) Alternative Sources Required .—
+If the head of contracting activity, or the designee of the head of contracting activity, determines it is in the best interest of the Government to make the award under subsection (b)(1), the head of the agency shall conduct an assessment of alternative offerors as a source of supply using authorities provided by sections 865 and 882 of the National Defense Authorization Act for Fiscal Year 2025 ( Public Law 118–159 ).
+(c) Limitations on authority .—
+The Federal Acquisition Regulation shall include the following provisions regarding the types of information that contracting officers may require under subsection (a):
+(1) Reasonable limitations on requests for sales data relating to commercial products or commercial services.
+(2) A requirement that a contracting officer limit, to the maximum extent practicable, the scope of any request for information relating to commercial products or commercial services from an offeror to only that information that is in the form regularly maintained by the offeror in commercial operations.
+(3) A statement that any information received relating to commercial products or commercial services that is exempt from disclosure under section 552(b) of title 5 shall not be disclosed by the Federal Government.
+§ 3706. Price reductions for defective cost or pricing data
+(a) Provision Requiring Adjustment.—
+(1) In general .—
+A prime contract (or change or modification to a prime contract) under which a certificate under section 3702(b) of this title is required shall contain a provision that the price of the contract to the United States, including profit or fee, shall be adjusted to exclude any significant amount by which it may be determined by the head of the agency that such price was increased because the contractor (or any subcontractor required to make available such a certificate) submitted defective cost or pricing data.
+(2) What constitutes defective cost or pricing data .—
+For the purposes of this chapter, defective cost or pricing data are cost or pricing data which, as of the date of agreement on the price of the contract (or another date agreed upon between the parties), were inaccurate, incomplete, or noncurrent. If for purposes of the preceding sentence the parties agree upon a date other than the date of agreement on the price of the contract, the date agreed upon by the parties shall be as close to the date of agreement on the price of the contract as is practicable.
+(b) Valid Defense .—
+In determining for purposes of a contract price adjustment under a contract provision required by subsection (a) whether, and to what extent, a contract price was increased because the contractor (or a subcontractor) submitted defective cost or pricing data, it shall be a defense that the United States did not rely on the defective data submitted by the contractor or subcontractor.
+(c) Invalid Defenses .—
+It is not a defense to an adjustment of the price of a contract under a contract provision required by subsection (a) that—
+(1) the price of the contract would not have been modified even if accurate, complete, and current cost or pricing data had been submitted by the contractor or subcontractor because the contractor or subcontractor—
+(A) was the sole source of the property or services procured; or
+(B) otherwise was in a superior bargaining position with respect to the property or services procured;
+(2) the contracting officer should have known that the cost and pricing data in issue were defective even though the contractor or subcontractor took no affirmative action to bring the character of the data to the attention of the contracting officer;
+(3) the contract was based on an agreement between the contractor and the United States about the total cost of the contract and there was no agreement about the cost of each item procured under such contract; or
+(4) the prime contractor or subcontractor did not submit a certification of cost and pricing data relating to the contract as required under section 3702(b) of this title .
+(d) Offsets.—
+(1) When allowed .—
+A contractor shall be allowed to offset an amount against the amount of a contract price adjustment under a contract provision required by subsection (a) if—
+(A) the contractor certifies to the contracting officer (or to a designated representative of the contracting officer) that, to the best of the contractor’s knowledge and belief, the contractor is entitled to the offset; and
+(B) the contractor proves that the cost or pricing data were available before the date of agreement on the price of the contract (or price of the modification) or, if applicable consistent with subsection (a)(2), another date agreed upon between the parties, and that the data were not submitted as specified in section 3702(c) of this title before such date.
+(2) A contractor shall not be allowed to offset an amount otherwise authorized to be offset under paragraph (1) if—
+(A) the certification under section 3702(b) of this title with respect to the cost or pricing data involved was known to be false when signed; or
+(B) the United States proves that, had the cost or pricing data referred to in paragraph (1)(B) been submitted to the United States before the date of agreement on the price of the contract (or price of the modification) or, if applicable consistent with subsection (a)(2), another date agreed upon between the parties, the submission of such cost or pricing data would not have resulted in an increase in that price in the amount to be offset.
+§ 3707. Interest and penalties for certain overpayments
+(a) In General .—
+If the United States makes an overpayment to a contractor under a contract subject to this chapter and the overpayment was due to the submission by the contractor of defective cost or pricing data, the contractor shall be liable to the United States—
+(1) for interest on the amount of such overpayment, to be computed—
+(A) for the period beginning on the date the overpayment was made to the contractor and ending on the date the contractor repays the amount of such overpayment to the United States; and
+(B) at the current rate prescribed by the Secretary of the Treasury under section 6621 of the Internal Revenue Code of 1986; and
+(2) if the submission of such defective data was a knowing submission, for an additional amount equal to the amount of the overpayment.
+(b) Liability Not Affected by Refusal to Submit Certification .—
+Any liability under this section of a contractor that submits cost or pricing data but refuses to submit the certification required by section 3702(b) of this title with respect to the cost or pricing data shall not be affected by the refusal to submit such certification.
+§ 3708. Right to examine contractor records
+For the purpose of evaluating the accuracy, completeness, and currency of cost or pricing data required to be submitted by this chapter, the head of an agency shall have the authority provided by section 3841(b)(2) of this title .
+§ 3709. Program to accelerate contracting and pricing processes
+(a) In General .—
+The Secretary of Defense shall establish a program to reform and accelerate the contracting and pricing processes associated with contracts in excess of $50,000,000 by—
+(1) basing price reasonableness determinations on actual cost and pricing data for purchases of the same or similar products for the Department of Defense; and
+(2) reducing the cost and pricing data to be submitted in accordance with this chapter.
+(b) Implementation Guidance .—
+The Secretary, acting through the Under Secretary of Defense for Acquisition and Sustainment, shall ensure that each senior contracting official (as defined in section 1737 of this title ) for a contract described in subsection (a) has the discretion to implement the program under this section efficiently and effectively by ensuring the following:
+(1) That the program does not include any preferences for contract type or specific contract requirements.
+(2) That each Secretary of a military department has no unique reporting requirements to the Under Secretary of Defense for Acquisition and Sustainment with respect to the program.
+CHAPTER 272— [Reserved]
+§ 3721. [Reserved]
+§ 3722. [Reserved]
+§ 3723. [Reserved]
+§ 3724. [Reserved]
+CHAPTER 273— ALLOWABLE COSTS
+SUBCHAPTER I— GENERAL
+§ 3741. Definitions
+In this subchapter:
+(1) Compensation .—
+The term “compensation”, for a year, means the total amount of wages, salary, bonuses and deferred compensation for the year, whether paid, earned, or otherwise accruing, as recorded in an employer’s cost accounting records for the year.
+(2) Covered contract .—
+The term “covered contract” means a contract for an amount in excess of $500,000 that is entered into by the head of an agency, except that such term does not include a fixed-price contract without cost incentives or any firm fixed-price contract for the purchase of commercial products or commercial services.
+(3) Fiscal year .—
+The term “fiscal year” means a fiscal year established by a contractor for accounting purposes.
+(4) Head of the agency .—
+The term “head of the agency” or “agency head” does not include the Secretary of a military department.
+(5) Agency .—
+The term “agency” means the Department of Defense, the Coast Guard, and the National Aeronautics and Space Administration.
+§ 3742. Adjustment of threshold amount of covered contract
+Effective on October 1 of each year that is divisible by five, the amount set forth in section 3741(2) of this title shall be adjusted in accordance with section 1908 of title 41 .
+§ 3743. Effect of submission of unallowable costs
+(a) Indirect Cost That Violates a FAR Cost Principle .—
+The head of an agency shall require that a covered contract provide that if the contractor submits to the agency a proposal for settlement of indirect costs incurred by the contractor for any period after such costs have been accrued and if that proposal includes the submission of a cost which is unallowable because the cost violates a cost principle in the Federal Acquisition Regulation or applicable agency supplement to the Federal Acquisition Regulation, the cost shall be disallowed.
+(b) Penalty for Violation of Cost Principle.—
+(1) If the head of the agency determines that a cost submitted by a contractor in its proposal for settlement is expressly unallowable under a cost principle referred to in subsection (a) that defines the allowability of specific selected costs, the head of the agency shall assess a penalty against the contractor in an amount equal to—
+(A) the amount of the disallowed cost allocated to covered contracts for which a proposal for settlement of indirect costs has been submitted; plus
+(B) interest (to be computed based on provisions in the Federal Acquisition Regulation) to compensate the United States for the use of any funds which a contractor has been paid in excess of the amount to which the contractor was entitled.
+(2) Cost determined to be unallowable before proposal submitted .—
+If the head of the agency determines that a proposal for settlement of indirect costs submitted by a contractor includes a cost determined to be unallowable in the case of such contractor before the submission of such proposal, the head of the agency shall assess a penalty against the contractor in an amount equal to two times the amount of the disallowed cost allocated to covered contracts for which a proposal for settlement of indirect costs has been submitted.
+(c) Waiver of Penalty .—
+The Federal Acquisition Regulation shall provide for a penalty under subsection (b) to be waived in the case of a contractor’s proposal for settlement of indirect costs when—
+(1) the contractor withdraws the proposal before the formal initiation of an audit of the proposal by the Federal Government and resubmits a revised proposal;
+(2) the amount of unallowable costs subject to the penalty is insignificant; or
+(3) the contractor demonstrates, to the contracting officer’s satisfaction, that—
+(A) it has established appropriate policies and personnel training and an internal control and review system that provide assurances that unallowable costs subject to penalties are precluded from being included in the contractor’s proposal for settlement of indirect costs; and
+(B) the unallowable costs subject to the penalty were inadvertently incorporated into the proposal.
+(d) Applicability of Contract Disputes Procedure to Disallowance of Cost and Assessment of Penalty .—
+An action of the head of an agency under subsection (a) or (b)—
+(1) shall be considered a final decision for the purposes of section 7103 of title 41 ; and
+(2) is appealable in the manner provided in section 7104(a) of title 41 .
+§ 3744. Specific costs not allowable
+(a) Specific Costs .—
+The following costs are not allowable under a covered contract:
+(1) Costs of entertainment, including amusement, diversion, and social activities and any costs directly associated with such costs (such as tickets to shows or sports events, meals, lodging, rentals, transportation, and gratuities).
+(2) Costs incurred to influence (directly or indirectly) legislative action on any matter pending before Congress, a State legislature, or a legislative body of a political subdivision of a State.
+(3) Costs incurred in defense of any civil or criminal fraud proceeding or similar proceeding (including filing of any false certification) brought by the United States where the contractor is found liable or has pleaded nolo contendere to a charge of fraud or similar proceeding (including filing of a false certification).
+(4) Payments of fines and penalties resulting from violations of, or failure to comply with, Federal, State, local, or foreign laws and regulations, except when incurred as a result of compliance with specific terms and conditions of the contract or specific written instructions from the contracting officer authorizing in advance such payments in accordance with applicable provisions of the Federal Acquisition Regulation.
+(5) Costs of membership in any social, dining, or country club or organization.
+(6) Costs of alcoholic beverages.
+(7) Contributions or donations, regardless of the recipient.
+(8) Costs of advertising designed to promote the contractor or its products.
+(9) Costs of promotional items and memorabilia, including models, gifts, and souvenirs.
+(10) Costs for travel by commercial aircraft which exceed the amount of the standard commercial fare.
+(11) Costs incurred in making any payment (commonly known as a “golden parachute payment”) which is—
+(i) in an amount in excess of the normal severance pay paid by the contractor to an employee upon termination of employment; and
+(ii) is paid to the employee contingent upon, and following, a change in management control over, or ownership of, the contractor or a substantial portion of the contractor’s assets.
+(12) Costs of commercial insurance that protects against the costs of the contractor for correction of the contractor’s own defects in materials or workmanship.
+(13) Costs of severance pay paid by the contractor to foreign nationals employed by the contractor under a service contract performed outside the United States, to the extent that the amount of severance pay paid in any case exceeds the amount paid in the industry involved under the customary or prevailing practice for firms in that industry providing similar services in the United States, as determined under the Federal Acquisition Regulation.
+(14) Costs of severance pay paid by the contractor to a foreign national employed by the contractor under a service contract performed in a foreign country if the termination of the employment of the foreign national is the result of the closing of, or the curtailment of activities at, a United States military facility in that country at the request of the government of that country.
+(15) Costs incurred by a contractor in connection with any criminal, civil, or administrative proceeding commenced by the United States or a State, to the extent provided in section 3750 of this title .
+(16)   1 Costs of compensation of any contractor employee for a fiscal year, regardless of the contract funding source, to the extent that such compensation exceeds $625,000 adjusted annually for the U.S. Bureau of Labor Statistics Employment Cost Index for total compensation for private industry workers, by occupational and industry group not seasonally adjusted, except that the Secretary of Defense may establish exceptions for positions in the science, technology, engineering, mathematics, medical, and cybersecurity fields and other fields requiring unique areas of expertise upon a determination that such exceptions are needed to ensure that the Department of Defense has continued access to needed skills and capabilities.
+(16)   1 Costs of compensation of contractor and subcontractor employees for a fiscal year, regardless of the contract funding source, to the extent that such compensation exceeds $487,000 per year, adjusted annually to reflect the change in the Employment Cost Index for all workers, as calculated by the Bureau of Labor Statistics, except that the head of an executive agency may establish one or more narrowly targeted exceptions for scientists, engineers, or other specialists upon a determination that such exceptions are needed to ensure that the executive agency has continued access to needed skills and capabilities.
+(17) Costs incurred by a contractor in connection with a congressional investigation or inquiry into an issue that is the subject matter of a proceeding resulting in a disposition as described in section 3750(c) of this title .
+(b) Waiver of Severance Pay Restrictions for Foreign Nationals.—
+(1) Head of an agency determination .—
+Pursuant to the Federal Acquisition Regulation and subject to the availability of appropriations, the head of an agency awarding a covered contract (other than a contract to which subsection (d) applies) may waive the application of the provisions of subsections (a)(13) and (a)(14) to that contract if the head of the agency determines that—
+(A) the application of such provisions to the contract would adversely affect the continuation of a program, project, or activity that provides significant support services for members of the armed forces stationed or deployed outside the United States;
+(B) the contractor has taken (or has established plans to take) appropriate actions within the contractor’s control to minimize the amount and number of incidents of the payment of severance pay by the contractor to employees under the contract who are foreign nationals; and
+(C) the payment of severance pay is necessary in order to comply with a law that is generally applicable to a significant number of businesses in the country in which the foreign national receiving the payment performed services under the contract or is necessary to comply with a collective bargaining agreement.
+(2) Solicitation to include statement about waiver .—
+The head of an agency shall include in the solicitation for a covered contract a statement indicating—
+(A) that a waiver has been granted under paragraph (1) for the contract; or
+(B) whether the head of the agency will consider granting such a waiver, and, if the agency head will consider granting a waiver, the criteria to be used in granting the waiver.
+(3) Determination to be made before contract awarded .—
+The head of an agency shall make the final determination regarding whether to grant a waiver under paragraph (1) with respect to a covered contract before award of the contract.
+(c) Establishment of Definitions, Exclusions, Limitations, and Qualifications .—
+The provisions of the Federal Acquisition Regulation implementing this subchapter may establish appropriate definitions, exclusions, limitations, and qualifications.
+(d) Specific Costs Under Military Banking Contracts Relating to Foreign Nationals.—
+(1) Authority .—
+The Secretary of Defense may provide in a military banking contract that the provisions of subsections (a)(13) and (a)(14) shall not apply to costs incurred under the contract by the contractor for payment of mandated foreign national severance pay. The Secretary may include such a provision in a military banking contract only if the Secretary determines, with respect to that contract, that the contractor has taken (or has established plans to take) appropriate actions within the contractor’s control to minimize the amount and number of incidents of the payment of severance pay by the contractor to employees under the contract who are foreign nationals.
+(2) Definitions .—
+In paragraph (1):
+(A) Military banking contract .—
+The term “military banking contract” means a contract between the Secretary and a financial institution under which the financial institution operates a military banking facility outside the United States for use by members of the armed forces stationed or deployed outside the United States and other authorized personnel.
+(B) Mandated foreign national severance pay .—
+The term “mandated foreign national severance pay” means severance pay paid by a contractor to a foreign national employee the payment of which by the contractor is required in order to comply with a law that is generally applicable to a significant number of businesses in the country in which the foreign national receiving the payment performed services under the contract.
+(3) Exception for foreign-owned financial institutions .—
+Paragraph (1) does not apply to a contract with a financial institution that is owned or controlled by citizens or nationals of a foreign country, as determined by the Secretary of Defense. Such a determination shall be made in accordance with the criteria set out in paragraph (1) of section 4(g) of the Buy American Act (as added by section 7002(2) of the Omnibus Trade and Competitiveness Act of 1988) and the policy guidance referred to in paragraph (2)(A) of that section.
+§ 3745. Required regulations
+(a) In General .—
+The Federal Acquisition Regulation shall contain provisions on the allowability of contractor costs. Such provisions shall define in detail and in specific terms those costs which are unallowable, in whole or in part, under covered contracts.
+(b) Specific Items .—
+The regulations shall, at a minimum, clarify the cost principles applicable to contractor costs of the following:
+(1) Air shows.
+(2) Membership in civic, community, and professional organizations.
+(3) Recruitment.
+(4) Employee morale and welfare.
+(5) Actions to influence (directly or indirectly) executive branch action on regulatory and contract matters (other than costs incurred in regard to contract proposals pursuant to solicited or unsolicited bids).
+(6) Community relations.
+(7) Dining facilities.
+(8) Professional and consulting services, including legal services.
+(9) Compensation.
+(10) Selling and marketing.
+(11) Travel.
+(12) Public relations.
+(13) Hotel and meal expenses.
+(14) Expense of corporate aircraft.
+(15) Company-furnished automobiles.
+(16) Advertising.
+(17) Conventions.
+(c) Additional Requirements.—
+(1) When questioned costs may be resolved .—
+The Federal Acquisition Regulation shall require that a contracting officer not resolve any questioned costs until he has obtained—
+(A) adequate documentation with respect to such costs; and
+(B) the opinion of the contract auditor on the allowability of such costs.
+(2) Presence of contract auditor .—
+The Federal Acquisition Regulation shall provide that, to the maximum extent practicable, the contract auditor be present at any negotiation or meeting with the contractor regarding a determination of the allowability of indirect costs of the contractor.
+(3) Settlement to reflect amount of individual questioned costs .—
+The Federal Acquisition Regulation shall require that all categories of costs designated in the report of the contract auditor as questioned with respect to a proposal for settlement be resolved in such a manner that the amount of the individual questioned costs that are paid will be reflected in the settlement.
+§ 3746. Applicability of regulations to subcontractors
+The regulations referred to in sections 3744 and 3745(a) and (b) of this title shall require prime contractors of a covered contract, to the maximum extent practicable, to apply the provisions of such regulations to all subcontractors of the covered contract.
+§ 3747. Contractor certification
+(a) Content and Form .—
+A proposal for settlement of indirect costs applicable to a covered contract shall include a certification by an official of the contractor that, to the best of the certifying official’s knowledge and belief, all indirect costs included in the proposal are allowable. Any such certification shall be in a form prescribed in the Federal Acquisition Regulation.
+(b) Waiver .—
+The head of the agency or the Secretary of the military department concerned may, in an exceptional case, waive the requirement for certification under subsection (a) in the case of any contract if the head of the agency or the Secretary—
+(1) determines in such case that it would be in the interest of the United States to waive such certification; and
+(2) states in writing the reasons for that determination and makes such determination available to the public.
+§ 3748. Penalties for submission of cost known as not allowable
+The submission to an agency of a proposal for settlement of costs for any period after such costs have been accrued that includes a cost that is expressly specified by statute or regulation as being unallowable, with the knowledge that such cost is unallowable, shall be subject to the provisions of section 287 of title 18 and section 3729 of title 31 .
+§ 3749. Burden of proof on contractor
+In a proceeding before the Armed Services Board of Contract Appeals, the United States Court of Federal Claims, or any other Federal court in which the reasonableness of indirect costs for which a contractor seeks reimbursement from the Department of Defense is in issue, the burden of proof shall be upon the contractor to establish that those costs are reasonable.
+§ 3750. Proceeding costs not allowable
+(a) Definitions .—
+In this section:
+(1) Costs .—
+The term “costs”, with respect to a proceeding—
+(A) means all costs incurred by a contractor or subcontractor, or personal services contractor, whether before or after the commencement of any such proceeding; and
+(B) includes—
+(i) administrative and clerical expenses;
+(ii) the cost of legal services, including legal services performed by an employee of the contractor or subcontractor, or personal services contractor;
+(iii) the cost of the services of accountants and consultants retained by the contractor or subcontractor, or personal services contractor; and
+(iv) the pay of directors, officers, and employees of the contractor or subcontractor, or personal services contractor for time devoted by such directors, officers, and employees to such proceeding.
+(2) Penalty .—
+The term “penalty” does not include restitution, reimbursement, or compensatory damages.
+(3) Proceedings .—
+The term “proceeding” includes an investigation.
+(b) In General .—
+Except as otherwise provided in this section, costs incurred by a contractor or subcontractor, or personal services contractor in connection with any criminal, civil, or administrative proceeding commenced by the United States, by a State, or by a contractor or subcontractor, or personal services contractor employee submitting a complaint under section 4701 of this title are not allowable as reimbursable costs under a covered contract, subcontract, or personal services contract if the proceeding—
+(1) relates to a violation of, or failure to comply with, a Federal or State statute or regulation or to any other activity described in section 4701(a)(1) of this title ; and
+(2) results in a disposition described in subsection (c).
+(c) Covered Dispositions .—
+A disposition referred to in subsection (b)(2) is any of the following:
+(1) In the case of a criminal proceeding, a conviction (including a conviction pursuant to a plea of nolo contendere) by reason of the violation or failure referred to in subsection (b).
+(2) In the case of a civil or administrative proceeding involving an allegation of fraud or similar misconduct, a determination of contractor or subcontractor, or personal services contractor liability on the basis of the violation or failure referred to in subsection (b).
+(3) In the case of any civil or administrative proceeding, the imposition of a monetary penalty or an order to take corrective action under section 4701 of this title by reason of the violation or failure referred to in subsection (b).
+(4) A final decision—
+(A) to debar or suspend the contractor or subcontractor, or personal services contractor;
+(B) to rescind or void the contract, subcontract, or personal services contract; or
+(C) to terminate the contract, subcontract, or personal services contract for default;
+by reason of the violation or failure referred to in subsection (b).
+(5) A disposition of the proceeding by consent or compromise if such action could have resulted in a disposition described in paragraphs (1), (2), (3), or (4).
+(d) Costs Allowed by Settlement Agreement in Proceeding Commenced by United States .—
+In the case of a proceeding referred to in subsection (b) that is commenced by the United States and is resolved by consent or compromise pursuant to an agreement entered into by a contractor or subcontractor, or personal services contractor and the United States, the costs incurred by the contractor or subcontractor, or personal services contractor in connection with such proceeding that are otherwise not allowable as reimbursable costs under such subsection may be allowed to the extent specifically provided in such agreement.
+(e) Costs Specifically Authorized in Proceeding Commenced by State .—
+In the case of a proceeding referred to in subsection (b) that is commenced by a State, the head of the agency or Secretary of the military department concerned that awarded the covered contract, subcontract, or personal services contract involved in the proceeding may allow the costs incurred by the contractor or subcontractor, or personal services contractor in connection with such proceeding as reimbursable costs if the agency head or Secretary determines, in accordance with the Federal Acquisition Regulation, that the costs were incurred as a result of (1) a specific term or condition of the contract, subcontract, or personal services contract, or (2) specific written instructions of the agency or military department.
+(f) Other Allowable Costs.—
+(1) In general .—
+Except as provided in paragraph (3), costs incurred by a contractor or subcontractor, or personal services contractor in connection with a criminal, civil, or administrative proceeding commenced by the United States or a State in connection with a covered contract, subcontract, or personal services contract may be allowed as reimbursable costs under the contract, subcontract, or personal services contract if such costs are not disallowable under subsection (b), but only to the extent provided in paragraph (2).
+(2) Amount of Allowable Costs.—
+(A) Maximum amount allowed .—
+The amount of the costs allowable under paragraph (1) in any case may not exceed the amount equal to 80 percent of the amount of the costs incurred, to the extent that such costs are determined to be otherwise allowable and allocable under the Federal Acquisition Regulation.
+(B) Content of regulations .—
+Regulations issued for the purpose of subparagraph (A) shall provide for appropriate consideration of—
+(i) the complexity of procurement litigation;
+(ii) generally accepted principles governing the award of legal fees in civil actions involving the United States as a party; and
+(iii) such other factors as may be appropriate.
+(3) When otherwise allowable costs are not allowable .—
+In the case of a proceeding referred to in paragraph (1), contractor or subcontractor, or personal services contractor costs otherwise allowable as reimbursable costs under this subsection are not allowable if—
+(A) such proceeding involves the same contractor or subcontractor, or personal services contractor misconduct alleged as the basis of another criminal, civil, or administrative proceeding; and
+(B) the costs of such other proceeding are not allowable under subsection (b).

@@ -1,0 +1,455 @@
+WARN Act: notice before mass layoffs
+29 U.S.C. §2101 et seq.
+Read from: subchapter /us/usc/t29/ch20/schV (OLRC XML 119-124)
+Heading: GENERAL PROVISIONS
+
+SUBCHAPTER V— GENERAL PROVISIONS
+Part A— Enforcement Provisions
+§ 1851. Criminal sanctions
+(a) Violations of chapter or regulations
+Any person who willfully and knowingly violates this chapter or any regulation under this chapter shall be fined not more than $1,000 or sentenced to prison for a term not to exceed one year, or both. Upon conviction for any subsequent violation of this chapter or any regulation under this chapter, the defendant shall be fined not more than $10,000 or sentenced to prison for a term not to exceed three years, or both.
+(b) Violations of section 1324a(a) of title 8
+If a farm labor contractor who commits a violation of paragraph (1) or (2) of section 1324a(a) of title 8 has been refused issuance or renewal of, or has failed to obtain, a certificate of registration or is a farm labor contractor whose certificate has been suspended or revoked, the contractor shall, upon conviction, be fined not more than $10,000 or sentenced to prison for a term not to exceed three years, or both.
+§ 1852. Judicial enforcement
+(a) Injunctive relief
+The Secretary may petition any appropriate district court of the United States for temporary or permanent injunctive relief if the Secretary determines that this chapter, or any regulation under this chapter, has been violated.
+(b) Control of civil litigation
+Except as provided in section 518(a) of title 28 , relating to litigation before the Supreme Court, the Solicitor of Labor may appear for and represent the Secretary in any civil litigation brought under this chapter, but all such litigation shall be subject to the direction and control of the Attorney General.
+§ 1853. Administrative sanctions
+(a) Civil money penalties for violations; criteria for assessment
+(1) Subject to paragraph (2), any person who commits a violation of this chapter or any regulation under this chapter, may be assessed a civil money penalty of not more than $1,000 for each violation.
+(2) In determining the amount of any penalty to be assessed under paragraph (1), the Secretary shall take into account (A) the previous record of the person in terms of compliance with this chapter and with comparable requirements of the Farm Labor Contractor Registration Act of 1963 [ 7 U.S.C. 2041 et seq.], and with regulations promulgated under this chapter and such Act, and (B) the gravity of the violation.
+(b) Administrative review
+(1) The person assessed shall be afforded an opportunity for agency hearing, upon request made within thirty days after the date of issuance of the notice of assessment. In such hearing, all issues shall be determined on the record pursuant to section 554 of title 5 . If no hearing is requested as herein provided, the assessment shall constitute a final and unappealable order.
+(2) If a hearing is requested, the initial agency decision shall be made by an administrative law judge, and such decision shall become the final order unless the Secretary modifies or vacates the decision. Notice of intent to modify or vacate the decision of the administrative law judge shall be issued to the parties within thirty days after the decision of the administrative law judge. A final order which takes effect under this paragraph shall be subject to review only as provided under subsection (c).
+(c) Judicial review
+Any person against whom an order imposing a civil money penalty has been entered after an agency hearing under this section may obtain review by the United States district court for any district in which he is located or the United States District Court for the District of Columbia by filing a notice of appeal in such court within thirty days from the date of such order, and simultaneously sending a copy of such notice by registered mail to the Secretary. The Secretary shall promptly certify and file in such court the record upon which the penalty was imposed. The findings of the Secretary shall be set aside only if found to be unsupported by substantial evidence as provided by section 706(2)(E) of title 5 . Any final decision, order, or judgment of such District Court concerning such review shall be subject to appeal as provided in chapter 83 of title 28.
+(d) Failure to pay assessment; maintenance of action
+If any person fails to pay an assessment after it has become a final and unappealable order, or after the court has entered final judgment in favor of the agency, the Secretary shall refer the matter to the Attorney General, who shall recover the amount assessed by action in the appropriate United States district court. In such action the validity and appropriateness of the final order imposing the penalty shall not be subject to review.
+(e) Payment of penalties into Treasury of United States
+All penalties collected under authority of this section shall be paid into the Treasury of the United States.
+§ 1854. Private right of action
+(a) Maintenance of civil action in district court by aggrieved person
+Any person aggrieved by a violation of this chapter or any regulation under this chapter by a farm labor contractor, agricultural employer, agricultural association, or other person may file suit in any district court of the United States having jurisdiction of the parties, without respect to the amount in controversy and without regard to the citizenship of the parties and without regard to exhaustion of any alternative administrative remedies provided herein.
+(b) Appointment of attorney and commencement of action
+Upon application by a complainant and in such circumstances as the court may deem just, the court may appoint an attorney for such complainant and may authorize the commencement of the action.
+(c) Award of damages or other equitable relief; amount; criteria; appeal
+(1) If the court finds that the respondent has intentionally violated any provision of this chapter or any regulation under this chapter, it may award damages up to and including an amount equal to the amount of actual damages, or statutory damages of up to $500 per plaintiff per violation, or other equitable relief, except that (A) multiple infractions of a single provision of this chapter or of regulations under this chapter shall constitute only one violation for purposes of determining the amount of statutory damages due a plaintiff; and (B) if such complaint is certified as a class action, the court shall award no more than the lesser of up to $500 per plaintiff per violation, or up to $500,000 or other equitable relief.
+(2) In determining the amount of damages to be awarded under paragraph (1), the court is authorized to consider whether an attempt was made to resolve the issues in dispute before the resort to litigation.
+(3) Any civil action brought under this section shall be subject to appeal as provided in chapter 83 of title 28.
+(d) Workers’ compensation benefits; exclusive remedy
+(1) Notwithstanding any other provision of this chapter, where a State workers’ compensation law is applicable and coverage is provided for a migrant or seasonal agricultural worker, the workers’ compensation benefits shall be the exclusive remedy for loss of such worker under this chapter in the case of bodily injury or death in accordance with such State’s workers’ compensation law.
+(2) The exclusive remedy prescribed by paragraph (1) precludes the recovery under subsection (c) of actual damages for loss from an injury or death but does not preclude recovery under subsection (c) for statutory damages or equitable relief, except that such relief shall not include back or front pay or in any manner, directly or indirectly, expand or otherwise alter or affect (A) a recovery under a State workers’ compensation law or (B) rights conferred under a State workers’ compensation law.
+(e) Expansion of statutory damages
+If the court finds in an action which is brought by or for a worker under subsection (a) in which a claim for actual damages is precluded because the worker’s injury is covered by a State workers’ compensation law as provided by subsection (d) that—
+(1) (A) the defendant in the action violated section 1841(b) of this title by knowingly requiring or permitting a driver to drive a vehicle for the transportation of migrant or seasonal agricultural workers while under the influence of alcohol or a controlled substance (as defined in section 802 of title 21 ) and the defendant had actual knowledge of the driver’s condition, and
+(B) such violation resulted in injury to or death of the migrant or seasonal worker by or for whom the action was brought and such injury or death arose out of and in the course of employment as determined under the State workers’ compensation law,
+(2) (A) the defendant violated a safety standard prescribed by the Secretary under section 1841(b) of this title which the defendant was determined in a previous judicial or administrative proceeding to have violated, and
+(B) such safety violation resulted in an injury or death described in paragraph (1)(B),
+(3) (A) (i) the defendant willfully disabled or removed a safety device prescribed by the Secretary under section 1841(b) of this title , or
+(ii) the defendant in conscious disregard of the requirements of section 1841(b) of this title failed to provide a safety device required under such section, and
+(B) such disablement, removal, or failure to provide a safety device resulted in an injury or death described in paragraph (1)(B), or
+(4) (A) the defendant violated a safety standard prescribed by the Secretary under section 1841(b) of this title ,
+(B) such safety violation resulted in an injury or death described in paragraph (1)(B), and
+(C) the defendant at the time of the violation of section 1841(b) of this title also was—
+(i) an unregistered farm labor contractor in violation of section 1811(a) of this title , or
+(ii) a person who utilized the services of a farm labor contractor of the type specified in clause (i) without taking reasonable steps to determine that the farm labor contractor possessed a valid certificate of registration authorizing the performance of the farm labor contracting activities which the contractor was requested or permitted to perform with the knowledge of such person,
+the court shall award not more than $10,000 per plaintiff per violation with respect to whom the court made the finding described in paragraph (1), (2), (3), or (4), except that multiple infractions of a single provision of this chapter shall constitute only one violation for purposes of determining the amount of statutory damages due to a plaintiff under this subsection and in the case of a class action, the court shall award not more than the lesser of up to $10,000 per plaintiff or up to $500,000 for all plaintiffs in such class action.
+(f) Tolling of statute of limitations
+If it is determined under a State workers’ compensation law that the workers’ compensation law is not applicable to a claim for bodily injury or death of a migrant or seasonal agricultural worker, the statute of limitations for bringing an action for actual damages for such injury or death under subsection (a) shall be tolled for the period during which the claim for such injury or death under such State workers’ compensation law was pending. The statute of limitations for an action for other actual damages, statutory damages, or equitable relief arising out of the same transaction or occurrence as the injury or death of the migrant or seasonal agricultural worker shall be tolled for the period during which the claim for such injury or death was pending under the State workers’ compensation law.
+§ 1855. Discrimination prohibited
+(a) Prohibited activities
+No person shall intimidate, threaten, restrain, coerce, blacklist, discharge, or in any manner discriminate against any migrant or seasonal agricultural worker because such worker has, with just cause, filed any complaint or instituted, or caused to be instituted, any proceeding under or related to this chapter, or has testified or is about to testify in any such proceedings, or because of the exercise, with just cause, by such worker on behalf of himself or others of any right or protection afforded by this chapter.
+(b) Proceedings for redress of violations
+A migrant or seasonal agricultural worker who believes, with just cause, that he has been discriminated against by any person in violation of this section may, within 180 days after such violation occurs, file a complaint with the Secretary alleging such discrimination. Upon receipt of such complaint, the Secretary shall cause such investigation to be made as he deems appropriate. If upon such investigation, the Secretary determines that the provisions of this section have been violated, the Secretary shall bring an action in any appropriate United States district court against such person. In any such action the United States district courts shall have jurisdiction, for cause shown, to restrain violation of subsection (a) and order all appropriate relief, including rehiring or reinstatement of the worker, with back pay, or damages.
+§ 1856. Waiver of rights
+Agreements by employees purporting to waive or to modify their rights under this chapter shall be void as contrary to public policy, except that a waiver or modification of rights in favor of the Secretary shall be valid for purposes of enforcement of this chapter.
+Part B— Administrative Provisions
+§ 1861. Rules and regulations
+The Secretary may issue such rules and regulations as are necessary to carry out this chapter, consistent with the requirements of chapter 5 of title 5.
+§ 1862. Authority to obtain information
+(a) Investigation and inspection authority concerning places, records, etc.
+To carry out this chapter the Secretary, either pursuant to a complaint or otherwise, shall, as may be appropriate, investigate, and in connection therewith, enter and inspect such places (including housing and vehicles) and such records (and make transcriptions thereof), question such persons and gather such information to determine compliance with this chapter, or regulations prescribed under this chapter.
+(b) Attendance and testimony of witnesses, and production of evidence; subpena authority
+The Secretary may issue subpenas requiring the attendance and testimony of witnesses or the production of any evidence in connection with such investigations. The Secretary may administer oaths, examine witnesses, and receive evidence. For the purpose of any hearing or investigation provided for in this chapter, the authority contained in sections 49 and 50 of title 15, relating to the attendance of witnesses and the production of books, papers, and documents, shall be available to the Secretary. The Secretary shall conduct investigations in a manner which protects the confidentiality of any complainant or other party who provides information to the Secretary in good faith.
+(c) Prohibited activities
+It shall be a violation of this chapter for any person to unlawfully resist, oppose, impede, intimidate, or interfere with any official of the Department of Labor assigned to perform an investigation, inspection, or law enforcement function pursuant to this chapter during the performance of such duties.
+§ 1863. Agreements with Federal and State agencies
+(a) Scope of agreements
+The Secretary may enter into agreements with Federal and State agencies (1) to use their facilities and services, (2) to delegate, subject to subsection (b), to Federal and State agencies such authority, other than rulemaking, as may be useful in carrying out this chapter, and (3) to allocate or transfer funds to, or otherwise pay or reimburse, such agencies for expenses incurred pursuant to agreements under clause (1) or (2) of this section.
+(b) Delegation of authority pursuant to written State plan
+Any delegation to a State agency pursuant to subsection (a)(2) shall be made only pursuant to a written State plan which—
+(1) shall include a description of the functions to be performed, the methods of performing such functions, and the resources to be devoted to the performance of such functions; and
+(2) provides assurances satisfactory to the Secretary that the State agency will comply with its description under paragraph (1) and that the State agency’s performance of functions so delegated will be at least comparable to the performance of such functions by the Department of Labor.
+Part C— Miscellaneous Provisions
+§ 1871. State laws and regulations
+This chapter is intended to supplement State law, and compliance with this chapter shall not excuse any person from compliance with appropriate State law and regulation.
+§ 1872. Transition provision
+The Secretary may deny a certificate of registration to any farm labor contractor, as defined in this chapter, who has a judgment outstanding against him under the Farm Labor Contractor Registration Act of 1963 ( 7 U.S.C. 2041 et seq.), or is subject to a final order of the Secretary under that Act assessing a civil money penalty which has not been paid. Any findings under the Farm Labor Contractor Registration Act of 1963 may also be applicable to determinations of willful and knowing violations under this chapter.
+CHAPTER 21— HELEN KELLER NATIONAL CENTER FOR YOUTHS AND ADULTS WHO ARE DEAF-BLIND
+§ 1901. Congressional findings
+The Congress finds that—
+(1) deaf-blindness is among the most severe of all forms of disabilities, and there is a great and continuing need for services and training to help individuals who are deaf-blind attain the highest possible level of development;
+(2) due to the rubella epidemic of the 1960’s, the rapidly increasing number of older persons many of whom are experiencing significant losses of both vision and hearing, and recent advances in medical technology that have sustained the lives of many severely disabled individuals, including individuals who are deaf-blind, who might not otherwise have survived, the need for services for individuals who are deaf-blind is even more pressing now than in the past;
+(3) helping individuals who are deaf-blind to become self-sufficient, independent, and employable by providing the services and training necessary to accomplish that end will benefit the Nation, both economically and socially;
+(4) the Helen Keller National Center for Youths and Adults who are Deaf-Blind is a vital national resource for meeting the needs of individuals who are deaf-blind and no State currently has the facilities or personnel to meet such needs;
+(5) the Federal Government has made a substantial investment in capital, equipment, and operating funds for such Center since it was established; and
+(6) it is in the national interest to continue to provide support for the Center, and it is a proper function of the Federal Government to be the primary source of such support.
+§ 1902. Continued operation of Center
+(a) Administration by Secretary of Education
+The Secretary of Education shall continue to administer and support the Helen Keller National Center for Youths and Adults who are Deaf-Blind in the same manner as such Center was administered prior to February 22, 1984 , to the extent such manner of administration is not inconsistent with any purpose described in subsection (b) or any other requirement of this chapter.
+(b) Purposes of Center
+The purposes of the Center are to—
+(1) provide specialized intensive services, or any other services, at the Center or anywhere else in the United States, which are necessary to encourage the maximum personal development of any individual who is deaf-blind;
+(2) train family members of individuals who are deaf-blind at the Center or anywhere else in the United States, in order to assist family members in providing and obtaining appropriate services for the individual who is deaf-blind;
+(3) train professionals and allied personnel at the Center or anywhere else in the United States to provide services to individuals who are deaf-blind; and
+(4) conduct applied research, development programs, and demonstrations with respect to communication techniques, teaching methods, aids and devices, and delivery of services.
+§ 1903. Audit; monitoring and evaluation
+(a) The books and accounts of the Center shall be audited annually by an independent auditor in the manner prescribed by the Secretary and a report on each such audit shall be submitted by the auditor to the Secretary within 15 days following the completion of the audit and acceptance of the audit by the Center.
+(b) (1) The Secretary shall establish procedures for monitoring, on a regular basis, the services performed and the training conducted by the Center.
+(2) The Secretary shall, in addition to the regular monitoring required under paragraph (1), conduct an evaluation of the operation of the Center at the end of each fiscal year. A written report of such evaluation shall be submitted to the President, the Clerk of the House of Representatives, and the Secretary of the Senate within one hundred and eighty days after the end of the fiscal year for which such evaluation was conducted. The first such report shall be submitted for fiscal year 1983.
+§ 1904. Authorization of appropriations
+(a) There are authorized to be appropriated to carry out the provisions of this chapter such sums as may be necessary for each of the fiscal years 1999 through 2003. Such sums shall remain available until expended.
+(b) Any appropriation Act containing any appropriation authorized by subsection (a) shall contain a statement of the specific amount being made available to the Center.
+§ 1905. Definitions
+For purposes of this chapter—
+(1) the terms “Helen Keller National Center for Youths and Adults who are Deaf-Blind” and “Center” mean the Helen Keller National Center for Youths and Adults who are Deaf-Blind, and its affiliated network, operated pursuant to this chapter;
+(2) the term “individual who is deaf-blind” means any individual—
+(A) (i) who has a central visual acuity of 20/200 or less in the better eye with corrective lenses, or a field defect such that the peripheral diameter of visual field subtends an angular distance no greater than 20 degrees, or a progressive visual loss having a prognosis leading to one or both these conditions;
+(ii) who has a chronic hearing impairment so severe that most speech cannot be understood with optimum amplification, or a progressive hearing loss having a prognosis leading to this condition; and
+(iii) for whom the combination of impairments described in clauses (i) and (ii) cause extreme difficulty in attaining independence in daily life activities, achieving psychosocial adjustment, or obtaining a vocation;
+(B) who despite the inability to be measured accurately for hearing and vision loss due to cognitive or behavioral constraints, or both, can be determined through functional and performance assessment to have severe hearing and visual disabilities that cause extreme difficulty in attaining independence in daily life activities, achieving psychosocial adjustment, or obtaining vocational objectives; or
+(C) meets such other requirements as the Secretary may prescribe by regulation; and
+(3) the term “Secretary” means the Secretary of Education.
+§ 1906. Construction; effect on agreements
+This chapter shall not be construed as modifying or affecting any agreement between the Department of Education or any other department or agency of the United States and the Helen Keller Services for the Blind, Incorporated, or any successor to or assignee of such corporation, with respect to the Center.
+§ 1907. Helen Keller National Center Federal Endowment Fund
+(a) Establishment
+The Secretary and the Board of Directors of the Helen Keller National Center are authorized to establish the Helen Keller National Center Federal Endowment Fund (hereafter in this section referred to as the “Endowment Fund”) in accordance with the provisions of this section, to promote the financial independence of the Helen Keller National Center. The Secretary and the Board may enter into such agreements as may be necessary to carry out the purposes of this section.
+(b) Federal payments
+(1) In general
+The Secretary shall make payments to the Endowment Fund from amounts appropriated pursuant to subsection (h), consistent with the provisions of this section.
+(2) Amount of payment
+Subject to the availability of appropriations, the Secretary shall make payments to the Endowment Fund in amounts equal to sums contributed to the Endowment Fund from non-Federal sources (excluding transfers from other endowment funds of the Center).
+(c) Investments
+(1) In general
+The Center, in investing the Endowment Fund corpus and income, shall exercise the judgment and care, under the prevailing circumstances, which a person of prudence, discretion, and intelligence would exercise in the management of that person’s own business affairs.
+(2) Limitations
+(A) Federally insured investments and other investments
+The Endowment Fund corpus and income shall be invested in federally insured bank savings accounts or comparable interest bearing accounts, certificates of deposit, money market funds, mutual funds, obligations of the United States, or other low-risk instruments and securities in which a regulated insurance company may invest under the laws of the State of New York.
+(B) Real estate
+The Endowment Fund corpus and income may not be invested in real estate.
+(C) Conflict of interest
+The Endowment Fund corpus or income may not be invested in instruments or securities issued by an organization in which an executive officer is a controlling shareholder, director, or owner within the meaning of Federal securities laws and other applicable laws.
+(D) Encumbrances
+The Center may not assign, hypothecate, encumber, or create a lien on the Endowment Fund corpus without specific written authorization of the Secretary.
+(d) Withdrawals and expenditures
+(1) In general
+For a 20-year period following the receipt of a payment under this section, the Center shall not withdraw or expend the Federal payment or matching contribution made to the Endowment Fund corpus. On the expiration of such period, the Center may use the Endowment Fund corpus plus any of the Endowment Fund income for any purpose that benefits individuals who are deaf-blind.
+(2) Operational and commercial expenses
+(A) In general
+The Helen Keller National Center may withdraw or expend the Endowment Fund income for any expenses necessary for the operation of the Center, including expenses of operations and maintenance, administration, academic and support personnel, construction and renovation, community and client services programs, technical assistance, and research.
+(B) Limitation
+The Center may not withdraw or expend the Endowment Fund income for any commercial purpose.
+(3) Limitations and waiver of limitations
+(A) In general
+Except as provided in subparagraph (B), the Center shall not withdraw or expend more than 50 percent of the total aggregate Endowment Fund income earned prior to the time of withdrawal or expenditure.
+(B) Exception
+The Secretary may permit the Center to withdraw or expend more than 50 percent of its total aggregate endowment income where the Center demonstrates to the Secretary’s satisfaction that such withdrawal or expenditure is necessary because of—
+(i) a financial emergency, such as a pending insolvency or temporary liquidity problem;
+(ii) a life-threatening situation occasioned by a natural disaster or arson; or
+(iii) another unusual occurrence or exigent circumstance.
+(e) Reporting requirements
+(1) Financial records
+The Helen Keller National Center shall keep accurate financial records relating to the operation of the Endowment Fund.
+(2) Audit and report
+(A) Audit
+The Center shall arrange for the conduct of an annual financial and compliance audit of the Endowment Fund in the manner prescribed by the Secretary pursuant to section 1903(a) of this title .
+(B) Report
+The Center shall submit a copy of the report on the audit required under subparagraph (A) to the Secretary within 15 days after completion of the audit and acceptance of the audit by the Center.
+(3) Annual report
+Not later than 60 days after the end of each fiscal year, the Center shall provide to the Secretary an annual report on the uses of funds provided by the Federal endowment program authorized under this section. Such report shall contain such information, and be in such form as the Secretary may require.
+(f) Recovery of payments
+After notice and an opportunity for a hearing, the Secretary is authorized to recover any Federal payments made under this section if the Helen Keller National Center—
+(1) makes a withdrawal or expenditure from the Endowment Fund corpus or income which is not consistent with the provisions of this section;
+(2) fails to comply with the investment standards and limitations under this section; or
+(3) fails to account properly to the Secretary concerning the investment of or expenditures from the Endowment Fund corpus or income.
+(g) Definitions
+For the purposes of this section:
+(1) Endowment fund
+The term “endowment fund” means a fund, or a tax-exempt foundation, established and maintained by the Helen Keller National Center for the purpose of generating income for the support of the Center.
+(2) Endowment Fund corpus
+The term “Endowment Fund corpus” means an amount equal to the Federal payments made to the Endowment Fund and amounts contributed to the Endowment Fund from non-Federal sources.
+(3) Endowment Fund income
+The term “Endowment Fund income” means an amount equal to the total market value of the Endowment Fund minus the Endowment Fund corpus.
+(h) Authorization of appropriations
+There are authorized to be appropriated to carry out this section, such sums as may be necessary for each of the fiscal years 1999 through 2003. Such sums shall remain available until expended.
+§ 1908. Registry
+(a) In general
+To assist the Center in providing services to individuals who are deaf-blind, the Center may establish and maintain registries of such individuals in each of the regional field offices of the network of the Center.
+(b) Voluntary provision of information
+No individual who is deaf-blind may be required to provide information to the Center for any purpose with respect to a registry established under subsection (a).
+(c) Nondisclosure
+The Center (including the network of the Center) may not disclose information contained in a registry established under subsection (a) to any individual or organization that is not affiliated with the Center, unless the individual to whom the information relates provides specific written authorization for the Center to disclose the information.
+(d) Privacy rights
+The requirements of section 552a of title 5 (commonly known as the “Privacy Act of 1974”) shall apply to personally identifiable information contained in the registries established by the Center under subsection (a), in the same manner and to the same extent as such requirements apply to a record of an agency.
+(e) Removal of information
+On the request of an individual, the Center shall remove all information relating to the individual from any registry established under subsection (a).
+CHAPTER 22— EMPLOYEE POLYGRAPH PROTECTION
+§ 2001. Definitions
+As used in this chapter:
+(1) Commerce
+The term “commerce” has the meaning provided by section 203(b) of this title .
+(2) Employer
+The term “employer” includes any person acting directly or indirectly in the interest of an employer in relation to an employee or prospective employee.
+(3) Lie detector
+The term “lie detector” includes a polygraph, deceptograph, voice stress analyzer, psychological stress evaluator, or any other similar device (whether mechanical or electrical) that is used, or the results of which are used, for the purpose of rendering a diagnostic opinion regarding the honesty or dishonesty of an individual.
+(4) Polygraph
+The term “polygraph” means an instrument that—
+(A) records continuously, visually, permanently, and simultaneously changes in cardiovascular, respiratory, and electrodermal patterns as minimum instrumentation standards; and
+(B) is used, or the results of which are used, for the purpose of rendering a diagnostic opinion regarding the honesty or dishonesty of an individual.
+(5) Secretary
+The term “Secretary” means the Secretary of Labor.
+§ 2002. Prohibitions on lie detector use
+Except as provided in sections 2006 and 2007 of this title, it shall be unlawful for any employer engaged in or affecting commerce or in the production of goods for commerce—
+(1) directly or indirectly, to require, request, suggest, or cause any employee or prospective employee to take or submit to any lie detector test;
+(2) to use, accept, refer to, or inquire concerning the results of any lie detector test of any employee or prospective employee;
+(3) to discharge, discipline, discriminate against in any manner, or deny employment or promotion to, or threaten to take any such action against—
+(A) any employee or prospective employee who refuses, declines, or fails to take or submit to any lie detector test, or
+(B) any employee or prospective employee on the basis of the results of any lie detector test; or
+(4) to discharge, discipline, discriminate against in any manner, or deny employment or promotion to, or threaten to take any such action against, any employee or prospective employee because—
+(A) such employee or prospective employee has filed any complaint or instituted or caused to be instituted any proceeding under or related to this chapter,
+(B) such employee or prospective employee has testified or is about to testify in any such proceeding, or
+(C) of the exercise by such employee or prospective employee, on behalf of such employee or another person, of any right afforded by this chapter.
+§ 2003. Notice of protection
+The Secretary shall prepare, have printed, and distribute a notice setting forth excerpts from, or summaries of, the pertinent provisions of this chapter. Each employer shall post and maintain such notice in conspicuous places on its premises where notices to employees and applicants to employment are customarily posted.
+§ 2004. Authority of Secretary
+(a) In general
+The Secretary shall—
+(1) issue such rules and regulations as may be necessary or appropriate to carry out this chapter;
+(2) cooperate with regional, State, local, and other agencies, and cooperate with and furnish technical assistance to employers, labor organizations, and employment agencies to aid in effectuating the purposes of this chapter; and
+(3) make investigations and inspections and require the keeping of records necessary or appropriate for the administration of this chapter.
+(b) Subpoena authority
+For the purpose of any hearing or investigation under this chapter, the Secretary shall have the authority contained in sections 49 and 50 of title 15.
+§ 2005. Enforcement provisions
+(a) Civil penalties
+(1) In general
+Subject to paragraph (2), any employer who violates any provision of this chapter may be assessed a civil penalty of not more than $10,000.
+(2) Determination of amount
+In determining the amount of any penalty under paragraph (1), the Secretary shall take into account the previous record of the person in terms of compliance with this chapter and the gravity of the violation.
+(3) Collection
+Any civil penalty assessed under this subsection shall be collected in the same manner as is required by subsections (b) through (e) of section 1853 of this title with respect to civil penalties assessed under subsection (a) of such section.
+(b) Injunctive actions by Secretary
+The Secretary may bring an action under this section to restrain violations of this chapter. The Solicitor of Labor may appear for and represent the Secretary in any litigation brought under this chapter. In any action brought under this section, the district courts of the United States shall have jurisdiction, for cause shown, to issue temporary or permanent restraining orders and injunctions to require compliance with this chapter, including such legal or equitable relief incident thereto as may be appropriate, including, but not limited to, employment, reinstatement, promotion, and the payment of lost wages and benefits.
+(c) Private civil actions
+(1) Liability
+An employer who violates this chapter shall be liable to the employee or prospective employee affected by such violation. Such employer shall be liable for such legal or equitable relief as may be appropriate, including, but not limited to, employment, reinstatement, promotion, and the payment of lost wages and benefits.
+(2) Court
+An action to recover the liability prescribed in paragraph (1) may be maintained against the employer in any Federal or State court of competent jurisdiction by an employee or prospective employee for or on behalf of such employee, prospective employee, and other employees or prospective employees similarly situated. No such action may be commenced more than 3 years after the date of the alleged violation.
+(3) Costs
+The court, in its discretion, may allow the prevailing party (other than the United States) reasonable costs, including attorney’s fees.
+(d) Waiver of rights prohibited
+The rights and procedures provided by this chapter may not be waived by contract or otherwise, unless such waiver is part of a written settlement agreed to and signed by the parties to the pending action or complaint under this chapter.
+§ 2006. Exemptions
+(a) No application to governmental employers
+This chapter shall not apply with respect to the United States Government, any State or local government, or any political subdivision of a State or local government.
+(b) National defense and security exemption
+(1) National defense
+Nothing in this chapter shall be construed to prohibit the administration, by the Federal Government, in the performance of any counterintelligence function, of any lie detector test to—
+(A) any expert or consultant under contract to the Department of Defense or any employee of any contractor of such Department; or
+(B) any expert or consultant under contract with the Department of Energy in connection with the atomic energy defense activities of such Department or any employee of any contractor of such Department in connection with such activities.
+(2) Security
+Nothing in this chapter shall be construed to prohibit the administration, by the Federal Government, in the performance of any intelligence or counterintelligence function, of any lie detector test to—
+(A) (i) any individual employed by, assigned to, or detailed to, the National Security Agency, the Defense Intelligence Agency, the National Geospatial-Intelligence Agency, or the Central Intelligence Agency,
+(ii) any expert or consultant under contract to any such agency,
+(iii) any employee of a contractor to any such agency,
+(iv) any individual applying for a position in any such agency, or
+(v) any individual assigned to a space where sensitive cryptologic information is produced, processed, or stored for any such agency; or
+(B) any expert, or consultant (or employee of such expert or consultant) under contract with any Federal Government department, agency, or program whose duties involve access to information that has been classified at the level of top secret or designated as being within a special access program under section 4.2(a) of Executive Order 12356 (or a successor Executive order).
+(c) FBI contractors exemption
+Nothing in this chapter shall be construed to prohibit the administration, by the Federal Government, in the performance of any counterintelligence function, of any lie detector test to an employee of a contractor of the Federal Bureau of Investigation of the Department of Justice who is engaged in the performance of any work under the contract with such Bureau.
+(d) Limited exemption for ongoing investigations
+Subject to sections 2007 and 2009 of this title, this chapter shall not prohibit an employer from requesting an employee to submit to a polygraph test if—
+(1) the test is administered in connection with an ongoing investigation involving economic loss or injury to the employer’s business, such as theft, embezzlement, misappropriation, or an act of unlawful industrial espionage or sabotage;
+(2) the employee had access to the property that is the subject of the investigation;
+(3) the employer has a reasonable suspicion that the employee was involved in the incident or activity under investigation; and
+(4) the employer executes a statement, provided to the examinee before the test, that—
+(A) sets forth with particularity the specific incident or activity being investigated and the basis for testing particular employees,
+(B) is signed by a person (other than a polygraph examiner) authorized to legally bind the employer,
+(C) is retained by the employer for at least 3 years, and
+(D) contains at a minimum—
+(i) an identification of the specific economic loss or injury to the business of the employer,
+(ii) a statement indicating that the employee had access to the property that is the subject of the investigation, and
+(iii) a statement describing the basis of the employer’s reasonable suspicion that the employee was involved in the incident or activity under investigation.
+(e) Exemption for security services
+(1) In general
+Subject to paragraph (2) and sections 2007 and 2009 of this title, this chapter shall not prohibit the use of polygraph tests on prospective employees by any private employer whose primary business purpose consists of providing armored car personnel, personnel engaged in the design, installation, and maintenance of security alarm systems, or other uniformed or plainclothes security personnel and whose function includes protection of—
+(A) facilities, materials, or operations having a significant impact on the health or safety of any State or political subdivision thereof, or the national security of the United States, as determined under rules and regulations issued by the Secretary within 90 days after June 27, 1988 , including—
+(i) facilities engaged in the production, transmission, or distribution of electric or nuclear power,
+(ii) public water supply facilities,
+(iii) shipments or storage of radioactive or other toxic waste materials, and
+(iv) public transportation, or
+(B) currency, negotiable securities, precious commodities or instruments, or proprietary information.
+(2) Access
+The exemption provided under this subsection shall not apply if the test is administered to a prospective employee who would not be employed to protect facilities, materials, operations, or assets referred to in paragraph (1).
+(f) Exemption for drug security, drug theft, or drug diversion investigations
+(1) In general
+Subject to paragraph (2) and sections 2007 and 2009 of this title, this chapter shall not prohibit the use of a polygraph test by any employer authorized to manufacture, distribute, or dispense a controlled substance listed in schedule I, II, III, or IV of section 812 of title 21 .
+(2) Access
+The exemption provided under this subsection shall apply—
+(A) if the test is administered to a prospective employee who would have direct access to the manufacture, storage, distribution, or sale of any such controlled substance; or
+(B) in the case of a test administered to a current employee, if—
+(i) the test is administered in connection with an ongoing investigation of criminal or other misconduct involving, or potentially involving, loss or injury to the manufacture, distribution, or dispensing of any such controlled substance by such employer, and
+(ii) the employee had access to the person or property that is the subject of the investigation.
+§ 2007. Restrictions on use of exemptions
+(a) Test as basis for adverse employment action
+(1) Under ongoing investigations exemption
+Except as provided in paragraph (2), the exemption under subsection (d) of section 2006 of this title shall not apply if an employee is discharged, disciplined, denied employment or promotion, or otherwise discriminated against in any manner on the basis of the analysis of a polygraph test chart or the refusal to take a polygraph test, without additional supporting evidence. The evidence required by such subsection may serve as additional supporting evidence.
+(2) Under other exemptions
+In the case of an exemption described in subsection (e) or (f) of such section, the exemption shall not apply if the results of an analysis of a polygraph test chart are used, or the refusal to take a polygraph test is used, as the sole basis upon which an adverse employment action described in paragraph (1) is taken against an employee or prospective employee.
+(b) Rights of examinee
+The exemptions provided under subsections (d), (e), and (f) of section 2006 of this title shall not apply unless the requirements described in the following paragraphs are met:
+(1) All phases
+Throughout all phases of the test—
+(A) the examinee shall be permitted to terminate the test at any time;
+(B) the examinee is not asked questions in a manner designed to degrade, or needlessly intrude on, such examinee;
+(C) the examinee is not asked any question concerning—
+(i) religious beliefs or affiliations,
+(ii) beliefs or opinions regarding racial matters,
+(iii) political beliefs or affiliations,
+(iv) any matter relating to sexual behavior; and
+(v) beliefs, affiliations, opinions, or lawful activities regarding unions or labor organizations; and
+(D) the examiner does not conduct the test if there is sufficient written evidence by a physician that the examinee is suffering from a medical or psychological condition or undergoing treatment that might cause abnormal responses during the actual testing phase.
+(2) Pretest phase
+During the pretest phase, the prospective examinee—
+(A) is provided with reasonable written notice of the date, time, and location of the test, and of such examinee’s right to obtain and consult with legal counsel or an employee representative before each phase of the test;
+(B) is informed in writing of the nature and characteristics of the tests and of the instruments involved;
+(C) is informed, in writing—
+(i) whether the testing area contains a two-way mirror, a camera, or any other device through which the test can be observed,
+(ii) whether any other device, including any device for recording or monitoring the test, will be used, or
+(iii) that the employer or the examinee may (with mutual knowledge) make a recording of the test;
+(D) is read and signs a written notice informing such examinee—
+(i) that the examinee cannot be required to take the test as a condition of employment,
+(ii) that any statement made during the test may constitute additional supporting evidence for the purposes of an adverse employment action described in subsection (a),
+(iii) of the limitations imposed under this section,
+(iv) of the legal rights and remedies available to the examinee if the polygraph test is not conducted in accordance with this chapter, and
+(v) of the legal rights and remedies of the employer under this chapter (including the rights of the employer under section 2008(c)(2) of this title ); and
+(E) is provided an opportunity to review all questions to be asked during the test and is informed of the right to terminate the test at any time.
+(3) Actual testing phase
+During the actual testing phase, the examiner does not ask such examinee any question relevant during the test that was not presented in writing for review to such examinee before the test.
+(4) Post-test phase
+Before any adverse employment action, the employer shall—
+(A) further interview the examinee on the basis of the results of the test; and
+(B) provide the examinee with—
+(i) a written copy of any opinion or conclusion rendered as a result of the test, and
+(ii) a copy of the questions asked during the test along with the corresponding charted responses.
+(5) Maximum number and minimum duration of tests
+The examiner shall not conduct and complete more than five polygraph tests on a calendar day on which the test is given, and shall not conduct any such test for less than a 90-minute duration.
+(c) Qualifications and requirements of examiners
+The exemptions provided under subsections (d), (e), and (f) of section 2006 of this title shall not apply unless the individual who conducts the polygraph test satisfies the requirements under the following paragraphs:
+(1) Qualifications
+The examiner—
+(A) has a valid and current license granted by licensing and regulatory authorities in the State in which the test is to be conducted, if so required by the State; and
+(B) maintains a minimum of a $50,000 bond or an equivalent amount of professional liability coverage.
+(2) Requirements
+The examiner—
+(A) renders any opinion or conclusion regarding the test—
+(i) in writing and solely on the basis of an analysis of polygraph test charts,
+(ii) that does not contain information other than admissions, information, case facts, and interpretation of the charts relevant to the purpose and stated objectives of the test, and
+(iii) that does not include any recommendation concerning the employment of the examinee; and
+(B) maintains all opinions, reports, charts, written questions, lists, and other records relating to the test for a minimum period of 3 years after administration of the test.
+§ 2008. Disclosure of information
+(a) In general
+A person, other than the examinee, may not disclose information obtained during a polygraph test, except as provided in this section.
+(b) Permitted disclosures
+A polygraph examiner may disclose information acquired from a polygraph test only to—
+(1) the examinee or any other person specifically designated in writing by the examinee;
+(2) the employer that requested the test; or
+(3) any court, governmental agency, arbitrator, or mediator, in accordance with due process of law, pursuant to an order from a court of competent jurisdiction.
+(c) Disclosure by employer
+An employer (other than an employer described in subsection (a), (b), or (c) of section 2006 of this title ) for whom a polygraph test is conducted may disclose information from the test only to—
+(1) a person in accordance with subsection (b); or
+(2) a governmental agency, but only insofar as the disclosed information is an admission of criminal conduct.
+§ 2009. Effect on other law and agreements
+Except as provided in subsections (a), (b), and (c) of section 2006 of this title , this chapter shall not preempt any provision of any State or local law or of any negotiated collective bargaining agreement that prohibits lie detector tests or is more restrictive with respect to lie detector tests than any provision of this chapter.
+CHAPTER 23— WORKER ADJUSTMENT AND RETRAINING NOTIFICATION
+§ 2101. Definitions; exclusions from definition of loss of employment
+(a) Definitions
+As used in this chapter—
+(1) the term “employer” means any business enterprise that employs—
+(A) 100 or more employees, excluding part-time employees; or
+(B) 100 or more employees who in the aggregate work at least 4,000 hours per week (exclusive of hours of overtime);
+(2) the term “plant closing” means the permanent or temporary shutdown of a single site of employment, or one or more facilities or operating units within a single site of employment, if the shutdown results in an employment loss at the single site of employment during any 30-day period for 50 or more employees excluding any part-time employees;
+(3) the term “mass layoff” means a reduction in force which—
+(A) is not the result of a plant closing; and
+(B) results in an employment loss at the single site of employment during any 30-day period for—
+(i) (I) at least 33 percent of the employees (excluding any part-time employees); and
+(II) at least 50 employees (excluding any part-time employees); or
+(ii) at least 500 employees (excluding any part-time employees);
+(4) the term “representative” means an exclusive representative of employees within the meaning of section 159(a) or 158(f) of this title or section 152 of title 45 ;
+(5) the term “affected employees” means employees who may reasonably be expected to experience an employment loss as a consequence of a proposed plant closing or mass layoff by their employer;
+(6) subject to subsection (b), the term “employment loss” means (A) an employment termination, other than a discharge for cause, voluntary departure, or retirement, (B) a layoff exceeding 6 months, or (C) a reduction in hours of work of more than 50 percent during each month of any 6-month period;
+(7) the term “unit of local government” means any general purpose political subdivision of a State which has the power to levy taxes and spend funds, as well as general corporate and police powers; and
+(8) the term “part-time employee” means an employee who is employed for an average of fewer than 20 hours per week or who has been employed for fewer than 6 of the 12 months preceding the date on which notice is required.
+(b) Exclusions from definition of employment loss
+(1) In the case of a sale of part or all of an employer’s business, the seller shall be responsible for providing notice for any plant closing or mass layoff in accordance with section 2102 of this title , up to and including the effective date of the sale. After the effective date of the sale of part or all of an employer’s business, the purchaser shall be responsible for providing notice for any plant closing or mass layoff in accordance with section 2102 of this title . Notwithstanding any other provision of this chapter, any person who is an employee of the seller (other than a part-time employee) as of the effective date of the sale shall be considered an employee of the purchaser immediately after the effective date of the sale.
+(2) Notwithstanding subsection (a)(6), an employee may not be considered to have experienced an employment loss if the closing or layoff is the result of the relocation or consolidation of part or all of the employer’s business and, prior to the closing or layoff—
+(A) the employer offers to transfer the employee to a different site of employment within a reasonable commuting distance with no more than a 6-month break in employment; or
+(B) the employer offers to transfer the employee to any other site of employment regardless of distance with no more than a 6-month break in employment, and the employee accepts within 30 days of the offer or of the closing or layoff, whichever is later.
+§ 2102. Notice required before plant closings and mass layoffs
+(a) Notice to employees, State dislocated worker units, and local governments
+An employer shall not order a plant closing or mass layoff until the end of a 60-day period after the employer serves written notice of such an order—
+(1) to each representative of the affected employees as of the time of the notice or, if there is no such representative at that time, to each affected employee; and
+(2) to the State or entity designated by the State to carry out rapid response activities under section 3174(a)(2)(A) of this title , and the chief elected official of the unit of local government within which such closing or layoff is to occur.
+If there is more than one such unit, the unit of local government which the employer shall notify is the unit of local government to which the employer pays the highest taxes for the year preceding the year for which the determination is made.
+(b) Reduction of notification period
+(1) An employer may order the shutdown of a single site of employment before the conclusion of the 60-day period if as of the time that notice would have been required the employer was actively seeking capital or business which, if obtained, would have enabled the employer to avoid or postpone the shutdown and the employer reasonably and in good faith believed that giving the notice required would have precluded the employer from obtaining the needed capital or business.
+(2) (A) An employer may order a plant closing or mass layoff before the conclusion of the 60-day period if the closing or mass layoff is caused by business circumstances that were not reasonably foreseeable as of the time that notice would have been required.
+(B) No notice under this chapter shall be required if the plant closing or mass layoff is due to any form of natural disaster, such as a flood, earthquake, or the drought currently ravaging the farmlands of the United States.
+(3) An employer relying on this subsection shall give as much notice as is practicable and at that time shall give a brief statement of the basis for reducing the notification period.
+(c) Extension of layoff period
+A layoff of more than 6 months which, at its outset, was announced to be a layoff of 6 months or less, shall be treated as an employment loss under this chapter unless—
+(1) the extension beyond 6 months is caused by business circumstances (including unforeseeable changes in price or cost) not reasonably foreseeable at the time of the initial layoff; and
+(2) notice is given at the time it becomes reasonably foreseeable that the extension beyond 6 months will be required.
+(d) Determinations with respect to employment loss
+For purposes of this section, in determining whether a plant closing or mass layoff has occurred or will occur, employment losses for 2 or more groups at a single site of employment, each of which is less than the minimum number of employees specified in section 2101(a)(2) or (3) of this title but which in the aggregate exceed that minimum number, and which occur within any 90-day period shall be considered to be a plant closing or mass layoff unless the employer demonstrates that the employment losses are the result of separate and distinct actions and causes and are not an attempt by the employer to evade the requirements of this chapter.
+§ 2103. Exemptions
+This chapter shall not apply to a plant closing or mass layoff if—
+(1) the closing is of a temporary facility or the closing or layoff is the result of the completion of a particular project or undertaking, and the affected employees were hired with the understanding that their employment was limited to the duration of the facility or the project or undertaking; or
+(2) the closing or layoff constitutes a strike or constitutes a lockout not intended to evade the requirements of this chapter. Nothing in this chapter shall require an employer to serve written notice pursuant to section 2102(a) of this title when permanently replacing a person who is deemed to be an economic striker under the National Labor Relations Act [ 29 U.S.C. 151 et seq.]: Provided , That nothing in this chapter shall be deemed to validate or invalidate any judicial or administrative ruling relating to the hiring of permanent replacements for economic strikers under the National Labor Relations Act.
+§ 2104. Administration and enforcement of requirements
+(a) Civil actions against employers
+(1) Any employer who orders a plant closing or mass layoff in violation of section 2102 of this title shall be liable to each aggrieved employee who suffers an employment loss as a result of such closing or layoff for—
+(A) back pay for each day of violation at a rate of compensation not less than the higher of—
+(i) the average regular rate received by such employee during the last 3 years of the employee’s employment; or
+(ii) the final regular rate received by such employee; and
+(B) benefits under an employee benefit plan described in section 1002(3) of this title , including the cost of medical expenses incurred during the employment loss which would have been covered under an employee benefit plan if the employment loss had not occurred.
+Such liability shall be calculated for the period of the violation, up to a maximum of 60 days, but in no event for more than one-half the number of days the employee was employed by the employer.
+(2) The amount for which an employer is liable under paragraph (1) shall be reduced by—
+(A) any wages paid by the employer to the employee for the period of the violation;
+(B) any voluntary and unconditional payment by the employer to the employee that is not required by any legal obligation; and
+(C) any payment by the employer to a third party or trustee (such as premiums for health benefits or payments to a defined contribution pension plan) on behalf of and attributable to the employee for the period of the violation.
+In addition, any liability incurred under paragraph (1) with respect to a defined benefit pension plan may be reduced by crediting the employee with service for all purposes under such a plan for the period of the violation.
+(3) Any employer who violates the provisions of section 2102 of this title with respect to a unit of local government shall be subject to a civil penalty of not more than $500 for each day of such violation, except that such penalty shall not apply if the employer pays to each aggrieved employee the amount for which the employer is liable to that employee within 3 weeks from the date the employer orders the shutdown or layoff.
+(4) If an employer which has violated this chapter proves to the satisfaction of the court that the act or omission that violated this chapter was in good faith and that the employer had reasonable grounds for believing that the act or omission was not a violation of this chapter the court may, in its discretion, reduce the amount of the liability or penalty provided for in this section.
+(5) A person seeking to enforce such liability, including a representative of employees or a unit of local government aggrieved under paragraph (1) or (3), may sue either for such person or for other persons similarly situated, or both, in any district court of the United States for any district in which the violation is alleged to have occurred, or in which the employer transacts business.
+(6) In any such suit, the court, in its discretion, may allow the prevailing party a reasonable attorney’s fee as part of the costs.
+(7) For purposes of this subsection, the term, 1 “aggrieved employee” means an employee who has worked for the employer ordering the plant closing or mass layoff and who, as a result of the failure by the employer to comply with section 2102 of this title , did not receive timely notice either directly or through his or her representative as required by section 2102 of this title .
+(b) Exclusivity of remedies
+The remedies provided for in this section shall be the exclusive remedies for any violation of this chapter. Under this chapter, a Federal court shall not have authority to enjoin a plant closing or mass layoff.
+§ 2105. Procedures in addition to other rights of employees
+The rights and remedies provided to employees by this chapter are in addition to, and not in lieu of, any other contractual or statutory rights and remedies of the employees, and are not intended to alter or affect such rights and remedies, except that the period of notification required by this chapter shall run concurrently with any period of notification required by contract or by any other statute.
+§ 2106. Procedures encouraged where not required
+It is the sense of Congress that an employer who is not required to comply with the notice requirements of section 2102 of this title should, to the extent possible, provide notice to its employees about a proposal to close a plant or permanently reduce its workforce.
+§ 2107. Authority to prescribe regulations
+(a) The Secretary of Labor shall prescribe such regulations as may be necessary to carry out this chapter. Such regulations shall, at a minimum, include interpretative regulations describing the methods by which employers may provide for appropriate service of notice as required by this chapter.
+(b) The mailing of notice to an employee’s last known address or inclusion of notice in the employee’s paycheck will be considered acceptable methods for fulfillment of the employer’s obligation to give notice to each affected employee under this chapter.
+§ 2108. Effect on other laws
+The giving of notice pursuant to this chapter, if done in good faith compliance with this chapter, shall not constitute a violation of the National Labor Relations Act [ 29 U.S.C. 151 et seq.] or the Railway Labor Act [ 45 U.S.C. 151 et seq.].
+§ 2109. Report on employment and international competitiveness
+Two years after August 4, 1988 , the Comptroller General shall submit to the Committee on Small Business of both the House and Senate, the Committee on Labor and Human Resources, and the Committee on Education and Labor a report containing a detailed and objective analysis of the effect of this chapter on employers (especially small- and medium-sized businesses), the economy (international competitiveness), and employees (in terms of levels and conditions of employment). The Comptroller General shall assess both costs and benefits, including the effect on productivity, competitiveness, unemployment rates and compensation, and worker retraining and readjustment.
+CHAPTER 24— TECHNOLOGY RELATED ASSISTANCE FOR INDIVIDUALS WITH DISABILITIES
+§§ 2201, 2202. Repealed. Pub. L. 105–394, title IV, § 401 , Nov. 13, 1998 , 112 Stat. 3661
+SUBCHAPTER I— GRANTS TO STATES
+§§ 2211 to 2216. Repealed. Pub. L. 105–394, title IV, § 401 , Nov. 13, 1998 , 112 Stat. 3661
+§ 2217. Repealed. Pub. L. 103–218, title I, § 107 , Mar. 9, 1994 , 108 Stat. 85
