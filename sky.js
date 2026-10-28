@@ -105,7 +105,7 @@ async function load() {
   skyGenerated = res.generated.slice(0, 10);
   skyStatus = `${stars.length.toLocaleString()} entities · generated ${res.generated.slice(0, 10)}`
     + (res.building ? ' · the map changed: a new sky is being built, entities added since are not placed yet (reload in a few minutes)' : '')
-    + ' · drag to orbit · wheel to zoom where you point · click a galaxy\'s name to fly to it · right-drag to move';
+    + ' · drag to orbit · wheel to zoom in where you point, out from the view · click a galaxy\'s name to fly to it · right-drag to move';
   status.textContent = skyStatus;
   fitAll();
 }
@@ -141,7 +141,7 @@ function fitAll() {
   for (const p of pts) r = Math.max(r, Math.hypot(p.x - cam.tx, p.y - cam.ty, p.z - cam.tz));
   cam.dist = r * 2.3; cam.panX = cam.panY = 0; dirty = true;
 }
-// Zoom toward the pointer: the point under the cursor stays where it is, so the wheel can dive into any galaxy, not only the center.
+// Zoom in toward the pointer: the point under the cursor stays where it is, so the wheel can dive into any galaxy. Zooming out is from the view's center (no pointer), so the picture backs away evenly instead of sliding.
 const zoom = (f, mx, my) => {
   const before = cam.dist, after = Math.min(60000, Math.max(60, cam.dist / f)), k = before / after;
   if (mx != null) {
@@ -526,7 +526,7 @@ canvas.addEventListener('pointerup', e => {
   drag = null; canvas.classList.remove('grabbing');
   letGo(e);
 });
-canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; zoom(Math.exp(-e.deltaY * 0.0012), e.clientX, e.clientY); }, { passive: false });
+canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; const f = Math.exp(-e.deltaY * 0.0012); if (f > 1) zoom(f, e.clientX, e.clientY); else zoom(f); }, { passive: false });   // in: toward the pointer; out: from the view's own center (Josie 2026-10-27)
 const setBar = () => document.documentElement.style.setProperty('--bar', barH() + 'px');
 setBar(); window.addEventListener('resize', () => { setBar(); dirty = true; });
 window.addEventListener('keydown', e => { if (e.key === ' ' && e.target === document.body) { spin = !spin; e.preventDefault(); } if (e.key === 'Escape' && mode === 'constellation') backToSky(); });
