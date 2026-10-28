@@ -111,7 +111,7 @@ async function load() {
   skyGenerated = res.generated.slice(0, 10);
   skyStatus = `${stars.length.toLocaleString()} entities · generated ${res.generated.slice(0, 10)}`
     + (res.building ? ' · the map changed: a new sky is being built, entities added since are not placed yet (reload in a few minutes)' : '')
-    + ' · drag to move · wheel, + and − to zoom · double-click to center there · click a domain chip or a galaxy\'s name to fly to it · click a star to open it · arrow keys move, 0 fits all';
+    + ' · drag to move · wheel to zoom in where you point, out to the whole sky · + and − zoom · double-click to center there · click a domain chip or a galaxy\'s name to fly to it · click a star to open it · arrow keys move, 0 fits all';
   status.textContent = skyStatus;
   fitAll();
 }
@@ -545,7 +545,7 @@ canvas.addEventListener('pointerup', e => {
   drag = null; canvas.classList.remove('grabbing');
   letGo(e);
 });
-canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; zoom(Math.exp(-e.deltaY * 0.0012)); }, { passive: false });   // from the middle of the view, never the pointer (Josie 2026-10-27)
+canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; const f = Math.exp(-e.deltaY * 0.0012); if (f > 1) zoom(f, e.clientX, e.clientY); else zoom(f); }, { passive: false });   // in: toward the pointer; out: from the middle, drifting home (Josie 2026-10-28)
 canvas.addEventListener('dblclick', e => {                        // center the view on that spot and come closer (the one pointer-placed move)
   if (mode === 'sky' && picture()) return;
   const W = window.innerWidth, H = window.innerHeight;
