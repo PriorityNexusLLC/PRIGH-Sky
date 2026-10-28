@@ -148,14 +148,25 @@ function fitAll() {
   let r = 100;
   for (const p of pts) r = Math.max(r, Math.hypot(p.x - cam.tx, p.y - cam.ty, p.z - cam.tz));
   cam.dist = r * 2.3; cam.panX = cam.panY = 0; if (!orbit3d) { cam.yaw = 0; cam.pitch = 0; } dirty = true;
+  home = { x: cam.tx, y: cam.ty, z: cam.tz, dist: cam.dist };     // the starting view: zooming out drifts back to it
 }
-// Zoom from the middle of the view (the pointer plays no part): the picture grows or shrinks in place. Pinch on a phone still zooms between the fingers.
+let home = null;
+// Zoom from the middle of the view (the pointer plays no part): zooming in grows the picture in place; zooming out
+// shrinks it and, step by step, slides it back toward the starting view, so a full zoom out ends exactly where the
+// sky began (Josie 2026-10-28: "when we scroll out it centers the map along the way so it looks like it did from the
+// beginning"). Pinch on a phone still zooms between the fingers.
 const zoom = (f, mx, my) => {
-  const before = cam.dist, after = Math.min(60000, Math.max(60, cam.dist / f)), k = before / after;
+  const before = cam.dist, after = Math.min(home && mode === 'sky' ? home.dist : 60000, Math.max(60, cam.dist / f)), k = before / after;   // never further out than the starting view
   if (mx != null) {
     const W = window.innerWidth, H = window.innerHeight;
     cam.panX = (mx - W / 2) - ((mx - W / 2) - cam.panX) * k;
     cam.panY = (my - midY(H)) - ((my - midY(H)) - cam.panY) * k;
+  }
+  if (after > before && home && mode === 'sky') {
+    const t = after >= home.dist ? 1 : Math.min(1, (after - before) / Math.max(1, home.dist - before));   // this step's share of the way out
+    cam.tx += (home.x - cam.tx) * t; cam.ty += (home.y - cam.ty) * t; cam.tz += (home.z - cam.tz) * t;
+    cam.panX *= 1 - t; cam.panY *= 1 - t;
+    if (t >= 1 && !orbit3d) { cam.yaw = 0; cam.pitch = 0; }
   }
   cam.dist = after; dirty = true;
 };
