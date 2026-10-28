@@ -72,6 +72,11 @@
   .flows-note[hidden] { display: none; }
   .status { position: fixed; right: 18px; bottom: 16px; z-index: 10; font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-soft); background: color-mix(in srgb, var(--surface) 88%, transparent); border: 1px solid var(--line); border-radius: 8px; padding: 0.3rem 0.6rem; }
 
+  .ctl { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); z-index: 10; display: flex; flex-direction: column; gap: 6px; }
+  .ctl button { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line-strong); background: color-mix(in srgb, var(--surface) 92%, transparent); color: var(--ink); font: 600 1.05rem/1 var(--font-mono); cursor: pointer; }
+  .ctl button:hover { border-color: var(--accent); color: var(--accent); }
+  .ctl button.on { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+  body.paged .ctl, body.flows .ctl, body.loops .ctl { display: none; }
   .tip { position: fixed; z-index: 15; pointer-events: none; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; padding: 0.4rem 0.6rem; font-size: 0.82rem; max-width: 22rem; box-shadow: 0 6px 20px rgba(0,0,0,.5); }
   .tip[hidden] { display: none; }
   .tip .sub { color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.7rem; }
@@ -188,6 +193,12 @@
 <canvas id="sky"></canvas>
 <div class="empty" id="loading">loading the sky…</div>
 <div class="tip" id="tip" hidden></div>
+<div class="ctl" aria-label="View controls">
+  <button id="zoom-in" type="button" title="Zoom in (+)" aria-label="Zoom in">+</button>
+  <button id="zoom-out" type="button" title="Zoom out (−)" aria-label="Zoom out">−</button>
+  <button id="zoom-fit" type="button" title="Fit everything in view (0)" aria-label="Fit all">⌂</button>
+  <button id="orbit-3d" type="button" title="3D: drag orbits instead of moving (off by default)" aria-label="3D orbit" aria-pressed="false">3D</button>
+</div>
 <div class="flows-note" id="flows-note" hidden></div>
 
 <div class="legend" id="legend">
@@ -397,6 +408,6 @@
   </div>
 </section>
 
-<script type="module" src="sky.js?v=81b9a3a7"></script>
+<script type="module" src="sky.js?v=cbb79634"></script>
 </body>
 </html>

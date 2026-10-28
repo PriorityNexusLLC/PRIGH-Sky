@@ -1,7 +1,8 @@
 // PRIGH sky: the whole map as stars in three dimensions on one canvas (no libraries), and a constellation for any
 // star you pick. Positions come fixed from /api/sky (domains as balls on a globe; hubs at each core). Only drawing
 // happens here, so fifty thousand stars cost nothing; a constellation runs a small force layout on a few hundred.
-// Drag to orbit in any direction, wheel to zoom, right-drag (or Shift+drag) to move.
+// Flat by default (Josie 2026-10-27, "the pointer system is still a mess"): drag moves the picture, the wheel and the + / -
+// buttons zoom from the middle of the view, arrow keys move, 0 fits everything. Orbiting in 3D is a switch ("3D"), off by default.
 const css = k => getComputedStyle(document.documentElement).getPropertyValue(k).trim();
 const DOMS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'X'];
 const color = {};
@@ -13,7 +14,8 @@ const PAPER = css('--paper'), INK = css('--ink');
 const canvas = document.getElementById('sky'), ctx = canvas.getContext('2d');
 const tip = document.getElementById('tip'), panel = document.getElementById('panel'), status = document.getElementById('status');
 let stars = [], names = [], dimmed = new Set();
-const cam = { yaw: 0.5, pitch: -0.3, dist: 4000, tx: 0, ty: 0, tz: 0, panX: 0, panY: 0 };
+const cam = { yaw: 0, pitch: 0, dist: 4000, tx: 0, ty: 0, tz: 0, panX: 0, panY: 0 };
+let orbit3d = false;                                                 // off: drag moves; on: drag orbits (right-drag or Shift+drag does the other)
 let mode = 'sky';                    // 'sky' | 'constellation'
 let con = null;                      // {center, nodes:[{id,label,dom,person,deg,x,y,z,...}], edges:[...], byId}
 let hover = null, dirty = true, alpha = 0, spin = false;
@@ -105,7 +107,7 @@ async function load() {
   skyGenerated = res.generated.slice(0, 10);
   skyStatus = `${stars.length.toLocaleString()} entities · generated ${res.generated.slice(0, 10)}`
     + (res.building ? ' · the map changed: a new sky is being built, entities added since are not placed yet (reload in a few minutes)' : '')
-    + ' · drag to orbit · wheel to zoom in where you point, out from the view · click a galaxy\'s name to fly to it · right-drag to move';
+    + ' · drag to move · wheel, + and − to zoom · arrow keys move, 0 fits all · click a name to fly to it · click a star to open it';
   status.textContent = skyStatus;
   fitAll();
 }
@@ -139,9 +141,9 @@ function fitAll() {
   cam.tx = cx / pts.length; cam.ty = cy / pts.length; cam.tz = cz / pts.length;
   let r = 100;
   for (const p of pts) r = Math.max(r, Math.hypot(p.x - cam.tx, p.y - cam.ty, p.z - cam.tz));
-  cam.dist = r * 2.3; cam.panX = cam.panY = 0; dirty = true;
+  cam.dist = r * 2.3; cam.panX = cam.panY = 0; if (!orbit3d) { cam.yaw = 0; cam.pitch = 0; } dirty = true;
 }
-// Zoom in toward the pointer: the point under the cursor stays where it is, so the wheel can dive into any galaxy. Zooming out is from the view's center (no pointer), so the picture backs away evenly instead of sliding.
+// Zoom from the middle of the view (the pointer plays no part): the picture grows or shrinks in place. Pinch on a phone still zooms between the fingers.
 const zoom = (f, mx, my) => {
   const before = cam.dist, after = Math.min(60000, Math.max(60, cam.dist / f)), k = before / after;
   if (mx != null) {
@@ -480,7 +482,7 @@ canvas.addEventListener('pointerdown', e => {
   if (fingers.size >= 2) {
     const [a, b] = [...fingers.values()];
     pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2 }; drag = null; tip.hidden = true;
-  } else drag = { x: e.clientX, y: e.clientY, moved: false, pan: e.button === 2 || e.shiftKey };
+  } else { const alt = e.button === 2 || e.shiftKey; drag = { x: e.clientX, y: e.clientY, moved: false, pan: orbit3d ? alt : !alt }; }
   canvas.setPointerCapture(e.pointerId); canvas.classList.add('grabbing');
 });
 const letGo = e => {
@@ -526,10 +528,27 @@ canvas.addEventListener('pointerup', e => {
   drag = null; canvas.classList.remove('grabbing');
   letGo(e);
 });
-canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; const f = Math.exp(-e.deltaY * 0.0012); if (f > 1) zoom(f, e.clientX, e.clientY); else zoom(f); }, { passive: false });   // in: toward the pointer; out: from the view's own center (Josie 2026-10-27)
+canvas.addEventListener('wheel', e => { e.preventDefault(); if (mode === 'sky' && picture()) return; zoom(Math.exp(-e.deltaY * 0.0012)); }, { passive: false });   // from the middle of the view, never the pointer (Josie 2026-10-27)
+// On-screen controls and keys: + / − zoom, fit, 3D on or off
+const ctl = id => document.getElementById(id);
+ctl('zoom-in')?.addEventListener('click', () => { if (!(mode === 'sky' && picture())) zoom(1.35); });
+ctl('zoom-out')?.addEventListener('click', () => { if (!(mode === 'sky' && picture())) zoom(1 / 1.35); });
+ctl('zoom-fit')?.addEventListener('click', () => { if (!(mode === 'sky' && picture())) fitAll(); });
+ctl('orbit-3d')?.addEventListener('click', () => { orbit3d = !orbit3d; ctl('orbit-3d').classList.toggle('on', orbit3d); ctl('orbit-3d').setAttribute('aria-pressed', orbit3d); if (!orbit3d) { cam.yaw = 0; cam.pitch = 0; spin = false; } dirty = true; });
+window.addEventListener('keydown', e => {
+  if (e.target !== document.body || (mode === 'sky' && picture())) return;
+  const step = 80;
+  if (e.key === 'ArrowLeft') { cam.panX += step; dirty = true; e.preventDefault(); }
+  else if (e.key === 'ArrowRight') { cam.panX -= step; dirty = true; e.preventDefault(); }
+  else if (e.key === 'ArrowUp') { cam.panY += step; dirty = true; e.preventDefault(); }
+  else if (e.key === 'ArrowDown') { cam.panY -= step; dirty = true; e.preventDefault(); }
+  else if (e.key === '+' || e.key === '=') { zoom(1.35); e.preventDefault(); }
+  else if (e.key === '-' || e.key === '_') { zoom(1 / 1.35); e.preventDefault(); }
+  else if (e.key === '0') { fitAll(); e.preventDefault(); }
+});
 const setBar = () => document.documentElement.style.setProperty('--bar', barH() + 'px');
 setBar(); window.addEventListener('resize', () => { setBar(); dirty = true; });
-window.addEventListener('keydown', e => { if (e.key === ' ' && e.target === document.body) { spin = !spin; e.preventDefault(); } if (e.key === 'Escape' && mode === 'constellation') backToSky(); });
+window.addEventListener('keydown', e => { if (e.key === ' ' && e.target === document.body && orbit3d) { spin = !spin; e.preventDefault(); } if (e.key === 'Escape' && mode === 'constellation') backToSky(); });
 
 // search
 const q = document.getElementById('q'), hits = document.getElementById('hits');
