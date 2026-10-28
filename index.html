@@ -58,6 +58,7 @@
   .legend .row { display: inline-flex; flex-wrap: wrap; gap: 0.25rem 0.35rem; }
   .legend .sep { width: 1px; height: 1.1rem; background: var(--line); }
   .legend .status { position: static; margin-left: auto; border: none; background: none; padding: 0; }
+  .legend .status .brand { color: var(--ink); text-decoration: none; letter-spacing: 0.06em; font-weight: 600; } .legend .status .brand:hover { color: var(--accent); }
   .chip { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.03em; color: var(--ink); background: none; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0.15rem 0.5rem; }
   .chip .d { width: 9px; height: 9px; border-radius: 50%; }
   .chip.off { opacity: 0.38; }
@@ -164,7 +165,7 @@
     .legend .sep { display: none; }
     .legend .chip { font-size: 0.6rem; padding: 0.1rem 0.4rem; gap: 0.25rem; }
     .legend .chip .d { width: 7px; height: 7px; }
-    .legend .status { display: none; }
+    .legend .status { display: block; flex: 1 0 100%; margin: 0.1rem 0 0; font-size: 0.6rem; } .legend .status #status, .legend .status .dot { display: none; }   /* phones: the name stays, the counts go */
     .ctl { right: 8px; gap: 5px; } .ctl button { width: 34px; height: 34px; font-size: 0.95rem; }
     .flows-note { left: 12px; right: 12px; max-width: none; font-size: 0.72rem; }
     .tip { max-width: 72vw; font-size: 0.78rem; }
@@ -249,7 +250,7 @@
       <span class="chip"><span class="glow a"></span>source changed</span>
     </div>
   </div>
-  <div class="status" id="status"></div>
+  <div class="status"><a class="brand" href="https://prioritynexusllc.github.io/" title="Priority Nexus LLC">Priority Nexus</a><span class="dot"> · </span><span id="status"></span></div>
 </div>
 
 <aside class="panel" id="panel" aria-live="polite">
