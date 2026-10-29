@@ -107,6 +107,7 @@ pre#out { white-space: pre-wrap; font: 11px/1.45 var(--f-mono); background: var(
 .choices { display: inline-flex; background: var(--sunk); border: 1px solid var(--line); border-radius: 12px; padding: 4px; gap: 4px; justify-self: start; flex-wrap: wrap; }
 .choices button { border: 0; background: transparent; border-radius: 9px; padding: 8px 16px; font-weight: 600; color: var(--muted); }
 .choices button:disabled { cursor: default; } .choices button:disabled:not([aria-pressed=true]) { opacity: .45; }
+table.p990 { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; } table.p990 td, table.p990 th { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
 .choices button small { display: block; font-size: 11px; font-weight: 500; opacity: .8; line-height: 1.25; margin-top: 2px; white-space: normal; }
 .choices button[aria-pressed=true].yes { background: var(--yes-bg); color: var(--yes); }
 .choices button[aria-pressed=true].no { background: var(--no-bg); color: var(--no); }
@@ -486,12 +487,14 @@ function fillTitles() {
   const usc = Object.keys(n).filter(k => k.startsWith("usc_")).sort((a, b) => num(a) - num(b));
   const cfr = Object.keys(n).filter(k => k.startsWith("cfr_")).sort((a, b) => num(a) - num(b));
   const cfpb = Object.keys(n).filter(k => k.startsWith("cfpb_")).sort();
+  const irs = Object.keys(n).filter(k => k.startsWith("irs990_")).sort();
   const opt = (k, label) => `<option value="${k}">${label} · ${n[k].toLocaleString()}</option>`;
   $("lawTitle").innerHTML = `<option value="">All titles · ${rows.length.toLocaleString()}</option>` +
     (n.rulebook ? `<optgroup label="Priority Nexus">${opt("rulebook", "The Rulebook")}</optgroup>` : "") +
     `<optgroup label="U.S. Code (statutes)">${usc.map(k => opt(k, `Title ${num(k)} · ${USC_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
     `<optgroup label="Code of Federal Regulations (agency rules)">${cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
-    (cfpb.length ? `<optgroup label="Credit card agreements (CFPB, as the issuers filed them)">${cfpb.map(k => opt(k, `Issuers ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "");
+    (cfpb.length ? `<optgroup label="Credit card agreements (CFPB, as the issuers filed them)">${cfpb.map(k => opt(k, `Issuers ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
+    (irs.length ? `<optgroup label="Nonprofit governance answers (Form 990 Part VI, as filed)">${irs.map(k => opt(k, `Organizations ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "");
   $("lawTitle").value = TITLE;
 }
 $("lawTitle").addEventListener("change", () => { TITLE = $("lawTitle").value; showResults(true); });
@@ -516,6 +519,13 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 function fillReading(host, i, quoteBox, card) {
   const law = currentLaw();
   if (!law) return;
+  if (law.binds === "policy" && law.p990) {                       // the whole Part VI as filed, under every gate
+    const L = law.p990.lines, yr = law.p990.tax_period_end;
+    const rowsHtml = Object.keys(P990_Q).map(k => `<tr><td>${k}</td><td>${esc(P990_Q[k])}</td><td>${L[k] === true ? "Yes" : L[k] === false ? "No" : "—"}</td></tr>`).join("");
+    host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING</span><p class="fine">Form 990 Part VI, as filed for the tax year ending ${esc(yr)}; board of ${L["1a"] ?? "?"} voting members, ${L["1b"] ?? "?"} independent. The 990 is made available: ${[L["18-own"] ? "own website" : "", L["18-other"] ? "another website" : "", L["18-request"] ? "upon request" : ""].filter(Boolean).join(", ") || "not stated"}.</p>
+      <table class="p990"><thead><tr><th>line</th><th>question</th><th>answer</th></tr></thead><tbody>${rowsHtml}</tbody></table></div>`;
+    return;
+  }
   const keys = SITE[i];
   if (!keys.length) {
     const e = law.extra;
@@ -577,7 +587,43 @@ function fillReading(host, i, quoteBox, card) {
   }));
 }
 // Priority Nexus's own answer for a gate, from what the program found (draft rule, 2026-10-26).
+// Form 990 Part VI: the organization's own yes/no answers, read gate by gate (Josie 2026-10-28, the Policy kind).
+const P990_Q = { "5": "significant diversion of assets", "6": "members or stockholders", "7a": "members can elect board members", "8a": "minutes of board meetings",
+  "11a": "the 990 given to the whole board before filing", "12a": "written conflict of interest policy", "12b": "annual disclosure of interests", "12c": "the policy monitored and enforced",
+  "13": "written whistleblower policy", "14": "written document retention policy", "15a": "top official's pay set by independent persons with comparability data", "15b": "other officers' pay set the same way" };
+function answer990(law, i) {
+  const L = law.p990.lines, yr = law.p990.tax_period_end;
+  const pick = (a, quote, note) => ({ a, quote: quote || "", note, auto: true });
+  const line = k => `Line ${k}: ${P990_Q[k] || k} — ${L[k] === true ? "Yes" : L[k] === false ? "No" : "not answered"} (as filed, tax year ending ${yr})`;
+  const all = ks => ks.every(k => L[k] === true), none = ks => ks.every(k => L[k] === false);
+  const na = why => pick("unk", "", `Form 990 does not ask this. ${why}`);
+  switch (i) {
+    case 0: { if (L["6"] === false) return pick("no", line("6"), "No members or stockholders: nobody outside the board can vote on it or leave it as a member.");
+              if (L["6"] === true && L["7a"] === true) return pick("yes", line("7a"), "Members can elect board members.");
+              if (L["6"] === true) return pick("unk", line("6"), "It has members, but the form says they do not elect the board."); return na("Nothing filed on members."); }
+    case 1: return na("Pressure or penalty is not among the Part VI questions.");
+    case 2: return na("Personal information is not among the Part VI questions.");
+    case 3: return pick("yes", `Filed by ${law.p990.filed_name || law.name} under EIN ${law.p990.ein}, signed ${law.p990.signed ? law.p990.signed.slice(0, 10) : "(date not in the record)"}.`, "The organization filed it itself, under penalty of perjury.");
+    case 4: return na("Plain words are not among the Part VI questions.");
+    case 5: { const ks = ["8a", "11a"], web = L["18-own"] || L["18-other"];
+              if (all(ks) && web) return pick("yes", line("11a"), "Minutes kept, the 990 shown to the whole board before filing, and the 990 posted on a website.");
+              if (none(ks) && !web) return pick("no", line("8a"), "No minutes, no 990 to the board before filing, and the 990 not posted.");
+              return pick("unk", line("11a"), `Partly: minutes ${L["8a"] ? "yes" : "no"}, 990 to the board ${L["11a"] ? "yes" : "no"}, 990 on a website ${web ? "yes" : "no"}.`); }
+    case 6: return na("Who carries the burden is not among the Part VI questions.");
+    case 7: { const ks = ["15a", "15b"];
+              if (all(ks)) return pick("yes", line("15a"), "Pay set by independent persons with comparability data, top official and other officers alike.");
+              if (none(ks)) return pick("no", line("15a"), "Pay not set by independent persons with comparability data.");
+              return pick("unk", line("15a"), `Partly: top official ${L["15a"] ? "yes" : "no"}, other officers ${L["15b"] ? "yes" : "no"}.`); }
+    case 8: { const ks = ["12a", "12c", "13"];
+              if (L["5"] === true) return pick("no", line("5"), "The organization reported a significant diversion of its assets this year.");
+              if (all(ks)) return pick("yes", line("12a"), "Conflict of interest policy, enforced, and a whistleblower policy: written in.");
+              if (none(ks)) return pick("no", line("12a"), "No conflict of interest policy and no whistleblower policy.");
+              return pick("unk", line("13"), `Partly: conflict policy ${L["12a"] ? "yes" : "no"}, enforced ${L["12c"] ? "yes" : "no"}, whistleblower policy ${L["13"] ? "yes" : "no"}.`); }
+  }
+  return na("");
+}
 function siteAnswer(law, i) {
+  if (law.binds === "policy" && law.p990) return answer990(law, i);
   const g = k => law.gates[k] || {};
   const pick = (a, quote, note) => ({ a, quote: quote || "", note, auto: true });
   const both = (k1, k2, yesNote, noNote) => {
@@ -662,7 +708,7 @@ function siteAnswer(law, i) {
     default: return pick("unk", "", "Our program has no search for this gate. This one needs a person to read it.");
   }
 }
-const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who", terms: "Card agreements" };
+const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who", terms: "Card agreements", policy: "Nonprofit policies" };
 // One list to search: the Rulebook's laws first, then every U.S. Code chapter and eCFR part.
 function allRows() {
   const rb = RULEBOOK ? RULEBOOK.laws.map(l => [l.id, l.name, null, "rulebook", l.citation || ""]) : [];
@@ -670,7 +716,7 @@ function allRows() {
 }
 function fillChips() {
   const rows = allRows(), n = k => rows.filter(r => k === "all" || r[3] === k).length;
-  const keys = ["all", "rulebook", "terms", "people", "business", "government", "mixed", "unclear"];
+  const keys = ["all", "rulebook", "terms", "policy", "people", "business", "government", "mixed", "unclear"];
   const name = { all: "Everything", rulebook: "The Rulebook", ...BINDS };
   $("chips").innerHTML = keys.filter(k => n(k)).map(k =>
     `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}">${name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
@@ -708,7 +754,7 @@ function pickLaw(id) {
     if (!law) return;
     if (law.id !== state.lawId) {
       // A different law is a new check: start its answers fresh.
-      const fresh = blank(); fresh.lawId = law.id; fresh.type = law.binds === "terms" ? "terms" : "law";
+      const fresh = blank(); fresh.lawId = law.id; fresh.type = law.binds === "terms" ? "terms" : law.binds === "policy" ? "policy" : "law";
       fresh.name = law.name + (law.citation ? " (" + law.citation + ")" : "");
       fresh.answers = GATES.map((_, i) => siteAnswer(law, i));
       state = fresh;
