@@ -243,11 +243,11 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
     <h3>How the answers are made</h3>
     <div class="steps">
       <div class="step"><span class="n">1</span><h4>Collect</h4>
-        <p>Programs download the official law in full, straight from the government: the whole U.S. Code and the whole eCFR (federal rules).</p>
-        <span class="big">15,735</span><span class="small">chapters and parts read so far</span></div>
+        <p>Programs download the official records in full, straight from the source: the whole U.S. Code and the whole eCFR (federal rules), every credit card agreement issuers file with the CFPB, the governance answers nonprofits sign on Form 990, and the SEC's orders letting companies withhold contract terms.</p>
+        <span class="big">15,735</span><span class="small">chapters and parts of federal law read so far</span></div>
       <div class="step"><span class="n">2</span><h4>Weigh</h4>
         <p>For each gate, the program finds the sentences that answer it, counts them, and checks who can act: the person, or only someone else. It follows the laws a law points to, one step out.</p>
-        <span class="big">15,979</span><span class="small">laws you can search on the Check page</span></div>
+        <span class="big">25,898</span><span class="small">laws, agreements, policies and orders you can search on the Check page</span></div>
       <div class="step"><span class="n">3</span><h4>Write in</h4>
         <p>The program writes its answer into each gate, with the quote, the link and a plain-words version beside the original. A person reads it and can change any answer.</p>
         <span class="big">1,427</span><span class="small">passages put in plain words</span></div>
@@ -488,13 +488,15 @@ function fillTitles() {
   const cfr = Object.keys(n).filter(k => k.startsWith("cfr_")).sort((a, b) => num(a) - num(b));
   const cfpb = Object.keys(n).filter(k => k.startsWith("cfpb_")).sort();
   const irs = Object.keys(n).filter(k => k.startsWith("irs990_")).sort();
+  const sct = Object.keys(n).filter(k => k.startsWith("secct_")).sort();
   const opt = (k, label) => `<option value="${k}">${label} · ${n[k].toLocaleString()}</option>`;
   $("lawTitle").innerHTML = `<option value="">All titles · ${rows.length.toLocaleString()}</option>` +
     (n.rulebook ? `<optgroup label="Priority Nexus">${opt("rulebook", "The Rulebook")}</optgroup>` : "") +
     `<optgroup label="U.S. Code (statutes)">${usc.map(k => opt(k, `Title ${num(k)} · ${USC_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
     `<optgroup label="Code of Federal Regulations (agency rules)">${cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
     (cfpb.length ? `<optgroup label="Credit card agreements (CFPB, as the issuers filed them)">${cfpb.map(k => opt(k, `Issuers ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
-    (irs.length ? `<optgroup label="Nonprofit governance answers (Form 990 Part VI, as filed)">${irs.map(k => opt(k, `Organizations ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "");
+    (irs.length ? `<optgroup label="Nonprofit governance answers (Form 990 Part VI, as filed)">${irs.map(k => opt(k, `Organizations ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
+    (sct.length ? `<optgroup label="Withheld contract terms (SEC orders granting confidential treatment)">${sct.map(k => opt(k, `Companies ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "");
   $("lawTitle").value = TITLE;
 }
 $("lawTitle").addEventListener("change", () => { TITLE = $("lawTitle").value; showResults(true); });
@@ -524,6 +526,13 @@ function fillReading(host, i, quoteBox, card) {
     const rowsHtml = Object.keys(P990_Q).map(k => `<tr><td>${k}</td><td>${esc(P990_Q[k])}</td><td>${L[k] === true ? "Yes" : L[k] === false ? "No" : "—"}</td></tr>`).join("");
     host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING</span><p class="fine">Form 990 Part VI, as filed for the tax year ending ${esc(yr)}; board of ${L["1a"] ?? "?"} voting members, ${L["1b"] ?? "?"} independent. The 990 is made available: ${[L["18-own"] ? "own website" : "", L["18-other"] ? "another website" : "", L["18-request"] ? "upon request" : ""].filter(Boolean).join(", ") || "not stated"}.</p>
       <table class="p990"><thead><tr><th>line</th><th>question</th><th>answer</th></tr></thead><tbody>${rowsHtml}</tbody></table></div>`;
+    return;
+  }
+  if (law.binds === "withheld" && law.ct) {                       // every order, newest first, each a link to the SEC's letter
+    const O = law.ct.orders;
+    const rowsHtml = O.map(x => `<tr><td><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.filed)}</a></td><td>${esc(x.applicant || "not read")}</td><td>${esc(x.about || "not read")}</td><td>${esc(x.exhibits.join(", ") || "—")}</td><td>${esc(x.through || "not stated")}</td></tr>`).join("");
+    host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING</span><p class="fine">${O.length} SEC order${O.length === 1 ? "" : "s"} granting ${esc(law.name)} confidential treatment, as filed under its EDGAR record (CIK ${esc(law.ct.cik)}). Each row links to the SEC's letter. Since April 2019 companies may also black out terms without an order; those are not listed.</p>
+      <table class="p990"><thead><tr><th>ordered</th><th>asked by</th><th>exhibits to</th><th>exhibits</th><th>runs through</th></tr></thead><tbody>${rowsHtml}</tbody></table></div>`;
     return;
   }
   const keys = SITE[i];
@@ -622,8 +631,33 @@ function answer990(law, i) {
   }
   return na("");
 }
+// SEC confidential treatment: the order is public, the withheld words are not (Josie 2026-10-29, the Withheld kind).
+function answerCT(law, i) {
+  const O = law.ct.orders, n = O.length, o = O[0], today = new Date().toISOString().slice(0, 10);
+  const pick = (a, quote, note) => ({ a, quote: quote || "", note, auto: true });
+  const na = why => pick("unk", "", `An order granting confidential treatment does not speak to this. ${why}`);
+  const about = x => x.about ? `exhibit${x.exhibits.length === 1 ? "" : "s"} ${x.exhibits.join(", ") || "(not read)"} to a ${x.about}` : "exhibits to a filing (the letter's wording was not read)";
+  const running = O.filter(x => (x.through || "9999") > today && x.filed >= "2016");
+  switch (i) {
+    case 3: return pick("yes", `${o.filed}: the SEC's Division of Corporation Finance granted ${o.applicant || law.name} confidential treatment for ${about(o)}${o.rule ? ` (Rule ${o.rule})` : ""}.`,
+                        `The order names who asked and the SEC office that signed it. ${n === 1 ? "One order" : n + " orders"} on the company's own EDGAR record${O.some(x => x.applicant && !x.applicant.toLowerCase().startsWith(law.name.toLowerCase().slice(0, 8))) ? ", some asked for by a holder or bidder filing about the company" : ""}.`);
+    case 5: if (running.length) return pick("no", `${running[0].filed}: ${about(running[0])}${running[0].through ? `, withheld through ${running[0].through}` : ", no end date stated"}.`,
+                        `${running.length === 1 ? "One order" : running.length + " orders"} still running: nobody outside can read the withheld terms. ${n > running.length ? `${n - running.length} older order${n - running.length === 1 ? "" : "s"} with a stated end date that has passed.` : ""}`);
+            return pick("unk", `${o.filed}: ${about(o)}${o.through ? `, withheld through ${o.through}` : ""}.`,
+                        `The stated period${n === 1 ? "" : "s"} ended. The SEC does not publish the withheld words when a period ends; the company would have to file them.`);
+    case 2: return na("It concerns the company's commercial terms, not personal information.");
+    case 4: return na("The withheld words cannot be read, so nobody can say whether they are plain.");
+    case 0: return na("It is the company's choice to ask; a reader has no part in it.");
+    case 1: return na("");
+    case 6: return na("The company carried the paperwork of asking; the public carries not knowing.");
+    case 7: return na("");
+    case 8: return na("Liability for what is withheld is set by the contract nobody outside can read.");
+  }
+  return na("");
+}
 function siteAnswer(law, i) {
   if (law.binds === "policy" && law.p990) return answer990(law, i);
+  if (law.binds === "withheld" && law.ct) return answerCT(law, i);
   const g = k => law.gates[k] || {};
   const pick = (a, quote, note) => ({ a, quote: quote || "", note, auto: true });
   const both = (k1, k2, yesNote, noNote) => {
@@ -708,7 +742,7 @@ function siteAnswer(law, i) {
     default: return pick("unk", "", "Our program has no search for this gate. This one needs a person to read it.");
   }
 }
-const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who", terms: "Card agreements", policy: "Nonprofit policies" };
+const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who", terms: "Card agreements", policy: "Nonprofit policies", withheld: "Withheld contracts" };
 // One list to search: the Rulebook's laws first, then every U.S. Code chapter and eCFR part.
 function allRows() {
   const rb = RULEBOOK ? RULEBOOK.laws.map(l => [l.id, l.name, null, "rulebook", l.citation || ""]) : [];
@@ -716,7 +750,7 @@ function allRows() {
 }
 function fillChips() {
   const rows = allRows(), n = k => rows.filter(r => k === "all" || r[3] === k).length;
-  const keys = ["all", "rulebook", "terms", "policy", "people", "business", "government", "mixed", "unclear"];
+  const keys = ["all", "rulebook", "terms", "policy", "withheld", "people", "business", "government", "mixed", "unclear"];
   const name = { all: "Everything", rulebook: "The Rulebook", ...BINDS };
   $("chips").innerHTML = keys.filter(k => n(k)).map(k =>
     `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}">${name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
@@ -754,7 +788,7 @@ function pickLaw(id) {
     if (!law) return;
     if (law.id !== state.lawId) {
       // A different law is a new check: start its answers fresh.
-      const fresh = blank(); fresh.lawId = law.id; fresh.type = law.binds === "terms" ? "terms" : law.binds === "policy" ? "policy" : "law";
+      const fresh = blank(); fresh.lawId = law.id; fresh.type = law.binds === "terms" ? "terms" : law.binds === "policy" ? "policy" : law.binds === "withheld" ? "other" : "law";
       fresh.name = law.name + (law.citation ? " (" + law.citation + ")" : "");
       fresh.answers = GATES.map((_, i) => siteAnswer(law, i));
       state = fresh;
