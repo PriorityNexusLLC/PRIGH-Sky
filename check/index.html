@@ -45,6 +45,11 @@ nav a[aria-current=page] { background: var(--band-ink); color: var(--band); }
 .band h1 span { color: var(--band-muted); font-weight: 600; }
 .band .lede { color: var(--band-muted); max-width: 62ch; margin: 0 0 22px; font-size: 17px; }
 .picker { max-width: 760px; }
+.findrow { display: flex; gap: 8px; align-items: stretch; }
+.findrow input { flex: 1 1 auto; min-width: 0; }
+.findrow select { flex: 0 1 300px; min-width: 0; font: 500 15px var(--f-body); padding: 0 12px; border-radius: 12px; border: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); cursor: pointer; }
+.matches { margin: 8px 2px 0; font: 600 13px var(--f-body); color: var(--band-muted); min-height: 1.2em; }
+@media (max-width: 640px) { .findrow { flex-direction: column; } .findrow select { flex-basis: auto; padding: 12px; } }
 .picker input { width: 100%; font: 500 17px var(--f-body); padding: 15px 18px; border-radius: 12px; border: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
 .chips button { font: 600 13px var(--f-body); color: var(--band-muted); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
@@ -173,7 +178,11 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
     <p class="lede">Pick a law, or paste any rule you live under. Nine plain questions show whether it lets you act for yourself, or only through someone else.</p>
     <div class="picker">
       <label class="lbl" for="lawSearch" style="color:var(--band-muted)">Find a law Priority Nexus has read</label>
-      <input type="search" id="lawSearch" autocomplete="off" placeholder="Loading every federal law…" aria-controls="lawResults">
+      <div class="findrow">
+        <input type="search" id="lawSearch" autocomplete="off" placeholder="Loading every federal law…" aria-controls="lawResults">
+        <select id="lawTitle" aria-label="Browse by title"><option value="">All titles</option></select>
+      </div>
+      <div class="matches" id="matches" aria-live="polite"></div>
       <div class="chips" id="chips" role="group" aria-label="Show"></div>
       <ul id="lawResults" hidden></ul>
     </div>
@@ -439,7 +448,25 @@ function renderGates() {
     host.appendChild(g);
   });
 }
-let INDEX = null, FILTER = "all";
+let INDEX = null, FILTER = "all", TITLE = "";
+// Title names, for the browse-by-title menu (the index rows carry only the title number).
+const USC_TITLES = { 1: "General Provisions", 2: "The Congress", 3: "The President", 4: "Flag and Seal, Seat of Government, and the States", 5: "Government Organization and Employees", 6: "Domestic Security", 7: "Agriculture", 8: "Aliens and Nationality", 9: "Arbitration", 10: "Armed Forces", 11: "Bankruptcy", 12: "Banks and Banking", 13: "Census", 14: "Coast Guard", 15: "Commerce and Trade", 16: "Conservation", 17: "Copyrights", 18: "Crimes and Criminal Procedure", 19: "Customs Duties", 20: "Education", 21: "Food and Drugs", 22: "Foreign Relations and Intercourse", 23: "Highways", 24: "Hospitals and Asylums", 25: "Indians", 26: "Internal Revenue Code", 27: "Intoxicating Liquors", 28: "Judiciary and Judicial Procedure", 29: "Labor", 30: "Mineral Lands and Mining", 31: "Money and Finance", 32: "National Guard", 33: "Navigation and Navigable Waters", 34: "Crime Control and Law Enforcement", 35: "Patents", 36: "Patriotic and National Observances, Ceremonies, and Organizations", 37: "Pay and Allowances of the Uniformed Services", 38: "Veterans' Benefits", 39: "Postal Service", 40: "Public Buildings, Property, and Works", 41: "Public Contracts", 42: "The Public Health and Welfare", 43: "Public Lands", 44: "Public Printing and Documents", 45: "Railroads", 46: "Shipping", 47: "Telecommunications", 48: "Territories and Insular Possessions", 49: "Transportation", 50: "War and National Defense", 51: "National and Commercial Space Programs", 52: "Voting and Elections", 53: "[Reserved]", 54: "National Park Service and Related Programs" };
+const CFR_TITLES = { 1: "General Provisions", 2: "Grants and Agreements", 3: "The President", 4: "Accounts", 5: "Administrative Personnel", 6: "Domestic Security", 7: "Agriculture", 8: "Aliens and Nationality", 9: "Animals and Animal Products", 10: "Energy", 11: "Federal Elections", 12: "Banks and Banking", 13: "Business Credit and Assistance", 14: "Aeronautics and Space", 15: "Commerce and Foreign Trade", 16: "Commercial Practices", 17: "Commodity and Securities Exchanges", 18: "Conservation of Power and Water Resources", 19: "Customs Duties", 20: "Employees' Benefits", 21: "Food and Drugs", 22: "Foreign Relations", 23: "Highways", 24: "Housing and Urban Development", 25: "Indians", 26: "Internal Revenue", 27: "Alcohol, Tobacco Products and Firearms", 28: "Judicial Administration", 29: "Labor", 30: "Mineral Resources", 31: "Money and Finance: Treasury", 32: "National Defense", 33: "Navigation and Navigable Waters", 34: "Education", 35: "[Reserved]", 36: "Parks, Forests, and Public Property", 37: "Patents, Trademarks, and Copyrights", 38: "Pensions, Bonuses, and Veterans' Relief", 39: "Postal Service", 40: "Protection of Environment", 41: "Public Contracts and Property Management", 42: "Public Health", 43: "Public Lands: Interior", 44: "Emergency Management and Assistance", 45: "Public Welfare", 46: "Shipping", 47: "Telecommunication", 48: "Federal Acquisition Regulations System", 49: "Transportation", 50: "Wildlife and Fisheries" };
+function titleOf(r) { return r[3] === "rulebook" ? "rulebook" : (r[2] || ""); }
+function fillTitles() {
+  const rows = allRows(), n = {};
+  rows.forEach(r => { const t = titleOf(r); n[t] = (n[t] || 0) + 1; });
+  const num = k => parseInt(k.split("_")[1], 10);
+  const usc = Object.keys(n).filter(k => k.startsWith("usc_")).sort((a, b) => num(a) - num(b));
+  const cfr = Object.keys(n).filter(k => k.startsWith("cfr_")).sort((a, b) => num(a) - num(b));
+  const opt = (k, label) => `<option value="${k}">${label} · ${n[k].toLocaleString()}</option>`;
+  $("lawTitle").innerHTML = `<option value="">All titles · ${rows.length.toLocaleString()}</option>` +
+    (n.rulebook ? `<optgroup label="Priority Nexus">${opt("rulebook", "The Rulebook")}</optgroup>` : "") +
+    `<optgroup label="U.S. Code (statutes)">${usc.map(k => opt(k, `Title ${num(k)} · ${USC_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
+    `<optgroup label="Code of Federal Regulations (agency rules)">${cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join("")}</optgroup>`;
+  $("lawTitle").value = TITLE;
+}
+$("lawTitle").addEventListener("change", () => { TITLE = $("lawTitle").value; showResults(true); });
 const CACHE = {};
 function currentLaw() {
   if (!state.lawId) return null;
@@ -619,12 +646,14 @@ function fillChips() {
 function showResults(open) {
   const q = $("lawSearch").value.toLowerCase().split(/\s+/).filter(Boolean);
   const ul = $("lawResults");
-  if (!q.length && !open) { ul.hidden = true; return; }
-  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) &&
+  if (!q.length && !open && !TITLE) { ul.hidden = true; return; }
+  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) && (!TITLE || titleOf(r) === TITLE) &&
     q.every(w => (r[0] + " " + r[1] + " " + (r[4] || "")).toLowerCase().includes(w)));
+  const SHOW = 200;
+  $("matches").textContent = `${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}` + (q.length || TITLE || FILTER !== "all" ? "" : " · pick a title or type a word");
   ul.hidden = false;
-  ul.innerHTML = `<li class="count">${hits.length.toLocaleString()} law${hits.length === 1 ? "" : "s"}${hits.length > 50 ? ", showing the first 50. Type more words to narrow it." : ""}</li>` +
-    hits.slice(0, 50).map(r => `<li><button type="button" data-id="${esc(r[0])}">${esc(r[1])}
+  ul.innerHTML = `<li class="count">${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}${hits.length > SHOW ? `, showing the first ${SHOW}. Pick a title or type more words to narrow it.` : ""}</li>` +
+    hits.slice(0, SHOW).map(r => `<li><button type="button" data-id="${esc(r[0])}">${esc(r[1])}
       <small>${esc(r[3] === "rulebook" ? r[4] : r[0])} · ${r[3] === "rulebook" ? "The Rulebook" : BINDS[r[3]] || ""}</small></button></li>`).join("");
   ul.querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => pickLaw(b.dataset.id)));
 }
@@ -754,7 +783,7 @@ Promise.all([
   fetch("rulebook_readings.json").then(r => r.ok ? r.json() : null).catch(() => null),
   fetch("all_laws/index.json").then(r => r.ok ? r.json() : null).catch(() => null)
 ]).then(([d, ix]) => {
-  RULEBOOK = d; INDEX = ix; fillChips();
+  RULEBOOK = d; INDEX = ix; fillChips(); fillTitles(); showResults(true); $("lawResults").hidden = true;
   if (state.lawId) getLaw(state.lawId).then(() => { showLawInfo(); renderGates(); });
 });
 </script>
