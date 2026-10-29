@@ -392,17 +392,17 @@ const LABEL = { yes: "Yes", no: "No", unk: "Can't tell" };
 // What each answer means for that gate, said plainly on the result card (Josie 2026-10-28: a red X beside "Coercion"
 // read as "no coercion"; it meant "no, not agreed freely"). Green is always the answer that leaves people in charge.
 const SAY = {
-  "Autonomy":      { yes: "You can say no or leave",                 no: "You can't say no or leave without losing something" },
-  "Coercion":      { yes: "You agree freely",                        no: "Pressure or penalty is written in" },
-  "Boundary":      { yes: "Leaves your information alone, or says what it takes", no: "Takes your information without saying what or why" },
-  "Origin":        { yes: "You can tell who wrote it and who gains", no: "Who wrote it or who gains is hidden" },
-  "Plain words":   { yes: "An ordinary reader can follow it",        no: "Hard for an ordinary reader to follow" },
-  "Verification":  { yes: "Outsiders can check it",                  no: "No way for outsiders to check it" },
-  "Friction":      { yes: "The burdens fall evenly",                 no: "The burdens fall on those with the least power" },
-  "Fair exchange": { yes: "What you give matches what you get",      no: "You give more than you get back" },
-  "Consequence":   { yes: "The side that wrote it answers for harm", no: "The side that wrote it does not answer for harm" },
+  "Autonomy":      { yes: "Can say no or leave",       no: "Can't leave without loss" },
+  "Coercion":      { yes: "Agree freely",              no: "Pressure or penalty" },
+  "Boundary":      { yes: "Your information left alone", no: "Takes your information" },
+  "Origin":        { yes: "Author and gain known",     no: "Author or gain hidden" },
+  "Plain words":   { yes: "Plain to read",             no: "Hard to read" },
+  "Verification":  { yes: "Outsiders can check",       no: "No outside check" },
+  "Friction":      { yes: "Burdens fall evenly",       no: "Burdens on the weakest" },
+  "Fair exchange": { yes: "Give matches get",          no: "Give more than you get" },
+  "Consequence":   { yes: "Writer answers for harm",   no: "Writer answers for nothing" },
 };
-const meaning = (g, a) => a === "yes" || a === "no" ? (SAY[g.name] || {})[a] || LABEL[a] : a === "unk" ? "Can't tell from the text" : "Not answered";
+const meaning = (g, a) => a === "yes" || a === "no" ? (SAY[g.name] || {})[a] || LABEL[a] : a === "unk" ? "Can't tell" : "Not answered";
 const $ = id => document.getElementById(id);
 
 function renderGates() {
