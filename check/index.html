@@ -485,11 +485,13 @@ function fillTitles() {
   const num = k => parseInt(k.split("_")[1], 10);
   const usc = Object.keys(n).filter(k => k.startsWith("usc_")).sort((a, b) => num(a) - num(b));
   const cfr = Object.keys(n).filter(k => k.startsWith("cfr_")).sort((a, b) => num(a) - num(b));
+  const cfpb = Object.keys(n).filter(k => k.startsWith("cfpb_")).sort();
   const opt = (k, label) => `<option value="${k}">${label} · ${n[k].toLocaleString()}</option>`;
   $("lawTitle").innerHTML = `<option value="">All titles · ${rows.length.toLocaleString()}</option>` +
     (n.rulebook ? `<optgroup label="Priority Nexus">${opt("rulebook", "The Rulebook")}</optgroup>` : "") +
     `<optgroup label="U.S. Code (statutes)">${usc.map(k => opt(k, `Title ${num(k)} · ${USC_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
-    `<optgroup label="Code of Federal Regulations (agency rules)">${cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join("")}</optgroup>`;
+    `<optgroup label="Code of Federal Regulations (agency rules)">${cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
+    (cfpb.length ? `<optgroup label="Credit card agreements (CFPB, as the issuers filed them)">${cfpb.map(k => opt(k, `Issuers ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "");
   $("lawTitle").value = TITLE;
 }
 $("lawTitle").addEventListener("change", () => { TITLE = $("lawTitle").value; showResults(true); });
@@ -537,6 +539,7 @@ function fillReading(host, i, quoteBox, card) {
   const parts = keys.map(k => {
     const g = law.gates[k]; if (!g) return "";
     if (k === "who-wrote") {
+      if (g.filed) return `<div class="sub"><span class="t">${esc(g.label)} <span>· ${esc(g.note)}</span></span></div>`;
       if (g.unchecked) return `<div class="sub"><span class="t">${esc(g.label)} <span>· not checked yet: lobbying filings are matched to the Rulebook's laws only</span></span></div>`;
       if (!g.found) return `<div class="sub"><span class="t">${esc(g.label)} <span>· no lobbying filing on our map names this law</span></span></div>`;
       return `<div class="sub"><span class="t">${esc(g.label)} <span>· ${g.count} filing${g.count === 1 ? "" : "s"} name it</span></span>
@@ -584,6 +587,12 @@ function siteAnswer(law, i) {
     const k = f1 ? k1 : k2;
     return pick("unk", g(k).quote, `Found: ${g(k).label.toLowerCase()}. Not written in the part we read: ${g(f1 ? k2 : k1).label.toLowerCase()}.`);
   };
+  // A contract (card agreement): arbitration decides Autonomy's court door and Consequence before anything else.
+  if (law.binds === "terms" && (i === 0 || i === 8)) {
+    const ar = g("arbitration");
+    if (ar.arbitration && !ar.opt_out) return pick("no", ar.quote || "", (i === 0 ? "Disputes go to arbitration, not a court." : "The issuer answers in arbitration it chose, not in court.") + (ar.class_waiver ? " A class action is waived." : ""));
+    if (ar.arbitration && ar.opt_out) return pick("unk", ar.quote_opt_out || ar.quote || "", "Arbitration is written in, with a written way to reject it within a time limit.");
+  }
   // Doors count only when a person can use them (Josie 2026-10-26). Without the full text we can't tell who a door serves.
   if (!law.answers3 && [0, 1, 5, 8].includes(i))
     return pick("unk", "", "We don't hold this law's full text, so we can't tell whether its doors are for people or only for companies and government.");
@@ -618,7 +627,7 @@ function siteAnswer(law, i) {
       // A federal law with no court review written in still falls under the APA's general review (5 U.S.C. 702),
       // unless the law itself bars review somewhere; then it's Can't tell. (Josie 2026-10-26: "go ahead with those changes")
       const apa = law.apa;
-      if (apa && !g("appeal").found) {
+      if (apa && apa.federal !== false && !g("appeal").found) {
         const h = g("hearing").found;
         if (apa.precluded) return pick("unk", apa.quote, `No court review written in this law, and the law bars court review of some decisions. The Administrative Procedure Act may cover the rest.${h ? " A hearing is written in." : ""}`);
         return pick(h ? "yes" : "unk", g("hearing").quote || "", `Court review comes from the Administrative Procedure Act (5 U.S.C. 702), not from this law's own text.${h ? " A hearing is written in." : " No hearing is written in the part we read."}`);
@@ -628,6 +637,7 @@ function siteAnswer(law, i) {
     case 1: return g("notice").found ? pick("yes", g("notice").quote, "Notice before it is used on a person is written in.")
                                      : pick("no", "", "No notice before it is used on a person written in the part we read.");
     case 3: { const w = g("who-wrote");
+      if (w.filed) return pick("yes", "", `Filed by ${w.by} with the CFPB, as the issuer wrote it.`);
       if (w.unchecked) return pick("unk", "", "Not checked yet. Lobbying filings are matched to the Rulebook's laws so far, not to every chapter and part.");
       return w.found ? pick("yes", "", `${w.count} lobbying filing${w.count === 1 ? "" : "s"} name this law. Clients: ${(w.clients || []).join(", ")}.`)
                      : pick("unk", "", "No lobbying filing on our map names this law. That does not mean nobody lobbied."); }
@@ -652,7 +662,7 @@ function siteAnswer(law, i) {
     default: return pick("unk", "", "Our program has no search for this gate. This one needs a person to read it.");
   }
 }
-const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who" };
+const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who", terms: "Card agreements" };
 // One list to search: the Rulebook's laws first, then every U.S. Code chapter and eCFR part.
 function allRows() {
   const rb = RULEBOOK ? RULEBOOK.laws.map(l => [l.id, l.name, null, "rulebook", l.citation || ""]) : [];
@@ -660,7 +670,7 @@ function allRows() {
 }
 function fillChips() {
   const rows = allRows(), n = k => rows.filter(r => k === "all" || r[3] === k).length;
-  const keys = ["all", "rulebook", "people", "business", "government", "mixed", "unclear"];
+  const keys = ["all", "rulebook", "terms", "people", "business", "government", "mixed", "unclear"];
   const name = { all: "Everything", rulebook: "The Rulebook", ...BINDS };
   $("chips").innerHTML = keys.filter(k => n(k)).map(k =>
     `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}">${name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
@@ -698,7 +708,7 @@ function pickLaw(id) {
     if (!law) return;
     if (law.id !== state.lawId) {
       // A different law is a new check: start its answers fresh.
-      const fresh = blank(); fresh.lawId = law.id; fresh.type = "law";
+      const fresh = blank(); fresh.lawId = law.id; fresh.type = law.binds === "terms" ? "terms" : "law";
       fresh.name = law.name + (law.citation ? " (" + law.citation + ")" : "");
       fresh.answers = GATES.map((_, i) => siteAnswer(law, i));
       state = fresh;
