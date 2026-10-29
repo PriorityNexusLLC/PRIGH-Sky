@@ -80,8 +80,9 @@ main { padding-block: 28px 64px; }
 .core .name { font-weight: 800; color: var(--cc); font-size: 15px; }
 .core .state { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
 .core ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.core li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 8px; font-size: 14px; }
-.core li .ans { font-size: 13px; font-weight: 700; }
+.core li { display: grid; grid-template-columns: 22px minmax(0, 1fr); grid-template-areas: "ic gn" "ic ans"; align-items: center; column-gap: 8px; row-gap: 1px; font-size: 14px; }
+.core li .ic { grid-area: ic; } .core li .gn { grid-area: gn; } .core li .ans { grid-area: ans; font-size: 12.5px; font-weight: 600; line-height: 1.3; }
+.core li .ans.yes { color: var(--yes); } .core li .ans.no { color: var(--no); } .core li .ans.unk { color: var(--unk); }
 .ic { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--line); color: var(--muted); font-size: 12px; font-weight: 800; line-height: 1; }
 .ic.yes, .ans.yes { color: var(--yes); } .ic.yes { background: var(--yes-bg); }
 .ic.no, .ans.no { color: var(--no); } .ic.no { background: var(--no-bg); }
@@ -105,6 +106,7 @@ pre#out { white-space: pre-wrap; font: 11px/1.45 var(--f-mono); background: var(
 .gate .q { font-weight: 700; font-size: 19px; line-height: 1.35; margin: 2px 0 0; text-wrap: balance; }
 .choices { display: inline-flex; background: var(--sunk); border: 1px solid var(--line); border-radius: 12px; padding: 4px; gap: 4px; justify-self: start; flex-wrap: wrap; }
 .choices button { border: 0; background: transparent; border-radius: 9px; padding: 8px 16px; font-weight: 600; color: var(--muted); }
+.choices button small { display: block; font-size: 11px; font-weight: 500; opacity: .8; line-height: 1.25; margin-top: 2px; white-space: normal; }
 .choices button[aria-pressed=true].yes { background: var(--yes-bg); color: var(--yes); }
 .choices button[aria-pressed=true].no { background: var(--no-bg); color: var(--no); }
 .choices button[aria-pressed=true].unk { background: var(--unk-bg); color: var(--unk); }
@@ -387,6 +389,20 @@ function loadLawText(id) {
 }
 
 const LABEL = { yes: "Yes", no: "No", unk: "Can't tell" };
+// What each answer means for that gate, said plainly on the result card (Josie 2026-10-28: a red X beside "Coercion"
+// read as "no coercion"; it meant "no, not agreed freely"). Green is always the answer that leaves people in charge.
+const SAY = {
+  "Autonomy":      { yes: "You can say no or leave",                 no: "You can't say no or leave without losing something" },
+  "Coercion":      { yes: "You agree freely",                        no: "Pressure or penalty is written in" },
+  "Boundary":      { yes: "Leaves your information alone, or says what it takes", no: "Takes your information without saying what or why" },
+  "Origin":        { yes: "You can tell who wrote it and who gains", no: "Who wrote it or who gains is hidden" },
+  "Plain words":   { yes: "An ordinary reader can follow it",        no: "Hard for an ordinary reader to follow" },
+  "Verification":  { yes: "Outsiders can check it",                  no: "No way for outsiders to check it" },
+  "Friction":      { yes: "The burdens fall evenly",                 no: "The burdens fall on those with the least power" },
+  "Fair exchange": { yes: "What you give matches what you get",      no: "You give more than you get back" },
+  "Consequence":   { yes: "The side that wrote it answers for harm", no: "The side that wrote it does not answer for harm" },
+};
+const meaning = (g, a) => a === "yes" || a === "no" ? (SAY[g.name] || {})[a] || LABEL[a] : a === "unk" ? "Can't tell from the text" : "Not answered";
 const $ = id => document.getElementById(id);
 
 function renderGates() {
@@ -403,7 +419,7 @@ function renderGates() {
         <div class="gh"><span class="num">${i + 1}</span>
           <div><div class="gname">${gate.name}</div><p class="q">${gate.q}</p></div></div>
         <div class="choices" role="group" aria-label="Answer for gate ${i + 1}">
-          ${["yes", "no", "unk"].map(k => `<button type="button" class="${k}" data-k="${k}" aria-pressed="${ans.a === k}">${LABEL[k]}</button>`).join("")}
+          ${["yes", "no", "unk"].map(k => `<button type="button" class="${k}" data-k="${k}" aria-pressed="${ans.a === k}" title="${esc(meaning(gate, k))}">${LABEL[k]}<small>${esc(k === "unk" ? "from the text" : (SAY[gate.name] || {})[k] || "")}</small></button>`).join("")}
         </div>
         ${ans.auto && ans.note ? `<p class="verdict">${esc(ans.note)}</p>` : ""}
         ${ans.auto ? `<p class="auto">Priority Nexus answer, from our program's reading. Open the evidence and change it if it's wrong.</p>` : ""}
@@ -705,7 +721,7 @@ function renderResult() {
     const mark = { yes: "✓", no: "✕", unk: "?", "": "·" };
     el.innerHTML = `<div class="name">${core.name}</div><div class="state">${coreState(idx)}</div>
       <ul>${idx.map(i => { const a = state.answers[i].a;
-        return `<li><span class="ic ${a}" aria-hidden="true">${mark[a]}</span><span>${GATES[i].name}</span><span class="ans ${a}">${LABEL[a] || "Not answered"}</span></li>`; }).join("")}</ul>`;
+        return `<li><span class="ic ${a}" aria-hidden="true">${mark[a]}</span><span class="gn">${GATES[i].name}</span><span class="ans ${a}">${meaning(GATES[i], a)}</span></li>`; }).join("")}</ul>`;
     strip.appendChild(el);
   });
   $("resultName").textContent = state.name || "Untitled check";
@@ -723,7 +739,7 @@ function reportText() {
     GATES.forEach((g, i) => {
       if (g.core !== core.id) return;
       const a = state.answers[i];
-      lines.push(`  ${i + 1}. ${g.name}: ${LABEL[a.a] || "Not answered"}${a.auto ? " (Priority Nexus answer, from the program's reading)" : ""}`);
+      lines.push(`  ${i + 1}. ${g.name}: ${meaning(g, a.a)}${a.auto ? " (Priority Nexus answer, from the program's reading)" : ""}`);
       lines.push(`     Question: ${g.q}`);
       if (a.quote.trim()) lines.push(`     From the text: "${a.quote.trim()}"`);
       if (a.note.trim()) lines.push(`     Note: ${a.note.trim()}`);
