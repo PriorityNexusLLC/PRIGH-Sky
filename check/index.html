@@ -391,16 +391,16 @@ function loadLawText(id) {
 const LABEL = { yes: "Yes", no: "No", unk: "Can't tell" };
 // What each answer means for that gate, said plainly on the result card (Josie 2026-10-28: a red X beside "Coercion"
 // read as "no coercion"; it meant "no, not agreed freely"). Green is always the answer that leaves people in charge.
-const SAY = {
-  "Autonomy":      { yes: "Can say no or leave",       no: "Can't leave without loss" },
-  "Coercion":      { yes: "Agree freely",              no: "Pressure or penalty" },
-  "Boundary":      { yes: "Your information left alone", no: "Takes your information" },
-  "Origin":        { yes: "Author and gain known",     no: "Author or gain hidden" },
-  "Plain words":   { yes: "Plain to read",             no: "Hard to read" },
-  "Verification":  { yes: "Outsiders can check",       no: "No outside check" },
-  "Friction":      { yes: "Burdens fall evenly",       no: "Burdens on the weakest" },
-  "Fair exchange": { yes: "Give matches get",          no: "Give more than you get" },
-  "Consequence":   { yes: "Writer answers for harm",   no: "Writer answers for nothing" },
+const SAY = {                                                   // Josie's words, 2026-10-28
+  "Autonomy":      { yes: "No loss",      no: "Loss" },
+  "Coercion":      { yes: "Agree freely", no: "Pressure or penalty" },
+  "Boundary":      { yes: "Private",      no: "Public" },
+  "Origin":        { yes: "Known",        no: "Hidden" },
+  "Plain words":   { yes: "Yes",          no: "No" },
+  "Verification":  { yes: "Public",       no: "Private" },
+  "Friction":      { yes: "Evenly",       no: "Restricted" },
+  "Fair exchange": { yes: "Evenly",       no: "Restricted" },
+  "Consequence":   { yes: "Yes",          no: "No" },
 };
 const meaning = (g, a) => a === "yes" || a === "no" ? (SAY[g.name] || {})[a] || LABEL[a] : a === "unk" ? "Can't tell" : "Not answered";
 const $ = id => document.getElementById(id);
