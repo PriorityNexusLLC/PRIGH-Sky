@@ -89,6 +89,7 @@ main { padding-block: 28px 64px; }
 .ic.unk, .ans.unk { color: var(--unk); } .ic.unk { background: var(--unk-bg); }
 .summary { margin: 0; font-size: 15px; color: var(--muted); }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions button.armed { background: var(--no, #b3261e); color: #fff; border-color: transparent; }
 button { font: 600 14px var(--f-body); border-radius: 10px; padding: 9px 16px; cursor: pointer; border: 1px solid var(--line2); background: var(--surface); color: var(--ink); }
 button:hover { border-color: var(--muted); }
 button.primary { background: var(--band); border-color: var(--band); color: var(--band-ink); }
@@ -822,8 +823,10 @@ function showResults(open) {
   ul.querySelectorAll("button[data-id]").forEach(b => b.addEventListener("click", () => pickLaw(b.dataset.id)));
 }
 $("lawSearch").addEventListener("input", () => showResults(false));
-$("lawSearch").addEventListener("focus", () => showResults(false));
-document.addEventListener("click", e => { if (!e.target.closest(".picker")) $("lawResults").hidden = true; });
+$("lawSearch").addEventListener("focus", () => showResults(true));     // clicking back into the box brings the list back
+$("lawSearch").addEventListener("click", () => showResults(true));
+// A click outside the picker closes the list. A chip click redraws the chips, so its target is no longer on the page: not outside.
+document.addEventListener("click", e => { if (e.target.isConnected && !e.target.closest(".picker")) $("lawResults").hidden = true; });
 function showLawInfo() {
   const law = currentLaw(), info = $("lawInfo");
   info.hidden = !law;
@@ -924,9 +927,12 @@ $("copyBtn").addEventListener("click", () => {
 let armed = false;
 $("newBtn").addEventListener("click", () => {
   const b = $("newBtn");
-  if (!armed) { armed = true; b.textContent = "Click again to clear everything"; setTimeout(() => { armed = false; b.textContent = "Start a new check"; }, 3000); return; }
-  armed = false; b.textContent = "Start a new check";
-  state = blank(); save(); renderAll(); $("docName").focus();
+  // Only a visitor's own typed check asks for a second click; a picked law or the example clears at once.
+  const own = !state.lawId && !state.example && (state.text.trim() || state.answers.some(a => a.a || a.quote.trim() || a.note.trim()));
+  if (own && !armed) { armed = true; b.textContent = "Click again to clear everything"; b.classList.add("armed"); setTimeout(() => { armed = false; b.textContent = "Start a new check"; b.classList.remove("armed"); }, 3000); return; }
+  armed = false; b.textContent = "Start a new check"; b.classList.remove("armed");
+  state = blank(); FILTER = "all"; TITLE = ""; if (INDEX) { fillChips(); fillTitles(); }
+  $("lawResults").hidden = true; save(); renderAll(); $("docName").focus();
 });
 
 function showTab() {
