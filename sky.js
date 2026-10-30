@@ -499,7 +499,7 @@ canvas.addEventListener('pointerdown', e => {
   if (fingers.size >= 2) {
     const [a, b] = [...fingers.values()];
     pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), mx: (a.x + b.x) / 2, my: (a.y + b.y) / 2 }; drag = null; tip.hidden = true;
-  } else { const alt = e.button === 2 || e.shiftKey; drag = { x: e.clientX, y: e.clientY, moved: false, pan: orbit3d ? alt : !alt }; }
+  } else { const alt = e.button === 2 || e.shiftKey; drag = { x: e.clientX, y: e.clientY, moved: false, pan: orbit3d ? alt : !alt, right: e.button === 2 }; }
   canvas.setPointerCapture(e.pointerId); canvas.classList.add('grabbing');
 });
 const letGo = e => {
@@ -537,7 +537,7 @@ canvas.addEventListener('pointerup', e => {
   if (pinch || (fingers.size >= 2)) { letGo(e); return; }
   if (mode === 'sky' && gravity === 'flows') { const b = flowAt(e.clientX, e.clientY); if (b) { tip.hidden = true; openBand(b); } }
   else if (mode === 'sky' && gravity === 'loops') { const l = loopAt(e.clientX, e.clientY); if (l) { tip.hidden = true; openLoop(l); } }
-  else if (drag && !drag.moved && !drag.pan) {
+  else if (drag && !drag.moved && !drag.right) {                // a press that did not move is a click, whether a drag would have moved or turned the view
     const box = mode === 'sky' && labelBoxes.find(b => e.clientX >= b.x && e.clientX <= b.x + b.w && e.clientY >= b.y && e.clientY <= b.y + b.h);
     if (box) flyTo(box.m);                                           // a click on a galaxy's name flies to it
     else { const h = pick(e.clientX, e.clientY); if (h) openConstellation(h.s.id); }
