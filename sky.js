@@ -1163,11 +1163,11 @@ ${spRows ? `${!full && (sp.flags || []).length > 40 ? `<p class="std">The first 
 ${tenRows ? `<table><thead><tr><th>Person</th><th>Board</th><th>Years, at least</th><th>Filings</th></tr></thead><tbody>${tenRows}</tbody></table>${!full && (ten.flags || []).length > 80 ? `<p class="std">${(ten.flags || []).length - 80} more not listed; Print shows them all.</p>` : ''}` : '<p class="std">None on record.</p>'}` },
     { title: 'Number of boards', html: `<p class="std">Standard: ${esc(ob.standard || '')}. The number: ${ob.threshold || 5} public-company boards. Also: ${esc(ob.ceo_standard || '')}. Records: current public-company board seats on the map per person.</p>
 ${obRows ? `<table><thead><tr><th>Person</th><th>Seats, by the records</th></tr></thead><tbody>${obRows}</tbody></table>` : '<p class="std">None on record.</p>'}` },
-    { title: 'Fund-complex officers', html: `<p class="std">Standard: ${esc(fo.standard || '')}. The number: ${fo.threshold || 10} funds, a display floor. Records: current officer and director roles at registered funds on the map, per person (${(fo.people_counted || 0).toLocaleString()} people hold at least one). ${esc(fo.note || '')}. Measure 5 counts only public-company board seats, so a fund complex run by the same few people never showed there.</p>
+    { title: 'Fund-complex officers', html: `<p class="std">Standard: ${esc(fo.standard || '')}. The number: ${fo.threshold || 10} funds, a display floor. Records: current officer and director roles at registered funds on the map, per person (${(fo.people_counted || 0).toLocaleString()} people hold at least one). ${esc(fo.note || '')}. Number of boards counts only public-company board seats, so a fund complex run by the same few people never showed there.</p>
 ${foRows ? `${!full && (fo.flags || []).length > 60 ? `<p class="std">The first 60 of ${(fo.flags || []).length}; Print shows them all.</p>` : ''}<table><thead><tr><th>Person</th><th>Funds</th><th>As officer</th><th>As director</th><th>Fund families, by the funds' names</th></tr></thead><tbody>${foRows}</tbody></table>` : '<p class="std">None at the display floor.</p>'}` },
-    { title: 'Common owners of rivals', html: `<p class="std">Standard: ${esc(co.standard || '')}. The line: ${esc(co.line_basis || '')}. Records: ${esc(co.method || '')}. Groups with fewer than ${co.min_companies || 5} companies holding filed stakes are not scored. Measure 2 says how concentrated a field's ownership is; this says whether one holder sits across the companies that compete in it.</p>
+    { title: 'Common owners of rivals', html: `<p class="std">Standard: ${esc(co.standard || '')}. The line: ${esc(co.line_basis || '')}. Records: ${esc(co.method || '')}. Groups with fewer than ${co.min_companies || 5} companies holding filed stakes are not scored. Concentration says how concentrated a field's ownership is; this says whether one holder sits across the companies that compete in it.</p>
 ${coRows ? `<table><thead><tr><th>Industry group</th><th>Companies with filed stakes</th><th>Holders</th><th>Holders in 2+ companies</th><th>Largest holders by family (companies, share of the group)</th></tr></thead><tbody>${coRows}</tbody></table>` : '<p class="std">No group has enough companies with filed stakes.</p>'}` },
-    { title: 'Shared boards', html: `<p class="std">Standard: ${esc(sb.standard || '')}. The thresholds: ${esc(sb.thresholds || '')}. Records: pairs of boards on the map that share ${sb.min_shared || 2} or more current directors, a display floor; the law reaches a single shared director, and ${(sb.single_director_same_group || 0).toLocaleString()} pairs in one industry group share exactly one. ${esc(sb.note || '')}. ${(sb.left_out || 0).toLocaleString()} pairs left out; ${(sb.pairs_one_board || 0).toLocaleString()} marked one board and listed last. Measure 1 of the Pattern sweep counts people with several seats; this counts the pair of boards.</p>
+    { title: 'Shared boards', html: `<p class="std">Standard: ${esc(sb.standard || '')}. The thresholds: ${esc(sb.thresholds || '')}. Records: pairs of boards on the map that share ${sb.min_shared || 2} or more current directors, a display floor; the law reaches a single shared director, and ${(sb.single_director_same_group || 0).toLocaleString()} pairs in one industry group share exactly one. ${esc(sb.note || '')}. ${(sb.left_out || 0).toLocaleString()} pairs left out; ${(sb.pairs_one_board || 0).toLocaleString()} marked one board and listed last. The Pattern sweep counts people with several seats; this counts the pair of boards.</p>
 ${sbRows ? `${!full && (sb.flags || []).length > 60 ? `<p class="std">The first 60 of ${(sb.flags || []).length} listed (${(sb.pairs_same_group || 0).toLocaleString()} pairs in one industry group, ${(sb.pairs_all || 0).toLocaleString()} in all); Print shows them all.</p>` : ''}<table><thead><tr><th>Board (recorded directors)</th><th>Board (recorded directors)</th><th>Shared directors</th><th>Same industry group</th><th>The directors</th></tr></thead><tbody>${sbRows}</tbody></table>` : '<p class="std">None at the display floor.</p>'}` },
     { title: 'Who hides, who asks', html: `<p class="std">Two readings set side by side. <b>Companies:</b> ${esc(ha.ct_standard || '')}. Records: the SEC's orders on the map, per company (${(ha.companies_with_orders || 0).toLocaleString()} companies hold at least one), beside the lobbying on the map for the same company. <b>Agencies:</b> ${esc(ha.foia_standard || '')}. The number: ${ha.days || 20} working days. Records: each body's latest Annual FOIA Report (${(ha.bodies || 0).toLocaleString()} bodies; ${(ha.bodies_over_the_line || 0).toLocaleString()} report a median simple-request time over the line), beside the federal awards and lobbying contacts on the map that name that body. ${esc(ha.note || '')}.</p>
 <h3 style="font-size:1rem;margin:.8rem 0 .3rem">Companies with the most orders to withhold contract terms</h3>
@@ -1176,13 +1176,23 @@ ${haRows ? `<table><thead><tr><th>Company</th><th>Orders</th><th>Newest</th><th>
 ${akRows ? `<table><thead><tr><th>Body</th><th>Year</th><th>Backlog</th><th>Received</th><th>Median days, simple</th><th>Awards on the map</th><th>Lobbying contacts on the map</th></tr></thead><tbody>${akRows}</tbody></table>` : '<p class="std">None on record.</p>'}` }
   ];
 }
+// The nine measures under the three cores, three each (Josie 2026-10-31). Each entry is an index into balanceSections().
+const BAL_CORES = [
+  ['Identity', 'who a director is to the company', [0, 3, 4]],
+  ['Transparency', 'who can be seen holding what', [1, 2, 6]],
+  ['Integrity', 'whether anything checks the power', [5, 7, 8]],
+];
+const BAL_ORDER = BAL_CORES.flatMap(c => c[2]);                 // section index -> its place on the page
+const balNumber = i => BAL_ORDER.indexOf(i) + 1;
 function renderBalancePage() {
   const box = document.getElementById('balance-body'); if (!box || !balance) return;
   const r = balance, go = (id, text) => `<button type="button" class="lnk" data-go="${esc(id)}">${esc(text)}</button>`;
-  const counts = BAL_COUNT(r);
+  const counts = BAL_COUNT(r), secs = balanceSections(false, go);
   box.innerHTML = `<div class="bal">
-${balanceSections(false, go).map((s, i) => `<h2>${i + 1}. ${esc(s.title)} <button type="button" class="btn no-print" data-print="${i}" style="font-size:.72rem;padding:.15rem .5rem;margin-left:.5rem;vertical-align:middle" title="Opens this section whole, every row (${counts[i].toLocaleString()}), ready to print or save as PDF">Print</button></h2>
-${s.html}`).join('\n')}
+<p class="std">The nine measures sit under the three cores, three each. The grouping is our reading; the standards and the records are not ours.</p>
+${BAL_CORES.map(([core, meaning, idx]) => `<section class="core"><h2 class="core">${esc(core)} <span class="mono" style="font-weight:400;opacity:.75;font-size:.8rem">${esc(meaning)}</span></h2>
+${idx.map(i => { const s = secs[i]; return `<h3 class="measure">${balNumber(i)}. ${esc(s.title)} <button type="button" class="btn no-print" data-print="${i}" style="font-size:.72rem;padding:.15rem .5rem;margin-left:.5rem;vertical-align:middle" title="Opens this section whole, every row (${counts[i].toLocaleString()}), ready to print or save as PDF">Print</button></h3>
+${s.html}`; }).join('\n')}</section>`).join('\n')}
 <p class="std">Measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map. Every number here can change when a filing is added; nothing is a verdict. Click a name to open its connections.</p>
 </div>`;
   box.querySelectorAll('[data-go]').forEach(el => el.addEventListener('click', () => { showPage(null); openConstellation(el.dataset.go); }));
@@ -1193,7 +1203,7 @@ function printBalanceSection(i) {                          // one section, whole
   let sec = document.getElementById('report-page');
   if (!sec) { sec = document.createElement('section'); sec.className = 'about page report-page'; sec.id = 'report-page'; document.body.appendChild(sec); }
   sec.innerHTML = `<div class="wrap report bal"><div class="btns no-print"><button class="btn primary" type="button" id="report-print">Print or save as PDF</button><button class="btn" type="button" id="report-close">Close</button></div>
-<h1>Balance · ${i + 1}. ${esc(s.title)}</h1>
+<h1>Balance · ${esc(BAL_CORES.find(c => c[2].includes(i))[0])} · ${balNumber(i)}. ${esc(s.title)}</h1>
 <p class="meta">PRIGH, the Priority Nexus map · prioritynexusllc.github.io/PRIGH-Sky · measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map · ${counts[i].toLocaleString()} row${counts[i] === 1 ? '' : 's'}, the whole list</p>
 ${s.html}
 <p class="std">Every number here can change when a filing is added; nothing is a verdict. The standard each section is held against is named at its top; the records are the filings on the map.</p></div>`;
