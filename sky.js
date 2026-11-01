@@ -1182,6 +1182,18 @@ const BAL_CORES = [
   ['Transparency', 'who can be seen holding what', [1, 2, 6]],
   ['Integrity', 'whether anything checks the power', [5, 7, 8]],
 ];
+// One or two plain sentences under each measure, for anyone (Josie 2026-10-31: "it's not dumb to include everyone, it's accessibility"). By section index.
+const BAL_PLAIN = [
+  'A company has a group of adults, the board, whose job is to keep an eye on the boss. We check how many of them are really outsiders, because a watcher who also works for the boss, or owns a big piece, is not really watching.',
+  'Imagine all the companies that make the same kind of thing, like medicines. We check whether a few owners hold pieces of most of them, or whether the pieces are spread out among many.',
+  'Some people or companies are like a bridge that everyone has to cross. We find the ones where, if that bridge went away, a whole part of the map would be cut off from the rest.',
+  'If the same person has sat on that board for many, many years, they may have become friends with the people they are supposed to watch. We count the years.',
+  'One person can only pay close attention to so many things. We count how many company boards each person sits on at once.',
+  'Some people run not one money fund but a hundred at the same time. We count them, because a hundred jobs with the same few people in charge is hard to see any other way.',
+  'Two companies are supposed to compete, like two lemonade stands across the street. We check whether the same owner holds a piece of both, because then the stands may not really be racing each other.',
+  'We look for two companies that have the same people sitting on both of their boards. When those two companies compete, the law says one person is not supposed to sit on both.',
+  'Some companies ask permission to keep parts of their contracts secret, and we count how often, next to how much they lobby. Some government offices make people wait a very long time for records they asked for, and we count the waiting line next to the money that flows to that office.',
+];
 const BAL_ORDER = BAL_CORES.flatMap(c => c[2]);                 // section index -> its place on the page
 const balNumber = i => BAL_ORDER.indexOf(i) + 1;
 function renderBalancePage() {
@@ -1189,9 +1201,10 @@ function renderBalancePage() {
   const r = balance, go = (id, text) => `<button type="button" class="lnk" data-go="${esc(id)}">${esc(text)}</button>`;
   const counts = BAL_COUNT(r), secs = balanceSections(false, go);
   box.innerHTML = `<div class="bal">
-<p class="std">The nine measures sit under the three cores, three each. The grouping is our reading; the standards and the records are not ours.</p>
+<p class="std">The nine measures sit under the three cores, three each. The grouping is our reading; the standards and the records are not ours. Under each measure, a line in plain words says what it looks for. None of them says anyone did wrong: they say where to look, and they look at everyone the same way.</p>
 ${BAL_CORES.map(([core, meaning, idx]) => `<section class="core"><h2 class="core">${esc(core)} <span class="mono" style="font-weight:400;opacity:.75;font-size:.8rem">${esc(meaning)}</span></h2>
 ${idx.map(i => { const s = secs[i]; return `<h3 class="measure">${balNumber(i)}. ${esc(s.title)} <button type="button" class="btn no-print" data-print="${i}" style="font-size:.72rem;padding:.15rem .5rem;margin-left:.5rem;vertical-align:middle" title="Opens this section whole, every row (${counts[i].toLocaleString()}), ready to print or save as PDF">Print</button></h3>
+<p class="plain">${esc(BAL_PLAIN[i])}</p>
 ${s.html}`; }).join('\n')}</section>`).join('\n')}
 <p class="std">Measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map. Every number here can change when a filing is added; nothing is a verdict. Click a name to open its connections.</p>
 </div>`;
@@ -1204,6 +1217,7 @@ function printBalanceSection(i) {                          // one section, whole
   if (!sec) { sec = document.createElement('section'); sec.className = 'about page report-page'; sec.id = 'report-page'; document.body.appendChild(sec); }
   sec.innerHTML = `<div class="wrap report bal"><div class="btns no-print"><button class="btn primary" type="button" id="report-print">Print or save as PDF</button><button class="btn" type="button" id="report-close">Close</button></div>
 <h1>Balance · ${esc(BAL_CORES.find(c => c[2].includes(i))[0])} · ${balNumber(i)}. ${esc(s.title)}</h1>
+<p class="plain">${esc(BAL_PLAIN[i])}</p>
 <p class="meta">PRIGH, the Priority Nexus map · prioritynexusllc.github.io/PRIGH-Sky · measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map · ${counts[i].toLocaleString()} row${counts[i] === 1 ? '' : 's'}, the whole list</p>
 ${s.html}
 <p class="std">Every number here can change when a filing is added; nothing is a verdict. The standard each section is held against is named at its top; the records are the filings on the map.</p></div>`;
