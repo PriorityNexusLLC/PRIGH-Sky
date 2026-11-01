@@ -1099,7 +1099,7 @@ ${money.size ? `<p>Amounts are the figures the filings state, summed; a record w
 <li>Only people in public roles appear, from the filings that name them in those roles. Nothing about private life is collected.</li>
 <li>The map is a work in progress. Missing is not the same as clean.</li></ul>
 <h2>6. If you are named here</h2>
-<p>Want to answer? Send it to <a href="mailto:theaistherapist@gmail.com?subject=Reply%3A%20${encodeURIComponent(me.label)}">theaistherapist@gmail.com</a>. We post it, in full, under your name, the day it arrives. A record wrong? Say which; it is corrected with a dated note.</p>
+<p>Want to answer? Send it to <a href="mailto:prighthesky@gmail.com?subject=Reply%3A%20${encodeURIComponent(me.label)}">prighthesky@gmail.com</a>. We post it, in full, under your name, the day it arrives. A record wrong? Say which; it is corrected with a dated note.</p>
 <h2>7. All sources</h2>
 <ol>${direct.filter(e => e.url).map(e => `<li><a href="${esc(e.url)}">${esc(e.url)}</a> · ${esc(e.source || '')}${e.date ? ' · ' + esc(e.date) : ''}</li>`).join('')}</ol>
 <h2>8. Integrity</h2>
