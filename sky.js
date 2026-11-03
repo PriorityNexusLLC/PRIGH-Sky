@@ -1198,6 +1198,13 @@ const BAL_PLAIN = [
 ];
 const BAL_ORDER = BAL_CORES.flatMap(c => c[2]);                 // section index -> its place on the page
 const balNumber = i => BAL_ORDER.indexOf(i) + 1;
+// The first paragraph of a measure is the standard in the law's words. It folds into a dropdown the reader opens
+// (Josie 2026-11-03: "What's written, where"), open on the print page.
+function foldStandard(html, open) {
+  const m = html.match(/^<p class="std">([\s\S]*?)<\/p>/);
+  if (!m) return html;
+  return `<details class="where"${open ? ' open' : ''}><summary>What's written, where</summary><p class="std">${m[1]}</p></details>` + html.slice(m[0].length);
+}
 function renderBalancePage() {
   const box = document.getElementById('balance-body'); if (!box || !balance) return;
   const r = balance, go = (id, text) => `<button type="button" class="lnk" data-go="${esc(id)}">${esc(text)}</button>`;
@@ -1205,7 +1212,7 @@ function renderBalancePage() {
   box.innerHTML = `<div class="bal">
 <p class="std">The nine measures sit under the three cores, three each. The grouping is our reading; the standards and the records are not ours. Under each measure, a line in plain words says what it looks for. None of them says anyone did wrong: they say where to look, and they look at everyone the same way.</p>
 ${BAL_CORES.map(([core, meaning, idx]) => `<section class="core"><h2 class="core">${esc(core)} <span class="mono" style="font-weight:400;opacity:.75;font-size:.8rem">${esc(meaning)}</span></h2>
-${idx.map(i => { const s = secs[i]; return `<h3 class="measure">${balNumber(i)}. ${esc(s.title)} <button type="button" class="btn no-print" data-print="${i}" style="font-size:.72rem;padding:.15rem .5rem;margin-left:.5rem;vertical-align:middle" title="Opens this section whole, every row (${counts[i].toLocaleString()}), ready to print or save as PDF">Print</button></h3>
+${idx.map(i => { const s = { ...secs[i], html: foldStandard(secs[i].html, false) }; return `<h3 class="measure">${balNumber(i)}. ${esc(s.title)} <button type="button" class="btn no-print" data-print="${i}" style="font-size:.72rem;padding:.15rem .5rem;margin-left:.5rem;vertical-align:middle" title="Opens this section whole, every row (${counts[i].toLocaleString()}), ready to print or save as PDF">Print</button></h3>
 <p class="plain">${esc(BAL_PLAIN[i])}</p>
 ${s.html}`; }).join('\n')}</section>`).join('\n')}
 <p class="std">Measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map. Every number here can change when a filing is added; nothing is a verdict. Click a name to open its connections.</p>
@@ -1221,7 +1228,7 @@ function printBalanceSection(i) {                          // one section, whole
 <h1>Balance · ${esc(BAL_CORES.find(c => c[2].includes(i))[0])} · ${balNumber(i)}. ${esc(s.title)}</h1>
 <p class="plain">${esc(BAL_PLAIN[i])}</p>
 <p class="meta">PRIGH, the Priority Nexus map · prioritynexusllc.github.io/PRIGH-Sky · measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map · ${counts[i].toLocaleString()} row${counts[i] === 1 ? '' : 's'}, the whole list</p>
-${s.html}
+${foldStandard(s.html, true)}
 <p class="std">Every number here can change when a filing is added; nothing is a verdict. The standard each section is held against is named at its top; the records are the filings on the map.</p></div>`;
   sec.hidden = false;
   document.getElementById('report-print').addEventListener('click', () => window.print());
