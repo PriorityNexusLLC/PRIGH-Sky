@@ -240,7 +240,7 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
     <section id="method" class="card" hidden>
     <h2>Method</h2>
     <p class="lead">All decent questions to complex answers, not for judgement or coercion, only clarity: a big complex picture drawn into a legible map.</p>
-    <p>This check asks nine questions of any rule a person lives under. A rule is a public position in writing: those who influence the whole, which is the human systems, economy, society, enforcements, anything that affects human sovereignty. It does not decide who is good or bad. It asks three things: does the rule leave people in charge of themselves, can it be seen clearly, and does it treat everyone it touches fairly.</p>
+    <p>This check asks nine questions of any rule a person lives under. A rule is a public position in writing: those who influence the whole, which is the human systems, economy, society, enforcements, anything that affects human sovereignty. It does not decide who is good or bad. It asks three things: does the rule leave people in charge of themselves, can it be seen clearly, and does it treat everyone it touches fairly. Rules of a faith are read the same way: the rulebook a religious body publishes on its own site, the text that is used on a member, with the body's own words for each door added to the search (citation, right of defense, recourse, dispensation). The gates measure the rule, never the belief; every body is read alike; a creed states belief and has no procedure, so it is not read.</p>
     <h3>How the answers are made</h3>
     <div class="steps">
       <div class="step"><span class="n">1</span><h4>Collect</h4>
@@ -795,7 +795,7 @@ function siteAnswer(law, i) {
     default: return pick("unk", "", "Our program has no search for this gate. This one needs a person to read it.");
   }
 }
-const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who", terms: "Card agreements", policy: "Nonprofit policies", withheld: "Withheld contracts", requests: "Records requests" };
+const BINDS = { people: "Rules on people", business: "Rules on companies", government: "Rules on government", mixed: "Rules on several", unclear: "Not clear who", terms: "Card agreements", policy: "Nonprofit policies", withheld: "Withheld contracts", requests: "Records requests", faith: "Rules of a faith" };
 // One list to search: the Rulebook's laws first, then every U.S. Code chapter and eCFR part.
 function allRows() {
   const rb = RULEBOOK ? RULEBOOK.laws.map(l => [l.id, l.name, null, "rulebook", l.citation || ""]) : [];
@@ -803,7 +803,7 @@ function allRows() {
 }
 function fillChips() {
   const rows = allRows(), n = k => rows.filter(r => k === "all" || r[3] === k).length;
-  const keys = ["all", "rulebook", "terms", "policy", "withheld", "requests", "people", "business", "government", "mixed", "unclear"];
+  const keys = ["all", "rulebook", "terms", "policy", "withheld", "requests", "faith", "people", "business", "government", "mixed", "unclear"];
   const name = { all: "Everything", rulebook: "The Rulebook", ...BINDS };
   $("chips").innerHTML = keys.filter(k => n(k)).map(k =>
     `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}">${name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
