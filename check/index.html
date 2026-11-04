@@ -757,6 +757,17 @@ function siteAnswer(law, i) {
     if (i === 5) return two("access", "Seeing the record", "self-report", "The law reporting on itself");
     return one("standing", "A person enforcing it in court themselves");
   }
+  // Rules of a faith (Josie 2026-11-03: "show both"): the door as written, whoever acts, beside the door a person can use.
+  if (law.binds === "faith" && law.gates.written && [0, 1, 5, 8].includes(i)) {
+    const W = law.gates.written;
+    const line = (k, label) => { const w = W[k] || {}, p = g(k);
+      return `${label}: ${w.found ? `written (${w.count} sentence${w.count === 1 ? "" : "s"})` : "not written in this part"}; ${p.found ? "a person can use it themselves" : w.found ? "the text names the court or the council, not the member" : "nothing for a person to use"}.`; };
+    const keys = i === 0 ? [["hearing", "A chance to answer"], ["appeal", "A way to a reviewer"]] : i === 1 ? [["notice", "Notice before it is used on a person"]] : i === 5 ? [["access", "Seeing the record"], ["self-report", "The body reporting on itself"]] : [["standing", "A member bringing the matter themselves"]];
+    const pf = keys.filter(([k]) => g(k).found).length, wf = keys.filter(([k]) => (W[k] || {}).found).length;
+    const v = pf === keys.length ? "yes" : wf ? "unk" : "no";
+    const q = keys.map(([k]) => g(k).quote).find(Boolean) || keys.map(([k]) => (W[k] || {}).quote).find(Boolean) || "";
+    return pick(v, q, keys.map(([k, l]) => line(k, l)).join(" ") + " Two readings: as written, and whether the member is the one who may act.");
+  }
   switch (i) {
     case 0: {
       // A federal law with no court review written in still falls under the APA's general review (5 U.S.C. 702),
