@@ -418,6 +418,24 @@ const $ = id => document.getElementById(id);
 // own check, kept in their browser, and stays editable.
 const PUBLIC = !!document.querySelector('meta[name="pn-public"]');
 
+// The links under each gate: first the text being checked, at its own source. A rule of a faith points only at the body's
+// own site (no register, no court record holds it); every other text keeps the public registers for its gate.
+function whereLinks(i) {
+  const law = currentLaw();
+  const a = (href, label) => `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(label)}</a>`;
+  const out = [];
+  if (law && law.url) {
+    let site = ""; try { site = new URL(law.url).origin; } catch (e) {}
+    if (law.binds === "faith") {
+      out.push(a(law.url, `This part, on the body's own site (${(law.faith || "").split(" · ").pop() || "the body"})`));
+      if (site) out.push(a(site, "The body's own site (its whole rulebook)"));
+      if (i === 3) out.push(a(SRC.irs[1], "IRS nonprofit search (a church need not file a Form 990)"));
+      return out.join("");
+    }
+    out.push(a(law.url, "This text, at its source"));
+  }
+  return out.concat(WHERE[i].map(k => a(SRC[k][1], SRC[k][0]))).join("");
+}
 function renderGates() {
   const host = $("gates"); host.innerHTML = "";
   CORES.forEach(core => {
@@ -448,7 +466,7 @@ function renderGates() {
           <div data-pq></div>
           <p class="warn" data-warn hidden>No quote yet. An answer without a quote is only an opinion.</p>
           <div data-reading></div>
-          <p class="where"><b>Where to look:</b> ${WHERE[i].map(k => `<a href="${SRC[k][1]}" target="_blank" rel="noopener">${SRC[k][0]}</a>`).join("")}</p>
+          <p class="where"><b>Where to look:</b> ${whereLinks(i)}</p>
           <div><label class="lbl" for="note${i}">Your note (optional)</label><textarea class="note" id="note${i}" placeholder="In your own words"></textarea></div>
         </div></details>`;
       card.querySelector("[data-look]").textContent = gate.look[state.type] || gate.look.other;
