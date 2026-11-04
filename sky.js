@@ -1221,7 +1221,10 @@ ${s.html}`; }).join('\n')}</section>`).join('\n')}
   box.querySelectorAll('[data-print]').forEach(el => el.addEventListener('click', () => printBalanceSection(+el.dataset.print)));
 }
 function printBalanceSection(i) {                          // one section, whole, in the report page: print or save as PDF
-  const r = balance, s = balanceSections(true, (id, text) => esc(text))[i], counts = BAL_COUNT(r);
+  // Every name in the print is a link to that entity on the public map (Josie 2026-11-04: "the links need to be attached"); the print CSS writes the address after it.
+  const base = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) ? 'https://prioritynexusllc.github.io/PRIGH-Sky/' : (location.origin + location.pathname).replace(/index\.html$/, '');
+  const link = (id, text) => id ? `<a href="${esc(base + '#' + encodeURIComponent(id))}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text);
+  const r = balance, s = balanceSections(true, link)[i], counts = BAL_COUNT(r);
   let sec = document.getElementById('report-page');
   if (!sec) { sec = document.createElement('section'); sec.className = 'about page report-page'; sec.id = 'report-page'; document.body.appendChild(sec); }
   sec.innerHTML = `<div class="wrap report bal"><div class="btns no-print"><button class="btn primary" type="button" id="report-print">Print or save as PDF</button><button class="btn" type="button" id="report-close">Close</button></div>
