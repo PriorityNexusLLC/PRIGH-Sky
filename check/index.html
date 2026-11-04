@@ -929,10 +929,16 @@ function allRows() {
   const rb = RULEBOOK ? RULEBOOK.laws.map(l => [l.id, l.name, null, "rulebook", l.citation || ""]) : [];
   return rb.concat(INDEX ? INDEX.laws : []);
 }
+// A chip is a kind (who a text binds) or one of the "Rules for …" groups (Josie 2026-11-04: badges under the search bar;
+// "Rules on several" and "Not clear who" dropped from the row, the rows themselves stay under Everything).
+const peopleRows = () => ((INDEX && INDEX.people) || {}).rows || {};
+function chipMatch(r, k) { return k === "all" || (k.startsWith("for:") ? !!(peopleRows()[r[0]] || {})[k.slice(4)] : r[3] === k); }
 function fillChips() {
-  const rows = allRows(), n = k => rows.filter(r => k === "all" || r[3] === k).length;
-  const keys = ["all", "rulebook", "terms", "policy", "withheld", "requests", "faith", "people", "business", "government", "mixed", "unclear"];
+  const rows = allRows(), n = k => rows.filter(r => chipMatch(r, k)).length;
+  const groups = ((INDEX && INDEX.people) || {}).groups || {};
+  const keys = ["all", "rulebook", "terms", "policy", "withheld", "requests", "faith", "people", "business", "government", ...Object.keys(groups).map(g => "for:" + g)];
   const name = { all: "Everything", rulebook: "The Rulebook", ...BINDS };
+  Object.entries(groups).forEach(([g, v]) => { name["for:" + g] = v.label; });
   $("chips").innerHTML = keys.filter(k => n(k)).map(k =>
     `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}">${name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
   $("chips").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
@@ -946,7 +952,7 @@ function showResults(open) {
   if (!q.length && !open && !TITLE && !SET) { ul.hidden = true; return; }
   const peRows = (INDEX.people || {}).rows || {}, pg = SET.startsWith("people:") ? SET.slice(7) : "";
   const inSet = r => pg ? !!(peRows[r[0]] && peRows[r[0]][pg]) && (!TITLE || peRows[r[0]][pg].includes(TITLE.split(":")[1])) : (!SET || setOf(r) === SET) && (!TITLE || titleOf(r) === TITLE);
-  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) && inSet(r) &&
+  const hits = allRows().filter(r => chipMatch(r, FILTER) && inSet(r) &&
     q.every(w => (r[0] + " " + r[1] + " " + (r[4] || "")).toLowerCase().includes(w)));
   const SHOW = 200;
   const gset = GROUPS.find(g => g.key === SET);
