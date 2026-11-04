@@ -48,6 +48,7 @@ nav a[aria-current=page] { background: var(--band-ink); color: var(--band); }
 .findrow { display: flex; gap: 8px; align-items: stretch; }
 .findrow input { flex: 1 1 auto; min-width: 0; }
 .findrow select:disabled { opacity: .55; cursor: default; }
+.wayout { margin: 10px 0 0; padding: 10px 12px; border-left: 3px solid var(--band-muted, #888); font-size: 14px; line-height: 1.5; } .wayout .v { font-weight: 700; } .wayout q { display: block; font-style: italic; margin: 4px 0; quotes: "“" "”"; } .wayout .w { opacity: .75; display: block; }
 .findrow select { flex: 0 1 240px; min-width: 0; font: 500 15px var(--f-body); padding: 0 12px; border-radius: 12px; border: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); cursor: pointer; }
 .matches { margin: 8px 2px 0; font: 600 13px var(--f-body); color: var(--band-muted); min-height: 1.2em; }
 @media (max-width: 640px) { .findrow { flex-direction: column; } .findrow select { flex-basis: auto; padding: 12px; } }
@@ -208,6 +209,7 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
           </div>
           <div class="strip" id="strip"></div>
           <p class="summary" id="summary"></p>
+          <p class="wayout" id="wayout" hidden></p>
           <div class="actions">
             <button class="primary" id="copyBtn">Copy the report</button>
             <button id="showBtn">Show the report</button>
@@ -515,7 +517,8 @@ function fillTitles() {
   add("irs990", "Nonprofit governance answers (Form 990 Part VI, as filed)", irs, irs.map(k => opt(k, `Organizations ${letter(k)}`)).join(""));
   add("secct", "Withheld contract terms (SEC orders granting confidential treatment)", sct, sct.map(k => opt(k, `Companies ${letter(k)}`)).join(""));
   add("foia", "Records requests (Annual FOIA Reports, as the agencies filed them)", foia, foia.map(k => opt(k, `Agencies and offices ${letter(k)}`)).join(""));
-  add("faith", "Rules of a faith (each body's own rulebook, from its own site)", faith, faith.map(k => opt(k, (INDEX.groups || {})[k] || k)).join(""));
+  add("faith", "Rules of a faith (each body's own rulebook, from its own site)", faith, faith.map(k => opt(k, (INDEX.groups || {})[k] || k)).join("")
+    + (INDEX.faith_left_out || []).map(([b]) => `<option disabled>— ${b}: none read yet (see Method)</option>`).join(""));
   states.forEach(st => { const p = st.toLowerCase() + "_", ks = Object.keys(n).filter(k => k.startsWith(p)).sort((a, b) => Object.keys(STATE_CODES[st].codes).length ? (STATE_CODES[st].codes[a.slice(p.length)] || a).localeCompare(STATE_CODES[st].codes[b.slice(p.length)] || b) : (numKey(a.slice(p.length)) - numKey(b.slice(p.length))) || a.localeCompare(b));
     add(st.toLowerCase(), `${STATE_CODES[st].name} (state law, from the state's own publication)`, ks, ks.map(k => opt(k, STATE_CODES[st].codes[k.slice(p.length)] ? `${STATE_CODES[st].codes[k.slice(p.length)]} Code` : (INDEX.groups || {})[k] ? (st === "TX" || STATE_CODES[st].plain || /^(Title|Chapter|Part|Preliminary|Chapters) /.test(INDEX.groups[k]) ? INDEX.groups[k] : `${k.split("_")[1] === "CONST" ? "" : "Title " + k.split("_")[1].replace(/_/g, ".") + " · "}${INDEX.groups[k]}`) : k.slice(p.length))).join("")); });
   $("lawSet").innerHTML = `<option value="">All sets · ${rows.length.toLocaleString()}</option>` + GROUPS.map(g => `<option value="${g.key}" title="${g.desc}">${g.label} · ${g.count.toLocaleString()}</option>`).join("");
@@ -940,6 +943,16 @@ function renderResult() {
   let s = `${c.yes} yes, ${c.no} no, ${c.unk} can't tell, ${c[""]} not answered.`;
   if (noQuote) s += ` ${noQuote} answer${noQuote > 1 ? "s have" : " has"} no quote yet.`;
   $("summary").textContent = s;
+  // The tenth line for a faith body (Josie 2026-11-03): a way out, can a member leave without penalty?
+  const lawNow = currentLaw(), wo = lawNow && lawNow.binds === "faith" ? lawNow.gates["way-out"] : null, wEl = $("wayout");
+  if (wEl) {
+    if (wo) { const rv = wo.reviewed;
+      wEl.hidden = false;
+      wEl.innerHTML = `<b>10 · A way out.</b> Can a member leave without penalty? ${rv ? `<span class="v">${esc(rv.verdict)}</span>${rv.where ? ` <span class="w">(${esc(rv.where)})</span>` : ""}` : ""}`
+        + `${rv && rv.quote ? `<q>${esc(rv.quote)}</q>` : wo.quote ? `<q>${esc(wo.quote)}</q>` : ""}`
+        + `<span class="w">${rv && rv.note ? esc(rv.note) + ". " : ""}In this part: ${wo.found ? `${wo.count} sentence${wo.count === 1 ? "" : "s"} on leaving` : "nothing on a member leaving"}. The body's verdict was read by eye from its own text.</span>`;
+    } else wEl.hidden = true;
+  }
   if (!$("out").hidden) $("out").textContent = reportText();
 }
 function reportText() {
