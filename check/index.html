@@ -599,11 +599,18 @@ function fillReading(host, i, quoteBox, card) {
     }));
     return;
   }
+  const wo = i === 0 && law.gates["way-out"] ? law.gates["way-out"] : null;
+  const woHtml = !wo ? "" : `<div class="sub"><span class="t">A way out: can a member leave without penalty? <span>· in this part: ${wo.found ? `${wo.count} sentence${wo.count === 1 ? "" : "s"} on leaving` : "nothing on a member leaving"}${wo.reviewed ? `; for this body, read by eye: ${esc(wo.reviewed.verdict)}${wo.reviewed.where ? ` (${esc(wo.reviewed.where)})` : ""}` : ""}</span></span>
+    ${wo.quote ? `<blockquote>${esc(wo.quote)}</blockquote><button type="button" class="use2" data-q="${esc(wo.quote)}">Use this passage</button>` : ""}
+    ${wo.quote_penalty && wo.quote_penalty !== wo.quote ? `<blockquote>${esc(wo.quote_penalty)}</blockquote><button type="button" class="use2" data-q="${esc(wo.quote_penalty)}">Use this passage</button>` : ""}
+    ${wo.reviewed && wo.reviewed.quote && wo.reviewed.quote !== wo.quote ? `<blockquote>${esc(wo.reviewed.quote)}</blockquote><button type="button" class="use2" data-q="${esc(wo.reviewed.quote)}">Use this passage</button>` : ""}
+    ${wo.reviewed && wo.reviewed.note ? `<span>${esc(wo.reviewed.note)}</span>` : ""}</div>`;
   const parts = keys.map(k => {
     const g = law.gates[k]; if (!g) return "";
     if (k === "who-wrote") {
       if (g.filed) return `<div class="sub"><span class="t">${esc(g.label)} <span>· ${esc(g.note)}</span></span></div>`;
       if (g.unchecked) return `<div class="sub"><span class="t">${esc(g.label)} <span>· not checked yet: lobbying filings are matched to the Rulebook's laws only</span></span></div>`;
+      if (g.by) return `<div class="sub"><span class="t">${esc(g.label)} <span>· ${esc(g.note || g.by)}</span></span></div>`;
       if (!g.found) return `<div class="sub"><span class="t">${esc(g.label)} <span>· no lobbying filing on our map names this law</span></span></div>`;
       return `<div class="sub"><span class="t">${esc(g.label)} <span>· ${g.count} filing${g.count === 1 ? "" : "s"} name it</span></span>
         <span>Clients: ${g.clients.map(esc).join(", ")}</span>
@@ -632,7 +639,7 @@ function fillReading(host, i, quoteBox, card) {
     if (i === 0 && apa && apa.precluded && apa.quote)
       apaLine += `<div class="sub"><span class="t">This law bars court review of some decisions</span><blockquote>${esc(apa.quote)}</blockquote>${pw(apa.quote)}</div>`;
   }
-  host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING · ${esc(law.name)}</span>${parts}${apaLine}
+  host.innerHTML = `<div class="reading"><span class="head">PRIORITY NEXUS READING · ${esc(law.name)}</span>${woHtml}${parts}${apaLine}
     <p class="fine">Found by our program's word search on ${esc(law.run || RULEBOOK.run)}. A passage can say the opposite of what the gate hopes for. Read it, then answer.</p>
     ${RULEBOOK && RULEBOOK.plain ? `<p class="fine">${PW_LABEL}</p>` : ""}</div>`;
   host.querySelectorAll("[data-q]").forEach(b => b.addEventListener("click", () => {
@@ -785,7 +792,7 @@ function siteAnswer(law, i) {
       return `${label}: ${w.found ? `written (${w.count} sentence${w.count === 1 ? "" : "s"})` : "not written in this part"}; ${p.found ? "a person can use it themselves" : w.found ? "the text names the court or the council, not the member" : "nothing for a person to use"}.`; };
     const keys = i === 0 ? [["hearing", "A chance to answer"], ["appeal", "A way to a reviewer"]] : i === 1 ? [["notice", "Notice before it is used on a person"]] : i === 5 ? [["access", "Seeing the record"], ["self-report", "The body reporting on itself"]] : [["standing", "A member bringing the matter themselves"]];
     const pf = keys.filter(([k]) => g(k).found).length, wf = keys.filter(([k]) => (W[k] || {}).found).length;
-    const v = pf === keys.length ? "yes" : wf ? "unk" : "no";
+    let v = pf === keys.length ? "yes" : wf ? "unk" : "no";
     let q = keys.map(([k]) => g(k).quote).find(Boolean) || keys.map(([k]) => (W[k] || {}).quote).find(Boolean) || "";
     let note = keys.map(([k, l]) => line(k, l)).join(" ") + " Two readings: as written, and whether the member is the one who may act.";
     // A way out (Josie 2026-11-03: "how many protect the spirit to allow it choice"): the tenth line, on the Autonomy gate.
@@ -794,6 +801,10 @@ function siteAnswer(law, i) {
       note += ` A way out, can a member leave without penalty? In this part: ${w.found ? `${w.count} sentence${w.count === 1 ? "" : "s"} on leaving${w.penalty_count ? `, ${w.penalty_count} beside a penalty word` : ""}${w.free_count ? `, ${w.free_count} beside a free-choice word` : ""}` : "nothing on a member leaving"}.`;
       if (rv) note += ` For this body, read by eye: ${rv.verdict}${rv.where ? ` (${rv.where})` : ""}.${rv.note ? ` ${rv.note}.` : ""}`;
       if (!q && rv && rv.quote) q = rv.quote;
+      // the question is "can you say no, leave, or get out": a written free way out answers it yes; leaving written as an
+      // offense, or set beside disfellowshipping, answers it no; otherwise the hearing and appeal reading stands
+      if (rv && /^written as a free act/.test(rv.verdict)) { v = "yes"; q = rv.quote || q; }
+      else if (rv && /offense|disfellowship/.test(rv.verdict)) { v = "no"; q = rv.quote || q; }
     }
     return pick(v, q, note);
   }
@@ -813,6 +824,7 @@ function siteAnswer(law, i) {
                                      : pick("no", "", "No notice before it is used on a person written in the part we read.");
     case 3: { const w = g("who-wrote");
       if (w.filed) return pick("yes", "", `Filed by ${w.by} with the CFPB, as the issuer wrote it.`);
+      if (w.by && !w.count) return pick("yes", "", `Written and adopted by ${w.by} through its own governing body, and published on its own site. No lobbying register exists for a church, so nothing outside the body is on record as shaping it.`);
       if (w.unchecked) return pick("unk", "", "Not checked yet. Lobbying filings are matched to the Rulebook's laws so far, not to every chapter and part.");
       return w.found ? pick("yes", "", `${w.count} lobbying filing${w.count === 1 ? "" : "s"} name this law. Clients: ${(w.clients || []).join(", ")}.`)
                      : pick("unk", "", "No lobbying filing on our map names this law. That does not mean nobody lobbied."); }
