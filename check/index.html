@@ -210,6 +210,7 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
           <div class="strip" id="strip"></div>
           <p class="summary" id="summary"></p>
           <p class="wayout" id="wayout" hidden></p>
+          <p class="wayout" id="child" hidden></p>
           <div class="actions">
             <button class="primary" id="copyBtn">Copy the report</button>
             <button id="showBtn">Show the report</button>
@@ -253,6 +254,10 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
     <p>23 bodies are read so far: Christian churches of many branches, a Jewish rabbinical court, the Sikh code of conduct, two Buddhist bodies, Quaker, Mennonite, Zoroastrian and Jain federations, the Church of Scientology, two Satanic bodies, and one union built on anarchist ideas.</p>
     <p>No one here decides what counts as a religion. Any body that publishes a rulebook used on its members, on its own site, is read, and read the same way.</p>
     <p>Each body also gets a tenth line, on the first gate: a way out, can a member leave without penalty? The program flags the sentences on leaving. A person read them for every body, and the verdict says only what the text says.</p>
+    <h3>Rules for children</h3>
+    <p>A child cannot use a door alone. Rules written for or about a child are gathered in one set, from every other set, by the words of their own headings: school, custody and adoption, juvenile justice, protection, child care, health and consent, child support, child labor, minors and the market, and children in a religious body.</p>
+    <p>Each of those units gets one more line under its result: who speaks for the child. The program reads the door words it already found and says who they let act: the child in the text's own words, a parent or guardian, only an agency, an official or a court, or no door at all.</p>
+    <p>It reads words, not meaning. A heading that names a student may be about a loan, and a door for a parent is not a door for the child. The line says where the words sit, and a person can change any answer.</p>
     <p>Bodies we could not read are named with the reason, so an absence is never mistaken for a choice. A body whose rulebook is not published on its own site has already answered one question of transparency.</p>
     <ul>
       <li>Taoism (no taoist body publishing its rules for members in english on its own site was found)</li>
@@ -573,6 +578,11 @@ function fillTitles() {
   add("foia", "Records requests (Annual FOIA Reports, as the agencies filed them)", foia, foia.map(k => opt(k, `Agencies and offices ${letter(k)}`)).join(""));
   add("faith", "Rules of a faith (each body's own rulebook, from its own site)", faith, faith.map(k => opt(k, (INDEX.groups || {})[k] || k)).join("")
     + (INDEX.faith_left_out || []).map(([b]) => `<option disabled>— ${b}: none read yet (see Method)</option>`).join(""));
+  // Rules for children (Josie 2026-11-04): every unit whose heading names a child, across all sets, sorted by type
+  const ch = INDEX.children || { types: {}, rows: {} }, chIds = new Set(Object.keys(ch.rows));
+  const chCount = {}; Object.values(ch.rows).forEach(ts => ts.forEach(t => { chCount[t] = (chCount[t] || 0) + 1; }));
+  if (chIds.size) GROUPS.push({ key: "children", label: "Rules for children", desc: "every law, rule or canon whose heading names a child, gathered from all the sets; the line under the result says who the text lets speak for the child",
+    count: chIds.size, html: Object.keys(ch.types).filter(t => chCount[t]).map(t => `<option value="child:${t}">${ch.types[t]} · ${chCount[t].toLocaleString()}</option>`).join("") });
   states.forEach(st => { const p = st.toLowerCase() + "_", ks = Object.keys(n).filter(k => k.startsWith(p)).sort((a, b) => Object.keys(STATE_CODES[st].codes).length ? (STATE_CODES[st].codes[a.slice(p.length)] || a).localeCompare(STATE_CODES[st].codes[b.slice(p.length)] || b) : (numKey(a.slice(p.length)) - numKey(b.slice(p.length))) || a.localeCompare(b));
     add(st.toLowerCase(), `${STATE_CODES[st].name} (state law, from the state's own publication)`, ks, ks.map(k => opt(k, STATE_CODES[st].codes[k.slice(p.length)] ? `${STATE_CODES[st].codes[k.slice(p.length)]} Code` : (INDEX.groups || {})[k] ? (st === "TX" || STATE_CODES[st].plain || /^(Title|Chapter|Part|Preliminary|Chapters) /.test(INDEX.groups[k]) ? INDEX.groups[k] : `${k.split("_")[1] === "CONST" ? "" : "Title " + k.split("_")[1].replace(/_/g, ".") + " · "}${INDEX.groups[k]}`) : k.slice(p.length))).join("")); });
   $("lawSet").innerHTML = `<option value="">All sets · ${rows.length.toLocaleString()}</option>` + GROUPS.map(g => `<option value="${g.key}" title="${g.desc}">${g.label} · ${g.count.toLocaleString()}</option>`).join("");
@@ -927,7 +937,9 @@ function showResults(open) {
   const q = $("lawSearch").value.toLowerCase().split(/\s+/).filter(Boolean);
   const ul = $("lawResults");
   if (!q.length && !open && !TITLE && !SET) { ul.hidden = true; return; }
-  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) && (!SET || setOf(r) === SET) && (!TITLE || titleOf(r) === TITLE) &&
+  const chRows = (INDEX.children || {}).rows || {};
+  const inSet = r => SET === "children" ? !!chRows[r[0]] && (!TITLE || chRows[r[0]].includes(TITLE.slice(6))) : (!SET || setOf(r) === SET) && (!TITLE || titleOf(r) === TITLE);
+  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) && inSet(r) &&
     q.every(w => (r[0] + " " + r[1] + " " + (r[4] || "")).toLowerCase().includes(w)));
   const SHOW = 200;
   const gset = GROUPS.find(g => g.key === SET);
@@ -1006,6 +1018,16 @@ function renderResult() {
         + `${rv && rv.quote ? `<q>${esc(rv.quote)}</q>` : wo.quote ? `<q>${esc(wo.quote)}</q>` : ""}`
         + `<span class="w">${rv && rv.note ? esc(rv.note) + ". " : ""}In this part: ${wo.found ? `${wo.count} sentence${wo.count === 1 ? "" : "s"} on leaving` : "nothing on a member leaving"}. The body's verdict was read by eye from its own text.</span>`;
     } else wEl.hidden = true;
+  }
+  // Rules for children (Josie 2026-11-04): who the text lets speak for the child, from the door words the program found
+  const cEl = $("child"), ch = lawNow && lawNow.child, cT = (INDEX && INDEX.children) || { types: {}, speaks: {} };
+  if (cEl) {
+    if (ch) {
+      cEl.hidden = false;
+      cEl.innerHTML = `<b>Who speaks for the child.</b> A child cannot use a door alone. In this text: <span class="v">${esc(cT.speaks[ch.speaks] || ch.speaks)}</span>${ch.where ? ` <span class="w">(under ${esc(ch.where.toLowerCase())})</span>` : ""}`
+        + `${ch.quote ? `<q>${esc(ch.quote)}</q>` : ""}`
+        + `<span class="w">Type: ${esc(ch.types.map(t => cT.types[t] || t).join("; "))}. The program read the door words it found and says who they let act; it finds words, not meaning. A person can change any answer above.</span>`;
+    } else cEl.hidden = true;
   }
   if (!$("out").hidden) $("out").textContent = reportText();
 }
