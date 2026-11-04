@@ -505,7 +505,9 @@ function fillTitles() {
   const letter = k => k.split("_")[1] === "0" ? "0-9" : k.split("_")[1];
   // the sets, in the order the page has always listed them; each with its own titles
   GROUPS = [];
-  const add = (key, label, keys, html) => { if (keys.length) GROUPS.push({ key, label, count: keys.reduce((t, k) => t + n[k], 0), html }); };
+  // the menu shows the main words; what was in brackets goes under the menus once a set is chosen (Josie 2026-11-03)
+  const add = (key, label, keys, html) => { if (!keys.length) return; const m = label.match(/^(.*?)\s*\((.*)\)$/);
+    GROUPS.push({ key, label: m ? m[1] : label, desc: m ? m[2] : "", count: keys.reduce((t, k) => t + n[k], 0), html }); };
   add("rulebook", "Priority Nexus", n.rulebook ? ["rulebook"] : [], n.rulebook ? opt("rulebook", "The Rulebook") : "");
   add("usc", "U.S. Code (statutes)", usc, usc.map(k => opt(k, `Title ${num(k)} · ${USC_TITLES[num(k)] || ""}`)).join(""));
   add("cfr", "Code of Federal Regulations (agency rules)", cfr, cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join(""));
@@ -516,7 +518,7 @@ function fillTitles() {
   add("faith", "Rules of a faith (each body's own rulebook, from its own site)", faith, faith.map(k => opt(k, (INDEX.groups || {})[k] || k)).join(""));
   states.forEach(st => { const p = st.toLowerCase() + "_", ks = Object.keys(n).filter(k => k.startsWith(p)).sort((a, b) => Object.keys(STATE_CODES[st].codes).length ? (STATE_CODES[st].codes[a.slice(p.length)] || a).localeCompare(STATE_CODES[st].codes[b.slice(p.length)] || b) : (numKey(a.slice(p.length)) - numKey(b.slice(p.length))) || a.localeCompare(b));
     add(st.toLowerCase(), `${STATE_CODES[st].name} (state law, from the state's own publication)`, ks, ks.map(k => opt(k, STATE_CODES[st].codes[k.slice(p.length)] ? `${STATE_CODES[st].codes[k.slice(p.length)]} Code` : (INDEX.groups || {})[k] ? (st === "TX" || STATE_CODES[st].plain || /^(Title|Chapter|Part|Preliminary|Chapters) /.test(INDEX.groups[k]) ? INDEX.groups[k] : `${k.split("_")[1] === "CONST" ? "" : "Title " + k.split("_")[1].replace(/_/g, ".") + " · "}${INDEX.groups[k]}`) : k.slice(p.length))).join("")); });
-  $("lawSet").innerHTML = `<option value="">All sets · ${rows.length.toLocaleString()}</option>` + GROUPS.map(g => `<option value="${g.key}">${g.label} · ${g.count.toLocaleString()}</option>`).join("");
+  $("lawSet").innerHTML = `<option value="">All sets · ${rows.length.toLocaleString()}</option>` + GROUPS.map(g => `<option value="${g.key}" title="${g.desc}">${g.label} · ${g.count.toLocaleString()}</option>`).join("");
   $("lawSet").value = SET;
   fillTitleMenu();
 }
@@ -859,7 +861,8 @@ function showResults(open) {
   const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) && (!SET || setOf(r) === SET) && (!TITLE || titleOf(r) === TITLE) &&
     q.every(w => (r[0] + " " + r[1] + " " + (r[4] || "")).toLowerCase().includes(w)));
   const SHOW = 200;
-  $("matches").textContent = `${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}` + (q.length || TITLE || SET || FILTER !== "all" ? "" : " · pick a set, or type a word");
+  const gset = GROUPS.find(g => g.key === SET);
+  $("matches").textContent = (gset ? `${gset.label}${gset.desc ? ": " + gset.desc : ""} · ` : "") + `${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}` + (q.length || TITLE || SET || FILTER !== "all" ? "" : " · pick a set, or type a word");
   ul.hidden = false;
   ul.innerHTML = `<li class="count">${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}${hits.length > SHOW ? `, showing the first ${SHOW}. Pick a title or type more words to narrow it.` : ""}</li>` +
     hits.slice(0, SHOW).map(r => `<li><button type="button" data-id="${esc(r[0])}">${esc(r[1])}
