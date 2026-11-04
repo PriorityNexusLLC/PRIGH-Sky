@@ -495,6 +495,7 @@ function fillTitles() {
   const irs = Object.keys(n).filter(k => k.startsWith("irs990_")).sort();
   const sct = Object.keys(n).filter(k => k.startsWith("secct_")).sort();
   const foia = Object.keys(n).filter(k => k.startsWith("foia_")).sort();
+  const faith = Object.keys(n).filter(k => k.startsWith("faith_")).sort((a, b) => ((INDEX.groups || {})[a] || a).localeCompare((INDEX.groups || {})[b] || b));   // one entry per body, by its name
   const numKey = k => /^[IVXLC]+$/.test(k) ? ROMAN(k) : (parseFloat(k.replace(/_/g, ".")) || 999);   // Florida's titles are Roman numerals
   const states = Object.keys(STATE_CODES).filter(st => Object.keys(n).some(k => k.startsWith(st.toLowerCase() + "_")));
   const opt = (k, label) => `<option value="${k}">${label} · ${n[k].toLocaleString()}</option>`;
@@ -506,6 +507,7 @@ function fillTitles() {
     (irs.length ? `<optgroup label="Nonprofit governance answers (Form 990 Part VI, as filed)">${irs.map(k => opt(k, `Organizations ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
     (sct.length ? `<optgroup label="Withheld contract terms (SEC orders granting confidential treatment)">${sct.map(k => opt(k, `Companies ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
     (foia.length ? `<optgroup label="Records requests (Annual FOIA Reports, as the agencies filed them)">${foia.map(k => opt(k, `Agencies and offices ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
+    (faith.length ? `<optgroup label="Rules of a faith (each body's own rulebook, from its own site)">${faith.map(k => opt(k, (INDEX.groups || {})[k] || k)).join("")}</optgroup>` : "") +
     states.map(st => { const p = st.toLowerCase() + "_", ks = Object.keys(n).filter(k => k.startsWith(p)).sort((a, b) => Object.keys(STATE_CODES[st].codes).length ? (STATE_CODES[st].codes[a.slice(p.length)] || a).localeCompare(STATE_CODES[st].codes[b.slice(p.length)] || b) : (numKey(a.slice(p.length)) - numKey(b.slice(p.length))) || a.localeCompare(b));
       return `<optgroup label="${STATE_CODES[st].name} (state law, from the state's own publication)">${ks.map(k => opt(k, STATE_CODES[st].codes[k.slice(p.length)] ? `${STATE_CODES[st].codes[k.slice(p.length)]} Code` : (INDEX.groups || {})[k] ? (st === "TX" || STATE_CODES[st].plain || /^(Title|Chapter|Part|Preliminary|Chapters) /.test(INDEX.groups[k]) ? INDEX.groups[k] : `${k.split("_")[1] === "CONST" ? "" : "Title " + k.split("_")[1].replace(/_/g, ".") + " · "}${INDEX.groups[k]}`) : k.slice(p.length))).join("")}</optgroup>`; }).join("");
   $("lawTitle").value = TITLE;
