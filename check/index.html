@@ -47,7 +47,8 @@ nav a[aria-current=page] { background: var(--band-ink); color: var(--band); }
 .picker { max-width: 760px; }
 .findrow { display: flex; gap: 8px; align-items: stretch; }
 .findrow input { flex: 1 1 auto; min-width: 0; }
-.findrow select { flex: 0 1 300px; min-width: 0; font: 500 15px var(--f-body); padding: 0 12px; border-radius: 12px; border: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); cursor: pointer; }
+.findrow select:disabled { opacity: .55; cursor: default; }
+.findrow select { flex: 0 1 240px; min-width: 0; font: 500 15px var(--f-body); padding: 0 12px; border-radius: 12px; border: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); cursor: pointer; }
 .matches { margin: 8px 2px 0; font: 600 13px var(--f-body); color: var(--band-muted); min-height: 1.2em; }
 @media (max-width: 640px) { .findrow { flex-direction: column; } .findrow select { flex-basis: auto; padding: 12px; } }
 .picker input { width: 100%; font: 500 17px var(--f-body); padding: 15px 18px; border-radius: 12px; border: 0; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
@@ -185,7 +186,8 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
       <label class="lbl" for="lawSearch" style="color:var(--band-muted)">Find a law Priority Nexus has read</label>
       <div class="findrow">
         <input type="search" id="lawSearch" autocomplete="off" placeholder="Loading every federal law…" aria-controls="lawResults">
-        <select id="lawTitle" aria-label="Browse by title"><option value="">All titles</option></select>
+        <select id="lawSet" aria-label="Browse by set"><option value="">All sets</option></select>
+        <select id="lawTitle" aria-label="Browse by title within the set" disabled><option value="">Pick a set first</option></select>
       </div>
       <div class="matches" id="matches" aria-live="polite"></div>
       <div class="chips" id="chips" role="group" aria-label="Show"></div>
@@ -478,13 +480,14 @@ function renderGates() {
     host.appendChild(g);
   });
 }
-let INDEX = null, FILTER = "all", TITLE = "";
+let INDEX = null, FILTER = "all", TITLE = "", SET = "", GROUPS = [];   // SET: one set of titles (usc, cfr, faith, a state…); TITLE: one title within it
 // Title names, for the browse-by-title menu (the index rows carry only the title number).
 const STATE_CODES = { CA: { name: "California", codes: { BPC: "Business and Professions", CCP: "Civil Procedure", CIV: "Civil", COM: "Commercial", CORP: "Corporations", EDC: "Education", ELEC: "Elections", EVID: "Evidence", FAM: "Family", FIN: "Financial", FGC: "Fish and Game", FAC: "Food and Agricultural", GOV: "Government", HNC: "Harbors and Navigation", HSC: "Health and Safety", INS: "Insurance", LAB: "Labor", MVC: "Military and Veterans", PEN: "Penal", PROB: "Probate", PCC: "Public Contract", PRC: "Public Resources", PUC: "Public Utilities", RTC: "Revenue and Taxation", SHC: "Streets and Highways", UIC: "Unemployment Insurance", VEH: "Vehicle", WAT: "Water", WIC: "Welfare and Institutions", CONS: "Constitution" } }, CO: { name: "Colorado", codes: {} }, DC: { name: "District of Columbia", codes: {} }, TX: { name: "Texas", codes: {} }, NJ: { name: "New Jersey", codes: {} }, IL: { name: "Illinois", codes: {} }, MI: { name: "Michigan", codes: {} }, IA: { name: "Iowa", codes: {} }, MA: { name: "Massachusetts", codes: {} }, SD: { name: "South Dakota", codes: {} }, WA: { name: "Washington", codes: {} }, VA: { name: "Virginia", codes: {} }, WV: { name: "West Virginia", codes: {} }, FL: { name: "Florida", codes: {} }, NC: { name: "North Carolina", codes: {} }, OR: { name: "Oregon", codes: {} }, NV: { name: "Nevada", codes: {} }, ND: { name: "North Dakota", codes: {} }, WY: { name: "Wyoming", codes: {} }, WI: { name: "Wisconsin", codes: {}, plain: true } };
 const ROMAN = s => { const v = { I: 1, V: 5, X: 10, L: 50, C: 100 }; let t = 0; for (let i = 0; i < s.length; i++) t += v[s[i]] < v[s[i + 1]] ? -v[s[i]] : v[s[i]]; return t; };
 const USC_TITLES = { 1: "General Provisions", 2: "The Congress", 3: "The President", 4: "Flag and Seal, Seat of Government, and the States", 5: "Government Organization and Employees", 6: "Domestic Security", 7: "Agriculture", 8: "Aliens and Nationality", 9: "Arbitration", 10: "Armed Forces", 11: "Bankruptcy", 12: "Banks and Banking", 13: "Census", 14: "Coast Guard", 15: "Commerce and Trade", 16: "Conservation", 17: "Copyrights", 18: "Crimes and Criminal Procedure", 19: "Customs Duties", 20: "Education", 21: "Food and Drugs", 22: "Foreign Relations and Intercourse", 23: "Highways", 24: "Hospitals and Asylums", 25: "Indians", 26: "Internal Revenue Code", 27: "Intoxicating Liquors", 28: "Judiciary and Judicial Procedure", 29: "Labor", 30: "Mineral Lands and Mining", 31: "Money and Finance", 32: "National Guard", 33: "Navigation and Navigable Waters", 34: "Crime Control and Law Enforcement", 35: "Patents", 36: "Patriotic and National Observances, Ceremonies, and Organizations", 37: "Pay and Allowances of the Uniformed Services", 38: "Veterans' Benefits", 39: "Postal Service", 40: "Public Buildings, Property, and Works", 41: "Public Contracts", 42: "The Public Health and Welfare", 43: "Public Lands", 44: "Public Printing and Documents", 45: "Railroads", 46: "Shipping", 47: "Telecommunications", 48: "Territories and Insular Possessions", 49: "Transportation", 50: "War and National Defense", 51: "National and Commercial Space Programs", 52: "Voting and Elections", 53: "[Reserved]", 54: "National Park Service and Related Programs" };
 const CFR_TITLES = { 1: "General Provisions", 2: "Grants and Agreements", 3: "The President", 4: "Accounts", 5: "Administrative Personnel", 6: "Domestic Security", 7: "Agriculture", 8: "Aliens and Nationality", 9: "Animals and Animal Products", 10: "Energy", 11: "Federal Elections", 12: "Banks and Banking", 13: "Business Credit and Assistance", 14: "Aeronautics and Space", 15: "Commerce and Foreign Trade", 16: "Commercial Practices", 17: "Commodity and Securities Exchanges", 18: "Conservation of Power and Water Resources", 19: "Customs Duties", 20: "Employees' Benefits", 21: "Food and Drugs", 22: "Foreign Relations", 23: "Highways", 24: "Housing and Urban Development", 25: "Indians", 26: "Internal Revenue", 27: "Alcohol, Tobacco Products and Firearms", 28: "Judicial Administration", 29: "Labor", 30: "Mineral Resources", 31: "Money and Finance: Treasury", 32: "National Defense", 33: "Navigation and Navigable Waters", 34: "Education", 35: "[Reserved]", 36: "Parks, Forests, and Public Property", 37: "Patents, Trademarks, and Copyrights", 38: "Pensions, Bonuses, and Veterans' Relief", 39: "Postal Service", 40: "Protection of Environment", 41: "Public Contracts and Property Management", 42: "Public Health", 43: "Public Lands: Interior", 44: "Emergency Management and Assistance", 45: "Public Welfare", 46: "Shipping", 47: "Telecommunication", 48: "Federal Acquisition Regulations System", 49: "Transportation", 50: "Wildlife and Fisheries" };
 function titleOf(r) { return r[3] === "rulebook" ? "rulebook" : (r[2] || ""); }
+function setOf(r) { const t = titleOf(r); return t === "rulebook" ? "rulebook" : t.split("_")[0]; }
 function fillTitles() {
   const rows = allRows(), n = {};
   rows.forEach(r => { const t = titleOf(r); n[t] = (n[t] || 0) + 1; });
@@ -499,19 +502,35 @@ function fillTitles() {
   const numKey = k => /^[IVXLC]+$/.test(k) ? ROMAN(k) : (parseFloat(k.replace(/_/g, ".")) || 999);   // Florida's titles are Roman numerals
   const states = Object.keys(STATE_CODES).filter(st => Object.keys(n).some(k => k.startsWith(st.toLowerCase() + "_")));
   const opt = (k, label) => `<option value="${k}">${label} · ${n[k].toLocaleString()}</option>`;
-  $("lawTitle").innerHTML = `<option value="">All titles · ${rows.length.toLocaleString()}</option>` +
-    (n.rulebook ? `<optgroup label="Priority Nexus">${opt("rulebook", "The Rulebook")}</optgroup>` : "") +
-    `<optgroup label="U.S. Code (statutes)">${usc.map(k => opt(k, `Title ${num(k)} · ${USC_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
-    `<optgroup label="Code of Federal Regulations (agency rules)">${cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join("")}</optgroup>` +
-    (cfpb.length ? `<optgroup label="Credit card agreements (CFPB, as the issuers filed them)">${cfpb.map(k => opt(k, `Issuers ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
-    (irs.length ? `<optgroup label="Nonprofit governance answers (Form 990 Part VI, as filed)">${irs.map(k => opt(k, `Organizations ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
-    (sct.length ? `<optgroup label="Withheld contract terms (SEC orders granting confidential treatment)">${sct.map(k => opt(k, `Companies ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
-    (foia.length ? `<optgroup label="Records requests (Annual FOIA Reports, as the agencies filed them)">${foia.map(k => opt(k, `Agencies and offices ${k.split("_")[1] === "0" ? "0-9" : k.split("_")[1]}`)).join("")}</optgroup>` : "") +
-    (faith.length ? `<optgroup label="Rules of a faith (each body's own rulebook, from its own site)">${faith.map(k => opt(k, (INDEX.groups || {})[k] || k)).join("")}</optgroup>` : "") +
-    states.map(st => { const p = st.toLowerCase() + "_", ks = Object.keys(n).filter(k => k.startsWith(p)).sort((a, b) => Object.keys(STATE_CODES[st].codes).length ? (STATE_CODES[st].codes[a.slice(p.length)] || a).localeCompare(STATE_CODES[st].codes[b.slice(p.length)] || b) : (numKey(a.slice(p.length)) - numKey(b.slice(p.length))) || a.localeCompare(b));
-      return `<optgroup label="${STATE_CODES[st].name} (state law, from the state's own publication)">${ks.map(k => opt(k, STATE_CODES[st].codes[k.slice(p.length)] ? `${STATE_CODES[st].codes[k.slice(p.length)]} Code` : (INDEX.groups || {})[k] ? (st === "TX" || STATE_CODES[st].plain || /^(Title|Chapter|Part|Preliminary|Chapters) /.test(INDEX.groups[k]) ? INDEX.groups[k] : `${k.split("_")[1] === "CONST" ? "" : "Title " + k.split("_")[1].replace(/_/g, ".") + " · "}${INDEX.groups[k]}`) : k.slice(p.length))).join("")}</optgroup>`; }).join("");
-  $("lawTitle").value = TITLE;
+  const letter = k => k.split("_")[1] === "0" ? "0-9" : k.split("_")[1];
+  // the sets, in the order the page has always listed them; each with its own titles
+  GROUPS = [];
+  const add = (key, label, keys, html) => { if (keys.length) GROUPS.push({ key, label, count: keys.reduce((t, k) => t + n[k], 0), html }); };
+  add("rulebook", "Priority Nexus", n.rulebook ? ["rulebook"] : [], n.rulebook ? opt("rulebook", "The Rulebook") : "");
+  add("usc", "U.S. Code (statutes)", usc, usc.map(k => opt(k, `Title ${num(k)} · ${USC_TITLES[num(k)] || ""}`)).join(""));
+  add("cfr", "Code of Federal Regulations (agency rules)", cfr, cfr.map(k => opt(k, `${num(k)} CFR · ${CFR_TITLES[num(k)] || ""}`)).join(""));
+  add("cfpb", "Credit card agreements (CFPB, as the issuers filed them)", cfpb, cfpb.map(k => opt(k, `Issuers ${letter(k)}`)).join(""));
+  add("irs990", "Nonprofit governance answers (Form 990 Part VI, as filed)", irs, irs.map(k => opt(k, `Organizations ${letter(k)}`)).join(""));
+  add("secct", "Withheld contract terms (SEC orders granting confidential treatment)", sct, sct.map(k => opt(k, `Companies ${letter(k)}`)).join(""));
+  add("foia", "Records requests (Annual FOIA Reports, as the agencies filed them)", foia, foia.map(k => opt(k, `Agencies and offices ${letter(k)}`)).join(""));
+  add("faith", "Rules of a faith (each body's own rulebook, from its own site)", faith, faith.map(k => opt(k, (INDEX.groups || {})[k] || k)).join(""));
+  states.forEach(st => { const p = st.toLowerCase() + "_", ks = Object.keys(n).filter(k => k.startsWith(p)).sort((a, b) => Object.keys(STATE_CODES[st].codes).length ? (STATE_CODES[st].codes[a.slice(p.length)] || a).localeCompare(STATE_CODES[st].codes[b.slice(p.length)] || b) : (numKey(a.slice(p.length)) - numKey(b.slice(p.length))) || a.localeCompare(b));
+    add(st.toLowerCase(), `${STATE_CODES[st].name} (state law, from the state's own publication)`, ks, ks.map(k => opt(k, STATE_CODES[st].codes[k.slice(p.length)] ? `${STATE_CODES[st].codes[k.slice(p.length)]} Code` : (INDEX.groups || {})[k] ? (st === "TX" || STATE_CODES[st].plain || /^(Title|Chapter|Part|Preliminary|Chapters) /.test(INDEX.groups[k]) ? INDEX.groups[k] : `${k.split("_")[1] === "CONST" ? "" : "Title " + k.split("_")[1].replace(/_/g, ".") + " · "}${INDEX.groups[k]}`) : k.slice(p.length))).join("")); });
+  $("lawSet").innerHTML = `<option value="">All sets · ${rows.length.toLocaleString()}</option>` + GROUPS.map(g => `<option value="${g.key}">${g.label} · ${g.count.toLocaleString()}</option>`).join("");
+  $("lawSet").value = SET;
+  fillTitleMenu();
 }
+// The title menu holds only the chosen set's titles; with no set chosen it waits (Josie 2026-11-03: expand on the options you click).
+function fillTitleMenu() {
+  const g = GROUPS.find(g => g.key === SET);
+  const sel = $("lawTitle");
+  if (!g) { sel.innerHTML = `<option value="">Pick a set first</option>`; sel.disabled = true; TITLE = ""; return; }
+  sel.disabled = false;
+  sel.innerHTML = `<option value="">All of this set · ${g.count.toLocaleString()}</option>` + g.html;
+  if (!g.html.includes(`value="${TITLE}"`)) TITLE = "";
+  sel.value = TITLE;
+}
+$("lawSet").addEventListener("change", () => { SET = $("lawSet").value; TITLE = ""; fillTitleMenu(); showResults(true); });
 $("lawTitle").addEventListener("change", () => { TITLE = $("lawTitle").value; showResults(true); });
 const CACHE = {};
 function currentLaw() {
@@ -836,11 +855,11 @@ function fillChips() {
 function showResults(open) {
   const q = $("lawSearch").value.toLowerCase().split(/\s+/).filter(Boolean);
   const ul = $("lawResults");
-  if (!q.length && !open && !TITLE) { ul.hidden = true; return; }
-  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) && (!TITLE || titleOf(r) === TITLE) &&
+  if (!q.length && !open && !TITLE && !SET) { ul.hidden = true; return; }
+  const hits = allRows().filter(r => (FILTER === "all" || r[3] === FILTER) && (!SET || setOf(r) === SET) && (!TITLE || titleOf(r) === TITLE) &&
     q.every(w => (r[0] + " " + r[1] + " " + (r[4] || "")).toLowerCase().includes(w)));
   const SHOW = 200;
-  $("matches").textContent = `${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}` + (q.length || TITLE || FILTER !== "all" ? "" : " · pick a title or type a word");
+  $("matches").textContent = `${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}` + (q.length || TITLE || SET || FILTER !== "all" ? "" : " · pick a set, or type a word");
   ul.hidden = false;
   ul.innerHTML = `<li class="count">${hits.length.toLocaleString()} match${hits.length === 1 ? "" : "es"}${hits.length > SHOW ? `, showing the first ${SHOW}. Pick a title or type more words to narrow it.` : ""}</li>` +
     hits.slice(0, SHOW).map(r => `<li><button type="button" data-id="${esc(r[0])}">${esc(r[1])}
@@ -956,7 +975,7 @@ $("newBtn").addEventListener("click", () => {
   const own = !state.lawId && !state.example && (state.text.trim() || state.answers.some(a => a.a || a.quote.trim() || a.note.trim()));
   if (own && !armed) { armed = true; b.textContent = "Click again to clear everything"; b.classList.add("armed"); setTimeout(() => { armed = false; b.textContent = "Start a new check"; b.classList.remove("armed"); }, 3000); return; }
   armed = false; b.textContent = "Start a new check"; b.classList.remove("armed");
-  state = blank(); FILTER = "all"; TITLE = ""; if (INDEX) { fillChips(); fillTitles(); }
+  state = blank(); FILTER = "all"; TITLE = ""; SET = ""; if (INDEX) { fillChips(); fillTitles(); }
   $("lawResults").hidden = true; save(); renderAll(); $("docName").focus();
 });
 
