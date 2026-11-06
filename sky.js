@@ -651,7 +651,15 @@ document.querySelectorAll('[data-loops]').forEach(b => b.addEventListener('click
   dirty = true; loopsStatus(); loopsNote();
 }));
 
-load().then(() => { requestAnimationFrame(frame); if (location.hash.length > 1) openConstellation(decodeURIComponent(location.hash.slice(1))); });
+// the intro page links straight to a tab or a view: sky.html?tab=balance, sky.html?view=flows (2026-11-06)
+const WANT = new URLSearchParams(location.search);
+const TAB = { about: 'about', method: 'method', balance: 'balance-page', rulebook: 'rulebook-page', november: 'november-page', corrections: 'corrections' };
+load().then(() => {
+  requestAnimationFrame(frame);
+  if (location.hash.length > 1) openConstellation(decodeURIComponent(location.hash.slice(1)));
+  if (TAB[WANT.get('tab')]) showPage(TAB[WANT.get('tab')]);
+  if (['connections', 'influence', 'flows', 'loops'].includes(WANT.get('view'))) setGravity(WANT.get('view'));
+});
 
 
 // ------------------------------------------------------------ flows: the groups around a circle, the bands between them
