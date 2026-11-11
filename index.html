@@ -16,9 +16,11 @@
   a { color: var(--accent); }
   .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
   nav { border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 52px; font-size: 14px; }
-  nav .brand { color: var(--ink); text-decoration: none; font-weight: 600; }
-  nav .links a { margin-left: 18px; text-decoration: none; color: var(--ink-soft); }
+  nav .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 18px; min-height: 52px; padding-top: 10px; padding-bottom: 10px; font-size: 14px; }
+  nav .brand { color: var(--ink); text-decoration: none; }
+  nav .brand b { font-weight: 600; letter-spacing: .04em; }
+  nav .brand span { color: var(--ink-soft); margin-left: 6px; }
+  nav .links a { margin-right: 18px; text-decoration: none; color: var(--ink-soft); }
   nav .links a:hover { color: var(--ink); }
   header { padding: 56px 0 28px; }
   h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 5vw, 46px); line-height: 1.12; margin: 0 0 14px; }
@@ -45,7 +47,7 @@
 </head>
 <body>
 <nav><div class="wrap">
-  <a class="brand" href="https://prioritynexusllc.github.io/">Priority Nexus</a>
+  <a class="brand" href="./"><b>PRIGH</b> <span>Public Record Institutional Governance &amp; Health</span></a>
   <div class="links"><a href="sky.html">Sky</a><a href="check/">Accountability Check</a><a href="sky.html?tab=method">Method</a><a href="https://github.com/PriorityNexusLLC/PRIGH-Sky">Code</a></div>
 </div></nav>
 
