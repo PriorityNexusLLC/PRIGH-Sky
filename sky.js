@@ -1079,7 +1079,7 @@ async function entityReport(c) {
   if (money.size) summary.push(`Money on the record: ${[...money.keys()].join(', ')}; ${moneyFmt(moneyTotal)} paid or received where the filings state an amount (section 4.3).`);
   summary.push(`${counts.confirmed} of the direct connections are confirmed by a second source; ${counts['not checked yet']} are not checked yet${counts.alert ? `; ${counts.alert} cite a source that has changed` : ''}.`);
   const body = `<h1>${esc(me.label)}: connections on the public record</h1>
-<p class="meta">Built ${today} in a visitor's browser from the public map of Priority Nexus LLC (prioritynexusllc.github.io/PRIGH-Sky) · read-only</p>
+<p class="meta">Built ${today} in a visitor's browser from the public map of Priority Nexus LLC (prioritynexusllc.org/PRIGH-Sky) · read-only</p>
 <p class="meta"><b>Not reviewed or approved by a person. This is not a report published by Priority Nexus.</b></p>
 <p><b>Signals for review, not findings of wrongdoing.</b> Everything below is what public filings report. Each item links to its filing so any reader can check it.</p>
 <h2>1. Summary</h2><p>${summary.join(' ')}</p>
@@ -1230,7 +1230,7 @@ ${s.html}`; }).join('\n')}</section>`).join('\n')}
 }
 function printBalanceSection(i) {                          // one section, whole, in the report page: print or save as PDF
   // Every name in the print is a link to that entity on the public map (Josie 2026-11-04: "the links need to be attached"); the print CSS writes the address after it.
-  const base = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) ? 'https://prioritynexusllc.github.io/PRIGH-Sky/' : (location.origin + location.pathname).replace(/index\.html$/, '');
+  const base = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) ? 'https://prioritynexusllc.org/PRIGH-Sky/' : (location.origin + location.pathname).replace(/index\.html$/, '');
   const link = (id, text) => id ? `<a href="${esc(base + '#' + encodeURIComponent(id))}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text);
   const r = balance, s = balanceSections(true, link)[i], counts = BAL_COUNT(r);
   let sec = document.getElementById('report-page');
@@ -1238,7 +1238,7 @@ function printBalanceSection(i) {                          // one section, whole
   sec.innerHTML = `<div class="wrap report bal"><div class="btns no-print"><button class="btn primary" type="button" id="report-print">Print or save as PDF</button><button class="btn" type="button" id="report-close">Close</button></div>
 <h1>Balance · ${esc(BAL_CORES.find(c => c[2].includes(i))[0])} · ${balNumber(i)}. ${esc(s.title)}</h1>
 <p class="plain">${esc(BAL_PLAIN[i])}</p>
-<p class="meta">PRIGH, the Priority Nexus map · prioritynexusllc.github.io/PRIGH-Sky · measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map · ${counts[i].toLocaleString()} row${counts[i] === 1 ? '' : 's'}, the whole list</p>
+<p class="meta">PRIGH, the Priority Nexus map · prioritynexusllc.org/PRIGH-Sky · measured ${esc((r.generated || r.computed_at || '').slice(0, 10))} from the filed records on the map · ${counts[i].toLocaleString()} row${counts[i] === 1 ? '' : 's'}, the whole list</p>
 ${foldStandard(s.html, true)}
 <p class="std">Every number here can change when a filing is added; nothing is a verdict. The standard each section is held against is named at its top; the records are the filings on the map.</p></div>`;
   sec.hidden = false;
