@@ -263,6 +263,11 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
     <p>The elderly: nursing homes and long-term care, retirement and pensions, Medicare, elder abuse, adult guardianship, age discrimination, aging agencies and senior housing, advance directives and end of life.</p>
     <p>The disabled: special education, employment and rehabilitation, disability benefits, mental health and commitment, incapacity and guardianship, access, housing, blindness and deafness.</p>
     <p>Immigrants: visas and status, naturalization, deportation and detention, refugees and asylum, work and migrant labor, public benefits and services, border and enforcement.</p>
+    <h3>Rules for LGBTQ+</h3>
+    <p>This set is gathered differently. Headings rarely name LGBTQ+ people; the words sit inside the text, in a list of who is protected, a definition of marriage, a rule on a birth record. So the program read the whole text of every federal and state unit it holds and kept each one that names the group, with the sentence it found.</p>
+    <p>A rule is in the set because it names the group, whichever way it cuts. A rule that protects and a rule that restricts are both here. The set does not say which is which; the sentence is shown so anyone can read it.</p>
+    <p>Types: discrimination; marriage, partnership and family; health care, transition and conversion therapy; names, sex markers and records; schools, sports and shared facilities; crimes and hate crimes; prisons, detention and the military.</p>
+    <p>Some words were narrowed because they also mean something else. "Domestic partnership" is also a tax term. "Same sex" also appears in search and housing rules. "Sodomy" also names assault crimes. Each is counted only beside words that make the meaning plain. Some rules will still be in the set wrongly, and some will be missing. Rules of a faith are in the set only when a heading names the group.</p>
     <p>Each of those units gets one more line under its result: who speaks for the person. The program reads the door words it already found and says who they let act: the person in the text's own words, someone named to act for them (a parent, guardian, conservator, agent, counsel, sponsor or advocate), only an agency, an official or a court, or no door at all.</p>
     <p>It reads words, not meaning. A heading that names a student may be about a loan, and a door for a guardian is not a door for the person. The line says where the words sit, and a person can change any answer.</p>
     <p>Bodies we could not read are named with the reason, so an absence is never mistaken for a choice. A body whose rulebook is not published on its own site has already answered one question of transparency.</p>
@@ -591,7 +596,7 @@ function fillTitles() {
   Object.entries(pe.groups).forEach(([gk, g]) => {
     const ids = Object.keys(pe.rows).filter(id => pe.rows[id][gk]), cnt = {};
     ids.forEach(id => pe.rows[id][gk].forEach(t => { cnt[t] = (cnt[t] || 0) + 1; }));
-    if (ids.length) GROUPS.push({ key: "people:" + gk, label: g.label, desc: `every law, rule or canon whose heading names the group, gathered from all the sets; the line under the result says who the text lets speak for the person`,
+    if (ids.length) GROUPS.push({ key: "people:" + gk, label: g.label, desc: g.desc || `every law, rule or canon whose heading names the group, gathered from all the sets; the line under the result says who the text lets speak for the person`,
       count: ids.length, html: Object.keys(g.types).filter(t => cnt[t]).map(t => `<option value="${gk}:${t}">${g.types[t]} · ${cnt[t].toLocaleString()}</option>`).join("") });
   });
   states.forEach(st => { const p = st.toLowerCase() + "_", ks = Object.keys(n).filter(k => k.startsWith(p)).sort((a, b) => Object.keys(STATE_CODES[st].codes).length ? (STATE_CODES[st].codes[a.slice(p.length)] || a).localeCompare(STATE_CODES[st].codes[b.slice(p.length)] || b) : (numKey(a.slice(p.length)) - numKey(b.slice(p.length))) || a.localeCompare(b));
@@ -1057,6 +1062,11 @@ function renderResult() {
   const pEl = $("people"), pp = (lawNow && lawNow.people) || {}, pG = ((INDEX && INDEX.people) || {}).groups || {};
   const WHO = { child: "the child", elder: "the person", disabled: "the person", immigrant: "the person" };
   if (pEl) pEl.innerHTML = Object.entries(pp).map(([gk, c]) => { const g = pG[gk] || { label: gk, types: {}, speaks: {} };
+    // Rules for LGBTQ+ (Josie 2026-11-12): gathered from the text itself, so the line shows the sentence that names the group
+    if (g.by_text || c.names) return `<p class="wayout"><b>${esc(g.label)}: what this text says.</b> ${c.names ? `This text names the group in ${c.n || 1} sentence${(c.n || 1) === 1 ? "" : "s"}. One of them:<q>${esc(c.names)}</q>` : "The heading names the group."}`
+      + `<span class="w">Type: ${esc(c.types.map(t => g.types[t] || t).join("; "))}. A rule is in this set because it names the group, whichever way it cuts: one that protects and one that restricts are both here.</span>`
+      + ` Who the door words let act: <span class="v">${esc(g.speaks[c.speaks] || c.speaks)}</span>${c.where ? ` <span class="w">(under ${esc(c.where.toLowerCase())})</span>` : ""}${c.quote ? `<q>${esc(c.quote)}</q>` : ""}`
+      + `<span class="w">The program finds words, not meaning. A person can change any answer above.</span></p>`;
     return `<p class="wayout"><b>${esc(g.label)}: who speaks for ${WHO[gk] || "the person"}.</b> Someone who cannot use a door alone needs a name at the door. In this text: <span class="v">${esc(g.speaks[c.speaks] || c.speaks)}</span>${c.where ? ` <span class="w">(under ${esc(c.where.toLowerCase())})</span>` : ""}`
       + `${c.quote ? `<q>${esc(c.quote)}</q>` : ""}`
       + `<span class="w">Type: ${esc(c.types.map(t => g.types[t] || t).join("; "))}. The program read the door words it found and says who they let act; it finds words, not meaning. A person can change any answer above.</span></p>`; }).join("");
