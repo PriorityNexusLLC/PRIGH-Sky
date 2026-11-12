@@ -46,6 +46,18 @@
   @media (max-width: 1000px) { .nav button, .nav a { font-size: 0.78rem; padding: 0.3rem 0.4rem; } }
   .nav button:hover, .nav a:hover { color: var(--accent); }
   .nav button.on { color: var(--ink); }
+  /* the top row stays short (Josie 2026-11-11: "we don't need all those options"); the other pages sit under More */
+  .nav details.more { position: relative; }
+  .nav details.more > summary { list-style: none; cursor: pointer; font-size: 0.86rem; color: var(--ink-soft); padding: 0.35rem 0.5rem; white-space: nowrap; user-select: none; }
+  .nav details.more > summary::-webkit-details-marker { display: none; }
+  .nav details.more > summary::after { content: " \25BE"; }
+  .nav details.more > summary:hover { color: var(--accent); }
+  .nav details.more > summary.on, .nav details.more[open] > summary { color: var(--ink); }
+  .nav details.more .menu { position: absolute; right: 0; top: 100%; z-index: 40; display: flex; flex-direction: column; min-width: 12rem; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px; padding: 0.3rem; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+  .nav details.more .menu button, .nav details.more .menu a { text-align: left; padding: 0.45rem 0.6rem; font-size: 0.86rem; }
+  .nav details.more .menu [hidden] { display: none; }
+  @media (max-width: 1000px) { .nav details.more > summary { font-size: 0.78rem; padding: 0.3rem 0.4rem; } }
+  @media (max-width: 640px) { .nav details.more > summary { padding: 0.2rem 0.4rem; } .nav details.more .menu { position: fixed; left: 12px; right: 12px; top: auto; min-width: 0; } }
 
   canvas#sky { position: fixed; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
   canvas#sky.grabbing { cursor: grabbing; }
@@ -189,14 +201,16 @@
     <a href="./" title="What each page shows, in a few lines">Start</a>
     <button id="nav-sky" class="on" type="button">Sky</button>
     <button id="nav-about" type="button">How to read it</button>
-    <button id="nav-method" type="button">Method</button>
     <button id="nav-balance" type="button" title="Each published standard beside what the records show">Balance</button>
+    <details class="more" id="nav-more"><summary>More</summary><div class="menu">
+    <button id="nav-method" type="button">Method</button>
     <button id="nav-rulebook" type="button" title="The laws that bind the institutions on the map, held against nine gates">Rulebook</button>
     <button id="nav-november" type="button" title="What the filings show about the candidates on the November 2026 ballot">November 2026</button>
     <button id="nav-corrections" type="button">Corrections</button>
     <a href="check/" title="Nine plain questions of any law: does it let you act for yourself?">Accountability Check</a>
     <button id="nav-reports" hidden type="button">Reports</button>
     
+    </div></details>
   </nav>
 </div>
 
@@ -420,6 +434,6 @@
   </div>
 </section>
 
-<script type="module" src="sky.js?v=32298a02"></script>
+<script type="module" src="sky.js?v=28ddccf2"></script>
 </body>
 </html>

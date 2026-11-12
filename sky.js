@@ -597,6 +597,8 @@ function showPage(id) {
     document.getElementById(nav).classList.toggle('on', on);
   }
   document.getElementById('nav-sky').classList.toggle('on', !id);
+  const more = document.getElementById('nav-more');                 // More lights up when one of its pages is open
+  if (more) more.querySelector('summary').classList.toggle('on', !!more.querySelector('button.on'));
   document.body.classList.toggle('paged', !!id);                    // a page covers the sky; the detail panel waits underneath until Sky is chosen again
   if (id === 'reports') loadReports();
   if (id === 'balance-page') loadBalance();
@@ -1340,3 +1342,12 @@ async function loadNovember() {
   box.innerHTML = november.reports.map(r => `<h1>${esc(r.title)}</h1><p class="gen">written ${esc(r.generated)} from FEC filings and the House and Senate rosters · descriptive patterns, not findings</p>${r.html}`).join('<hr style="border:0;border-top:1px solid var(--line);margin:2.5rem 0">');
   box.querySelectorAll('a.map[data-go]').forEach(el => el.addEventListener('click', ev => { ev.preventDefault(); showPage(null); openConstellation(el.dataset.go); }));
 }
+
+// the "More" menu in the top row closes after a choice, a click elsewhere, or Escape
+(function () {
+  const more = document.getElementById('nav-more');
+  if (!more) return;
+  more.addEventListener('click', e => { if (e.target.closest('.menu button, .menu a')) more.open = false; });
+  document.addEventListener('click', e => { if (!more.contains(e.target)) more.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') more.open = false; });
+})();
