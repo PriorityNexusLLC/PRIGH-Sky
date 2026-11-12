@@ -394,6 +394,7 @@ const WHERE = [
 ];
 // Which of Priority Nexus's own law gates speak to each of the nine (approved by Josie 2026-10-26).
 const SITE = [["hearing", "appeal"], ["notice"], [], ["who-wrote"], [], ["access", "self-report"], ["symmetry"], [], ["standing", "waiver"]];
+const FRICTION_KIND = { file: "filing", prove: "proving", wait: "waiting", pay: "paying", clock: "a deadline" };
 let RULEBOOK = null;
 
 const SAMPLE = {
@@ -694,7 +695,11 @@ function fillReading(host, i, quoteBox, card) {
         <span>${g.examples.map(e => `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.client)}, ${esc(e.posted)}</a>`).join(" · ")}</span></div>`;
     }
     if (k === "symmetry") {
-      return `<div class="sub"><span class="t">${esc(g.label)} <span>· penalty sentences naming only individuals: ${g.individuals ?? 0}, only institutions: ${g.entities ?? 0}</span></span>
+      const f = law.friction, use = q => q ? `<blockquote>${esc(q)}</blockquote>${pw(q)}<button type="button" class="use2" data-q="${esc(q)}">Use this passage</button>` : "";
+      const kinds = f ? Object.entries(f.kinds || {}).sort((x, y) => y[1] - x[1]).map(([kk, n]) => `${FRICTION_KIND[kk] || kk} ${n}`).join(", ") : "";
+      const loadHtml = !f ? "" : `<div class="sub"><span class="t">The load on a person: who must file, prove, wait or pay <span>· ${f.people || 0} sentence${f.people === 1 ? "" : "s"}${kinds ? ` (${esc(kinds)})` : ""}</span></span>${use(f.qp)}</div>
+        <div class="sub"><span class="t">The load, or a deadline, on a company or the government <span>· ${(f.business || 0) + (f.government || 0)} sentence${(f.business || 0) + (f.government || 0) === 1 ? "" : "s"} (companies ${f.business || 0}, government ${f.government || 0})</span></span>${use(f.qi)}</div>`;
+      return loadHtml + `<div class="sub"><span class="t">${esc(g.label)} <span>· penalty sentences naming only individuals: ${g.individuals ?? 0}, only institutions: ${g.entities ?? 0}</span></span>
         ${g.qi ? `<blockquote>${esc(g.qi)}</blockquote>${pw(g.qi)}<button type="button" class="use2" data-q="${esc(g.qi)}">Use this passage</button>` : ""}
         ${g.qe ? `<blockquote>${esc(g.qe)}</blockquote>${pw(g.qe)}<button type="button" class="use2" data-q="${esc(g.qe)}">Use this passage</button>` : ""}</div>`;
     }
@@ -906,7 +911,20 @@ function siteAnswer(law, i) {
       return w.found ? pick("yes", "", `${w.count} lobbying filing${w.count === 1 ? "" : "s"} name this law. Clients: ${(w.clients || []).join(", ")}.`)
                      : pick("unk", "", "No lobbying filing on our map names this law. That does not mean nobody lobbied."); }
     case 5: return both("access", "self-report", "People can see the record, and the law must report on itself.", "No record access and no self-report written in the part we read.");
-    case 6: { const s = g("symmetry"), a = s.individuals || 0, b = s.entities || 0;
+    case 6: { const s = g("symmetry"), a = s.individuals || 0, b = s.entities || 0, f = law.friction;
+      // Friction read for the people (Josie 2026-11-12: "Yes, Friction first"): who must file, prove, wait or pay.
+      // Draft rule (data/private/gate_thresholds.json, "friction"): No when the load, or the penalties, fall mostly on people.
+      if (f) {
+        const p = f.people || 0, inst = (f.business || 0) + (f.government || 0);
+        const pl = n => `${n} sentence${n === 1 ? "" : "s"}`;
+        const kinds = Object.entries(f.kinds || {}).sort((x, y) => y[1] - x[1]).map(([k, n]) => `${FRICTION_KIND[k] || k} ${n}`).join(", ");
+        const load = `${pl(p)} put filing, proving, waiting or paying on a person${kinds ? ` (${kinds})` : ""}; ${pl(inst)} put a load or a deadline on a company or the government.`;
+        const pen = a || b ? ` Penalties: ${a} name only individuals, ${b} only institutions.` : "";
+        if (!p && !inst && !a && !b) return pick("unk", "", "No sentence found that puts filing, proving, waiting or paying on a person, a company or the government, and no penalty that names only one side.");
+        if (p > inst) return pick("no", f.qp || s.qi, `The load falls mostly on people. ${load}${pen}`);
+        if (a > b) return pick("no", s.qi || f.qp, `The penalties fall mostly on individuals. ${load}${pen}`);
+        return pick("yes", f.qi || s.qe || f.qp, `The load does not fall mostly on people. ${load}${pen}`);
+      }
       if (!a && !b) return pick("unk", "", "No penalty sentences that name only individuals or only institutions.");
       return a > b ? pick("no", s.qi, `More penalty sentences name only individuals (${a}) than only institutions (${b}).`)
                    : pick("yes", s.qe, `Penalty sentences naming only institutions (${b}) are at least as many as those naming only individuals (${a}).`); }
