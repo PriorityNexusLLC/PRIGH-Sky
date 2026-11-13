@@ -268,6 +268,12 @@ body.on-method .picker, body.on-method #lawInfo, body.on-method .lede { display:
     <p>A rule is in the set because it names the group, whichever way it cuts. A rule that protects and a rule that restricts are both here. The set does not say which is which; the sentence is shown so anyone can read it.</p>
     <p>Types: discrimination; marriage, partnership and family; health care, transition and conversion therapy; names, sex markers and records; schools, sports and shared facilities; crimes and hate crimes; prisons, detention and the military.</p>
     <p>Some words were narrowed because they also mean something else. "Domestic partnership" is also a tax term. "Same sex" also appears in search and housing rules. "Sodomy" also names assault crimes. Each is counted only beside words that make the meaning plain. Some rules will still be in the set wrongly, and some will be missing. Rules of a faith are in the set only when a heading names the group.</p>
+    <h3>Rules for women</h3>
+    <p>Gathered the same way as the set above: from the whole text of every federal and state unit, not from headings. A rule is in the set when its text names women, or names pregnancy, birth, abortion, contraception and the like, with the sentence it found.</p>
+    <p>A rule is in the set because it names the group, whichever way it cuts. A rule that protects and a rule that restricts are both here, and the set does not say which is which.</p>
+    <p>Types: pregnancy, birth, abortion and contraception; women's health; work, pay and business; schools and sports; violence against women; marriage, property and family; prisons, detention and the military; voting, juries, offices and boards.</p>
+    <p>One type stands apart: sex named in a list of protected grounds. A rule that says "race, color, religion, sex" names sex, not women. Those rules are kept, in a type of their own, so they can be told from rules that name women.</p>
+    <p>Words left out because they also mean something else: "female" alone (it is also livestock, fish and game), "mother" alone (a mother's maiden name), "wife" and "widow" alone, and "men and women", which names everyone. Some rules will still be in the set wrongly, and some will be missing. Rules of a faith are in the set only when a heading names women.</p>
     <p>Each of those units gets one more line under its result: who speaks for the person. The program reads the door words it already found and says who they let act: the person in the text's own words, someone named to act for them (a parent, guardian, conservator, agent, counsel, sponsor or advocate), only an agency, an official or a court, or no door at all.</p>
     <p>It reads words, not meaning. A heading that names a student may be about a loan, and a door for a guardian is not a door for the person. The line says where the words sit, and a person can change any answer.</p>
     <p>Bodies we could not read are named with the reason, so an absence is never mistaken for a choice. A body whose rulebook is not published on its own site has already answered one question of transparency.</p>
@@ -965,8 +971,14 @@ function fillChips() {
   const keys = ["all", "rulebook", "terms", "policy", "withheld", "requests", "faith", "people", "business", "government", ...Object.keys(groups).map(g => "for:" + g)];
   const name = { all: "Everything", rulebook: "The Rulebook", ...BINDS };
   Object.entries(groups).forEach(([g, v]) => { name["for:" + g] = v.label; });
+  // Josie 2026-11-12: "to save room on these badges, we could just keep their key detail? Like Government, Religion, Children".
+  // The badge shows the key word; the full name stays as the hover text and in the set menu.
+  const SHORT = { rulebook: "Rulebook", people: "People", business: "Companies", government: "Government", faith: "Religion", terms: "Card agreements",
+    policy: "Nonprofits", withheld: "Withheld", requests: "Records requests" };
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+  Object.entries(groups).forEach(([g, v]) => { SHORT["for:" + g] = cap(v.label.replace(/^Rules for (the )?/, "")); });
   $("chips").innerHTML = keys.filter(k => n(k)).map(k =>
-    `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}">${name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
+    `<button type="button" data-k="${k}" aria-pressed="${k === FILTER}" title="${esc(name[k])}">${SHORT[k] || name[k]} <span>${n(k).toLocaleString()}</span></button>`).join("");
   $("chips").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
     FILTER = b.dataset.k; fillChips(); showResults(true);
   }));
