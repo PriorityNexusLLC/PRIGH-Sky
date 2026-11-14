@@ -1079,6 +1079,14 @@ async function entityReport(c) {
     ? `Because filings report this person at each of them, those organizations are linked to one another: ${links.length} pair${links.length === 1 ? '' : 's'}, ${cross.length} crossing between sectors and ${same.length} within a sector.`
     : `Through ${people.size} ${people.size === 1 ? 'person' : 'people'}, it is linked to ${orgsLinked.size} other organization${orgsLinked.size === 1 ? '' : 's'}; ${cross.length} of those links cross between sectors and ${same.length} stay within a sector.`);
   if (money.size) summary.push(`Money on the record: ${[...money.keys()].join(', ')}; ${moneyFmt(moneyTotal)} paid or received where the filings state an amount (section 4.3).`);
+  // Balance measures for this subject, read from the published whole-map results (Josie 2026-11-14: "Why isn't the balance
+  // results shared? ... I don't want to hold back anymore, if it's a whistleblow, let the whole world know.")
+  let balItems = [], balNote = '';
+  try {
+    if (!balance) balance = await fetch(STATIC ? 'data/balance.json' : '/api/balance').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    balItems = balanceFor(c.center, balance);
+  } catch (e) { balNote = 'The Balance results could not be read just now (' + esc(e.message) + ').'; }
+  if (balItems.length) summary.push(`The Balance measures flag ${balItems.length} item${balItems.length === 1 ? '' : 's'} for this subject, each beside a published standard (section 4.4).`);
   summary.push(`${counts.confirmed} of the direct connections are confirmed by a second source; ${counts['not checked yet']} are not checked yet${counts.alert ? `; ${counts.alert} cite a source that has changed` : ''}.`);
   const body = `<h1>${esc(me.label)}: connections on the public record</h1>
 <p class="meta">Built ${today} in a visitor's browser from the public map of Priority Nexus LLC (prioritynexusllc.org/PRIGH-Sky) · read-only</p>
@@ -1102,7 +1110,8 @@ ${direct.length ? `<table><thead><tr><th>What the filings report</th><th>Status<
 ${links.length ? `<table><thead><tr><th>Pair</th><th>Through</th><th>Sectors</th><th>Filings</th></tr></thead><tbody>${links.slice(0, 300).map(linkRow).join('')}</tbody></table>${links.length > 300 ? `<p class="meta">${links.length - 300} more pairs not listed.</p>` : ''}` : '<p>None on record.</p>'}
 <h3>4.3 Money on the record</h3>
 ${money.size ? `<p>Amounts are the figures the filings state, summed; a record without a stated amount is counted but adds nothing to the sum. "In" is money this entity received; "out" is money it paid or gave.</p><table><thead><tr><th>Kind</th><th>Records</th><th>With an amount</th><th>In</th><th>Out</th><th>Largest</th></tr></thead><tbody>${moneyRows.join('')}</tbody></table>` : '<p>No money records on file for this entity: no contributions, contracts, grants, lobbying income or reported trades in the filings read.</p>'}
-<h3>4.4 Balance measures</h3><p>The nine Balance measures (independence, concentration, single points, tenure, number of boards, fund-complex officers, common owners of rivals, shared boards, who hides / who asks) run on the whole map and are not computed on this page. The published standards and limits are on the Method page.</p>
+<h3>4.4 Balance measures</h3>${balItems.length ? `<p>What the Balance measures show for this subject, each beside its published standard. A flag is a signal for review, not a finding of wrongdoing.</p><ul>${balItems.map(x => `<li>${x}</li>`).join('')}</ul>` : `<p>${balNote || 'None of the flags on the published Balance lists name this subject.'}</p>`}
+<p class="meta">Measured on the whole map${balance && balance.generated ? ', generated ' + esc(balance.generated) : ''}. Four of the lists show only the largest cases (single points, shared boards, withheld contract terms, records requests), so absent here is not the same as clear. Concentration and common owners of rivals are measured by sector, not by entity: see the Balance tab.</p>
 <h2>5. Limits</h2><ul>
 <li>${noUrl} of ${direct.length} direct connections carry no filing link on this copy; they are shown but should be read as unverified here.</li>
 <li>A connection is a filed fact: a board seat, a contract, a contribution, a lobbying filing. It says nothing about intent. Connected is not guilty.</li>
@@ -1128,6 +1137,29 @@ ${money.size ? `<p>Amounts are the figures the filings state, summed; a record w
 }
 const moneyFmt = v => v >= 1e9 ? `$${(v / 1e9).toFixed(2)}B` : v >= 1e6 ? `$${(v / 1e6).toFixed(2)}M` : v >= 1e3 ? `$${Math.round(v / 1e3).toLocaleString()}K` : `$${Math.round(v).toLocaleString()}`;
 
+
+// The Balance flags that name one entity, as report lines (section 4.4 of the entity report). r = the published balance results.
+function balanceFor(id, r) {
+  const out = [], f = (o, k) => ((o || {})[k] || []), std = s => s ? ` <i>Standard:</i> ${esc(s)}` : '';
+  for (const x of f(r.independence, 'flags')) if (x.org === id)
+    out.push(`<b>Board independence.</b> ${esc(String(x.tied))} of ${esc(String(x.directors))} recorded directors of ${esc(x.label)} have a filed tie to the company${(x.ties || []).length ? ': ' + x.ties.map(t => esc(t.label) + ((t.why || []).length ? ' (' + esc(t.why.join(', ')) + ')' : '')).join('; ') : ''}.${std(r.independence.standard)}`);
+  for (const x of f(r.tenure, 'flags')) if (x.person === id || x.org === id)
+    out.push(`<b>Tenure.</b> ${esc(x.label)} has served on the board of ${esc(x.org_label)} for at least ${esc(String(x.years_at_least))} years (${esc(x.first_filing || '')} to ${esc(x.latest_filing || '')}).${std(r.tenure.standard)}`);
+  for (const x of f(r.overboarding, 'flags')) if (x.person === id || (x.orgs || []).some(o => o.id === id))
+    out.push(`<b>Number of boards.</b> Filings report ${esc(x.label)} with ${esc(String(x.why || x.seats))}${(x.orgs || []).length ? ': ' + x.orgs.slice(0, 12).map(o => esc(o.label)).join(', ') + (x.orgs.length > 12 ? `, and ${x.orgs.length - 12} more` : '') : ''}.${std(r.overboarding.standard)}`);
+  for (const x of f(r.fund_officers, 'flags')) if (x.person === id)
+    out.push(`<b>Fund-complex officer.</b> Filings report ${esc(x.label)} at ${esc(String(x.funds))} registered funds (${esc(String(x.as_officer))} as officer, ${esc(String(x.as_director))} as director).${std(r.fund_officers.standard)}`);
+  for (const x of f(r.single_points, 'flags')) if (x.id === id)
+    out.push(`<b>Single point.</b> ${esc(String(x.cut_off))} entities on the map connect to the rest only through ${esc(x.label)}. This describes the shape of the mapped network, not conduct.`);
+  for (const x of f(r.shared_boards, 'flags')) if (x.a === id || x.b === id)
+    out.push(`<b>Shared boards.</b> ${esc(x.a_label)} and ${esc(x.b_label)} share ${esc(String(Array.isArray(x.shared) ? x.shared.length : x.shared))} directors${x.same_group ? ' and are in the same industry group' : ''}.${std(r.shared_boards.standard)}`);
+  const ha = r.hides_asks || {};
+  for (const x of (ha.hides || [])) if (x.id === id)
+    out.push(`<b>Withheld contract terms.</b> ${esc(String(x.orders))} SEC orders let ${esc(x.label)} withhold parts of contracts it filed${x.newest ? ' (newest ' + esc(x.newest) + ')' : ''}.${std(ha.ct_standard)}`);
+  for (const x of (ha.asks || [])) if (x.id === id)
+    out.push(`<b>Records requests.</b> ${esc(x.label)} received ${esc(String(x.received))} requests in fiscal year ${esc(String(x.fy))}, with a backlog of ${esc(String(x.backlog))}${x.over_the_line ? '; its reported times are over the line' : ''}.${std(ha.foia_standard)}`);
+  return out;
+}
 
 // ------------------------------------------------------------ Balance: each published standard beside what the records show
 // Josie 2026-10-23: like the workbench's Balance tab, "no alarm or tags of alarm, just showing the same laws vs entities".
