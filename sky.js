@@ -659,6 +659,10 @@ const TAB = { about: 'about', method: 'method', balance: 'balance-page', ruleboo
 load().then(() => {
   requestAnimationFrame(frame);
   if (location.hash.length > 1) openConstellation(decodeURIComponent(location.hash.slice(1)));
+  if (WANT.get('report') && location.hash.length > 1) {          // sky.html?report=1#ENT_X opens that entity's report (the Reports page links here, 2026-11-14)
+    const t = setInterval(() => { const b = document.getElementById('report'); if (b) { clearInterval(t); b.click(); } }, 300);
+    setTimeout(() => clearInterval(t), 30000);
+  }
   if (TAB[WANT.get('tab')]) showPage(TAB[WANT.get('tab')]);
   if (['connections', 'influence', 'flows', 'loops'].includes(WANT.get('view'))) setGravity(WANT.get('view'));
 });
