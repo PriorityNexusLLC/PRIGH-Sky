@@ -1153,7 +1153,7 @@ function balanceFor(id, r) {
     permission: '<b>Permission</b>: a rule that lets a company withhold. It does not say it must.',
     none: '<b>No rule</b>: the law cited limits who sits on one fund’s board. Nothing limits how many funds one person serves; the line of ten is ours.',
   };
-  const out = [], f = (o, k) => ((o || {})[k] || []), std = (s, k) => s ? ` <i>Standard:</i> ${esc(s)}${WHAT[k] ? ' ' + WHAT[k] : ''}` : '';
+  const out = [], f = (o, k) => ((o || {})[k] || []), std = (s, k) => s ? ` <i>Standard:</i> ${esc(s)}${/[.!?]$/.test(s) ? '' : '.'}${WHAT[k] ? ' ' + WHAT[k] : ''}` : '';
   for (const x of f(r.independence, 'flags')) if (x.org === id)
     out.push(`<b>Board independence.</b> ${esc(String(x.tied))} of ${esc(String(x.directors))} recorded directors of ${esc(x.label)} have a filed tie to the company${(x.ties || []).length ? ': ' + x.ties.map(t => esc(t.label) + ((t.why || []).length ? ' (' + esc(t.why.join(', ')) + ')' : '')).join('; ') : ''}.${std(r.independence.standard, 'exchange')}`);
   for (const x of f(r.tenure, 'flags')) if (x.person === id || x.org === id)
