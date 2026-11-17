@@ -1270,7 +1270,11 @@ const balNumber = i => BAL_ORDER.indexOf(i) + 1;
 function foldStandard(html, open) {
   const m = html.match(/^<p class="std">([\s\S]*?)<\/p>/);
   if (!m) return html;
-  return `<details class="where"${open ? ' open' : ''}><summary>What's written, where</summary><p class="std">${m[1]}</p></details>` + html.slice(m[0].length);
+  // The rule-or-suggestion label stays in view above the dropdown (2026-11-17); the standard's own words fold away as before.
+  const cut = m[1].search(/ (?:Standard: |Not a published standard|Two readings set)/);
+  const lab = (/^<b>(?:Rule|Suggestion|No rule|One permission and one rule):<\/b>/.test(m[1]) && cut > 0) ? m[1].slice(0, cut) : '';
+  const rest = lab ? m[1].slice(cut + 1) : m[1];
+  return (lab ? `<p class="std">${lab}</p>` : '') + `<details class="where"${open ? ' open' : ''}><summary>What's written, where</summary><p class="std">${rest}</p></details>` + html.slice(m[0].length);
 }
 function renderBalancePage() {
   const box = document.getElementById('balance-body'); if (!box || !balance) return;
