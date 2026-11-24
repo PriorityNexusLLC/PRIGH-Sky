@@ -138,7 +138,7 @@
       '<button class="btn" type="button" id="whole-close">Close</button></div>' +
       '<h1>SEC changes · ' + esc(d.title) + '</h1><p class="note">' + esc(d.lead) + '</p>' +
       '<p class="note">PRIGH, the Priority Nexus map · prioritynexusllc.org/PRIGH-Sky/sec · ' + esc(d.compared) + ' · ' + d.rows.length.toLocaleString('en-US') +
-      ' row' + (d.rows.length === 1 ? '' : 's') + ', the whole list. Each name opens that filer's own page at the SEC: sec.gov/edgar/browse/?CIK= followed by the number beside the name.</p>' +
+      ' row' + (d.rows.length === 1 ? '' : 's') + ', the whole list. Each name opens its own page at the SEC: sec.gov/edgar/browse/?CIK= followed by the number beside the name.</p>' +
       '<table><thead><tr>' + head + '</tr></thead><tbody>' + parts.join('') + '</tbody></table>' +
       '<p class="note">A change is a filed fact to look at, not a finding about anyone: filings are also removed for ordinary reasons (wrong filer, duplicate, correction). Source: the SEC\'s daily file of every filer, submissions.zip.</p>';
     box.hidden = false; box.scrollTop = 0; document.body.classList.add('whole');
