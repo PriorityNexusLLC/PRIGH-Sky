@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEC changes</title>
+<meta name="description" content="What changed in the SEC's own record of every filer this week: filings that left a filer's list, records gone, changed names and other changed records.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root { --paper: #0b0d14; --surface: #12151f; --ink: #e9e7e1; --ink-soft: #9aa3b5; --line: #232838; --line-strong: #323a4e; --accent: #85a6ec; --accent-soft: #1b2540;
+          --verified: #5cc3a3; --caution: #e0a35c; --font-display: "Fraunces", Georgia, serif; --font-body: "IBM Plex Sans", system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); line-height: 1.5; }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  nav { border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 18px; min-height: 52px; padding-top: 10px; padding-bottom: 10px; font-size: 14px; }
+  nav .brand { color: var(--ink); text-decoration: none; }
+  nav .brand b { font-weight: 600; letter-spacing: .04em; }
+  nav .brand span { color: var(--ink-soft); margin-left: 6px; }
+  nav .links a { margin-right: 18px; text-decoration: none; color: var(--ink-soft); }
+  nav .links a:hover { color: var(--ink); }
+  header { padding: 56px 0 28px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 5vw, 46px); line-height: 1.12; margin: 0 0 14px; }
+  .lead { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0; }
+  .counts { display: flex; flex-wrap: wrap; gap: 28px; margin: 26px 0 0; padding: 0; list-style: none; }
+  .counts li { font-size: 14px; color: var(--ink-soft); }
+  .counts b { display: block; font-family: var(--font-display); font-size: 26px; color: var(--ink); font-weight: 600; }
+  .go { display: inline-block; margin-top: 28px; padding: 12px 20px; background: var(--accent); color: #0b0d14; border-radius: 8px; text-decoration: none; font-weight: 600; }
+  .go:hover { filter: brightness(1.08); }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: 24px; margin: 40px 0 6px; }
+  .sub { color: var(--ink-soft); margin: 0 0 18px; }
+  .tabs { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .tab { display: block; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); }
+  .tab:hover { border-color: var(--line-strong); background: var(--accent-soft); }
+  .tab h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
+  .tab h3 span { color: var(--accent); font-weight: 500; font-size: 14px; margin-left: 8px; }
+  .tab p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+  .rules { margin: 0; padding-left: 20px; color: var(--ink-soft); }
+  .rules li { margin: 6px 0; }
+  .rules b { color: var(--ink); }
+  footer { margin-top: 56px; padding: 24px 0 48px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 14px; }
+  @media (min-width: 700px) { .tabs { grid-template-columns: 1fr 1fr; } }
+
+  .note { color: var(--ink-soft); font-size: 15px; max-width: 700px; }
+  .picks { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 0; font-size: 14px; color: var(--ink-soft); }
+  .pick { padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--accent); text-decoration: none; font-variant-numeric: tabular-nums; }
+  .pick:hover { background: var(--accent-soft); }
+  .pick.on { background: var(--accent); color: #0b0d14; border-color: var(--accent); font-weight: 600; }
+  .facts { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
+  .facts li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; color: var(--ink-soft); font-size: 14px; }
+  .facts b { display: block; font-family: var(--font-display); font-size: 24px; color: var(--ink); font-weight: 600; }
+  h3 { font-size: 17px; margin: 26px 0 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  .btn { font: inherit; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .btn:hover { background: var(--accent-soft); }
+  .btn.primary { background: var(--accent); color: #0b0d14; border-color: var(--accent); font-weight: 600; }
+  ol.rows, ul.rows { list-style: none; margin: 0; padding: 0; }
+  .rows li { display: grid; grid-template-columns: 1fr; gap: 2px 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .rows .amt { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+  .rows .k { color: var(--ink-soft); font-size: 13px; }
+  .rows a, #whole a { text-decoration: none; }
+  .rows a:hover, #whole a:hover { text-decoration: underline; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 14px; }
+  .scroll table { min-width: 640px; }
+  th, td { text-align: left; vertical-align: top; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
+  th { color: var(--ink); font-weight: 600; }
+  td.m, th.m { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink); }
+  td small { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  #whole { position: fixed; inset: 0; z-index: 50; overflow: auto; background: var(--paper); padding: 20px 0 60px; }
+  #whole[hidden] { display: none; }
+  #whole h1 { font-size: clamp(22px, 4vw, 30px); }
+  #whole .btns { display: flex; gap: 10px; margin: 0 0 18px; position: sticky; top: 0; background: var(--paper); padding: 8px 0; }
+  #whole table { width: 100%; }
+  @media (min-width: 700px) { .facts { grid-template-columns: 1fr 1fr 1fr; } .rows li { grid-template-columns: 130px 1fr; } .rows .k { grid-column: 2; } }
+  @media print {
+    body.whole > :not(#whole) { display: none !important; }
+    #whole { position: static; background: #fff; color: #111; padding: 0; }
+    #whole .wrap { max-width: none; padding: 0; }
+    #whole th, #whole td, #whole td.m, #whole td small, #whole .note, #whole h1 { color: #111; border-color: #ccc; }
+    #whole a { color: #1a3f8f; }
+    #whole table { font-size: 10px; } #whole tr { break-inside: avoid; } #whole thead { display: table-header-group; }
+    .no-print { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<!-- pnbar: the Priority Nexus site menu -->
+<style>.pnbar{background:#000;border-bottom:1px solid #2a2140;font:14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}.pnbar>div{max-width:1040px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:16px;height:40px;overflow-x:auto;white-space:nowrap}.pnbar a{color:#a79fbd;text-decoration:none}.pnbar a:hover,.pnbar a.here{color:#ece8f5}.pnbar .b{display:flex;align-items:center;gap:8px;color:#ece8f5;font-weight:700;letter-spacing:.04em;margin-right:auto}.pnbar img{width:22px;height:22px;border-radius:5px}@media(max-width:640px){.pnbar .b span{display:none}}.pnbar .pm{display:none;margin-left:auto;font:inherit;font-weight:600;color:#ece8f5;background:rgba(139,63,224,.18);border:1px solid #2a2140;border-radius:8px;padding:4px 12px;cursor:pointer}@media(max-width:760px){.pnbar>div{flex-wrap:wrap;height:auto;min-height:40px;overflow:visible;white-space:normal;gap:0 16px}.pnbar .b{margin-right:0;padding:9px 0}.pnbar .b span{display:inline}.pnbar .pm{display:block}.pnbar>div>a:not(.b){display:none;width:calc(100vw - 32px);padding:12px 0;border-top:1px solid #2a2140;font-size:16px}.pnbar.open>div>a:not(.b){display:block}.pnbar a.here{color:#b06cf5}}</style>
+<div class="pnbar"><div><a class="b" href="https://prioritynexusllc.org/"><img src="https://prioritynexusllc.org/pn-logo.png" alt=""><span>People First</span></a><button class="pm" type="button" aria-expanded="false" onclick="var n=this.closest(`.pnbar`);this.setAttribute(`aria-expanded`,n.classList.toggle(`open`))">Menu</button><a href="https://prioritynexusllc.org/">Home</a><a href="https://prioritynexusllc.org/about/">About</a><a class="here" href="https://prioritynexusllc.org/projects/">Projects</a><a href="https://prioritynexusllc.org/when-a-limit-breaks/">Limit Breaks</a><a href="https://prioritynexusllc.org/predators/">Predators</a><a href="https://prioritynexusllc.org/resources/">Resources</a><a href="https://prioritynexusllc.org/accountability-check/">Accountability&nbsp;Check</a><a href="https://prioritynexusllc.org/contact/">Contact</a></div></div>
+<nav><div class="wrap">
+  <a class="brand" href="../"><b>PRIGH</b> <span>Public Record Institutional Governance &amp; Health</span></a>
+  <div class="links"><a href="../sky.html">Sky</a><a href="../check/">Accountability Check</a><a href="../sky.html?tab=method">Method</a><a href="https://github.com/PriorityNexusLLC/PRIGH-Sky">Code</a></div>
+</div></nav>
+
+<header><div class="wrap"><h1>SEC changes</h1><p class="lead">Weekly report, week ending 2026-11-22. What changed in the Securities and Exchange Commission's own record of every filer between the copy of 2026-11-19 and the copy of 2026-11-22.</p><p class="picks"><span>Reports by week ending:</span> <a class="pick on" href="../sec/2026-11-22/">2026-11-22</a></p><ul class="facts"><li><b>7,601</b>new filings listed</li><li><b>41</b>filings left a filer's list, 0 of them no longer open at the SEC</li><li><b>57</b>filers with a changed record</li><li><b>0</b>filer records gone</li><li><b>400</b>new filer records</li></ul></div></header><section><div class="wrap"><p class="note">The SEC publishes one file a day with every filer's record and the list of everything it has ever filed. Each new copy is set beside the copy before it, and what is gone and what changed is listed here. Filers are matched by SEC number, never by name. Anyone who files with the SEC is in its public record, companies and people alike, so every filer is named. A change is a filed fact to look at, not a finding about anyone: filings are also removed for ordinary reasons (filed under the wrong filer, a duplicate, a correction). Each name opens that filer's own page at the SEC.</p><p class="note">The file is checked every day and the changes are kept. One report is made for each week, Monday to Sunday, from 1 daily comparison in this one. Every earlier report stays open at the links above and in the list at the foot of the page. See also <a href="../pac/">PAC movement</a>, the same weekly report for the FEC's files.</p><p class="note">Being collected now: 1 day so far for the week ending 2026-11-29. That report is published on 2026-11-29.</p><p class="note">Each list shows the first 15, filers on the map first. The button beside it opens the whole list, to read, print or save as PDF.</p>
+<h2>Filings that left a filer's list</h2><p class="sub">A filing that was listed under a filer in the copy before and is not listed there now.</p>
+<h3>No longer opens at the SEC </h3><p class="note">These are the ones to look at: the filing was listed, and its own page does not open any more.</p><p class="note">None.</p>
+<h3>Still opens at the SEC <button class="btn no-print" type="button" data-whole="moved">Whole list: view or print (41 rows)</button></h3><p class="note">The filing still exists. It is no longer listed under this filer (often it was re-filed under another filer or corrected).</p><ol class="rows"><li><span class="amt">4</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0000068505">Motorola Solutions, Inc.</a> <small class="k">CIK 68505 · on the map</small></span><span class="k">filed 2017-11-08 · accession 0001201232-17-000003 · <a href="https://www.sec.gov/Archives/edgar/data/68505/000120123217000003/0001201232-17-000003-index.htm">where it was</a></span></li><li><span class="amt">4</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0000068505">Motorola Solutions, Inc.</a> <small class="k">CIK 68505 · on the map</small></span><span class="k">filed 2017-11-08 · accession 0001508118-17-000003 · <a href="https://www.sec.gov/Archives/edgar/data/68505/000150811817000003/0001508118-17-000003-index.htm">where it was</a></span></li><li><span class="amt">4</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0000068505">Motorola Solutions, Inc.</a> <small class="k">CIK 68505 · on the map</small></span><span class="k">filed 2017-11-08 · accession 0001643595-17-000004 · <a href="https://www.sec.gov/Archives/edgar/data/68505/000164359517000004/0001643595-17-000004-index.htm">where it was</a></span></li><li><span class="amt">4</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0000068505">Motorola Solutions, Inc.</a> <small class="k">CIK 68505 · on the map</small></span><span class="k">filed 2017-11-08 · accession 0001656592-17-000003 · <a href="https://www.sec.gov/Archives/edgar/data/68505/000165659217000003/0001656592-17-000003-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001114446-24-002870 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000111444624002870/0001114446-24-002870-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001114446-24-002871 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000111444624002871/0001114446-24-002871-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001114446-24-002872 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000111444624002872/0001114446-24-002872-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001114446-24-002873 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000111444624002873/0001114446-24-002873-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001114446-24-002874 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000111444624002874/0001114446-24-002874-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001114446-24-002875 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000111444624002875/0001114446-24-002875-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001839882-24-017397 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000183988224017397/0001839882-24-017397-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001839882-24-017409 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000183988224017409/0001839882-24-017409-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001839882-24-017411 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000183988224017411/0001839882-24-017411-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001839882-24-017431 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000183988224017431/0001839882-24-017431-index.htm">where it was</a></span></li><li><span class="amt">424B2</span><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001114446">UBS AG</a> <small class="k">CIK 1114446 · on the map</small></span><span class="k">filed 2024-06-03 · accession 0001839882-24-017482 · <a href="https://www.sec.gov/Archives/edgar/data/1114446/000183988224017482/0001839882-24-017482-index.htm">where it was</a></span></li></ol>
+<h2>Filer records gone</h2><p class="sub">0 this week. </p><p class="note">None.</p>
+<h2>Changed records</h2><p class="sub">57 filers. What the record said at the week's first copy and what it says at the last. <button class="btn no-print" type="button" data-whole="changed">Whole list: view or print (57 rows)</button></p><ul class="rows"><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001278387">BROADWOOD CAPITAL INC</a> <small class="k">CIK 1278387 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001278386">BROADWOOD PARTNERS, L.P.</a> <small class="k">CIK 1278386 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0002097963">BlueArc Capital Management, LLC</a> <small class="k">CIK 2097963 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001790577">CG Subsidiary Holdings L.L.C.</a> <small class="k">CIK 1790577 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001527166">Carlyle Group Inc.</a> <small class="k">CIK 1527166 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001548628">Carlyle Holdings I L.P.</a> <small class="k">CIK 1548628 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001548630">Carlyle Holdings II L.L.C.</a> <small class="k">CIK 1548630 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0002019348">Clark Jermoluk Founders Fund I LLC</a> <small class="k">CIK 2019348 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0002068530">Coastlands Capital LP</a> <small class="k">CIK 2068530 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001541901">Encompass Capital Advisors LLC</a> <small class="k">CIK 1541901 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001537466">Encompass Capital Master Fund LP</a> <small class="k">CIK 1537466 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0000807249">GAMCO INVESTORS, INC. ET AL</a> <small class="k">CIK 807249 · on the map</small></span><span class="k">industry code: blank → 0000</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0002111846">Game Your Game Inc.</a> <small class="k">CIK 2111846 · on the map</small></span><span class="k">state of incorporation: DE → NV</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001901930">H&amp;F Corporate Investors X, Ltd.</a> <small class="k">CIK 1901930 · on the map</small></span><span class="k">tax ID: changed → (number not stored)</span></li><li><span><a href="https://www.sec.gov/edgar/browse/?CIK=0001274775">Hatsopoulos John</a> <small class="k">CIK 1274775 · on the map</small></span><span class="k">earlier names: HATSOPOULOS JOHN → none</span></li></ul>
+<h2>New filings by form</h2><p class="sub">7,601 new filings. <button class="btn no-print" type="button" data-whole="forms">Whole list: view or print (144 rows)</button></p><p class="note">4 2,407, 424B2 1,411, 8-K 488, 144 422, NPORT-P 297, D/A 212, 6-K 212, 24F-2NT 165, FWP 157, 497K 143, 424B3 111, 3 105</p>
+<h2>Every report</h2><p class="note">Each week ending opens that week's whole report, with its own lists to view or print.</p><div class="scroll"><table><tr><th>Week ending</th><th>Copies compared</th><th>New filings</th><th>Left a filer's list</th><th>No longer at the SEC</th><th>Records gone</th><th>Changed records</th></tr>
+<tr><td><a href="../sec/2026-11-22/">2026-11-22</a></td><td>2026-11-19 to 2026-11-22</td><td>7,601</td><td>41</td><td>0</td><td>0</td><td>57</td></tr>
+</table></div><h2>What is not here</h2><ul class="rules"><li>Addresses and phone numbers in the SEC's file are never read or stored.</li><li>A changed tax ID is listed only as changed. The number is never stored.</li><li>The source: <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces">the SEC's own bulk file, submissions.zip</a>. Anyone can download the same file and see the same records.</li></ul></div></section>
+<footer><div class="wrap">Built 2026-11-22. A project of <a href="https://prioritynexusllc.org/">Priority Nexus LLC</a>. Not a verdict on anyone: a map of what was filed.<span class="visits"></span> This site counts visits and keeps nothing about the visitor, just the click.</div></footer>
+<script data-goatcounter="https://prioritynexusllc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script><script>fetch("https://prioritynexusllc.goatcounter.com/counter/TOTAL.json").then(function(r){return r.ok?r.json():null}).then(function(j){if(!j)return;document.querySelectorAll(".visits").forEach(function(e){e.textContent=" · "+j.count+" visits."})}).catch(function(){})</script><script>(function(){if(document.getElementById("pnshare"))return;var b=document.createElement("button");b.id="pnshare";b.type="button";b.textContent="Share";b.title="Copy the link to this page";b.style.cssText="position:fixed;right:14px;bottom:14px;z-index:9999;font:600 14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#ece8f5;background:#2a1a4a;border:1px solid #6b4bb0;border-radius:999px;padding:9px 16px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.45)";function done(t){b.textContent=t;setTimeout(function(){b.textContent="Share"},2000)}function old(){var t=document.createElement("textarea");t.value=location.href;t.style.cssText="position:fixed;left:-999px";document.body.appendChild(t);t.select();var ok=false;try{ok=document.execCommand("copy")}catch(e){}t.remove();done(ok?"Link copied":"Copy failed")}b.onclick=function(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(location.href).then(function(){done("Link copied")},old)}else old()};document.body.appendChild(b)})()</script>
+
+<section id="whole" hidden><div class="wrap"></div></section>
+<script>
+(function () {
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); };
+  var money = function (x) { var v = Math.round(Math.abs(x)).toLocaleString('en-US'); return (x < 0 ? '-$' : '$') + v; };
+  var box = document.getElementById('whole');
+  function cell(kind, v, names) {
+    if (kind === '$') return '<td class="m">' + money(v) + '</td>';
+    if (kind === 'n') return '<td class="m">' + Number(v).toLocaleString('en-US') + '</td>';
+    if (kind === 'cik') return '<td><a href="https://www.sec.gov/edgar/browse/?CIK=' + esc(v) + '" target="_blank" rel="noopener">' + esc(names[v] || 'name not in the record') + '</a> <small>CIK ' + esc(Number(v)) + '</small></td>';
+    if (kind === 'url') return v ? '<td><a href="' + esc(v) + '" target="_blank" rel="noopener">open</a></td>' : '<td></td>';
+    if (kind === 'id') {
+      if (!v) return '<td></td>';
+      var what = v.charAt(0) === 'C' ? 'committee' : 'candidate';
+      return '<td><a href="https://www.fec.gov/data/' + what + '/' + esc(v) + '/" target="_blank" rel="noopener">' + esc(names[v] || 'name not in the register') + '</a> <small>' + esc(v) + '</small></td>';
+    }
+    return '<td>' + esc(v) + '</td>';
+  }
+  function show(d) {
+    var head = d.cols.map(function (c) { return '<th' + (c[1] === '$' || c[1] === 'n' ? ' class="m"' : '') + '>' + esc(c[0]) + '</th>'; }).join('');
+    var parts = [];
+    for (var i = 0; i < d.rows.length; i++) {
+      var r = d.rows[i], t = '<tr>';
+      for (var j = 0; j < d.cols.length; j++) t += cell(d.cols[j][1], r[j], d.names);
+      parts.push(t + '</tr>');
+    }
+    box.firstElementChild.innerHTML = '<div class="btns no-print"><button class="btn primary" type="button" id="whole-print">Print or save as PDF</button>' +
+      '<button class="btn" type="button" id="whole-close">Close</button></div>' +
+      '<h1>SEC changes · ' + esc(d.title) + '</h1><p class="note">' + esc(d.lead) + '</p>' +
+      '<p class="note">PRIGH, the Priority Nexus map · prioritynexusllc.org/PRIGH-Sky/sec · ' + esc(d.compared) + ' · ' + d.rows.length.toLocaleString('en-US') +
+      ' row' + (d.rows.length === 1 ? '' : 's') + ', the whole list. Each name opens that filer's own page at the SEC: sec.gov/edgar/browse/?CIK= followed by the number beside the name.</p>' +
+      '<table><thead><tr>' + head + '</tr></thead><tbody>' + parts.join('') + '</tbody></table>' +
+      '<p class="note">A change is a filed fact to look at, not a finding about anyone: filings are also removed for ordinary reasons (wrong filer, duplicate, correction). Source: the SEC\'s daily file of every filer, submissions.zip.</p>';
+    box.hidden = false; box.scrollTop = 0; document.body.classList.add('whole');
+    document.getElementById('whole-print').addEventListener('click', function () { window.print(); });
+    document.getElementById('whole-close').addEventListener('click', function () { box.hidden = true; document.body.classList.remove('whole'); });
+  }
+  document.querySelectorAll('[data-whole]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var label = b.textContent; b.textContent = 'Opening…'; b.disabled = true;
+      fetch('data/' + b.dataset.whole + '.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(show)
+        .catch(function () { alert('The whole list did not load. Please try again.'); })
+        .then(function () { b.textContent = label; b.disabled = false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
